@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.wrangler/
+.env
+.env.*
+*.pem
+*.key
+.dev.vars
+
+# Internal specification: never publish (repo is public)
+*.docx

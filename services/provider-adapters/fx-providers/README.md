@@ -1,0 +1,9 @@
+# fx-providers
+
+FX rate provider adapters.
+
+**SRS:** SRS-316-AFR-001 §14
+
+## Requirement IDs
+
+- `INT-001` — Each provider adapter SHALL declare supported countries, currencies, methods, limits, refund capabilities and callback semantics.

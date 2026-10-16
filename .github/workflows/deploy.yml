@@ -1,0 +1,63 @@
+# CI/CD: every push is validated; pushes deploy apps/marketing-web to Cloudflare Pages.
+#   main         -> production  (https://<project>.pages.dev)
+#   other branch -> preview     (https://<branch>.<project>.pages.dev)
+# Required GitHub secrets: CLOUDFLARE_API_TOKEN (Pages:Edit only), CLOUDFLARE_ACCOUNT_ID
+# Optional GitHub variable: CLOUDFLARE_PAGES_PROJECT (defaults to 316money)
+# Only apps/marketing-web is published; architecture docs and the SRS are never deployed.
+name: ci-cd
+
+on:
+  push:
+  pull_request:
+
+concurrency:
+  group: ci-cd-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Required files present
+        run: |
+          test -f apps/marketing-web/index.html
+          test -f apps/marketing-web/styles.css
+      - name: No secrets in site output
+        run: |
+          if grep -rEIl "(BEGIN [A-Z ]*PRIVATE KEY|CLOUDFLARE_API_TOKEN|sk_live_|AKIA[0-9A-Z]{16})" apps/marketing-web; then
+            echo "Secret-like content found in published directory"; exit 1
+          fi
+
+  deploy:
+    needs: validate
+    # Never deploy from pull requests (forks have no secrets and run untrusted code).
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      deployments: write
+    environment:
+      name: ${{ github.ref_name == 'main' && 'production' || 'preview' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: >-
+            pages deploy apps/marketing-web
+            --project-name=${{ vars.CLOUDFLARE_PAGES_PROJECT || '316money' }}
+            --branch=${{ github.ref_name }}
+            --commit-hash=${{ github.sha }}
+            --commit-dirty=false
