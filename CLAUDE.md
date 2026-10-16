@@ -30,3 +30,8 @@ Frontend standards:
 - **Typography:** fluid scale (`clamp()` or Tailwind prefixes such as `text-sm md:text-base lg:text-lg`).
 - **Grids:** auto-fit density, e.g. `grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4`.
 - **Assets:** images, charts and media are fluid (`w-full h-auto`) or sit in fixed aspect-ratio wrappers.
+
+## Layout defects that must never ship (user-reported)
+- **No side flanks on large screens.** Full-width surfaces (nav bars, mega-menus and dropdown panels, banners) run edge to edge at every width; only their inner content is capped (e.g. 90rem) and centred. The page background must never show as empty margins either side of a full-bleed panel.
+- **No broken words.** Text never splits mid-word at any width (`overflow-wrap: normal; word-break: normal; hyphens: manual`; `white-space: nowrap` for nav labels, buttons and short labels). When a row cannot fit, change the layout instead: collapse the nav to a drawer earlier, wrap whole words, or stack columns. Headings use `text-wrap: balance`.
+- **Reserved media slots.** Where imagery is added later, keep the structure and fixed aspect-ratio box in place so adding the asset causes no layout shift.
