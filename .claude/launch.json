@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "marketing-web",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "4316", "--directory", "apps/marketing-web", "--bind", "127.0.0.1"],
+      "port": 4316
+    }
+  ]
+}
