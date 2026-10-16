@@ -1,0 +1,13 @@
+{
+  "name": "316money",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "node site/build.mjs",
+    "check": "node site/build.mjs --check"
+  },
+  "devDependencies": {
+    "marked": "14.1.4"
+  }
+}
