@@ -5,18 +5,39 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>316 Money · Fast &amp; Secure Payments for Africa</title>
   <meta name="description" content="316 Money helps individuals and businesses hold, send, and receive money securely, instantly, in multiple currencies.">
-  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="131x131" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap">
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="sections.css">
 </head>
 <body>
+  <svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-arrow-long" viewBox="0 0 24 16"><path d="M1 8h21M16 2l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chev-down" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chev-right" viewBox="0 0 16 16"><path d="M6 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M11 18.5h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 19c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5M16 5.3a3 3 0 010 5.6M18 14c2 .6 3.5 2.4 3.5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 10h18M7 15h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-headset" viewBox="0 0 24 24"><path d="M4.5 14v-2a7.5 7.5 0 0115 0v2M4.5 14h2.5v4h-2a1 1 0 01-1-1v-2a1 1 0 011-1zM19.5 14H17v4h2a1 1 0 001-1v-2a1 1 0 00-1-1zM17 18.5c0 1.4-1.8 2.5-5 2.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2.5L5 13.5h6l-1 8 8-11h-6l1-8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 8v7M8.5 12l3.5 3.5 3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-user-plus" viewBox="0 0 24 24"><circle cx="10" cy="8" r="3.4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 19.5c0-3.4 2.9-5.5 6.5-5.5 1.2 0 2.3.2 3.2.7M18 14v6M15 17h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-transfer" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 20.5h8M9 9l-2 2 2 2M15 9l2 2-2 2M7 11h10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-plug" viewBox="0 0 24 24"><rect x="5" y="3.5" width="14" height="17" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M9 8h6M9 12h6M10 16h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M3 9.5a13 13 0 0118 0M6 13a8.5 8.5 0 0112 0M9.2 16.3a4 4 0 015.6 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="19.2" r="1.2" fill="currentColor"/></symbol>
+    <symbol id="i-tv" viewBox="0 0 24 24"><rect x="4.5" y="3.5" width="15" height="17" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 17h8M8 7h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  </defs>
+</svg>
   <header class="nav">
     <div class="container nav__inner">
-      <a class="nav__logo" href="/" aria-label="316 Money home">
-        <!-- LOGO SLOT: replace assets/logo.svg with the final logo -->
-        <img src="/assets/logo.svg" alt="316 Money" width="140" height="38">
+      <a class="nav__logo" href="./" aria-label="316 Money home">
+        <img src="assets/logo.png" alt="" width="131" height="131"><span class="nav__wordmark">MONEY</span>
       </a>
 
       <input class="nav__toggle" type="checkbox" id="nav-toggle" aria-label="Toggle menu">
@@ -61,8 +82,7 @@
               <aside class="mega__promo">
                 <h3>Get your 316 Money account</h3>
                 <p>Download the 316 App and create your account in a few easy steps. Hold and exchange multiple currencies. Create virtual cards.</p>
-                <!-- IMAGE SLOT: replace this div with <img src="/assets/nav-personal.png" alt="" width="" height=""> -->
-                <div class="mega__media" aria-hidden="true"></div>
+                <img class="mega__media" src="assets/Home/nav-promo.png" alt="" width="813" height="650" loading="lazy" decoding="async">
               </aside>
             </div>
           </li>
@@ -101,8 +121,7 @@
               <aside class="mega__promo">
                 <h3>Get a 316 Pay account for your business</h3>
                 <p>Download the 316 App and create your account in a few easy steps. Hold and exchange multiple currencies. Create virtual cards.</p>
-                <!-- IMAGE SLOT: replace this div with <img src="/assets/nav-business.png" alt="" width="" height=""> -->
-                <div class="mega__media" aria-hidden="true"></div>
+                <img class="mega__media" src="assets/Home/nav-promo.png" alt="" width="813" height="650" loading="lazy" decoding="async">
               </aside>
             </div>
           </li>
@@ -143,8 +162,7 @@
               <aside class="mega__promo">
                 <h3>Be a 316 Hotspot Agent, unlock financial benefit</h3>
                 <p>Download the 316 App and create your account in a few easy steps. Hold and exchange multiple currencies. Create virtual cards.</p>
-                <!-- IMAGE SLOT: replace this div with <img src="/assets/nav-partners.png" alt="" width="" height=""> -->
-                <div class="mega__media" aria-hidden="true"></div>
+                <img class="mega__media" src="assets/Home/nav-promo.png" alt="" width="813" height="650" loading="lazy" decoding="async">
               </aside>
             </div>
           </li>
@@ -159,6 +177,7 @@
   </header>
 
   <main>
+    <!-- 1 · Hero (gradient white -> lavender) -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero__inner">
         <div class="hero__copy">
@@ -166,7 +185,7 @@
             <span class="badge__tag">New</span>
             <span class="badge__text">316 Money is soon live in</span>
             <span class="flags" aria-label="Cameroon and Nigeria"><i class="flag flag--cm"></i><i class="flag flag--ng"></i></span>
-            <svg class="icon badge__arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="icon badge__arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
           </a>
 
           <h1 id="hero-title" class="hero__title">
@@ -177,28 +196,270 @@
           <p class="hero__lead">316 Money helps individuals and businesses hold, send, and receive money securely, instantly, in multiple currencies and with zero fees. Join thousands of satisfied users today.</p>
 
           <div class="hero__cta">
-            <a class="btn btn--primary" href="#sign-up">Get started
-              <svg class="icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-            <a class="btn btn--light" href="#learn-more">Learn more</a>
+            <a class="btn btn--primary" href="#get-started">Get started <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn--light" href="#features">Learn more</a>
           </div>
 
           <div class="social-proof">
-            <ul class="avatars" aria-hidden="true">
-              <li>U1</li><li>U2</li><li>U3</li><li>U4</li>
-            </ul>
+            <img class="social-proof__img" src="assets/Home/avatars.png" alt="" width="446" height="196">
             <p><strong>1,000+</strong> happy customers</p>
           </div>
         </div>
 
         <div class="hero__visual">
-          <!-- ASSET SLOT: drop the phone/wallet artwork at assets/hero.png, then replace
-               this div with <img src="/assets/hero.png" alt="..." width="..." height="..."> -->
-          <div class="hero__placeholder" role="img" aria-label="316 Money app preview"></div>
+          <img src="assets/Home/hero.png" alt="316 Money app showing wallet balances in naira, dollars and CFA francs" width="1441" height="1168" fetchpriority="high">
         </div>
       </div>
     </section>
+
+    <!-- 2 · Features you'll enjoy: bento (white) -->
+    <section class="sec sec--white" id="features" aria-labelledby="features-title">
+      <div class="wrap">
+        <header class="sec__head">
+          <h2 id="features-title" class="sec__title"><span class="accent">Features</span> you’ll Enjoy</h2>
+          <p class="sec__sub">316 Money helps individuals and businesses hold, send, and receive money securely, instantly, in multiple currencies and with zero fees. Join thousands of satisfied users today.</p>
+        </header>
+
+        <div class="bento">
+          <article class="bcard bcard--solid bento__send">
+            <h3>Send and receive money</h3>
+            <p>316 Money helps individuals and businesses hold, send, and receive money securely, instantly, in multiple currencies and with zero fees. Join thousands of satisfied users today.</p>
+            <ul class="txs">
+              <li class="tx">
+                <span class="tx__icon"><img src="assets/Home/send-icon.png" alt="" width="87" height="94"></span>
+                <span class="tx__who"><strong>James Olawale</strong><small>06 Jul &nbsp;•&nbsp; 02:25PM</small></span>
+                <span class="tx__amt tx__amt--in"><strong>+70,256.30</strong><small>NGN</small></span>
+              </li>
+              <li class="tx">
+                <span class="tx__icon tx__icon--flip"><img src="assets/Home/send-icon.png" alt="" width="87" height="94"></span>
+                <span class="tx__who"><strong>Samuel Onana</strong><small>19 Apr &nbsp;•&nbsp; 04:11PM</small></span>
+                <span class="tx__amt tx__amt--out"><strong>-41,115.50</strong><small>XAF</small></span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="bcard bcard--line bento__fx">
+            <div class="bcard__text">
+              <h3>Hold &amp; exchange multiple currencies</h3>
+              <p>316 Money helps individuals and businesses hold, send, and receive money securely, instantly, in multiple currencies and with zero fees. Join thousands of satisfied users today.</p>
+            </div>
+            <div class="fx" aria-hidden="true">
+              <span class="fx__label">Move from :</span>
+              <div class="fx__box"><span>0000.00</span><span class="fx__cur"><i class="flag flag--ng"></i>NGN<svg class="icon"><use href="#i-chev-down"/></svg></span></div>
+              <span class="fx__label">Move To :</span>
+              <div class="fx__box"><span>0000.00</span><span class="fx__cur"><i class="flag flag--us"></i>USD<svg class="icon"><use href="#i-chev-down"/></svg></span></div>
+            </div>
+          </article>
+
+          <article class="bcard bcard--line bento__airtime">
+            <div class="bcard__text">
+              <h3>Airtime &amp; Data Subscriptions</h3>
+              <p>316 Money helps individuals and businesses hold, send, and receive money securely, instantly, in multiple currencies and with zero fees. Join thousands of satisfied users today.</p>
+            </div>
+            <ul class="telcos" aria-label="Supported networks">
+              <li><span class="telco telco--mtn" role="img" aria-label="MTN"><b>MTN</b></span></li>
+              <li><img class="telco" src="assets/Home/orange.png" alt="Orange" width="180" height="180"></li>
+              <li><span class="telco telco--glo" role="img" aria-label="Glo"><b>glo</b></span></li>
+              <li><img class="telco" src="assets/Home/airtel.png" alt="Airtel" width="180" height="180"></li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="bento bento--row2">
+          <article class="bcard bcard--line bento__bills">
+            <div class="bcard__text">
+              <h3>Bill Payments</h3>
+              <p>Say goodbye to late fees and tedious bill management with our efficient bill payment feature straight from your 316 Money account.</p>
+            </div>
+            <ul class="bills">
+              <li><span class="bills__icon"><svg class="icon"><use href="#i-plug"/></svg></span><span class="bills__txt"><strong>Utility</strong><small>Pay your utility bills easy from your account</small></span><svg class="icon bills__go"><use href="#i-chev-right"/></svg></li>
+              <li><span class="bills__icon"><svg class="icon"><use href="#i-wifi"/></svg></span><span class="bills__txt"><strong>Internet services</strong><small>Pay your utility bills easy from your account</small></span><svg class="icon bills__go"><use href="#i-chev-right"/></svg></li>
+              <li><span class="bills__icon"><svg class="icon"><use href="#i-tv"/></svg></span><span class="bills__txt"><strong>Cable TV</strong><small>Pay your utility bills easy from your account</small></span><svg class="icon bills__go"><use href="#i-chev-right"/></svg></li>
+            </ul>
+          </article>
+
+          <article class="bcard bcard--solid bento__more">
+            <h3>See more of our features here</h3>
+            <a class="btn btn--ghost" href="#features-grid">Learn more</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 · Gift cards (lavender) -->
+    <section class="sec sec--tint" id="gift-cards" aria-labelledby="gift-title">
+      <div class="wrap">
+        <header class="sec__head">
+          <h2 id="gift-title" class="sec__title"><span class="accent">Gift cards</span> to share with your friends and loved ones everywhere.</h2>
+          <p class="sec__sub">316 Money helps individuals and businesses hold, send, and receive money securely, instantly, in multiple currencies and with zero fees. Join thousands of satisfied users today.</p>
+        </header>
+        <ul class="gifts">
+          <li class="gift"><span class="gc gc--amazon" role="img" aria-label="Amazon"><i></i></span></li>
+          <li class="gift"><span class="gc gc--binance" role="img" aria-label="Binance"><i></i></span></li>
+          <li class="gift"><span class="gc gc--adidas" role="img" aria-label="Adidas"><i></i></span></li>
+          <li class="gift"><span class="gc gc--apple" role="img" aria-label="Apple"><i></i></span></li>
+          <li class="gift"><span class="gc gc--shein" role="img" aria-label="SHEIN"><b>SHEIN</b></span></li>
+          <li class="gift"><span class="gc gc--crypto" role="img" aria-label="Crypto gift card"><b>Crypto</b><small>Gift card</small></span></li>
+          <li class="gift"><span class="gc gc--ea" role="img" aria-label="EA"><i></i></span></li>
+          <li class="gift"><span class="gc gc--mastercard" role="img" aria-label="Mastercard"><i></i></span></li>
+          <li class="gift"><span class="gc gc--netflix" role="img" aria-label="Netflix"><i></i></span></li>
+          <li class="gift"><span class="gc gc--zara" role="img" aria-label="Zara"><i></i></span></li>
+          <li class="gift"><span class="gc gc--switch" role="img" aria-label="Nintendo Switch"><i></i></span></li>
+          <li class="gift"><span class="gc gc--visa" role="img" aria-label="Visa"><i></i></span></li>
+        </ul>
+        <p class="more"><a href="#gift-cards">And much more</a></p>
+      </div>
+    </section>
+
+    <!-- 4 · Virtual cards (white) -->
+    <section class="sec sec--white sec--vc" id="virtual-cards" aria-labelledby="vc-title">
+      <div class="wrap">
+        <div class="vc">
+          <div class="vcard" role="img" aria-label="316 Money virtual Mastercard ending 4534">
+            <span class="vcard__num">•••• 4534</span>
+            <span class="vcard__label">Virtual card</span>
+            <span class="vcard__brand"><i></i><i></i><small>mastercard</small></span>
+          </div>
+          <div class="vc__copy">
+            <h2 id="vc-title">Create virtual cards</h2>
+            <p>316 Money helps individuals and businesses hold, send, and receive money securely, instantly, in multiple currencies and with zero fees. Join thousands of satisfied users today.</p>
+            <div class="vc__cta">
+              <a class="btn btn--white btn--sm-rect" href="#get-started">Get started <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              <a class="btn btn--white btn--sm-rect" href="#features-grid">Learn more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 · Features grid (lavender) -->
+    <section class="sec sec--tint" id="features-grid" aria-labelledby="fg-title">
+      <div class="wrap">
+        <header class="sec__head">
+          <h2 id="fg-title" class="sec__title"><span class="accent">Features</span> you’ll Enjoy</h2>
+          <p class="sec__sub">316 Money helps individuals and businesses hold, send, and receive money securely, instantly, in multiple currencies and with zero fees. Join thousands of satisfied users today.</p>
+        </header>
+        <ul class="fgrid">
+          <li class="fcard"><span class="fcard__icon"><svg class="icon"><use href="#i-phone"/></svg></span><h3>Mobile Payments</h3><p>Send and receive money directly from your smartphone with our easy-to-use mobile app.</p></li>
+          <li class="fcard"><span class="fcard__icon"><svg class="icon"><use href="#i-globe"/></svg></span><h3>Cross-Border Transfers</h3><p>Send money across African countries and internationally with lower fees and better exchange rates.</p></li>
+          <li class="fcard"><span class="fcard__icon"><svg class="icon"><use href="#i-users"/></svg></span><h3>Group Payments</h3><p>Easily split bills or collect funds from multiple people for events or projects.</p></li>
+          <li class="fcard"><span class="fcard__icon"><svg class="icon"><use href="#i-card"/></svg></span><h3>Virtual Cards</h3><p>Create virtual cards for online purchases with customizable spending limits and controls.</p></li>
+          <li class="fcard"><span class="fcard__icon"><svg class="icon"><use href="#i-headset"/></svg></span><h3>In-App Support</h3><p>Get help instantly through our dedicated customer support team available 24/7.</p></li>
+          <li class="fcard"><span class="fcard__icon"><svg class="icon"><use href="#i-bolt"/></svg></span><h3>Quick Payments</h3><p>Transfer money in seconds, not days. Our platform ensures immediate payment processing.</p></li>
+        </ul>
+        <p class="center"><a class="btn btn--primary btn--lg" href="#features">Learn more <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></p>
+      </div>
+    </section>
+
+    <!-- 6 · Savings (white) -->
+    <section class="sec sec--white" id="savings" aria-labelledby="savings-title">
+      <div class="wrap split">
+        <div class="split__media"><img src="assets/Home/savings.png" alt="A woman using the 316 Money savings pot on her phone" width="1924" height="2091" loading="lazy" decoding="async"></div>
+        <div class="split__copy">
+          <h2 id="savings-title" class="split__title"><span class="accent">Put money aside</span> for the things you love</h2>
+          <p>316 Money helps individuals and businesses hold, send, and receive money securely, instantly, in multiple currencies and with zero fees. Join thousands of satisfied users today.</p>
+          <a class="btn btn--primary btn--lg" href="#get-started">Learn more <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 · Get started in steps (lavender) -->
+    <section class="sec sec--tint" id="get-started" aria-labelledby="steps-title">
+      <div class="wrap">
+        <header class="sec__head">
+          <h2 id="steps-title" class="sec__title"><span class="accent">Get started</span> in a few easy steps</h2>
+          <p class="sec__sub">Get started with 316 Money in three simple steps and transform how you manage your money in Africa.</p>
+        </header>
+        <ol class="steps">
+          <li class="step"><span class="step__disc"><svg class="icon"><use href="#i-download"/></svg><b>1</b></span><h3>Download the app</h3><p>Get our mobile app from the App Store or Google Play Store.</p></li>
+          <li class="step"><span class="step__disc"><svg class="icon"><use href="#i-user-plus"/></svg><b>2</b></span><h3>Create an Account</h3><p>Sign up in minutes with just your email and phone number.</p></li>
+          <li class="step"><span class="step__disc"><svg class="icon"><use href="#i-transfer"/></svg><b>3</b></span><h3>Start Transacting</h3><p>Send money, pay bills, or request payments from friends instantly.</p></li>
+        </ol>
+        <p class="center"><a class="btn btn--primary btn--pill" href="#download">Join waitlist <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></p>
+      </div>
+    </section>
+
+    <!-- 8 · Business payments (white) -->
+    <section class="sec sec--white" id="business" aria-labelledby="biz-title">
+      <div class="wrap split split--rev">
+        <div class="split__copy">
+          <h2 id="biz-title" class="split__title">Looking to collect <span class="accent">business payments?</span></h2>
+          <p>316 Money helps individuals and businesses hold, send, and receive money securely, instantly, in multiple currencies and with zero fees. Join thousands of satisfied users today.</p>
+          <a class="btn btn--primary" href="#business">Learn more</a>
+        </div>
+        <div class="split__media"><img src="assets/Home/business-owner.png" alt="A smiling shop owner in an apron" width="1737" height="1712" loading="lazy" decoding="async"></div>
+      </div>
+    </section>
+
+    <!-- 9 · Hotspots (dark purple) -->
+    <section class="sec sec--dark" id="hotspots" aria-labelledby="hot-title">
+      <div class="wrap split">
+        <div class="split__media"><img src="assets/Home/hotspot-agent.png" alt="A woman using the 316 Hotspots app on her phone" width="1634" height="1737" loading="lazy" decoding="async"></div>
+        <div class="split__copy">
+          <p class="eyebrow">316 Hotspots</p>
+          <h2 id="hot-title" class="split__title split__title--md">Join our partner network and unlock massive financial benefits</h2>
+          <p>316 Money helps individuals and businesses hold, send, and receive money securely, instantly, in multiple currencies and with zero fees. Join thousands of satisfied users today.</p>
+          <div class="hero__cta">
+            <a class="btn btn--pink btn--sm-rect" href="#hotspots">Join now <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn--white btn--sm-rect" href="#hotspots">Learn more</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 · FAQ (white) -->
+    <section class="sec sec--white" id="faq" aria-labelledby="faq-title">
+      <div class="wrap faq">
+        <div class="faq__intro">
+          <h2 id="faq-title" class="faq__title"><span class="accent">Questions</span> you might want to ask</h2>
+          <div class="faq__users">
+            <img src="assets/Home/avatars.png" alt="" width="446" height="196" loading="lazy">
+            <p><strong>more than 10K+</strong><br>users worldwide</p>
+          </div>
+        </div>
+        <div class="faq__list">
+          <details><summary>What can I do with 316 Money?</summary><p>Hold money in multiple currencies, send and receive payments, pay bills, buy airtime and data, and create virtual cards. Which features you see depends on your country.</p></details>
+          <details><summary>How do I get started with 316 Money?</summary><p>Download the app from the App Store or Google Play, create an account with your email and phone number, and complete identity verification.</p></details>
+          <details><summary>Can I send and receive money with 316 Money?</summary><p>Yes. You can send and receive money with other 316 Money users and to supported destinations, with the fees and exchange rate shown before you confirm.</p></details>
+          <details><summary>Can I hold money in different currencies?</summary><p>Yes. Supported currencies are available as wallets in the app. Availability depends on your country.</p></details>
+          <details><summary>Can I save money towards specific goals?</summary><p>Yes. Create a named savings pot with a target amount and a timeframe, and add money to it whenever you like.</p></details>
+          <details><summary>Are all 316 Money features available in every country?</summary><p>No. Features are switched on country by country as our partners and approvals allow.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11 · Download (lavender) -->
+    <section class="sec sec--tint sec--palm" id="download" aria-labelledby="palm-title">
+      <div class="wrap split">
+        <div class="split__copy">
+          <h2 id="palm-title" class="split__title split__title--md">Experience <span class="accent">316 MONEY</span> in the palm of your hand</h2>
+          <p class="small">Download for iOS and Android. Open your account in under 3 minutes with zero paperwork and bring more ease to your financial life.</p>
+          <div class="stores">
+            <a class="store" href="#download"><i class="store__logo store__logo--apple" aria-hidden="true"></i><span><small>Download on the</small><strong>Apple App Store</strong></span></a>
+            <a class="store" href="#download"><i class="store__logo store__logo--play" aria-hidden="true"></i><span><small>Get it on</small><strong>Google Play Store</strong></span></a>
+          </div>
+        </div>
+        <div class="split__media"><img src="assets/Home/app-phone.png" alt="316 Money app on a smartphone" width="1832" height="2117" loading="lazy" decoding="async"></div>
+      </div>
+    </section>
   </main>
-  <script src="/nav.js" defer></script>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <div class="footer__brand">
+        <a class="footer__logo" href="./" aria-label="316 Money home"><img src="assets/logo.png" alt="" width="131" height="131"><span>Money</span></a>
+        <p>The next generation payment platform for individuals and businesses. Send money anywhere, instantly.</p>
+      </div>
+      <nav class="footer__cols" aria-label="Footer">
+        <div><h3>Company</h3><ul><li><a href="#">About us</a></li><li><a href="#">Careers</a></li><li><a href="#">Resources</a></li><li><a href="#">Help</a></li></ul></div>
+        <div><h3>For Individuals</h3><ul><li><a href="#get-started">Get started</a></li><li><a href="#features">Features</a></li><li><a href="#">Security</a></li><li><a href="#">Getting started</a></li></ul></div>
+        <div><h3>For Business</h3><ul><li><a href="#business">Get Started</a></li><li><a href="#features">Features</a></li><li><a href="#hotspots">Be a Partner</a></li><li><a href="#">Developer API</a></li></ul></div>
+        <div><h3>Legal</h3><ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">AML Policy</a></li><li><a href="#">Cookie Settings</a></li></ul></div>
+      </nav>
+    </div>
+    <div class="wrap footer__legal"><p>© 2026 316 Money. All rights reserved.</p></div>
+  </footer>
+
+  <script src="nav.js" defer></script>
 </body>
 </html>
