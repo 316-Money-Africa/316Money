@@ -70,8 +70,9 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
 /* ---------- Mega menu: full-bleed panel (edge to edge, no side flanks at any width) ---------- */
 .mega {
   display: none; position: absolute; left: 0; right: 0; top: 100%;
-  grid-template-columns: minmax(0, 1fr) clamp(16rem, 28vw, 28rem);
-  background: #fff; border-bottom: 0.0625rem solid var(--line); box-shadow: 0 1.5rem 2.5rem rgba(20, 24, 31, .08);
+  /* col 1 = left inset so content lines up with the logo (container cap + gutter); col 3 = promo, flush to the viewport edge */
+  grid-template-columns: max(var(--gutter), calc((100% - 90rem) / 2 + var(--gutter))) minmax(0, 1fr) clamp(16rem, 28vw, 28rem);
+  background: #fff; border-bottom: 0.0625rem solid var(--line); box-shadow: 0 1.5rem 2rem -1.25rem rgba(20, 24, 31, .12);
 }
 .nav__item.is-open > .mega { display: grid; }
 @media (hover: hover) and (min-width: 64.0625rem) {
@@ -79,7 +80,8 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
   .nav__item:hover > .nav__trigger { color: var(--brand); }
 }
 /* Left content aligns to the 90rem container; the promo panel stays flush to the viewport's right edge. */
-.mega__main { padding: clamp(1.75rem, 4vh, 3rem) clamp(1.5rem, 3vw, 4rem) clamp(2rem, 5vh, 3.5rem) max(var(--gutter), calc((100% - 90rem) / 2 + var(--gutter))); }
+.mega__main { grid-column: 2; padding: clamp(1.75rem, 4vh, 3rem) clamp(1.5rem, 3vw, 4rem) clamp(2rem, 5vh, 3.5rem) 0; }
+.mega__promo { grid-column: 3; }
 .mega__title { margin: 0; font-size: clamp(1.375rem, 1rem + 1vw, 1.875rem); font-weight: 600; color: #2d1b4e; }
 .mega__title a, .mega__col h3 a { display: inline-flex; align-items: center; gap: 0.625rem; min-height: var(--touch); }
 .mega__cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr)); gap: clamp(1.5rem, 3vw, 3rem); margin-top: clamp(1.75rem, 5vh, 3rem); }
@@ -156,6 +158,7 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
   .nav__item { border-bottom: 0.0625rem solid var(--line); }
   .nav__trigger { width: 100%; height: auto; min-height: var(--touch); justify-content: space-between; padding-block: 0.5rem; font-size: 1rem; }
   .mega { position: static; box-shadow: none; border: 0; grid-template-columns: 1fr; }
+  .mega__main, .mega__promo { grid-column: auto; }
   .mega__main { padding: 0.5rem 0 1rem; }
   .mega__title { font-size: 1.25rem; }
   .mega__cols { margin-top: 1rem; gap: 1.25rem; }
