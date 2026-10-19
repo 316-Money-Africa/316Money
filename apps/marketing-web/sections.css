@@ -32,6 +32,8 @@ section[id] { scroll-margin-top: var(--nav-h); }
 /* ---------- 2 · Bento features ---------- */
 .bento { display: grid; grid-template-columns: 43fr 57fr; gap: 1rem; }
 .bento--row2 { grid-template-columns: 64fr 36fr; margin-top: 1rem; }
+/* Bill Payments + "See more" row: taller than its content so the two panels read as large feature blocks. */
+.bento--row2 .bcard { min-height: clamp(16rem, 24vw, 22rem); }
 .bento__send { grid-row: span 2; }
 .bcard { display: flex; border-radius: 0.75rem; padding: clamp(1.25rem, 2.4vw, 2rem); min-width: 0; }
 .bcard h3 { margin: 0; font-size: clamp(1.125rem, 1rem + 0.6vw, 1.5rem); line-height: 1.25; font-weight: 600; }
@@ -83,24 +85,33 @@ section[id] { scroll-margin-top: var(--nav-h); }
 .bento__more h3 { font-size: clamp(1.375rem, 1.1rem + 1vw, 2rem); max-width: 12em; }
 
 /* ---------- 3 · Gift cards ---------- */
-.gifts { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(0.5rem, 1.4vw, 1rem); }
-.gift { padding: clamp(0.375rem, 1vw, 0.625rem); border-radius: 0.75rem; background: #E7E2FB; }
-.gc { display: grid; place-items: center; align-content: center; width: 100%; aspect-ratio: 1.3; border-radius: 0.375rem; overflow: hidden; text-align: center; }
-.gc i { display: block; width: 58%; aspect-ratio: 2 / 1; background: var(--logo-color, #fff); -webkit-mask: var(--logo) center / contain no-repeat; mask: var(--logo) center / contain no-repeat; }
-.gc b { font-weight: 800; letter-spacing: 0.06em; font-size: clamp(0.8rem, 0.5rem + 1.2vw, 1.4rem); }
-.gc small { font-size: 0.5rem; opacity: .85; letter-spacing: 0.08em; text-transform: uppercase; }
-.gc--amazon { background: #131921; --logo: url(assets/gift/amazon.svg); }
-.gc--binance { background: #14110c; --logo: url(assets/gift/binance.svg); --logo-color: #f3ba2f; }
-.gc--adidas { background: #fff; --logo: url(assets/gift/adidas.svg); --logo-color: #111; }
-.gc--apple { background: linear-gradient(160deg, #3aa8f8, #1b78ee); --logo: url(assets/gift/apple.svg); }
-.gc--shein { background: #fff; color: #111; }
-.gc--crypto { background: linear-gradient(135deg, #6a2fe0, #a35cf5); color: #fff; }
-.gc--ea { background: linear-gradient(135deg, #1f1b4d, #3a1d6e); --logo: url(assets/gift/ea.svg); --logo-color: #ff4d6d; }
-.gc--mastercard { background: #121212; --logo: url(assets/gift/mastercard.svg); }
-.gc--netflix { background: #141414; --logo: url(assets/gift/netflix.svg); --logo-color: #e50914; }
-.gc--zara { background: #fff; --logo: url(assets/gift/zara.svg); --logo-color: #111; }
-.gc--switch { background: #e60012; --logo: url(assets/gift/nintendoswitch.svg); }
-.gc--visa { background: linear-gradient(135deg, #1a3f9e, #2a63d6); --logo: url(assets/gift/visa.svg); }
+/* Tiles sit on a darker lavender plate; every card keeps the 422:371 artwork ratio so images and CSS-built cards align. */
+.gifts { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(0.5rem, 1.6vw, 1.25rem); max-width: 56rem; margin-inline: auto; }
+.gift { padding: clamp(0.375rem, 1vw, 0.75rem); border-radius: 0.75rem; background: #E4DFFA; }
+.gc { position: relative; display: grid; place-items: center; align-content: center; gap: 0.25rem; width: 100%; aspect-ratio: 422 / 371; border-radius: 0.5rem; overflow: hidden; text-align: center; background: #fff; }
+.gc img { width: 100%; height: 100%; object-fit: cover; }
+.gc img.gc__wordmark { width: 78%; height: auto; object-fit: contain; }
+.gc i { display: block; width: 30%; aspect-ratio: 1; background: var(--logo-color, #fff); -webkit-mask: var(--logo) center / contain no-repeat; mask: var(--logo) center / contain no-repeat; }
+.gc b { font-weight: 800; line-height: 1; font-size: clamp(0.8rem, 0.5rem + 1vw, 1.25rem); }
+.gc small { font-size: clamp(0.4rem, 0.3rem + 0.35vw, 0.625rem); letter-spacing: 0.12em; }
+.gc--amazon { background: #121212; color: #fff; }
+.gc--amazon b { text-transform: lowercase; letter-spacing: -0.02em; font-size: clamp(0.9rem, 0.5rem + 1.3vw, 1.5rem); }
+.gc--amazon::after { content: ""; width: 38%; height: 0.5rem; margin-top: -0.125rem; border-bottom: 0.1875rem solid #ff9900; border-radius: 0 0 50% 50%; }
+.gc--binance { background: radial-gradient(circle at 30% 20%, #3a3a3d, #101012 70%); color: #f3ba2f; --logo: url(assets/gift/binance.svg); --logo-color: #f3ba2f; }
+.gc--binance i { width: 34%; }
+.gc--adidas { background: #fff; color: #111; --logo: url(assets/gift/adidas.svg); --logo-color: #111; gap: 0.125rem; }
+.gc--adidas i { width: 46%; aspect-ratio: 1.3; }
+.gc--adidas b { font-size: clamp(0.65rem, 0.4rem + 0.8vw, 1.05rem); letter-spacing: -0.03em; }
+.gc--ea { background: #1d1a3f; --logo: url(assets/gift/ea.svg); --logo-color: #1d1a3f; }
+.gc--ea i { width: 46%; aspect-ratio: 1; display: grid; place-items: center; border-radius: 50%; background: #e8404c; -webkit-mask: none; mask: none; position: relative; }
+.gc--ea i::after { content: ""; position: absolute; inset: 24%; background: #1d1a3f; -webkit-mask: var(--logo) center / contain no-repeat; mask: var(--logo) center / contain no-repeat; }
+.gc--mastercard { background: #121212; color: #fff; }
+.mc { display: flex; }
+.mc u { width: 1.75rem; height: 1.75rem; border-radius: 50%; background: #eb001b; }
+.mc u + u { margin-left: -0.625rem; background: #f79e1b; mix-blend-mode: screen; }
+.gc--netflix { background: #c4121a; color: #141414; }
+.gc--netflix b { font-size: clamp(0.75rem, 0.4rem + 1vw, 1.25rem); letter-spacing: -0.04em; }
+.gc--white { background: #fff; }
 .more { margin: clamp(2rem, 4vw, 3rem) 0 0; text-align: center; }
 .more a { display: inline-flex; align-items: center; min-height: var(--touch); font-weight: 500; font-size: 0.9375rem; color: var(--plum); border-bottom: 0.125rem solid var(--plum); }
 
@@ -224,3 +235,10 @@ section[id] { scroll-margin-top: var(--nav-h); }
 @media (min-width: 100rem) {
   .wrap { max-width: 78rem; }
 }
+
+/* ---------- Designed line breaks ---------- */
+.ln { display: block; }
+.sec__head--wide { max-width: 64rem; }
+.sec__head--wide .sec__sub { max-width: none; }
+.sec__title .ln, .split__title .ln { text-wrap: balance; }
+.bcard p, .split__copy p, .vc__copy p { max-width: none; }
