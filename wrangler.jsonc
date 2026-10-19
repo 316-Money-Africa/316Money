@@ -1,0 +1,10 @@
+{
+  // Cloudflare Workers (static assets) deployment for the public website.
+  // Publishes ONLY apps/marketing-web; architecture docs, the SRS and source READMEs are never served.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "316money",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./apps/marketing-web"
+  }
+}

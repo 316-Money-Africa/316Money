@@ -4,8 +4,9 @@
   "type": "module",
   "engines": { "node": ">=20" },
   "scripts": {
-    "build": "node site/build.mjs",
-    "check": "node site/build.mjs --check"
+    "build": "node -e \"console.log('marketing-web is static: nothing to build')\"",
+    "docs:build": "node site/build.mjs",
+    "docs:check": "node site/build.mjs --check"
   },
   "devDependencies": {
     "marked": "14.1.4"
