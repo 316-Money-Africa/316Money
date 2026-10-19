@@ -38,3 +38,6 @@ Frontend standards:
 
 ## Git commits
 - Never add `Co-Authored-By` or any Claude attribution trailer to commits or PR descriptions in this repo (user instruction, overrides default attribution).
+
+## Performance
+- Never ship raw design PNGs. Put source art in `assets-src/` and run `tools/optimize-images.mjs` to produce WebP (about 2x the rendered size) in `apps/marketing-web/assets/`. Below-the-fold images use `loading="lazy"`; the hero image is preloaded. Keep the page asset weight under about 500 KB.
