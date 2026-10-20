@@ -137,19 +137,21 @@
 .mm .a-fill { left: 0; bottom: 0; width: 100%; }
 
 /* ----- Move money: two columns, proportions measured from the design ----- */
-.mm { grid-template-columns: 328fr 366fr; align-items: start; }
-.mm__pair { grid-template-columns: 155fr 161fr; align-items: start; }
+.mm { grid-template-columns: 328fr 366fr; align-items: stretch; }
+.mm__l { grid-template-rows: auto 1fr; }
+.mm__r { grid-template-rows: auto 1fr; }
+.mm__pair { grid-template-columns: 155fr 161fr; align-items: stretch; }
 .mm__top { grid-template-columns: 172fr 180fr; align-items: stretch; } /* both cards share one height */
 .mm-send { aspect-ratio: 328 / 220; }
-.mm-split { aspect-ratio: 155 / 166; }
-.mm-email { aspect-ratio: 161 / 168; }
+.mm-split { aspect-ratio: auto; min-height: 23cqw; }
+.mm-email { aspect-ratio: auto; min-height: 23cqw; }
 .mm-get { aspect-ratio: 172 / 191; }
 .mm-uk { aspect-ratio: auto; }
-.mm-cross { aspect-ratio: 366 / 192; }
+.mm-cross { aspect-ratio: auto; min-height: 26.3cqw; }
 .mm-send .a-phone { left: 29%; top: 36%; width: 44%; }
 .mm-send .a-recv { left: 22%; top: 55%; width: 58%; }
 .mm-send .a-sent { left: 22%; top: 72%; width: 58%; }
-.mm-get .a-fill { width: 106%; left: -3%; }
+.mm-get .a-fill { width: 100%; left: 0; }
 .mm-uk .a-fill { width: 66%; left: auto; right: 6%; }
 .mm-split .a-fill { width: 78%; left: auto; right: 0; }
 .mm-email .a-fill { width: 82%; left: 12%; }
@@ -174,24 +176,25 @@
 @media (prefers-reduced-motion: reduce) { .globe__track { animation: none; } }
 
 /* ----- Spend: two columns, rows measured from the design ----- */
-.sp { grid-template-columns: 339fr 353fr; align-items: start; }
+.sp { grid-template-columns: 339fr 353fr; align-items: stretch; }
+.sp__l { grid-template-rows: 1fr 1fr; }
 .sp__pair { grid-template-columns: 171fr 170fr; }
-.sp-wallet { aspect-ratio: 339 / 238; }
-.sp-school { aspect-ratio: 337 / 243; }
+.sp-wallet { aspect-ratio: auto; }
+.sp-school { aspect-ratio: auto; }
 .sp-fx { aspect-ratio: 353 / 142; }
 .sp-air, .sp-bill { aspect-ratio: 171 / 196; }
 .sp-pay { aspect-ratio: 353 / 149; }
-.sp-wallet .a-w1 { left: 6%; bottom: -2%; width: 72%; }
-.sp-wallet .a-w2 { left: 52%; bottom: 8%; width: 52%; }
+.sp-wallet .a-w1 { left: 6%; bottom: 0; width: 72%; }
+.sp-wallet .a-w2 { left: 52%; bottom: 8%; width: 46%; }
 .sp-school .a-st { left: 36%; bottom: 0; width: 58%; }
 .sp-school .a-tf { left: 11%; bottom: 16%; width: 48%; }
 .sp-fx .a-fx { left: 33%; bottom: 0; width: 42%; }
-.sp-air .a-mtn { left: -2%; bottom: -6%; width: 56%; }
-.sp-air .a-airtel { left: 36%; bottom: 3%; width: 46%; }
-.sp-air .a-saf { right: -10%; bottom: -14%; width: 56%; }
-.sp-bill .a-bl { left: 31%; bottom: -3%; width: 72%; }
+.sp-air .a-mtn { left: 0; bottom: 3%; width: 50%; }
+.sp-air .a-airtel { left: 34%; bottom: 10%; width: 44%; }
+.sp-air .a-saf { right: 0; bottom: 3%; width: 46%; }
+.sp-bill .a-bl { left: 28%; bottom: 0; width: 72%; }
 .sp-bill .a-ps { left: 1%; bottom: 20%; width: 52%; }
-.sp-pay .a-pc { left: 26%; bottom: -14%; width: 56%; }
+.sp-pay .a-pc { left: 26%; bottom: 0; width: 56%; }
 .sp-fx .pcard__text, .sp-pay .pcard__text, .sp-air .pcard__text, .sp-bill .pcard__text { padding-top: clamp(0.875rem, 2.4cqw, 1.5rem); }
 .sp-fx p, .sp-air p, .sp-bill p, .sp-pay p { max-width: 16em; }
 
@@ -219,6 +222,9 @@
   .mm-send, .sp-wallet, .sp-school, .mm-cross { aspect-ratio: auto; min-height: 17rem; }
   .mm-cross .globe { left: 4%; right: 4%; }
   .mm-split, .mm-email, .mm-get, .mm-uk, .sp-air, .sp-bill, .sp-fx, .sp-pay { aspect-ratio: auto; }
+  .mm__l, .mm__r, .sp__l { grid-template-rows: none; }
+  .mm-cross { min-height: 17rem; }
+  .mm-split, .mm-email { min-height: 14rem; }
   .mm .pm, .sp .pm { inset: auto 0 0 0; height: 55%; }
   .mm-send .pm, .sp-wallet .pm, .sp-school .pm { height: 62%; }
   .mm-cross .pm { display: none; }
