@@ -1,9 +1,7 @@
-# CI/CD: every push is validated; pushes deploy apps/marketing-web to Cloudflare Pages.
-#   main         -> production  (https://<project>.pages.dev)
-#   other branch -> preview     (https://<branch>.<project>.pages.dev)
-# Required GitHub secrets: CLOUDFLARE_API_TOKEN (Pages:Edit only), CLOUDFLARE_ACCOUNT_ID
-# Optional GitHub variable: CLOUDFLARE_PAGES_PROJECT (defaults to 316money)
-# Only apps/marketing-web is published; architecture docs and the SRS are never deployed.
+# CI: every push and pull request is validated before the site can ship.
+# Deployment is handled by Cloudflare itself (Workers Builds, connected to this repo), which publishes
+# only apps/marketing-web as configured in wrangler.jsonc. No Cloudflare credentials live in GitHub.
+# Architecture docs and the SRS are never deployed.
 name: ci-cd
 
 on:
@@ -28,6 +26,7 @@ jobs:
       - name: Required files present
         run: |
           test -f apps/marketing-web/index.html
+          test -f apps/marketing-web/features.html
           test -f apps/marketing-web/styles.css
       - name: Images must be compressed (WebP, no large raw PNG/JPG)
         run: |
@@ -36,35 +35,12 @@ jobs:
           total=$(find apps/marketing-web/assets -type f \( -name '*.webp' -o -name '*.png' -o -name '*.svg' \) -exec wc -c {} + | tail -1 | awk '{print $1}')
           echo "asset weight: $total bytes"
           if [ "$total" -gt 1048576 ]; then echo "Asset weight above 1 MB"; exit 1; fi
+      - name: Generated pages are up to date
+        run: |
+          node tools/build-pages.mjs
+          git diff --exit-code -- apps/marketing-web/index.html apps/marketing-web/features.html || { echo "Run node tools/build-pages.mjs and commit the result"; exit 1; }
       - name: No secrets in site output
         run: |
           if grep -rEIl "(BEGIN [A-Z ]*PRIVATE KEY|CLOUDFLARE_API_TOKEN|sk_live_|AKIA[0-9A-Z]{16})" apps/marketing-web; then
             echo "Secret-like content found in published directory"; exit 1
           fi
-
-  deploy:
-    needs: validate
-    # Never deploy from pull requests (forks have no secrets and run untrusted code).
-    if: github.event_name == 'push'
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    permissions:
-      contents: read
-      deployments: write
-    environment:
-      name: ${{ github.ref_name == 'main' && 'production' || 'preview' }}
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          persist-credentials: false
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: >-
-            pages deploy apps/marketing-web
-            --project-name=${{ vars.CLOUDFLARE_PAGES_PROJECT || '316money' }}
-            --branch=${{ github.ref_name }}
-            --commit-hash=${{ github.sha }}
-            --commit-dirty=false
