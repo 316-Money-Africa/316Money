@@ -55,7 +55,7 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
 
 /* ---------- Nav ---------- */
 .nav { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.86); backdrop-filter: blur(0.5rem); border-bottom: 0.0625rem solid transparent; }
-.nav:has(.is-open), .nav:has(.nav__item:hover .mega), .nav:has(.nav__item:focus-within .mega) { background: #fff; border-bottom-color: var(--line); }
+.nav:has(.is-open), .nav:has(.nav__item:hover .mega), .nav:has(.nav__item:has(:focus-visible) .mega) { background: #fff; border-bottom-color: var(--line); }
 .nav__inner { display: flex; align-items: center; justify-content: space-between; height: var(--nav-h); gap: 1.5rem; }
 .nav__logo { display: inline-flex; align-items: center; gap: 0.625rem; min-height: var(--touch); flex: none; }
 .nav__logo img { width: clamp(2.25rem, 2.6vw, 2.75rem); height: auto; }
@@ -82,10 +82,16 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
   background: #fff; border-bottom: 0.0625rem solid var(--line); box-shadow: 0 1.5rem 2rem -1.25rem rgba(20, 24, 31, .12);
 }
 .nav__item.is-open > .mega { display: grid; }
-@media (hover: hover) and (min-width: 64.0625rem) {
-  .nav__item:hover > .mega, .nav__item:focus-within > .mega { display: grid; }
+/* Desktop: forgiving hover. The panel stays reachable while the pointer travels down to it:
+   an invisible bridge fills the gap under the trigger, and closing waits 0.35s (hover-intent grace),
+   so moving, pausing or drifting sideways never snaps the menu shut. Opening is instant. */
+@media (min-width: 64.0625rem) {
+  .mega { display: grid; visibility: hidden; opacity: 0; pointer-events: none; transition: opacity .18s ease, visibility 0s linear .35s; }
+  .mega::before { content: ""; position: absolute; left: 0; right: 0; top: -1.75rem; height: 1.75rem; }
+  .nav__item.is-open > .mega, .nav__item:hover > .mega, .nav__item:has(:focus-visible) > .mega { visibility: visible; opacity: 1; pointer-events: auto; transition-delay: 0s; }
   .nav__item:hover > .nav__trigger { color: var(--brand); }
 }
+@media (prefers-reduced-motion: reduce) { .mega { transition: none !important; } }
 /* Left content aligns to the 90rem container; the promo panel stays flush to the viewport's right edge. */
 .mega__main { grid-column: 2; padding: clamp(1.75rem, 4vh, 3rem) clamp(1.5rem, 3vw, 4rem) clamp(2rem, 5vh, 3.5rem) 0; }
 .mega__promo { grid-column: 3; }
