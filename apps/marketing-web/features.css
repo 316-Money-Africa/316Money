@@ -176,10 +176,10 @@
 /* ----- Spend: two columns, rows measured from the design ----- */
 .sp { grid-template-columns: 339fr 353fr; align-items: start; }
 .sp__pair { grid-template-columns: 171fr 170fr; }
-.sp-wallet { aspect-ratio: 339 / 219; }
-.sp-school { aspect-ratio: 337 / 223; }
+.sp-wallet { aspect-ratio: 339 / 238; }
+.sp-school { aspect-ratio: 337 / 243; }
 .sp-fx { aspect-ratio: 353 / 142; }
-.sp-air, .sp-bill { aspect-ratio: 171 / 142; }
+.sp-air, .sp-bill { aspect-ratio: 171 / 196; }
 .sp-pay { aspect-ratio: 353 / 149; }
 .sp-wallet .a-w1 { left: 6%; bottom: -2%; width: 72%; }
 .sp-wallet .a-w2 { left: 52%; bottom: 8%; width: 52%; }
@@ -190,7 +190,7 @@
 .sp-air .a-airtel { left: 36%; bottom: 3%; width: 46%; }
 .sp-air .a-saf { right: -10%; bottom: -14%; width: 56%; }
 .sp-bill .a-bl { left: 31%; bottom: -3%; width: 72%; }
-.sp-bill .a-ps { left: 1%; bottom: 14%; width: 52%; }
+.sp-bill .a-ps { left: 1%; bottom: 20%; width: 52%; }
 .sp-pay .a-pc { left: 26%; bottom: -14%; width: 56%; }
 .sp-fx .pcard__text, .sp-pay .pcard__text, .sp-air .pcard__text, .sp-bill .pcard__text { padding-top: clamp(0.875rem, 2.4cqw, 1.5rem); }
 .sp-fx p, .sp-air p, .sp-bill p, .sp-pay p { max-width: 16em; }
@@ -204,7 +204,7 @@
 .copts .pcard__link { font-size: clamp(0.75rem, 3.4cqw, 0.875rem); }
 .copts .a-gc { left: -1.5%; top: 9%; width: 96%; }
 /* Virtual card (built in CSS; swap for artwork when supplied) */
-.vcc { position: absolute; left: 0; top: 24%; width: 65%; aspect-ratio: 1.66; border-radius: 0 0.9rem 0.9rem 0; color: #fff; overflow: hidden; background: linear-gradient(180deg, #8a7cf2 0%, #6c5ee0 40%, #4a3e9c 100%); box-shadow: 0 0.75rem 1.5rem rgba(20, 12, 60, .35); container-type: inline-size; }
+.vcc { position: absolute; left: 0; top: 10.2%; width: 89%; aspect-ratio: 1.64; border-radius: 0 1.1rem 1.1rem 0; color: #fff; overflow: hidden; background: linear-gradient(180deg, #8a7cf2 0%, #6c5ee0 40%, #4a3e9c 100%); box-shadow: 0 0.75rem 1.5rem rgba(20, 12, 60, .35); container-type: inline-size; }
 .vcc__brand { position: absolute; left: 14%; top: 15%; font-size: 9.5cqw; font-weight: 600; }
 .vcc__seal { position: absolute; left: 36%; top: 6%; width: 52%; aspect-ratio: 1; display: grid; place-items: center; border-radius: 22%; transform: rotate(8deg); background: rgba(255,255,255,.12); color: rgba(0,0,0,.14); font-size: 22cqw; font-weight: 700; }
 .vcc__num { position: absolute; left: 14%; top: 55%; display: flex; align-items: center; gap: 3.4cqw; font-size: 7.4cqw; }
