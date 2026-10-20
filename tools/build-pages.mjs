@@ -11,7 +11,8 @@ const PAGES = join(ROOT, "tools", "pages");
 const OUT = join(ROOT, "apps", "marketing-web");
 const read = (p) => readFileSync(p, "utf8").split("\r\n").join("\n");
 const part = (n) => read(join(PAGES, "partials", n + ".html")).trim();
-const partials = { sprite: part("sprite"), header: part("header"), footer: part("footer"), faq_download: part("faq-download") };
+const partials = { sprite: part("sprite"), header: part("header"), footer: part("footer"), faq_home: part("faq-home"), download: part("download") };
+partials.faq_download = [partials.faq_home, partials.download].join("\n\n");
 
 
 // {{img:Folder/name attr="x" ...}} -> <img> with the real WebP width/height (read from the file header) and lazy loading.
