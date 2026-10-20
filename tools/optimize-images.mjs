@@ -31,6 +31,7 @@ const WIDTHS = {
   "request-man.png": 780, "exchange-man.png": 780, "bills-list.png": 620, "pay-cards.png": 780,
   "uk-phone.png": 560, "split-friends.png": 640, "seal-watermark.png": 300,
   "send-money.png": 1000, "receive-money.png": 900, "uk-man.png": 760, "uk-payment.png": 520, "map.png": 1400,
+  "wallets-card.png": 560, "money-woman.png": 900, "exchange-man.png": 1000,
 };
 
 let before = 0, after = 0;
