@@ -2,7 +2,7 @@
 //   tools/pages/*.page.html      page bodies (first line: <!--page title="" description="" preload="" css=""-->)
 //   tools/pages/partials/*.html  shared sprite, header, footer and FAQ/download sections
 // Run: node tools/build-pages.mjs   (no dependencies). Commit the generated HTML; Cloudflare serves it as-is.
-import { readFileSync, readdirSync, writeFileSync } from "node:fs";
+import { readFileSync, readdirSync, writeFileSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -12,6 +12,26 @@ const OUT = join(ROOT, "apps", "marketing-web");
 const read = (p) => readFileSync(p, "utf8").split("\r\n").join("\n");
 const part = (n) => read(join(PAGES, "partials", n + ".html")).trim();
 const partials = { sprite: part("sprite"), header: part("header"), footer: part("footer"), faq_download: part("faq-download") };
+
+
+// {{img:Folder/name attr="x" ...}} -> <img> with the real WebP width/height (read from the file header) and lazy loading.
+function webpSize(file) {
+  const b = readFileSync(file);
+  const tag = b.toString("ascii", 12, 16);
+  if (tag === "VP8X") return [1 + b.readUIntLE(24, 3), 1 + b.readUIntLE(27, 3)];
+  if (tag === "VP8 ") return [b.readUInt16LE(26) & 0x3fff, b.readUInt16LE(28) & 0x3fff];
+  if (tag === "VP8L") { const v = b.readUInt32LE(21); return [1 + (v & 0x3fff), 1 + ((v >> 14) & 0x3fff)]; }
+  throw new Error(`${file}: not a WebP`);
+}
+function expandImages(html) {
+  return html.replace(/\{\{img:([\w\/-]+)((?:\s+[\w-]+="[^"]*")*)\}\}/g, (_, name, attrs) => {
+    const file = join(OUT, "assets", `${name}.webp`);
+    if (!existsSync(file)) throw new Error(`missing image: assets/${name}.webp (run tools/optimize-images.mjs)`);
+    const [w, h] = webpSize(file);
+    const hasAlt = /alt="/.test(attrs);
+    return `<img src="assets/${name}.webp"${hasAlt ? "" : ' alt=""'}${attrs} width="${w}" height="${h}" loading="lazy" decoding="async">`;
+  });
+}
 
 const OUTPUT_NAMES = { home: "index.html" }; // everything else -> <name>.html
 
@@ -23,6 +43,7 @@ for (const f of readdirSync(PAGES).filter((n) => n.endsWith(".page.html"))) {
   const meta = Object.fromEntries([...m[1].matchAll(/(\w+)="([^"]*)"/g)].map((x) => [x[1], x[2]]));
   let body = src.slice(m[0].length).trimEnd();
   for (const [k, v] of Object.entries(partials)) body = body.replaceAll(`{{${k}}}`, v);
+  body = expandImages(body);
   if (/\{\{\w+\}\}/.test(body)) throw new Error(`${f}: unresolved placeholder ${body.match(/\{\{\w+\}\}/)[0]}`);
 
   const css = ["styles.css", "sections.css", ...(meta.css ? meta.css.split(/\s+/).filter(Boolean) : [])]
