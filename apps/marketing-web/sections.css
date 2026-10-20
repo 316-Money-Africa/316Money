@@ -251,3 +251,7 @@ section[id] { scroll-margin-top: var(--nav-h); }
   .store strong { font-size: 0.75rem; white-space: nowrap; }
   .vc__cta .btn { flex: 1 1 0; padding-inline: 0.75rem; }
 }
+
+/* Designed line breaks only hold when the column is wide enough; below that, paragraphs flow naturally (no orphan words). */
+@media (max-width: 64rem) { p .ln { display: inline; } }
+@media (max-width: 75rem) { .hero__lead .ln { display: inline; } }
