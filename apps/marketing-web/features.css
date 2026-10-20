@@ -15,8 +15,10 @@
 /* ---------- Hero ---------- */
 .hero--features .hero__copy { align-items: flex-start; }
 .hero--features .pill { margin-bottom: clamp(1rem, 3vh, 1.75rem); }
-.hero__title--lines { margin-top: 0; font-size: clamp(2rem, 0.9rem + 2.6vw, 3.25rem); line-height: 1.05; }
-.hero__title--lines .ln { display: block; }
+.hero__title--lines { margin-top: 0; font-size: clamp(1.75rem, 8vw, 3.25rem); line-height: 1.05; text-wrap: nowrap; }
+.hero__title--lines .ln { display: block; white-space: nowrap; }
+.hero__title--lines .ln .accent { display: inline; } /* the base rule makes every span in the hero title a block; keep coloured words inline with their line */ /* each designed line stays on one line at every width; the type scales instead */
+@media (min-width: 60.0625rem) { .hero__title--lines { font-size: clamp(2rem, 4.2vw, 3.25rem); } }
 .hero--features .hero__lead { max-width: none; font-size: clamp(0.9375rem, 0.75rem + 0.5vw, 1.125rem); }
 
 /* ---------- Purple feature cards ---------- */
