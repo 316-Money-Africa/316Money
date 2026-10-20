@@ -1,6 +1,6 @@
 # marketing-web
 
-Public 316 Money website (static, deployed on every push by `.github/workflows/deploy.yml`). Home page: hero, features bento, gift cards, virtual cards, feature grid, savings, steps, business, Hotspots, FAQ, download and footer, with mega-menu navigation.
+Public 316 Money website (static; Cloudflare Workers serves this folder, see `wrangler.jsonc`). Pages: `index.html` (home) and `features.html`. Page HTML is generated: edit `tools/pages/*.page.html` and the partials, then run `node tools/build-pages.mjs`.
 
 Served assets live in `assets/` (WebP, `logo.png`, `favicon.png`, `flags/*`, `gift/*`). Original design PNGs are in `assets-src/` (not deployed); regenerate with `node tools/optimize-images.mjs`.
 

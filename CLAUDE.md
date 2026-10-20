@@ -40,4 +40,9 @@ Frontend standards:
 - Never add `Co-Authored-By` or any Claude attribution trailer to commits or PR descriptions in this repo (user instruction, overrides default attribution).
 
 ## Performance
+- **Every image added to the project is compressed before it ships. This is mandatory, not optional.** Do not reference or commit a raw PNG/JPG under `apps/`. The workflow for any new image, on any page:
+  1. Drop the original into `assets-src/<Page>/` (not deployed).
+  2. Run `npm i --no-save sharp && node tools/optimize-images.mjs` to generate WebP in `apps/marketing-web/assets/<Page>/` (resized to about 2x the largest rendered size; add its max width to `WIDTHS` in the script).
+  3. Reference only the `.webp`, with real `width`/`height` attributes; use `loading="lazy"` below the fold and `fetchpriority="high"` plus a preload for the hero image.
+  4. Check the page's total asset weight (aim for under about 500 KB) before pushing.
 - Never ship raw design PNGs. Put source art in `assets-src/` and run `tools/optimize-images.mjs` to produce WebP (about 2x the rendered size) in `apps/marketing-web/assets/`. Below-the-fold images use `loading="lazy"`; the hero image is preloaded. Keep the page asset weight under about 500 KB.

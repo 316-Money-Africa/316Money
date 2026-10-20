@@ -10,11 +10,10 @@ const require = createRequire(process.env.SHARP_FROM ? join(process.env.SHARP_FR
 const sharp = require("sharp");
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
-const SRC = join(ROOT, "assets-src", "Home");
-const OUT = join(ROOT, "apps", "marketing-web", "assets", "Home");
-mkdirSync(OUT, { recursive: true });
+const SRC_ROOT = join(ROOT, "assets-src");
+const OUT_ROOT = join(ROOT, "apps", "marketing-web", "assets");
 
-// max output width per file (px); anything not listed keeps its size
+// max output width per file (px); anything not listed keeps its size (capped at 1200)
 const WIDTHS = {
   "hero.png": 1100,
   "savings.png": 900,
@@ -25,13 +24,18 @@ const WIDTHS = {
 };
 
 let before = 0, after = 0;
-for (const f of readdirSync(SRC).filter((n) => n.endsWith(".png"))) {
-  const input = join(SRC, f);
-  const meta = await sharp(input).metadata();
-  const width = Math.min(meta.width, WIDTHS[f] ?? meta.width);
-  const out = join(OUT, parse(f).name + ".webp");
-  const info = await sharp(input).resize({ width }).webp({ quality: 80, alphaQuality: 90, effort: 6 }).toFile(out);
-  before += statSync(input).size; after += info.size;
-  console.log(`${f.padEnd(24)} ${meta.width}x${meta.height} -> ${info.width}x${info.height}  ${(statSync(input).size / 1024).toFixed(0)}KB -> ${(info.size / 1024).toFixed(0)}KB`);
+// every folder in assets-src/ (one per page) maps to the same folder in the served assets
+for (const dir of readdirSync(SRC_ROOT).filter((n) => statSync(join(SRC_ROOT, n)).isDirectory())) {
+  const SRC = join(SRC_ROOT, dir), OUT = join(OUT_ROOT, dir);
+  mkdirSync(OUT, { recursive: true });
+  for (const f of readdirSync(SRC).filter((n) => /\.(png|jpe?g)$/i.test(n))) {
+    const input = join(SRC, f);
+    const meta = await sharp(input).metadata();
+    const width = Math.min(meta.width, WIDTHS[f] ?? 1200);
+    const out = join(OUT, parse(f).name + ".webp");
+    const info = await sharp(input).resize({ width }).webp({ quality: 80, alphaQuality: 90, effort: 6 }).toFile(out);
+    before += statSync(input).size; after += info.size;
+    console.log(`${dir}/${f.padEnd(24)} ${meta.width}x${meta.height} -> ${info.width}x${info.height}  ${(statSync(input).size / 1024).toFixed(0)}KB -> ${(info.size / 1024).toFixed(0)}KB`);
+  }
 }
 console.log(`total ${(before / 1048576).toFixed(2)}MB -> ${(after / 1048576).toFixed(2)}MB`);

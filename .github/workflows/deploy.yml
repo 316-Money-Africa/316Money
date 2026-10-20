@@ -29,6 +29,14 @@ jobs:
         run: |
           test -f apps/marketing-web/index.html
           test -f apps/marketing-web/styles.css
+      - name: Images must be compressed (WebP, no large raw PNG/JPG)
+        run: |
+          big=$(find apps/marketing-web \( -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' \) -size +60k)
+          if [ -n "$big" ]; then echo "Uncompressed images found (run tools/optimize-images.mjs):"; echo "$big"; exit 1; fi
+          total=$(find apps/marketing-web/assets -type f \( -name '*.webp' -o -name '*.png' -o -name '*.svg' \) -printf '%s
+' | awk '{s+=$1} END {print s+0}')
+          echo "asset weight: $total bytes"
+          if [ "$total" -gt 1048576 ]; then echo "Asset weight above 1 MB"; exit 1; fi
       - name: No secrets in site output
         run: |
           if grep -rEIl "(BEGIN [A-Z ]*PRIVATE KEY|CLOUDFLARE_API_TOKEN|sk_live_|AKIA[0-9A-Z]{16})" apps/marketing-web; then

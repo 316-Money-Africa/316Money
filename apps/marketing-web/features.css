@@ -1,0 +1,92 @@
+/* Features page. Same rules as the rest of the site: rem/em/% only, fluid type, 2.75rem touch targets,
+   full-bleed bands with capped content, designed line breaks (.ln), reserved (blank) media slots. */
+:root {
+  --pc-top: #7d68cb;
+  --pc-bottom: #6a56b4;
+  --pc-muted-top: #6f6396;
+  --pc-muted-bottom: #7b6ea6;
+}
+
+/* ---------- Eyebrow pill ---------- */
+.pill { display: inline-flex; align-items: center; min-height: 1.25rem; padding: 0.25rem 0.75rem; border-radius: 999rem; background: var(--brand); color: #fff; font-size: 0.5625rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+.sec__head .pill { margin-bottom: 1rem; }
+.split__copy .pill { margin-bottom: 1rem; }
+
+/* ---------- Hero ---------- */
+.hero--features .hero__copy { align-items: flex-start; }
+.hero--features .pill { margin-bottom: clamp(1rem, 3vh, 1.75rem); }
+.hero__title--lines { margin-top: 0; font-size: clamp(2rem, 0.9rem + 2.6vw, 3.25rem); line-height: 1.05; }
+.hero__title--lines .ln { display: block; }
+.hero--features .hero__lead { max-width: none; font-size: clamp(0.9375rem, 0.75rem + 0.5vw, 1.125rem); }
+
+/* ---------- Purple feature cards ---------- */
+.pcard { position: relative; display: flex; flex-direction: column; justify-content: space-between; gap: 1rem; min-width: 0; padding: clamp(1.125rem, 2vw, 1.75rem); border-radius: 0.75rem; overflow: hidden; color: #fff; background: linear-gradient(180deg, var(--pc-top) 0%, var(--pc-bottom) 100%); }
+.pcard h3 { margin: 0; font-size: clamp(1rem, 0.85rem + 0.55vw, 1.375rem); line-height: 1.15; font-weight: 600; }
+.pcard p { margin: 0.5rem 0 0; max-width: 24em; font-size: clamp(0.75rem, 0.7rem + 0.2vw, 0.875rem); line-height: 1.4; color: rgba(255,255,255,.88); }
+.pcard__link { display: inline-flex; align-items: center; gap: 0.5rem; min-height: var(--touch); margin-top: 0.5rem; font-size: clamp(0.6875rem, 0.65rem + 0.2vw, 0.8125rem); font-weight: 500; color: #fff; }
+.pcard__link .icon { width: 1.25rem; height: 0.875rem; }
+.pcard__link:hover { text-decoration: underline; }
+.pcard__link:focus-visible { outline: 0.125rem solid #fff; outline-offset: 0.1875rem; border-radius: 0.25rem; }
+/* Media slots are intentionally blank for now: they reserve the space so adding artwork causes no layout shift. */
+.pcard__media { flex: 1 1 auto; min-height: clamp(3rem, 8vw, 7rem); width: 100%; }
+.pcard__media img { width: 100%; height: 100%; object-fit: contain; object-position: bottom; }
+.pcard--muted { background: linear-gradient(180deg, var(--pc-muted-top) 0%, var(--pc-muted-bottom) 100%); }
+
+/* ---------- Bento layouts ---------- */
+.pbento { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(0.5rem, 1.2vw, 1rem); }
+.pbento__col { display: grid; grid-template-rows: 1.15fr 1fr; gap: inherit; min-width: 0; }
+.pbento__row { display: grid; gap: clamp(0.5rem, 1.2vw, 1rem); min-width: 0; }
+.pbento__row--pair { grid-template-columns: 1fr 1fr; }
+.pbento__row--one { grid-template-columns: 1fr; }
+.pbento .pbento__col:first-child .pbento__row:first-child,
+.pbento .pbento__col:last-child .pbento__row:first-child { min-height: clamp(14rem, 25vw, 21rem); }
+.pbento .pbento__row:last-child { min-height: clamp(12rem, 20vw, 17rem); }
+.pbento--spend .pbento__col--halves { grid-template-rows: 1fr 1fr; }
+.pbento--spend .pbento__col--thirds { grid-template-rows: 1fr 1fr 1fr; }
+.pbento__pair { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(0.5rem, 1.2vw, 1rem); min-width: 0; }
+.pbento--spend .pbento__col--thirds > * { min-height: clamp(8.5rem, 13vw, 12rem); }
+
+/* ---------- Card options ---------- */
+.copts { display: grid; grid-template-columns: 1fr; gap: 1rem; max-width: 46rem; margin-inline: auto; }
+.pcard--tall { min-height: clamp(20rem, 32vw, 27rem); justify-content: flex-end; }
+.pcard--tall .pcard__media { flex: 1 1 auto; }
+.pcard--tall .pcard__text { margin-top: auto; }
+.pcard--tall h3 { font-size: clamp(1.25rem, 1rem + 0.8vw, 1.75rem); }
+.pcard--tall p { font-size: clamp(0.8125rem, 0.75rem + 0.25vw, 1rem); }
+
+/* ---------- Icon cards (3 x 2) ---------- */
+.pgrid3 { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+.pcard--icon { justify-content: flex-start; gap: 0; min-height: clamp(13rem, 19vw, 17rem); }
+.pcard--icon .pcard__text { margin-top: auto; }
+.pcard__icon { display: grid; place-items: center; width: 3.25rem; height: 3.25rem; margin-bottom: 1.5rem; border-radius: 50%; background: #efe9ff; color: var(--brand); }
+.pcard__icon .icon { width: 1.5rem; height: 1.5rem; }
+.pcard--icon::after { content: "316"; position: absolute; right: -0.5rem; bottom: -0.75rem; width: 4rem; height: 4rem; display: grid; place-items: center; border-radius: 1rem; transform: rotate(18deg); background: rgba(255,255,255,.1); color: rgba(255,255,255,.28); font-size: 1.25rem; font-weight: 700; pointer-events: none; }
+
+/* ---------- Split sections with blank media ---------- */
+.split__title--pill { font-size: clamp(1.75rem, 1.1rem + 2.2vw, 3rem); line-height: 1.1; }
+.f-media { width: 100%; max-width: 32rem; margin-inline: auto; }
+.f-media--wide { aspect-ratio: 5 / 4; }
+
+/* ---------- Breakpoints ---------- */
+@media (min-width: 40rem) {
+  .copts { grid-template-columns: 1fr 1fr; }
+  .pgrid3 { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 64rem) {
+  .pgrid3 { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 48rem) {
+  .pbento { grid-template-columns: 1fr; }
+  .pbento__col { grid-template-rows: auto; }
+  .pbento .pbento__col .pbento__row:first-child,
+  .pbento .pbento__row:last-child { min-height: 0; }
+  .pbento--spend .pbento__col--thirds > * { min-height: 0; }
+  .pbento__row--pair, .pbento__pair { grid-template-columns: 1fr 1fr; }
+  .pcard { min-height: 11rem; }
+  .pcard__media { min-height: 4rem; }
+}
+@media (max-width: 30rem) {
+  .pbento__row--pair, .pbento__pair { grid-template-columns: 1fr; }
+}
+
+.nb { white-space: nowrap; }
