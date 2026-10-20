@@ -36,7 +36,12 @@ jobs:
           if [ -n "$big" ]; then echo "Uncompressed images found (run tools/optimize-images.mjs):"; echo "$big"; exit 1; fi
           total=$(find apps/marketing-web/assets -type f \( -name '*.webp' -o -name '*.png' -o -name '*.svg' \) -exec wc -c {} + | tail -1 | awk '{print $1}')
           echo "asset weight: $total bytes"
-          if [ "$total" -gt 1572864 ]; then echo "Asset weight above 1.5 MB"; exit 1; fi
+          if [ "$total" -gt 3145728 ]; then echo "Total asset weight above 3 MB"; exit 1; fi
+          for d in apps/marketing-web/assets/*/; do
+            w=$(find "$d" -type f -exec wc -c {} + | tail -1 | awk '{print $1}')
+            echo "$d $w bytes"
+            if [ "$w" -gt 819200 ]; then echo "Page asset folder above 800 KB: $d"; exit 1; fi
+          done
       - name: Generated pages are up to date
         run: |
           node tools/build-pages.mjs
