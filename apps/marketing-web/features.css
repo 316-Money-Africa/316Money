@@ -123,3 +123,18 @@
   /* The map art bleeds off the right edge of the band, like the design */
   .sec--map .f-media--map { max-width: none; width: 120%; }
 }
+
+/* ---------- Send and receive artwork ---------- */
+.uk-media { position: relative; }
+.uk-media .uk-pay { position: absolute; right: -6%; bottom: 12%; width: 44%; height: auto; }
+.sec--map { position: relative; min-height: clamp(26rem, 36vw, 34rem); display: flex; align-items: center; }
+.map-art { width: 100%; }
+.map-art__img { display: block; width: 100%; height: auto; }
+@media (min-width: 64.0625rem) {
+  /* The map bleeds off the top and right edges of the band, behind the copy column's neighbour */
+  .sec--map .split { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .map-art { position: absolute; top: -4%; right: -6vw; width: 66vw; max-width: 66rem; pointer-events: none; z-index: 0; }
+  .sec--map .split__copy { position: relative; z-index: 1; }
+}
+
+@media (max-width: 40rem) { .uk-media .uk-pay { right: 0; } }

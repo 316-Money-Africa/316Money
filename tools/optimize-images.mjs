@@ -30,6 +30,7 @@ const WIDTHS = {
   "payment-successful.png": 420, "card-lavender.png": 720, "send-phone.png": 820, "email-form.png": 700,
   "request-man.png": 780, "exchange-man.png": 780, "bills-list.png": 620, "pay-cards.png": 780,
   "uk-phone.png": 560, "split-friends.png": 640, "seal-watermark.png": 300,
+  "send-money.png": 1000, "receive-money.png": 900, "uk-man.png": 760, "uk-payment.png": 520, "map.png": 1400,
 };
 
 let before = 0, after = 0;
