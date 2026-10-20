@@ -139,18 +139,18 @@
 /* ----- Move money: two columns, proportions measured from the design ----- */
 .mm { grid-template-columns: 328fr 366fr; align-items: start; }
 .mm__pair { grid-template-columns: 155fr 161fr; align-items: start; }
-.mm__top { grid-template-columns: 172fr 180fr; align-items: start; }
+.mm__top { grid-template-columns: 172fr 180fr; align-items: stretch; } /* both cards share one height */
 .mm-send { aspect-ratio: 328 / 220; }
 .mm-split { aspect-ratio: 155 / 166; }
 .mm-email { aspect-ratio: 161 / 168; }
 .mm-get { aspect-ratio: 172 / 191; }
-.mm-uk { aspect-ratio: 180 / 163; }
+.mm-uk { aspect-ratio: auto; }
 .mm-cross { aspect-ratio: 366 / 192; }
 .mm-send .a-phone { left: 29%; top: 36%; width: 44%; }
 .mm-send .a-recv { left: 22%; top: 55%; width: 58%; }
 .mm-send .a-sent { left: 22%; top: 72%; width: 58%; }
 .mm-get .a-fill { width: 106%; left: -3%; }
-.mm-uk .a-fill { width: 62%; left: auto; right: 6%; }
+.mm-uk .a-fill { width: 66%; left: auto; right: 6%; }
 .mm-split .a-fill { width: 78%; left: auto; right: 0; }
 .mm-email .a-fill { width: 82%; left: 12%; }
 
