@@ -254,4 +254,6 @@ section[id] { scroll-margin-top: var(--nav-h); }
 
 /* Designed line breaks only hold when the column is wide enough; below that, paragraphs flow naturally (no orphan words). */
 @media (max-width: 64rem) { p .ln { display: inline; } }
-@media (max-width: 75rem) { .hero__lead .ln { display: inline; } }
+/* Hero lead keeps its two designed lines wherever it physically fits: tablets (single column) and wide desktops. */
+@media (max-width: 40rem), (min-width: 60.0625rem) and (max-width: 75rem) { .hero__lead .ln { display: inline; } }
+@media (min-width: 40.0625rem) and (max-width: 60rem) { .hero__lead .ln { display: block; } .hero--features .hero__lead { font-size: clamp(0.9375rem, 2.3vw, 1.125rem); } }
