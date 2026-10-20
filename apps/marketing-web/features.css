@@ -114,3 +114,12 @@
 .f-img { display: block; width: 100%; height: auto; }
 .f-img--round { border-radius: 0.75rem; }
 .pcard--icon::after { content: ""; position: absolute; right: 0; bottom: 0; width: clamp(4.5rem, 8vw, 6.5rem); aspect-ratio: 395 / 341; background: url(assets/Features/seal-watermark.webp) right bottom / contain no-repeat; opacity: .9; transform: none; border-radius: 0; pointer-events: none; }
+
+/* ---------- Send and receive page ---------- */
+.f-media--map { aspect-ratio: 4 / 3; max-width: 40rem; }
+.sec--map { overflow: hidden; }
+.sec--map .wrap { max-width: 72rem; }
+@media (min-width: 64.0625rem) {
+  /* The map art bleeds off the right edge of the band, like the design */
+  .sec--map .f-media--map { max-width: none; width: 120%; }
+}
