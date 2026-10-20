@@ -35,18 +35,6 @@
 .pcard--muted { background: linear-gradient(180deg, var(--pc-muted-top) 0%, var(--pc-muted-bottom) 100%); }
 
 /* ---------- Bento layouts ---------- */
-.pbento { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(0.5rem, 1.2vw, 1rem); }
-.pbento__col { display: grid; grid-template-rows: 1.15fr 1fr; gap: inherit; min-width: 0; }
-.pbento__row { display: grid; gap: clamp(0.5rem, 1.2vw, 1rem); min-width: 0; }
-.pbento__row--pair { grid-template-columns: 1fr 1fr; }
-.pbento__row--one { grid-template-columns: 1fr; }
-.pbento .pbento__col:first-child .pbento__row:first-child,
-.pbento .pbento__col:last-child .pbento__row:first-child { min-height: clamp(14rem, 25vw, 21rem); }
-.pbento .pbento__row:last-child { min-height: clamp(12rem, 20vw, 17rem); }
-.pbento--spend .pbento__col--halves { grid-template-rows: 1fr 1fr; }
-.pbento--spend .pbento__col--thirds { grid-template-rows: 1fr 1fr 1fr; }
-.pbento__pair { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(0.5rem, 1.2vw, 1rem); min-width: 0; }
-.pbento--spend .pbento__col--thirds > * { min-height: clamp(8.5rem, 13vw, 12rem); }
 
 /* ---------- Card options ---------- */
 .copts { display: grid; grid-template-columns: 1fr; gap: 1rem; max-width: 46rem; margin-inline: auto; }
@@ -78,18 +66,10 @@
   .pgrid3 { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 48rem) {
-  .pbento { grid-template-columns: 1fr; }
-  .pbento__col { grid-template-rows: auto; }
-  .pbento .pbento__col .pbento__row:first-child,
-  .pbento .pbento__row:last-child { min-height: 0; }
-  .pbento--spend .pbento__col--thirds > * { min-height: 0; }
-  .pbento__row--pair, .pbento__pair { grid-template-columns: 1fr 1fr; }
-  .pcard { min-height: 11rem; }
-  .pcard__media { min-height: 4rem; }
+            .pcard { min-height: 11rem; }
 }
 @media (max-width: 30rem) {
-  .pbento__row--pair, .pbento__pair { grid-template-columns: 1fr; }
-}
+  }
 
 .nb { white-space: nowrap; }
 
@@ -97,22 +77,6 @@
 .pm { position: relative; }
 .pm img { position: absolute; display: block; height: auto; max-width: none; }
 .pm .pm__fill { inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: bottom; }
-.pm--send { min-height: clamp(9rem, 22vw, 16rem); }
-.pm--send .pm__phone { left: 50%; bottom: 0; width: 56%; transform: translateX(-50%); }
-.pm--send .pm__a { left: -2%; top: 4%; width: 46%; }
-.pm--send .pm__b { right: -2%; top: 34%; width: 46%; }
-.pm--wallets { min-height: clamp(8rem, 16vw, 13rem); }
-.pm--wallets .pm__a { left: -2%; bottom: -2%; width: 92%; }
-.pm--wallets .pm__b { right: -6%; bottom: 4%; width: 54%; }
-.pm--bills { min-height: clamp(7rem, 12vw, 10rem); }
-.pm--bills .pm__a { left: 50%; bottom: -4%; width: 96%; transform: translateX(-50%); }
-.pm--bills .pm__b { right: -8%; top: -10%; width: 46%; }
-.pm--school { min-height: clamp(8rem, 16vw, 13rem); }
-.pm--school .pm__a { right: 0; bottom: 0; width: 58%; }
-.pm--school .pm__b { left: -4%; bottom: 14%; width: 64%; }
-.pm--fill { min-height: clamp(6rem, 13vw, 11rem); }
-.pcard__media--card.pm { min-height: clamp(9rem, 20vw, 14rem); }
-.pm .pm__card { left: 50%; top: 0; width: 96%; transform: translateX(-50%); }
 .f-img { display: block; width: 100%; height: auto; }
 .f-img--round { border-radius: 0.75rem; }
 .pcard--icon::after { content: ""; position: absolute; right: 0; bottom: 0; width: clamp(4.5rem, 8vw, 6.5rem); aspect-ratio: 395 / 341; background: url(assets/Features/seal-watermark.webp) right bottom / contain no-repeat; opacity: .9; transform: none; border-radius: 0; pointer-events: none; }
@@ -155,3 +119,112 @@
 .wallets-media { position: relative; aspect-ratio: 1.3 / 1; max-width: 32rem; }
 .wallets-media .wm__panel { position: absolute; right: 0; top: 0; width: 84%; height: auto; }
 .wallets-media .wm__card { position: absolute; left: -2%; top: 20%; width: 50%; height: auto; }
+
+
+/* =====================================================================================
+   Card grids built to the design proportions (sizes are fractions of the grid width, so every
+   card scales together at every screen size). .mm = Move money, .sp = Spend, .copts = Card options.
+   ===================================================================================== */
+.mm, .sp { container-type: inline-size; display: grid; gap: 1.5cqw; --gap: 1.5cqw; }
+.mm__l, .mm__r, .sp__l, .sp__r, .mm__pair, .mm__top, .sp__pair { display: grid; gap: var(--gap, 0.75rem); min-width: 0; }
+.mm .pcard, .sp .pcard, .copts .pcard { position: relative; display: block; padding: 0; border-radius: 0.75rem; overflow: hidden; min-width: 0; }
+.mm .pcard__text, .sp .pcard__text { position: relative; z-index: 2; padding: clamp(0.875rem, 2.3cqw, 1.5rem) clamp(0.875rem, 2.3cqw, 1.5rem) 0; }
+.mm h3, .sp h3 { font-size: clamp(1rem, 2.15cqw, 1.5rem); line-height: 1.15; }
+.mm .pcard p, .sp .pcard p { margin: 0.4em 0 0; max-width: 24em; font-size: clamp(0.75rem, 1.35cqw, 0.9375rem); line-height: 1.35; }
+.mm .pcard__link, .sp .pcard__link { margin-top: 0.35em; min-height: var(--touch); font-size: clamp(0.6875rem, 1.15cqw, 0.8125rem); }
+.mm .pm, .sp .pm, .copts .pm { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.mm .pm img, .sp .pm img, .copts .pm img { position: absolute; display: block; height: auto; max-width: none; }
+.mm .a-fill { left: 0; bottom: 0; width: 100%; }
+
+/* ----- Move money: two columns, proportions measured from the design ----- */
+.mm { grid-template-columns: 328fr 366fr; align-items: start; }
+.mm__pair { grid-template-columns: 155fr 161fr; align-items: start; }
+.mm__top { grid-template-columns: 172fr 180fr; align-items: start; }
+.mm-send { aspect-ratio: 328 / 220; }
+.mm-split { aspect-ratio: 155 / 166; }
+.mm-email { aspect-ratio: 161 / 168; }
+.mm-get { aspect-ratio: 172 / 191; }
+.mm-uk { aspect-ratio: 180 / 163; }
+.mm-cross { aspect-ratio: 366 / 192; }
+.mm-send .a-phone { left: 29%; top: 36%; width: 44%; }
+.mm-send .a-recv { left: 22%; top: 55%; width: 58%; }
+.mm-send .a-sent { left: 22%; top: 72%; width: 58%; }
+.mm-get .a-fill { width: 106%; left: -3%; }
+.mm-uk .a-fill { width: 62%; left: auto; right: 6%; }
+.mm-split .a-fill { width: 78%; left: auto; right: 0; }
+.mm-email .a-fill { width: 82%; left: 12%; }
+
+/* ----- Cross-border globe: dome clipped from a big circle; the map pans forever (seamless: map + mirror) ----- */
+.globe { position: absolute; left: 15.5%; right: 6%; bottom: 0; aspect-ratio: 1364 / 485; overflow: hidden; background: #d9d9d9; clip-path: ellipse(52.9% 148.9% at 50% 148.9%); z-index: 1; }
+.globe__track { position: absolute; top: 0; left: 0; height: 100%; width: max-content; display: flex; animation: globe-spin 110s linear infinite; will-change: transform; }
+.mm .globe img.globe__img { position: static; height: 100%; width: auto; flex: none; }
+@keyframes globe-spin { to { transform: translateX(-50%); } }
+.globe__pin { position: absolute; display: flex; align-items: center; }
+.mm .globe__pin > img { position: relative; width: 3.9cqw; min-width: 1.5rem; aspect-ratio: 1; height: auto; border-radius: 50%; border: 0.15em solid #fff; box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,.2); }
+.globe__tag { position: absolute; display: grid; gap: 0.05em; padding: 0.45em 0.7em; border-radius: 0.4em; background: #fff; box-shadow: 0 0.2rem 0.6rem rgba(0,0,0,.14); font-size: clamp(0.4rem, 1.15cqw, 0.6875rem); white-space: nowrap; color: #333; }
+.globe__tag b { font-weight: 600; }
+.globe__tag small { font-size: .72em; color: #888; }
+.globe__tag em { font-style: normal; font-weight: 700; font-size: 1.15em; }
+.globe__tag .in { color: #4caf50; }
+.globe__tag .out { color: #ff5a5f; }
+.globe__pin--a { left: 47%; top: 36%; }
+.globe__pin--a .globe__tag { right: 100%; margin-right: 0.4em; }
+.globe__pin--b { left: 52%; top: 66%; }
+.globe__pin--b .globe__tag { left: 100%; margin-left: 0.4em; }
+@media (prefers-reduced-motion: reduce) { .globe__track { animation: none; } }
+
+/* ----- Spend: two columns, rows measured from the design ----- */
+.sp { grid-template-columns: 339fr 353fr; align-items: start; }
+.sp__pair { grid-template-columns: 171fr 170fr; }
+.sp-wallet { aspect-ratio: 339 / 219; }
+.sp-school { aspect-ratio: 337 / 223; }
+.sp-fx { aspect-ratio: 353 / 142; }
+.sp-air, .sp-bill { aspect-ratio: 171 / 142; }
+.sp-pay { aspect-ratio: 353 / 149; }
+.sp-wallet .a-w1 { left: 6%; bottom: -2%; width: 72%; }
+.sp-wallet .a-w2 { left: 52%; bottom: 8%; width: 52%; }
+.sp-school .a-st { left: 36%; bottom: 0; width: 58%; }
+.sp-school .a-tf { left: 11%; bottom: 16%; width: 48%; }
+.sp-fx .a-fx { left: 33%; bottom: 0; width: 42%; }
+.sp-air .a-mtn { left: -2%; bottom: -6%; width: 56%; }
+.sp-air .a-airtel { left: 36%; bottom: 3%; width: 46%; }
+.sp-air .a-saf { right: -10%; bottom: -14%; width: 56%; }
+.sp-bill .a-bl { left: 31%; bottom: -3%; width: 72%; }
+.sp-bill .a-ps { left: 1%; bottom: 14%; width: 52%; }
+.sp-pay .a-pc { left: 26%; bottom: -14%; width: 56%; }
+.sp-fx .pcard__text, .sp-pay .pcard__text, .sp-air .pcard__text, .sp-bill .pcard__text { padding-top: clamp(0.875rem, 2.4cqw, 1.5rem); }
+.sp-fx p, .sp-air p, .sp-bill p, .sp-pay p { max-width: 16em; }
+
+/* ----- Card options: artwork sits flush against the left edge of its tile ----- */
+.copts { max-width: 41rem; }
+.copts .pcard--tall { aspect-ratio: 290 / 378; min-height: 0; container-type: inline-size; }
+.copts .pcard--tall .pcard__text { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 0 7cqw 4cqw; }
+.copts .pcard--tall h3 { font-size: clamp(1.25rem, 7.4cqw, 1.75rem); }
+.copts .pcard--tall p { margin-top: 0.5em; max-width: 78%; font-size: clamp(0.8125rem, 4.4cqw, 1rem); line-height: 1.4; }
+.copts .pcard__link { font-size: clamp(0.75rem, 3.4cqw, 0.875rem); }
+.copts .a-gc { left: -1.5%; top: 9%; width: 96%; }
+/* Virtual card (built in CSS; swap for artwork when supplied) */
+.vcc { position: absolute; left: 0; top: 24%; width: 65%; aspect-ratio: 1.66; border-radius: 0 0.9rem 0.9rem 0; color: #fff; overflow: hidden; background: linear-gradient(180deg, #8a7cf2 0%, #6c5ee0 40%, #4a3e9c 100%); box-shadow: 0 0.75rem 1.5rem rgba(20, 12, 60, .35); container-type: inline-size; }
+.vcc__brand { position: absolute; left: 14%; top: 15%; font-size: 9.5cqw; font-weight: 600; }
+.vcc__seal { position: absolute; left: 36%; top: 6%; width: 52%; aspect-ratio: 1; display: grid; place-items: center; border-radius: 22%; transform: rotate(8deg); background: rgba(255,255,255,.12); color: rgba(0,0,0,.14); font-size: 22cqw; font-weight: 700; }
+.vcc__num { position: absolute; left: 14%; top: 55%; display: flex; align-items: center; gap: 3.4cqw; font-size: 7.4cqw; }
+.vcc__num i { width: 2.6cqw; height: 2.6cqw; border-radius: 50%; background: #fff; }
+.vcc__name { position: absolute; left: 14%; top: 73%; font-size: 5.6cqw; }
+
+/* ----- Phones / tablets: stack, same artwork placement ----- */
+@media (max-width: 46rem) {
+  .mm, .sp { grid-template-columns: 1fr; gap: 0.875rem; --gap: 0.875rem; }
+  .mm__pair, .mm__top, .sp__pair { grid-template-columns: 1fr 1fr; }
+  .mm .pcard, .sp .pcard { min-height: 14rem; }
+  .mm-send, .sp-wallet, .sp-school, .mm-cross { aspect-ratio: auto; min-height: 17rem; }
+  .mm-cross .globe { left: 4%; right: 4%; }
+  .mm-split, .mm-email, .mm-get, .mm-uk, .sp-air, .sp-bill, .sp-fx, .sp-pay { aspect-ratio: auto; }
+  .mm .pm, .sp .pm { inset: auto 0 0 0; height: 55%; }
+  .mm-send .pm, .sp-wallet .pm, .sp-school .pm { height: 62%; }
+  .mm-cross .pm { display: none; }
+  .copts { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+}
+@media (max-width: 30rem) {
+  .mm__pair, .mm__top, .sp__pair { grid-template-columns: 1fr; }
+  .mm .pcard, .sp .pcard { min-height: 15rem; }
+}
