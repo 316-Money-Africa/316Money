@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Request money · 316 Money</title>
-  <meta name="description" content="Manage supported currencies in one place, check your balances and exchange between currencies when available.">
+  <meta name="description" content="Request money from friends, family or other eligible recipients. Keep track of requests and make settling up simpler.">
   <link rel="icon" type="image/png" sizes="131x131" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,6 +39,8 @@
     <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 2.8v5.4c0 4.6-3 8-7 9.8-4-1.8-7-5.2-7-9.8V5.8L12 3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.8 12l2.2 2.2 4.2-4.4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4.5 20c0-3.8 3.4-6.3 7.5-6.3s7.5 2.5 7.5 6.3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
     <symbol id="i-plane" viewBox="0 0 24 24"><path d="M20.5 3.5L3.5 10.2l6.3 2.5 2.5 6.3 8.2-15.5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9.8 12.7l4.4-4.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+    <symbol id="i-plus-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 8v8M8 12h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   </defs>
 </svg>
   <header class="nav">
@@ -64,7 +66,7 @@
                 <li><a href="features.html">Explore all features</a></li>
                 <li><a href="send-and-receive.html">Send and receive</a></li>
                 <li><a href="request-money.html">Request money</a></li>
-                <li><a href="#">Currency wallets</a></li>
+                <li><a href="currency-wallets.html">Currency wallets</a></li>
                 <li><a href="#">Saving pots</a></li>
               </ul>
             </div>
@@ -185,15 +187,15 @@
 
   <main>
     <!-- 1 · Hero (gradient white -> lavender) -->
-    <section class="hero hero--features" aria-labelledby="cw-hero-title">
+    <section class="hero hero--features" aria-labelledby="rq-hero-title">
       <div class="container hero__inner">
         <div class="hero__copy">
-          <span class="pill">Currency wallets</span>
-          <h1 id="cw-hero-title" class="hero__title hero__title--lines">
-            <span class="ln">Your money, in</span>
-            <span class="ln accent">different Currencies</span>
+          <span class="pill">Request money</span>
+          <h1 id="rq-hero-title" class="hero__title hero__title--lines">
+            <span class="ln">Need money?</span>
+            <span class="ln accent">Just request</span>
           </h1>
-          <p class="hero__lead"><span class="ln">Manage supported currencies all in one place. Check your</span> <span class="ln">balances and exchange between currencies when available.</span></p>
+          <p class="hero__lead"><span class="ln">Request money from friends, family, or other</span> <span class="ln">eligible recipients. Keep track of requests and make</span> <span class="ln">settling up simpler.</span></p>
           <div class="hero__cta">
             <a class="btn btn--primary btn--sm-rect" href="features.html">Explore features <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
             <a class="btn btn--light btn--sm-rect" href="#download">Download the app</a>
@@ -205,84 +207,78 @@
       </div>
     </section>
 
-    <!-- 2 · Everything you need (white) -->
-    <section class="sec sec--white" id="everything" aria-labelledby="ev-title">
+    <!-- 2 · Make asking for money simple (white) -->
+    <section class="sec sec--white" id="simple" aria-labelledby="simple-title">
       <div class="wrap">
         <header class="sec__head">
-          <span class="pill">Everything in one place</span>
-          <h2 id="ev-title" class="sec__title"><span class="ln">Everything you need to</span> <span class="ln accent">manage your currencies</span></h2>
-          <p class="sec__sub">Keep track of your supported currency balances from one place.</p>
+          <span class="pill">Request money simply</span>
+          <h2 id="simple-title" class="sec__title"><span class="ln">Make asking for</span> <span class="ln accent">money simple.</span></h2>
+          <p class="sec__sub"><span class="ln">Send a request, share the details, and track its</span> <span class="ln">status.</span></p>
         </header>
-        <ul class="pgrid3">
-          <li class="pcard pcard--icon"><span class="pcard__icon"><svg class="icon"><use href="#i-plane"/></svg></span><div class="pcard__text"><h3>Multiple currencies</h3><p><span class="ln">Manage supported currencies in</span> <span class="ln">one place.</span></p><a class="pcard__link" href="#">Explore feature <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div></li>
-          <li class="pcard pcard--icon"><span class="pcard__icon"><svg class="icon"><use href="#i-plane"/></svg></span><div class="pcard__text"><h3>Currency Exchange</h3><p><span class="ln">Review exchange rate and fees before</span> <span class="ln">confirming a conversion.</span></p><a class="pcard__link" href="#">Explore feature <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div></li>
-          <li class="pcard pcard--icon"><span class="pcard__icon"><svg class="icon"><use href="#i-plane"/></svg></span><div class="pcard__text"><h3>Track your activity</h3><p><span class="ln">Review wallet transactions and</span> <span class="ln">transaction records.</span></p><a class="pcard__link" href="#">Explore feature <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div></li>
+        <ul class="rq">
+          <li class="rq__card"><span class="rq__icon"><svg class="icon"><use href="#i-plus-circle"/></svg></span><h3>Create a request</h3><p><span class="ln">Choose the recipient, amount and</span> <span class="ln">currency.</span></p></li>
+          <li class="rq__card"><span class="rq__icon"><svg class="icon"><use href="#i-plane"/></svg></span><h3>Send a request</h3><p>Decide how much you want to save.</p></li>
+          <li class="rq__card"><span class="rq__icon"><svg class="icon"><use href="#i-clock"/></svg></span><h3>Track progress</h3><p>Check how far you’ve come toward your goal.</p></li>
         </ul>
       </div>
     </section>
 
-    <!-- 3 · Your wallets (lavender) -->
-    <section class="sec sec--tint" id="wallets" aria-labelledby="wal-title">
+    <!-- 3 · Know where every request stands (lavender) -->
+    <section class="sec sec--tint" id="status" aria-labelledby="status-title">
       <div class="wrap split">
+        <div class="split__media f-media f-media--wide" aria-hidden="true"></div>
         <div class="split__copy">
-          <span class="pill">Your wallets</span>
-          <h2 id="wal-title" class="split__title split__title--pill"><span class="ln">Your currencies,</span> <span class="ln accent">all in one place.</span></h2>
-          <p><span class="ln">See your supported currency wallets at a glance,</span> <span class="ln">check individual balances, and keep your money</span> <span class="ln">organised through the 316 Money app.</span></p>
+          <span class="pill">Money requests</span>
+          <h2 id="status-title" class="split__title split__title--pill"><span class="ln">Know where every</span> <span class="ln accent">request stands</span></h2>
+          <p><span class="ln">See your request activity without losing track of</span> <span class="ln">who still needs to pay.</span></p>
           <a class="btn btn--primary btn--lg" href="#download">Get the app <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a>
         </div>
-        <div class="split__media f-media wallets-media"><img src="assets/CurrencyWallets/money-woman.webp" alt="" class="wm__panel" width="900" height="641" loading="lazy" decoding="async"><img src="assets/CurrencyWallets/wallets-card.webp" alt="" alt="Wallet balances in USD, GBP and NGN" class="wm__card" width="560" height="592" loading="lazy" decoding="async"></div>
       </div>
     </section>
 
-    <!-- 4 · Currency exchange (white) -->
-    <section class="sec sec--white" id="exchange" aria-labelledby="ex-title">
+    <!-- 4 · Split expenses (white) -->
+    <section class="sec sec--white" id="split" aria-labelledby="split-title">
       <div class="wrap split">
-        <div class="split__media f-media"><img src="assets/CurrencyWallets/exchange-man.webp" alt="" alt="A man exchanging naira for US dollars on a tablet" class="f-img" width="1000" height="914" loading="lazy" decoding="async"></div>
         <div class="split__copy">
-          <span class="pill">Currency exchange</span>
-          <h2 id="ex-title" class="split__title split__title--pill"><span class="ln">Exchange currencies</span> <span class="ln accent">with clarity.</span></h2>
-          <p><span class="ln">Review the exchange rate, applicable fees and</span> <span class="ln">the amount you will receive before confirming an</span> <span class="ln">available currency conversion.</span></p>
-          <a class="btn btn--primary btn--lg" href="#">Exchange now <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a>
+          <span class="pill">Shared expenses</span>
+          <h2 id="split-title" class="split__title split__title--pill"><span class="ln">Split expenses?</span> <span class="ln accent">Split them up.</span></h2>
+          <p><span class="ln">Organise shared costs, assign contributions, and</span> <span class="ln">track who has settled their share.</span></p>
+          <a class="btn btn--primary btn--lg" href="#download">Get the app <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a>
+        </div>
+        <div class="split__media f-media f-media--wide" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- 5 · A little reminder (lavender) -->
+    <section class="sec sec--tint" id="reminder" aria-labelledby="rem-title">
+      <div class="wrap split">
+        <div class="split__media f-media f-media--wide" aria-hidden="true"></div>
+        <div class="split__copy">
+          <span class="pill">Money requests</span>
+          <h2 id="rem-title" class="split__title split__title--pill"><span class="ln">A little reminder</span> <span class="ln accent">goes a long way.</span></h2>
+          <p><span class="ln">Keep track of outstanding requests and follow up</span> <span class="ln">when needed.</span></p>
+          <a class="btn btn--primary btn--lg" href="#download">Get the app <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a>
         </div>
       </div>
     </section>
 
-    <!-- 5 · Currency options (lavender) -->
-    <section class="sec sec--tint" id="options" aria-labelledby="opt-title">
-      <div class="wrap">
-        <header class="sec__head sec__head--wide">
-          <span class="pill">Supported currencies</span>
-          <h2 id="opt-title" class="sec__title"><span class="ln">Currency options</span> <span class="ln accent">for your market</span></h2>
-          <p class="sec__sub"><span class="ln">316 Money supports a range of currencies across eligible markets.</span> <span class="ln">Available wallets and currency services depend on your location and the</span> <span class="ln">services enabled for your account.</span></p>
-        </header>
-        <ul class="ccy">
-          <li class="ccy__card"><img src="assets/CurrencyWallets/flag-gb.webp" alt="" class="ccy__flag" width="170" height="144" loading="lazy" decoding="async"><h3>GBP</h3><p>British pound</p></li>
-          <li class="ccy__card"><img src="assets/CurrencyWallets/flag-us.webp" alt="" class="ccy__flag" width="170" height="144" loading="lazy" decoding="async"><h3>USD</h3><p>US dollar</p></li>
-          <li class="ccy__card"><img class="ccy__flag" src="assets/flags/eu.svg" alt="" width="36" height="24"><h3>EUR</h3><p>Euro</p></li>
-          <li class="ccy__card"><img src="assets/CurrencyWallets/flag-ng.webp" alt="" class="ccy__flag" width="170" height="144" loading="lazy" decoding="async"><h3>NGN</h3><p>Naira</p></li>
-          <li class="ccy__card"><img src="assets/CurrencyWallets/flag-cm.webp" alt="" class="ccy__flag" width="170" height="144" loading="lazy" decoding="async"><h3>XAF</h3><p>CFA franc</p></li>
-          <li class="ccy__card"><img src="assets/CurrencyWallets/flag-ke.webp" alt="" class="ccy__flag" width="170" height="144" loading="lazy" decoding="async"><h3>KES</h3><p>Kenyan shilling</p></li>
-        </ul>
-      </div>
-    </section>
-
-<!-- 10 · FAQ (white) -->
+    <!-- 6 · FAQ (white) -->
     <section class="sec sec--white" id="faq" aria-labelledby="faq-title">
       <div class="wrap faq">
         <div class="faq__intro">
           <h2 id="faq-title" class="faq__title"><span class="accent">Questions</span> you might want to ask</h2>
           <div class="faq__users">
-            <img src="assets/Home/avatars.webp" alt="" width="446" height="196" loading="lazy">
+            <img src="assets/Home/avatars.webp" alt="" alt="" width="446" height="196" loading="lazy" decoding="async">
             <p><strong>more than 10K+</strong><br>users worldwide</p>
           </div>
         </div>
         <div class="faq__list">
-          <details><summary>What can I do with 316 Money?</summary><p>Hold money in multiple currencies, send and receive payments, pay bills, buy airtime and data, and create virtual cards. Which features you see depends on your country.</p></details>
-          <details><summary>How do I get started with 316 Money?</summary><p>Download the app from the App Store or Google Play, create an account with your email and phone number, and complete identity verification.</p></details>
-          <details><summary>Can I send and receive money with 316 Money?</summary><p>Yes. You can send and receive money with other 316 Money users and to supported destinations, with the fees and exchange rate shown before you confirm.</p></details>
-          <details><summary>Can I hold money in different currencies?</summary><p>Yes. Supported currencies are available as wallets in the app. Availability depends on your country.</p></details>
-          <details><summary>Can I save money towards specific goals?</summary><p>Yes. Create a named savings pot with a target amount and a timeframe, and add money to it whenever you like.</p></details>
-          <details><summary>Are all 316 Money features available in every country?</summary><p>No. Features are switched on country by country as our partners and approvals allow.</p></details>
+          <details><summary>What is Request Money?</summary><p>Request Money lets you ask friends, family or other eligible recipients to pay you, and keeps track of each request in the app.</p></details>
+          <details><summary>Can I add a reason to my request?</summary><p>Yes. You can add a short note so the person knows what the request is for.</p></details>
+          <details><summary>Can I set an expiry date?</summary><p>Yes. You can choose when a request expires, and you can send a reminder before then.</p></details>
+          <details><summary>What happens if someone declines a request?</summary><p>The request is marked as declined in your activity and no money moves.</p></details>
+          <details><summary>How do I know if someone has paid?</summary><p>The request status changes to paid and you receive a notification.</p></details>
+          <details><summary>Can someone pay only part of their share?</summary><p>Yes, where partial payments are enabled. Each payment is tracked against the original request.</p></details>
         </div>
       </div>
     </section>

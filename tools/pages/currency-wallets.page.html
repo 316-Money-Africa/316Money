@@ -1,0 +1,84 @@
+<!--page title="Currency wallets · 316 Money" description="Manage supported currencies in one place, check your balances and exchange between currencies when available." preload="assets/Home/hero.webp" css="features.css"-->
+    <!-- 1 · Hero (gradient white -> lavender) -->
+    <section class="hero hero--features" aria-labelledby="cw-hero-title">
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <span class="pill">Currency wallets</span>
+          <h1 id="cw-hero-title" class="hero__title hero__title--lines">
+            <span class="ln">Your money, in</span>
+            <span class="ln accent">different Currencies</span>
+          </h1>
+          <p class="hero__lead"><span class="ln">Manage supported currencies all in one place. Check your</span> <span class="ln">balances and exchange between currencies when available.</span></p>
+          <div class="hero__cta">
+            <a class="btn btn--primary btn--sm-rect" href="features.html">Explore features <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn--light btn--sm-rect" href="#download">Download the app</a>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <img src="assets/Home/hero.webp" alt="316 Money app showing wallet balances" width="1100" height="892" fetchpriority="high">
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 · Everything you need (white) -->
+    <section class="sec sec--white" id="everything" aria-labelledby="ev-title">
+      <div class="wrap">
+        <header class="sec__head">
+          <span class="pill">Everything in one place</span>
+          <h2 id="ev-title" class="sec__title"><span class="ln">Everything you need to</span> <span class="ln accent">manage your currencies</span></h2>
+          <p class="sec__sub">Keep track of your supported currency balances from one place.</p>
+        </header>
+        <ul class="pgrid3">
+          <li class="pcard pcard--icon"><span class="pcard__icon"><svg class="icon"><use href="#i-plane"/></svg></span><div class="pcard__text"><h3>Multiple currencies</h3><p><span class="ln">Manage supported currencies in</span> <span class="ln">one place.</span></p><a class="pcard__link" href="#">Explore feature <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div></li>
+          <li class="pcard pcard--icon"><span class="pcard__icon"><svg class="icon"><use href="#i-plane"/></svg></span><div class="pcard__text"><h3>Currency Exchange</h3><p><span class="ln">Review exchange rate and fees before</span> <span class="ln">confirming a conversion.</span></p><a class="pcard__link" href="#">Explore feature <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div></li>
+          <li class="pcard pcard--icon"><span class="pcard__icon"><svg class="icon"><use href="#i-plane"/></svg></span><div class="pcard__text"><h3>Track your activity</h3><p><span class="ln">Review wallet transactions and</span> <span class="ln">transaction records.</span></p><a class="pcard__link" href="#">Explore feature <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 3 · Your wallets (lavender) -->
+    <section class="sec sec--tint" id="wallets" aria-labelledby="wal-title">
+      <div class="wrap split">
+        <div class="split__copy">
+          <span class="pill">Your wallets</span>
+          <h2 id="wal-title" class="split__title split__title--pill"><span class="ln">Your currencies,</span> <span class="ln accent">all in one place.</span></h2>
+          <p><span class="ln">See your supported currency wallets at a glance,</span> <span class="ln">check individual balances, and keep your money</span> <span class="ln">organised through the 316 Money app.</span></p>
+          <a class="btn btn--primary btn--lg" href="#download">Get the app <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a>
+        </div>
+        <div class="split__media f-media wallets-media">{{img:CurrencyWallets/money-woman class="wm__panel"}}{{img:CurrencyWallets/wallets-card alt="Wallet balances in USD, GBP and NGN" class="wm__card"}}</div>
+      </div>
+    </section>
+
+    <!-- 4 · Currency exchange (white) -->
+    <section class="sec sec--white" id="exchange" aria-labelledby="ex-title">
+      <div class="wrap split">
+        <div class="split__media f-media">{{img:CurrencyWallets/exchange-man alt="A man exchanging naira for US dollars on a tablet" class="f-img"}}</div>
+        <div class="split__copy">
+          <span class="pill">Currency exchange</span>
+          <h2 id="ex-title" class="split__title split__title--pill"><span class="ln">Exchange currencies</span> <span class="ln accent">with clarity.</span></h2>
+          <p><span class="ln">Review the exchange rate, applicable fees and</span> <span class="ln">the amount you will receive before confirming an</span> <span class="ln">available currency conversion.</span></p>
+          <a class="btn btn--primary btn--lg" href="#">Exchange now <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 · Currency options (lavender) -->
+    <section class="sec sec--tint" id="options" aria-labelledby="opt-title">
+      <div class="wrap">
+        <header class="sec__head sec__head--wide">
+          <span class="pill">Supported currencies</span>
+          <h2 id="opt-title" class="sec__title"><span class="ln">Currency options</span> <span class="ln accent">for your market</span></h2>
+          <p class="sec__sub"><span class="ln">316 Money supports a range of currencies across eligible markets.</span> <span class="ln">Available wallets and currency services depend on your location and the</span> <span class="ln">services enabled for your account.</span></p>
+        </header>
+        <ul class="ccy">
+          <li class="ccy__card">{{img:CurrencyWallets/flag-gb class="ccy__flag"}}<h3>GBP</h3><p>British pound</p></li>
+          <li class="ccy__card">{{img:CurrencyWallets/flag-us class="ccy__flag"}}<h3>USD</h3><p>US dollar</p></li>
+          <li class="ccy__card"><img class="ccy__flag" src="assets/flags/eu.svg" alt="" width="36" height="24"><h3>EUR</h3><p>Euro</p></li>
+          <li class="ccy__card">{{img:CurrencyWallets/flag-ng class="ccy__flag"}}<h3>NGN</h3><p>Naira</p></li>
+          <li class="ccy__card">{{img:CurrencyWallets/flag-cm class="ccy__flag"}}<h3>XAF</h3><p>CFA franc</p></li>
+          <li class="ccy__card">{{img:CurrencyWallets/flag-ke class="ccy__flag"}}<h3>KES</h3><p>Kenyan shilling</p></li>
+        </ul>
+      </div>
+    </section>
+
+{{faq_download}}
