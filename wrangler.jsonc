@@ -6,5 +6,13 @@
   "compatibility_date": "2026-10-01",
   "assets": {
     "directory": "./apps/marketing-web"
+  },
+  // Mirrors the Observability settings enabled in the Cloudflare dashboard so deployments stay in sync.
+  "observability": {
+    "logs": {
+      "enabled": true,
+      "invocation_logs": true,
+      "persist": true
+    }
   }
 }
