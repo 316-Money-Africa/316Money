@@ -13,29 +13,21 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SRC_ROOT = join(ROOT, "assets-src");
 const OUT_ROOT = join(ROOT, "apps", "marketing-web", "assets");
 
-// max output width per file (px); anything not listed keeps its size (capped at 1200)
+// max output width per image, keyed "Folder/file.png": ~2x the largest rendered CSS width (measured at a 2560px-wide
+// screen, where the 90rem container is at its widest) so images stay sharp on retina screens; never upscaled past the source.
+// Anything not listed keeps its size (capped at 1200).
 const WIDTHS = {
-  "hero.png": 1100,
-  "savings.png": 900,
-  "business-owner.png": 800,
-  "hotspot-agent.png": 760,
-  "app-phone.png": 720,
-  "nav-promo.png": 700,
-  "flags.png": 1000,
-  "savings-cards.png": 1000,
-  "world-map.png": 1100,
-  "student.png": 800,
-  "wallets-usd.png": 900,
-  "payment-received-100.png": 640, "payment-sent-50.png": 640, "ngn-100.png": 560, "tuition-fee.png": 520,
-  "payment-successful.png": 420, "card-lavender.png": 720, "send-phone.png": 820, "email-form.png": 700,
-  "request-man.png": 780, "exchange-man.png": 780, "bills-list.png": 620, "pay-cards.png": 780,
-  "uk-phone.png": 560, "split-friends.png": 640, "seal-watermark.png": 300,
-  "send-money.png": 1000, "receive-money.png": 900, "uk-man.png": 760, "uk-payment.png": 520, "map.png": 1400,
-  "telco-mtn.png": 300, "telco-airtel.png": 280, "telco-safaricom.png": 300,
-  "wallets-card.png": 560, "money-woman.png": 900, "exchange-man.png": 1000,
-  "request-status.png": 900, "split-people.png": 900, "reminder-woman.png": 900, "reminder-bubble.png": 260,
-  "pot-progress-woman.png": 760, "pot-success.png": 420, "pot-slider.png": 700, "pot-goals.png": 800,
+  "Home/nav-promo.png": 976, "Home/hero.png": 1664, "Home/app-phone.png": 1060, "Home/savings.png": 1320, "Home/business-owner.png": 1320, "Home/hotspot-agent.png": 1240,
+  "Features/send-phone.png": 1128, "Features/payment-received-100.png": 1020, "Features/payment-sent-50.png": 1020, "Features/split-friends.png": 731, "Features/email-form.png": 796,
+  "Features/request-man.png": 840, "Features/uk-phone.png": 627, "Features/savings-cards.png": 1320, "Features/wallets-usd.png": 1190, "Features/ngn-100.png": 760,
+  "Features/student.png": 960, "Features/tuition-fee.png": 790, "Features/exchange-man.png": 887, "Features/telco-mtn.png": 420, "Features/telco-airtel.png": 370, "Features/telco-safaricom.png": 390,
+  "Features/bills-list.png": 684, "Features/payment-successful.png": 502, "Features/pay-cards.png": 960, "Features/card-lavender.png": 850, "Features/flags.png": 1320, "Features/seal-watermark.png": 300,
+  "SendReceive/send-money.png": 1320, "SendReceive/receive-money.png": 1320, "SendReceive/uk-man.png": 1320, "SendReceive/uk-payment.png": 620, "SendReceive/map.png": 2784,
+  "CurrencyWallets/money-woman.png": 1190, "CurrencyWallets/wallets-card.png": 710, "CurrencyWallets/exchange-man.png": 1320,
+  "Pots/request-status.png": 1320, "Pots/split-people.png": 1320, "Pots/reminder-woman.png": 1320, "Pots/reminder-bubble.png": 342,
+  "Pots/pot-progress-woman.png": 1120, "Pots/pot-success.png": 560, "Pots/pot-slider.png": 820, "Pots/pot-goals.png": 1320,
 };
+const QUALITY = 86; // high enough that small UI text baked into the artwork stays crisp
 
 let before = 0, after = 0;
 // every folder in assets-src/ (one per page) maps to the same folder in the served assets
@@ -45,9 +37,9 @@ for (const dir of readdirSync(SRC_ROOT).filter((n) => statSync(join(SRC_ROOT, n)
   for (const f of readdirSync(SRC).filter((n) => /\.(png|jpe?g)$/i.test(n))) {
     const input = join(SRC, f);
     const meta = await sharp(input).metadata();
-    const width = Math.min(meta.width, WIDTHS[f] ?? 1200);
+    const width = Math.min(meta.width, WIDTHS[`${dir}/${f}`] ?? 1200);
     const out = join(OUT, parse(f).name + ".webp");
-    const info = await sharp(input).resize({ width }).webp({ quality: 80, alphaQuality: 75, effort: 6 }).toFile(out);
+    const info = await sharp(input).resize({ width }).webp({ quality: QUALITY, alphaQuality: 90, effort: 6 }).toFile(out);
     before += statSync(input).size; after += info.size;
     console.log(`${dir}/${f.padEnd(24)} ${meta.width}x${meta.height} -> ${info.width}x${info.height}  ${(statSync(input).size / 1024).toFixed(0)}KB -> ${(info.size / 1024).toFixed(0)}KB`);
   }
