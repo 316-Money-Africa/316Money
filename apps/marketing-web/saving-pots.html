@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Saving pots · 316 Money</title>
+  <meta name="description" content="Create saving pots for the things that matter to you. Organise your savings around your goals and keep track of your progress.">
+  <link rel="icon" type="image/png" sizes="131x131" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap">
+  <link rel="preload" as="image" href="assets/Home/hero.webp" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="sections.css">
+  <link rel="stylesheet" href="features.css">
+</head>
+<body>
+  <svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-arrow-long" viewBox="0 0 24 16"><path d="M1 8h21M16 2l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chev-down" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chev-right" viewBox="0 0 16 16"><path d="M6 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M11 18.5h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 19c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5M16 5.3a3 3 0 010 5.6M18 14c2 .6 3.5 2.4 3.5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 10h18M7 15h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-headset" viewBox="0 0 24 24"><path d="M4.5 14v-2a7.5 7.5 0 0115 0v2M4.5 14h2.5v4h-2a1 1 0 01-1-1v-2a1 1 0 011-1zM19.5 14H17v4h2a1 1 0 001-1v-2a1 1 0 00-1-1zM17 18.5c0 1.4-1.8 2.5-5 2.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2.5L5 13.5h6l-1 8 8-11h-6l1-8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 8v7M8.5 12l3.5 3.5 3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-user-plus" viewBox="0 0 24 24"><circle cx="10" cy="8" r="3.4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 19.5c0-3.4 2.9-5.5 6.5-5.5 1.2 0 2.3.2 3.2.7M18 14v6M15 17h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-transfer" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 20.5h8M9 9l-2 2 2 2M15 9l2 2-2 2M7 11h10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-plug" viewBox="0 0 24 24"><rect x="5" y="3.5" width="14" height="17" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M9 8h6M9 12h6M10 16h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M3 9.5a13 13 0 0118 0M6 13a8.5 8.5 0 0112 0M9.2 16.3a4 4 0 015.6 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="19.2" r="1.2" fill="currentColor"/></symbol>
+    <symbol id="i-tv" viewBox="0 0 24 24"><rect x="4.5" y="3.5" width="15" height="17" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 17h8M8 7h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0113 0c0 5.4-6.5 11-6.5 11z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-history" viewBox="0 0 24 24"><rect x="4.5" y="3.5" width="15" height="17" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 8.5h8M8 12h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="15.5" cy="15.5" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M17.4 17.4L19.5 19.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 2.8v5.4c0 4.6-3 8-7 9.8-4-1.8-7-5.2-7-9.8V5.8L12 3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.8 12l2.2 2.2 4.2-4.4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4.5 20c0-3.8 3.4-6.3 7.5-6.3s7.5 2.5 7.5 6.3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-plane" viewBox="0 0 24 24"><path d="M20.5 3.5L3.5 10.2l6.3 2.5 2.5 6.3 8.2-15.5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9.8 12.7l4.4-4.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+    <symbol id="i-plus-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 8v8M8 12h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-plus-square" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 8.5v7M8.5 12h7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><path d="M4 16.5l5.5-5.5 3.5 3.5L20 7.5M15 7.5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+  <header class="nav">
+    <div class="container nav__inner">
+      <a class="nav__logo" href="./" aria-label="316 Money home">
+        <img src="assets/logo.png" alt="" width="131" height="131"><span class="nav__wordmark">MONEY</span>
+      </a>
+
+      <input class="nav__toggle" type="checkbox" id="nav-toggle" aria-label="Toggle menu">
+      <label class="nav__burger" for="nav-toggle" aria-hidden="true"><span></span></label>
+
+      <nav class="nav__menu" aria-label="Primary">
+        <ul class="nav__links">
+          <li class="nav__item">
+            <button class="nav__trigger" type="button" aria-expanded="false" aria-controls="mega-personal">Personal <i class="chev"></i></button>
+            <div class="mega" id="mega-personal">
+              <div class="mega__main">
+                <h2 class="mega__title"><a href="#">316 Money for you<svg class="icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h2>
+                <div class="mega__cols">
+            <div class="mega__col">
+              <h3><a href="#">Features<svg class="icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
+              <ul>
+                <li><a href="features.html">Explore all features</a></li>
+                <li><a href="send-and-receive.html">Send and receive</a></li>
+                <li><a href="request-money.html">Request money</a></li>
+                <li><a href="currency-wallets.html">Currency wallets</a></li>
+                <li><a href="saving-pots.html">Saving pots</a></li>
+              </ul>
+            </div>
+            <div class="mega__col">
+              <h3><a href="#">Cards<svg class="icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
+              <ul>
+                <li><a href="#">Explore cards</a></li>
+                <li><a href="#">Virtual cards</a></li>
+                <li><a href="#">Gift cards</a></li>
+              </ul>
+            </div>
+            <div class="mega__col">
+              <h3><a href="#">More<svg class="icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
+              <ul>
+                <li><a href="#">Airtime top-up</a></li>
+                <li><a href="#">Bill payment</a></li>
+                <li><a href="#">Pay with 316 Money</a></li>
+              </ul>
+            </div>
+                </div>
+              </div>
+              <aside class="mega__promo">
+                <h3>Get your 316 Money account</h3>
+                <p>Download the 316 App and create your account in a few easy steps. Hold and exchange multiple currencies. Create virtual cards.</p>
+                <img class="mega__media" src="assets/Home/nav-promo.webp" alt="" width="700" height="560" loading="lazy" decoding="async">
+              </aside>
+            </div>
+          </li>
+          <li class="nav__item">
+            <button class="nav__trigger" type="button" aria-expanded="false" aria-controls="mega-business">Business <i class="chev"></i></button>
+            <div class="mega" id="mega-business">
+              <div class="mega__main">
+                <h2 class="mega__title"><a href="#">316 for businesses<svg class="icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h2>
+                <div class="mega__cols">
+            <div class="mega__col">
+              <h3><a href="#">Payments<svg class="icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
+              <ul>
+                <li><a href="#">Accept online payments</a></li>
+                <li><a href="#">Payment links</a></li>
+                <li><a href="#">Online checkout page</a></li>
+                <li><a href="#">Invoicing</a></li>
+              </ul>
+            </div>
+            <div class="mega__col">
+              <h3><a href="#">Integrations<svg class="icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
+              <ul>
+                <li><a href="#">3rd party integrations</a></li>
+                <li><a href="#">Developers</a></li>
+              </ul>
+            </div>
+            <div class="mega__col">
+              <h3><a href="#">Extras<svg class="icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
+              <ul>
+                <li><a href="#">Offer rewards</a></li>
+                <li><a href="#">Accept donations</a></li>
+                <li><a href="#">Dispute resolution</a></li>
+              </ul>
+            </div>
+                </div>
+              </div>
+              <aside class="mega__promo">
+                <h3>Get a 316 Pay account for your business</h3>
+                <p>Download the 316 App and create your account in a few easy steps. Hold and exchange multiple currencies. Create virtual cards.</p>
+                <img class="mega__media" src="assets/Home/nav-promo.webp" alt="" width="700" height="560" loading="lazy" decoding="async">
+              </aside>
+            </div>
+          </li>
+          <li class="nav__item">
+            <button class="nav__trigger" type="button" aria-expanded="false" aria-controls="mega-partners">Partner with us <i class="chev"></i></button>
+            <div class="mega" id="mega-partners">
+              <div class="mega__main">
+                <h2 class="mega__title"><a href="#">Be a 316 Hotspot Agent<svg class="icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h2>
+                <div class="mega__cols">
+            <div class="mega__col">
+              <h3><a href="#">Collection Agent<svg class="icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
+              <ul>
+                <li><a href="#">Getting started</a></li>
+                <li><a href="#">How it works</a></li>
+                <li><a href="#">Benefits</a></li>
+                <li><a href="#">Compliance</a></li>
+              </ul>
+            </div>
+            <div class="mega__col">
+              <h3><a href="#">Payment Agent<svg class="icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
+              <ul>
+                <li><a href="#">Getting started</a></li>
+                <li><a href="#">How it works</a></li>
+                <li><a href="#">Benefits</a></li>
+                <li><a href="#">Compliance</a></li>
+              </ul>
+            </div>
+            <div class="mega__col">
+              <h3><a href="#">Extras<svg class="icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
+              <ul>
+                <li><a href="#">Offer rewards</a></li>
+                <li><a href="#">Accept donations</a></li>
+                <li><a href="#">Dispute resolution</a></li>
+              </ul>
+            </div>
+                </div>
+              </div>
+              <aside class="mega__promo">
+                <h3>Be a 316 Hotspot Agent, unlock financial benefit</h3>
+                <p>Download the 316 App and create your account in a few easy steps. Hold and exchange multiple currencies. Create virtual cards.</p>
+                <img class="mega__media" src="assets/Home/nav-promo.webp" alt="" width="700" height="560" loading="lazy" decoding="async">
+              </aside>
+            </div>
+          </li>
+          <li class="nav__item"><a class="nav__trigger" href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav__actions">
+          <a class="btn btn--outline btn--sm" href="#sign-in">Sign in</a>
+          <a class="btn btn--primary btn--sm" href="#sign-up">Sign up</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1 · Hero (gradient white -> lavender) -->
+    <section class="hero hero--features" aria-labelledby="sp-hero-title">
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <span class="pill pill--plain">Saving pots</span>
+          <h1 id="sp-hero-title" class="hero__title hero__title--lines">
+            <span class="ln">Give your money,</span>
+            <span class="ln accent">a purpose</span>
+          </h1>
+          <p class="hero__lead"><span class="ln">Create saving pots for the things that matter to you.</span> <span class="ln">Organise your savings around your goals and keep track of your</span> <span class="ln">progress</span></p>
+          <div class="hero__cta">
+            <a class="btn btn--primary btn--sm-rect" href="features.html">Explore features <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn--light btn--sm-rect" href="#download">Download the app</a>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <img src="assets/Home/hero.webp" alt="316 Money app showing wallet balances" width="1100" height="892" fetchpriority="high">
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 · One pot for every goal (white) -->
+    <section class="sec sec--white" id="goals" aria-labelledby="goals-title">
+      <div class="wrap">
+        <header class="sec__head">
+          <span class="pill">Save with intention</span>
+          <h2 id="goals-title" class="sec__title"><span class="ln">One pot for</span> <span class="ln accent">every goal</span></h2>
+          <p class="sec__sub"><span class="ln">Give your savings a purpose by organising them</span> <span class="ln">around your personal goals.</span></p>
+        </header>
+        <ul class="pgrid3">
+          <li class="pcard pcard--icon"><span class="pcard__icon"><svg class="icon"><use href="#i-plane"/></svg></span><div class="pcard__text"><h3>Rent &amp; bills</h3><p><span class="ln">Put money aside for upcoming</span> <span class="ln">expenses.</span></p><a class="pcard__link" href="#">Explore feature <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div></li>
+          <li class="pcard pcard--icon"><span class="pcard__icon"><svg class="icon"><use href="#i-plane"/></svg></span><div class="pcard__text"><h3>New purchases</h3><p><span class="ln">Save towards something you’ve always</span> <span class="ln">wanted.</span></p><a class="pcard__link" href="#">Explore feature <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div></li>
+          <li class="pcard pcard--icon"><span class="pcard__icon"><svg class="icon"><use href="#i-plane"/></svg></span><div class="pcard__text"><h3>Travel plans</h3><p><span class="ln">Plan and work towards your next</span> <span class="ln">adventure.</span></p><a class="pcard__link" href="#">Explore feature <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 3 · Every step brings you closer (lavender) -->
+    <section class="sec sec--tint" id="progress" aria-labelledby="prog-title">
+      <div class="wrap split">
+        <div class="split__copy">
+          <span class="pill">Saving pot details</span>
+          <h2 id="prog-title" class="split__title split__title--pill"><span class="ln">Every step brings</span> <span class="ln accent">you closer</span></h2>
+          <p><span class="ln">Keep track of your progress with a clear view of</span> <span class="ln">how much you’ve saved and how much remains</span> <span class="ln">toward your target.</span></p>
+          <a class="btn btn--primary btn--lg" href="#download">Get the app <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a>
+        </div>
+        <div class="split__media f-media f-media--wide" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- 4 · Saving starts with a plan (white) -->
+    <section class="sec sec--white" id="plan" aria-labelledby="plan-title">
+      <div class="wrap">
+        <header class="sec__head">
+          <span class="pill">A simple way to start</span>
+          <h2 id="plan-title" class="sec__title"><span class="ln">Saving starts</span> <span class="ln accent">with a plan</span></h2>
+          <p class="sec__sub"><span class="ln">Send money across Africa with transfers designed</span> <span class="ln">for the people and place that matter most.</span></p>
+        </header>
+        <ul class="rq">
+          <li class="rq__card"><span class="rq__icon"><svg class="icon"><use href="#i-plus-square"/></svg></span><h3>Create a pot</h3><p>Define the goal you are saving for.</p></li>
+          <li class="rq__card"><span class="rq__icon"><svg class="icon"><use href="#i-target"/></svg></span><h3>Set a target</h3><p>Decide how much you want to save.</p></li>
+          <li class="rq__card"><span class="rq__icon"><svg class="icon"><use href="#i-trend"/></svg></span><h3>Track progress</h3><p>Check how far you’ve come toward your goal.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 5 · Make room for the things that matter (lavender) -->
+    <section class="sec sec--tint" id="room" aria-labelledby="room-title">
+      <div class="wrap split">
+        <div class="split__copy">
+          <span class="pill">Make space for more</span>
+          <h2 id="room-title" class="split__title split__title--pill"><span class="ln">Make room for the</span> <span class="ln">things <span class="accent">that matter</span></span></h2>
+          <p><span class="ln">Organise your goals in a way that makes sense for</span> <span class="ln">you. Whether its a planned expense or something</span> <span class="ln">you’ve always wanted for a while keep your savings</span> <span class="ln">goal visible.</span></p>
+          <a class="btn btn--primary btn--lg" href="#download">Get the app <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a>
+        </div>
+        <div class="split__media f-media f-media--wide" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- 6 · FAQ (white) -->
+    <section class="sec sec--white" id="faq" aria-labelledby="faq-title">
+      <div class="wrap faq">
+        <div class="faq__intro">
+          <h2 id="faq-title" class="faq__title"><span class="accent">Questions</span> you might want to ask</h2>
+          <div class="faq__users">
+            <img src="assets/Home/avatars.webp" alt="" alt="" width="446" height="196" loading="lazy" decoding="async">
+            <p><strong>more than 10K+</strong><br>users worldwide</p>
+          </div>
+        </div>
+        <div class="faq__list">
+          <details><summary>What are saving pots?</summary><p>Saving pots let you set money aside for a specific goal, such as rent, a purchase or a trip, and track how close you are to it.</p></details>
+          <details><summary>What can I save for?</summary><p>Anything you like: rent and bills, a new purchase, travel plans or any goal you want to keep visible.</p></details>
+          <details><summary>Can I create more than one saving pot?</summary><p>Yes. You can create a separate pot for each goal.</p></details>
+          <details><summary>Can I set a target for my saving pot?</summary><p>Yes. Set how much you want to save and watch your progress toward it.</p></details>
+          <details><summary>Can I withdraw money from a saving pot?</summary><p>Yes, under the terms of the saving pot. Check the pot details in the app before withdrawing.</p></details>
+          <details><summary>Can I automate my savings?</summary><p>Where available, you can set up recurring contributions so your pot grows without you having to remember.</p></details>
+        </div>
+      </div>
+    </section>
+
+<!-- 11 · Download (lavender) -->
+    <section class="sec sec--tint sec--palm" id="download" aria-labelledby="palm-title">
+      <div class="wrap split">
+        <div class="split__copy">
+          <h2 id="palm-title" class="split__title split__title--md"><span class="ln">Experience <span class="accent">316 MONEY</span> in</span> <span class="ln">the palm of your hand</span></h2>
+          <p class="small"><span class="ln">Download for iOS and Android. Open your account in under 3 minutes with zero</span> <span class="ln">paperwork and bring more ease to your financial life.</span></p>
+          <div class="stores">
+            <a class="store" href="#download"><i class="store__logo store__logo--apple" aria-hidden="true"></i><span><small>Download on the</small><strong>Apple App Store</strong></span></a>
+            <a class="store" href="#download"><i class="store__logo store__logo--play" aria-hidden="true"></i><span><small>Get it on</small><strong>Google Play Store</strong></span></a>
+          </div>
+        </div>
+        <div class="split__media"><img src="assets/Home/app-phone.webp" alt="316 Money app on a smartphone" width="720" height="832" loading="lazy" decoding="async"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <div class="footer__brand">
+        <a class="footer__logo" href="./" aria-label="316 Money home"><img src="assets/logo.png" alt="" width="131" height="131"><span>Money</span></a>
+        <p>The next generation payment platform for individuals and businesses. Send money anywhere, instantly.</p>
+      </div>
+      <nav class="footer__cols" aria-label="Footer">
+        <div><h3>Company</h3><ul><li><a href="#">About us</a></li><li><a href="#">Careers</a></li><li><a href="#">Resources</a></li><li><a href="#">Help</a></li></ul></div>
+        <div><h3>For Individuals</h3><ul><li><a href="#get-started">Get started</a></li><li><a href="#features">Features</a></li><li><a href="#">Security</a></li><li><a href="#">Getting started</a></li></ul></div>
+        <div><h3>For Business</h3><ul><li><a href="#business">Get Started</a></li><li><a href="#features">Features</a></li><li><a href="#hotspots">Be a Partner</a></li><li><a href="#">Developer API</a></li></ul></div>
+        <div><h3>Legal</h3><ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">AML Policy</a></li><li><a href="#">Cookie Settings</a></li></ul></div>
+      </nav>
+    </div>
+    <div class="wrap footer__legal"><p>© 2026 316 Money. All rights reserved.</p></div>
+  </footer>
+  <script src="nav.js" defer></script>
+</body>
+</html>
