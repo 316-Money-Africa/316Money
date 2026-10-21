@@ -243,3 +243,6 @@
 .rq__card h3 { margin: 0; font-size: clamp(1.0625rem, 0.95rem + 0.5vw, 1.25rem); font-weight: 600; color: var(--plum); }
 .rq__card p { margin: 0.5rem 0 0; font-size: 0.75rem; line-height: 1.4; color: var(--muted); }
 @media (min-width: 40rem) { .rq { grid-template-columns: repeat(3, 1fr); } }
+
+/* Plain (unfilled) eyebrow used above some hero titles */
+.pill--plain { background: transparent; color: var(--muted); padding-left: 0; font-weight: 500; letter-spacing: 0.05em; }
