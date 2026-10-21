@@ -185,8 +185,8 @@
 .sp-fx { aspect-ratio: 353 / 142; }
 .sp-air, .sp-bill { aspect-ratio: 171 / 196; }
 .sp-pay { aspect-ratio: 353 / 149; }
-.sp-wallet .a-w1 { left: 6%; bottom: 0; width: 72%; }
-.sp-wallet .a-w2 { left: 52%; bottom: 8%; width: 46%; }
+.sp-wallet .a-w1 { left: 32%; bottom: 5%; width: 60%; } /* phone behind the cards; its 316 MONEY logo stays visible */
+.sp-wallet .a-w2 { left: 14%; top: 5%; width: 85%; }
 .sp-school .a-st { left: 36%; bottom: 0; width: 58%; }
 .sp-school .a-tf { left: 11%; bottom: 16%; width: 48%; }
 .sp-fx .a-fx { left: 33%; bottom: 0; width: 42%; }
@@ -195,7 +195,7 @@
 .sp-air .a-saf { right: 0; bottom: 3%; width: 46%; }
 .sp-bill .a-bl { left: 28%; bottom: 0; width: 72%; }
 .sp-bill .a-ps { left: 1%; bottom: 20%; width: 52%; }
-.sp-pay .a-pc { left: 26%; bottom: 0; width: 56%; }
+.sp-pay .a-pc { left: 5%; bottom: -8%; width: 90%; }
 .sp-fx .pcard__text, .sp-pay .pcard__text, .sp-air .pcard__text, .sp-bill .pcard__text { padding-top: clamp(0.875rem, 2.4cqw, 1.5rem); }
 .sp-fx p, .sp-air p, .sp-bill p, .sp-pay p { max-width: 16em; }
 
@@ -206,7 +206,8 @@
 .copts .pcard--tall h3 { font-size: clamp(1.25rem, 7.4cqw, 1.75rem); }
 .copts .pcard--tall p { margin-top: 0.5em; max-width: 78%; font-size: clamp(0.8125rem, 4.4cqw, 1rem); line-height: 1.4; }
 .copts .pcard__link { font-size: clamp(0.75rem, 3.4cqw, 0.875rem); }
-.copts .a-gc { left: -1.5%; top: 9%; width: 96%; }
+.copts .a-vc3d { left: -4%; top: 8%; width: 108%; }
+.copts .a-gifts { left: 2%; top: 10%; width: 96%; }
 /* Virtual card (built in CSS; swap for artwork when supplied) */
 .vcc { position: absolute; left: 0; top: 10.2%; width: 89%; aspect-ratio: 1.64; border-radius: 0 1.1rem 1.1rem 0; color: #fff; overflow: hidden; background: linear-gradient(180deg, #8a7cf2 0%, #6c5ee0 40%, #4a3e9c 100%); box-shadow: 0 0.75rem 1.5rem rgba(20, 12, 60, .35); container-type: inline-size; }
 .vcc__brand { position: absolute; left: 14%; top: 15%; font-size: 9.5cqw; font-weight: 600; }
@@ -264,19 +265,9 @@
 .pgrid3--tall .pcard--icon { min-height: clamp(16rem, 23vw, 20rem); }
 
 /* ---------- Cards page ---------- */
-/* Card artwork for the two option tiles is built in CSS (swap for supplied artwork later). All sizes are cqw of the tile. */
-.copts .ccard { position: absolute; left: 11cqw; top: 15cqw; width: 78cqw; aspect-ratio: 1.6; padding: 6cqw; border-radius: 4.5cqw; color: #fff; transform: rotate(24deg); transform-origin: 50% 50%; box-shadow: 0 3cqw 6cqw rgba(30, 14, 70, .35); overflow: hidden; z-index: 1; font-size: 3.2cqw; }
-.ccard--purple { background: linear-gradient(135deg, #8b79d6 0%, #6a55b5 55%, #4f3f95 100%); }
-.ccard--pink { background: linear-gradient(135deg, #d36fcf 0%, #b24bb0 55%, #8f3a93 100%); }
-.ccard::after { content: ""; position: absolute; right: -14%; top: -30%; width: 70%; aspect-ratio: 1; border-radius: 50%; background: rgba(255,255,255,.12); }
-.ccard__brand { position: absolute; left: 7%; top: 9%; font-size: 1.15em; font-weight: 700; letter-spacing: .03em; }
-.ccard__chip { position: absolute; left: 7%; top: 36%; width: 12%; aspect-ratio: 1.25; border-radius: .35em; background: linear-gradient(135deg, #f1d58a, #c9a24a); }
-.ccard__num { position: absolute; left: 7%; top: 58%; font-size: 1.2em; font-weight: 500; letter-spacing: .08em; white-space: nowrap; }
-.ccard__name { position: absolute; left: 7%; top: 76%; font-size: .78em; font-weight: 400; letter-spacing: .05em; white-space: nowrap; }
-.ccard__exp { position: absolute; right: 8%; top: 76%; font-size: .78em; white-space: nowrap; }
-
-/* Reserved media slot (lavender panel) until the artwork is supplied: fixed aspect ratio, so adding it causes no layout shift */
-.f-slot { width: 100%; aspect-ratio: 4 / 3; border-radius: 0.875rem; background: #cfc6ec; }
+/* Card artwork for the two option tiles (artwork sits at the top of each tile, text overlays the bottom) */
+.copts .a-phys { left: 0; top: -1%; width: 90%; } /* the artwork is cropped on its left edge, so it sits flush with the tile edge */
+.copts .a-virt { right: 0; top: 0; width: 80%; } /* cropped on its right edge: flush with the tile edge */
 
 /* "A card for the way you move": icon + title + text rows with hairline dividers */
 .cl { list-style: none; margin: 2rem 0 0; padding: 0; max-width: 30rem; }

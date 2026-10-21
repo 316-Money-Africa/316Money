@@ -29,8 +29,8 @@
           <p class="sec__sub"><span class="ln">Explore card options that offer more flexibility in how you pay</span> <span class="ln">and manage your money.</span></p>
         </header>
         <div class="copts">
-          <article class="pcard pcard--muted pcard--tall"><div class="ccard ccard--purple" aria-hidden="true"><b class="ccard__brand">316 MONEY</b><i class="ccard__chip"></i><span class="ccard__num">1234 5678 9000 8765</span><span class="ccard__name">CARDHOLDER NAME</span><span class="ccard__exp">09/28</span></div><div class="pcard__text"><h3>Physical cards</h3><p>Explore physical card features and eligibility.</p><a class="pcard__link" href="#eligible">Learn more <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div></article>
-          <article class="pcard pcard--muted pcard--tall"><div class="ccard ccard--pink" aria-hidden="true"><b class="ccard__brand">316 MONEY</b><i class="ccard__chip"></i><span class="ccard__num">1234 5678 9000 8765</span><span class="ccard__name">CARDHOLDER NAME</span><span class="ccard__exp">09/28</span></div><div class="pcard__text"><h3>Virtual cards</h3><p>Explore virtual card features and eligibility.</p><a class="pcard__link" href="#eligible">Learn more <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div></article>
+          <article class="pcard pcard--muted pcard--tall"><div class="pm" aria-hidden="true">{{img:Cards/physical-card class="a-phys"}}</div><div class="pcard__text"><h3>Physical cards</h3><p>Explore physical card features and eligibility.</p><a class="pcard__link" href="#eligible">Learn more <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div></article>
+          <article class="pcard pcard--muted pcard--tall"><div class="pm" aria-hidden="true">{{img:Cards/virtual-card class="a-virt"}}</div><div class="pcard__text"><h3>Virtual cards</h3><p>Explore virtual card features and eligibility.</p><a class="pcard__link" href="#eligible">Learn more <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div></article>
         </div>
       </div>
     </section>
@@ -48,8 +48,7 @@
             <li class="cl__item"><span class="cl__icon"><svg class="icon" aria-hidden="true"><use href="#i-card"/></svg></span><div><h3>Understand eligibility</h3><p>Check availability in your market.</p></div></li>
           </ul>
         </div>
-        <!-- Reserved media slot: add the hand-holding-cards artwork (assets-src/Cards/) and swap this div for the image token -->
-        <div class="split__media f-media"><div class="f-slot" role="img" aria-label="Hand holding 316 Money cards"></div></div>
+        <div class="split__media f-media">{{img:Cards/hand-cards alt="A hand holding three purple 316 Money cards" class="f-img"}}</div>
       </div>
     </section>
 
