@@ -33,6 +33,8 @@ const WIDTHS = {
   "send-money.png": 1000, "receive-money.png": 900, "uk-man.png": 760, "uk-payment.png": 520, "map.png": 1400,
   "telco-mtn.png": 300, "telco-airtel.png": 280, "telco-safaricom.png": 300,
   "wallets-card.png": 560, "money-woman.png": 900, "exchange-man.png": 1000,
+  "request-status.png": 900, "split-people.png": 900, "reminder-woman.png": 900, "reminder-bubble.png": 260,
+  "pot-progress-woman.png": 760, "pot-success.png": 420, "pot-slider.png": 700, "pot-goals.png": 800,
 };
 
 let before = 0, after = 0;

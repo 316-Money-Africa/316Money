@@ -246,3 +246,13 @@
 
 /* Plain (unfilled) eyebrow used above some hero titles */
 .pill--plain { background: transparent; color: var(--muted); padding-left: 0; font-weight: 500; letter-spacing: 0.05em; }
+
+/* ---------- Request money + Saving pots artwork ---------- */
+.rem-media, .pot-media { position: relative; }
+.rem-media .rem-bubble { position: absolute; left: 76%; top: 58%; width: 24%; height: auto; }
+.pot-media { aspect-ratio: 1.45 / 1; max-width: 33rem; }
+.pot-media::before { content: ""; position: absolute; right: -3%; bottom: -9%; width: 60%; aspect-ratio: 1; border-radius: 50%; background: #ece7fd; z-index: 0; }
+.pot-media img { position: absolute; display: block; height: auto; max-width: none; z-index: 1; }
+.pot-media .pot-panel { left: 12%; top: 0; width: 77%; border-radius: 0.75rem; }
+.pot-media .pot-success { left: -2%; top: 3%; width: 38%; }
+.pot-media .pot-slider { left: 41%; top: 47%; width: 56%; }
