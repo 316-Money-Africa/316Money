@@ -25,6 +25,8 @@ const WIDTHS = {
   "SendReceive/send-money.png": 1320, "SendReceive/receive-money.png": 1320, "SendReceive/uk-man.png": 1320, "SendReceive/uk-payment.png": 620, "SendReceive/map.png": 2784,
   "CurrencyWallets/money-woman.png": 1190, "CurrencyWallets/wallets-card.png": 710, "CurrencyWallets/exchange-man.png": 1320,
   "Pots/request-status.png": 1320, "Pots/split-people.png": 1320, "Pots/reminder-woman.png": 1320, "Pots/reminder-bubble.png": 342,
+  "Cards/physical-card.png": 900, "Cards/virtual-card.png": 900, "Cards/hand-cards.png": 1320,
+  "Features/virtual-card-3d.png": 1000, "Features/gift-logos.png": 1000, "Features/wallet-cards.png": 1000, "Features/wallet-phone.png": 900, "Features/checkout.png": 1320, "Features/save-smarter.png": 1320,
   "Pots/pot-progress-woman.png": 1120, "Pots/pot-success.png": 560, "Pots/pot-slider.png": 820, "Pots/pot-goals.png": 1320,
 };
 const QUALITY = 86; // high enough that small UI text baked into the artwork stays crisp
