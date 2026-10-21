@@ -159,7 +159,7 @@
 
 /* ----- Cross-border globe: dome clipped from a big circle; the map pans forever (seamless: map + mirror) ----- */
 .globe { position: absolute; left: 15.5%; right: 6%; bottom: 0; aspect-ratio: 1364 / 485; overflow: hidden; background: #d9d9d9; clip-path: ellipse(52.9% 148.9% at 50% 148.9%); z-index: 1; }
-.globe__track { position: absolute; top: 0; left: 0; height: 100%; width: max-content; display: flex; animation: globe-spin 80s linear infinite; will-change: transform; }
+.globe__track { position: absolute; top: 0; left: 0; height: 100%; width: max-content; display: flex; animation: globe-spin 60s linear infinite; will-change: transform; }
 .mm .globe img.globe__img { position: static; height: 100%; width: auto; flex: none; }
 @keyframes globe-spin { to { transform: translateX(-50%); } }
 .globe__pin { position: absolute; display: flex; align-items: center; }
