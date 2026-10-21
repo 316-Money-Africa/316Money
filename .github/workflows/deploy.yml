@@ -31,6 +31,7 @@ jobs:
           test -f apps/marketing-web/request-money.html
           test -f apps/marketing-web/currency-wallets.html
           test -f apps/marketing-web/saving-pots.html
+          test -f apps/marketing-web/cards.html
           test -f apps/marketing-web/styles.css
       - name: Images must be compressed (WebP, no large raw PNG/JPG)
         run: |

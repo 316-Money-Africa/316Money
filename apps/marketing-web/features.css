@@ -262,3 +262,34 @@
 .sec--roomy { padding-block: calc(var(--section-pad) * 1.35); }
 .sec--roomy .sec__head { margin-bottom: clamp(2.5rem, 6vw, 4.25rem); }
 .pgrid3--tall .pcard--icon { min-height: clamp(16rem, 23vw, 20rem); }
+
+/* ---------- Cards page ---------- */
+/* Card artwork for the two option tiles is built in CSS (swap for supplied artwork later). All sizes are cqw of the tile. */
+.copts .ccard { position: absolute; left: 11cqw; top: 15cqw; width: 78cqw; aspect-ratio: 1.6; padding: 6cqw; border-radius: 4.5cqw; color: #fff; transform: rotate(24deg); transform-origin: 50% 50%; box-shadow: 0 3cqw 6cqw rgba(30, 14, 70, .35); overflow: hidden; z-index: 1; font-size: 3.2cqw; }
+.ccard--purple { background: linear-gradient(135deg, #8b79d6 0%, #6a55b5 55%, #4f3f95 100%); }
+.ccard--pink { background: linear-gradient(135deg, #d36fcf 0%, #b24bb0 55%, #8f3a93 100%); }
+.ccard::after { content: ""; position: absolute; right: -14%; top: -30%; width: 70%; aspect-ratio: 1; border-radius: 50%; background: rgba(255,255,255,.12); }
+.ccard__brand { position: absolute; left: 7%; top: 9%; font-size: 1.15em; font-weight: 700; letter-spacing: .03em; }
+.ccard__chip { position: absolute; left: 7%; top: 36%; width: 12%; aspect-ratio: 1.25; border-radius: .35em; background: linear-gradient(135deg, #f1d58a, #c9a24a); }
+.ccard__num { position: absolute; left: 7%; top: 58%; font-size: 1.2em; font-weight: 500; letter-spacing: .08em; white-space: nowrap; }
+.ccard__name { position: absolute; left: 7%; top: 76%; font-size: .78em; font-weight: 400; letter-spacing: .05em; white-space: nowrap; }
+.ccard__exp { position: absolute; right: 8%; top: 76%; font-size: .78em; white-space: nowrap; }
+
+/* Reserved media slot (lavender panel) until the artwork is supplied: fixed aspect ratio, so adding it causes no layout shift */
+.f-slot { width: 100%; aspect-ratio: 4 / 3; border-radius: 0.875rem; background: #cfc6ec; }
+
+/* "A card for the way you move": icon + title + text rows with hairline dividers */
+.cl { list-style: none; margin: 2rem 0 0; padding: 0; max-width: 30rem; }
+.cl__item { display: flex; align-items: center; gap: 1rem; padding: 1rem 0; border-top: 0.0625rem solid rgba(60, 40, 140, .14); }
+.cl__item:first-child { border-top: 0; padding-top: 0; }
+.cl__icon { flex: none; display: grid; place-items: center; width: 2.25rem; height: 2.25rem; border-radius: 50%; color: var(--brand); }
+.cl__icon .icon { width: 1.25rem; height: 1.25rem; }
+.cl__item h3 { margin: 0; font-size: clamp(1rem, 0.95rem + 0.3vw, 1.1875rem); font-weight: 600; color: var(--plum); }
+.cl__item p { margin: 0.2rem 0 0; font-size: 0.8125rem; line-height: 1.4; color: var(--muted); }
+.split__copy .cl p { max-width: none; margin: 0.2rem 0 0; font-size: 0.8125rem; }
+
+/* Two purple eligibility cards, centred */
+.pgrid2 { display: grid; grid-template-columns: 1fr; gap: 1rem; max-width: 46rem; margin-inline: auto; }
+.pgrid2 .pcard--icon { min-height: clamp(15rem, 22vw, 18rem); }
+.pgrid2 .pcard--icon .pcard__text p { max-width: none; }
+@media (min-width: 40rem) { .pgrid2 { grid-template-columns: 1fr 1fr; } }
