@@ -377,16 +377,16 @@
 /* Gift cards: the four category tiles (Shopping, Cryptocurrency, Entertainment, Gaming) */
 .tiles--cat .tile { min-height: clamp(15rem, 25vw, 19rem); }
 .c-shop { left: 18%; bottom: 3%; width: 64%; }
-.c-coin { height: auto; }
-.c-btc { right: 9%; top: 33%; width: 14%; }
-.c-eth { right: 3%; top: 56%; width: 6%; border-radius: 50%; }
-.c-ton { left: 18%; bottom: 10%; width: 17%; }
-.c-sol { right: 16%; bottom: 8%; width: 17%; }
+.c-coin { height: auto; transform: translate(-50%, -50%); }
+.c-btc { left: 68.5%; top: 52%; width: 15.7%; }
+.c-eth { left: 96%; top: 53%; width: 17.5%; border-radius: 50%; box-shadow: 0 0.5rem 1rem rgba(20, 8, 60, .3); }
+.c-ton { left: 49.5%; top: 79%; width: 15.7%; }
+.c-sol { left: 80.5%; top: 79%; width: 15.7%; }
 .c-music { left: 22%; bottom: 0; width: 42%; }
-.c-game { bottom: -12%; width: 31%; }
-.c-g1 { left: 4%; }
-.c-g2 { left: 34%; }
-.c-g3 { left: 65%; }
+.c-game { bottom: 4%; width: 28%; }
+.c-g1 { left: 0.5%; }
+.c-g2 { left: 30%; width: 31%; }
+.c-g3 { left: 62.5%; }
 
 /* keep the turning gift grid clear of the tile text */
 .copts .pcard:first-child .pm { clip-path: inset(0 0 34% 0); }
