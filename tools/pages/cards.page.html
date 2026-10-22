@@ -1,14 +1,14 @@
-<!--page title="Explore cards · 316 Money" description="Discover card options designed to give you more ways to pay, manage your everyday spending and enjoy greater flexibility when accessing your money with 316 Money." preload="assets/Home/hero.webp" css="features.css"-->
+<!--page title="Explore cards · 316 Money" description="Explore virtual card options for online payments and digital gift cards for the things you love, with 316 Money." preload="assets/Home/hero.webp" css="features.css"-->
     <!-- 1 · Hero (gradient white -> lavender) -->
     <section class="hero hero--features" aria-labelledby="cd-hero-title">
       <div class="container hero__inner">
         <div class="hero__copy">
           <span class="pill">Cards</span>
           <h1 id="cd-hero-title" class="hero__title hero__title--lines">
-            <span class="ln">Your money,</span>
-            <span class="ln">ready <span class="accent">when you are</span></span>
+            <span class="ln">More ways <span class="accent">to pay,</span></span>
+            <span class="ln">more ways <span class="accent">to give</span></span>
           </h1>
-          <p class="hero__lead"><span class="ln">Discover card options designed to give you more ways to pay,</span> <span class="ln">manage your everyday spending, and enjoy greater flexibility</span> <span class="ln">when accessing your money with 316 Money.</span></p>
+          <p class="hero__lead"><span class="ln">Explore virtual card options for online payments</span> <span class="ln">and digital gift cards for the things you love.</span></p>
           <div class="hero__cta">
             <a class="btn btn--primary btn--sm-rect" href="features.html">Explore features <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
             <a class="btn btn--light btn--sm-rect" href="#download">Download the app</a>
@@ -24,66 +24,83 @@
     <section class="sec sec--white" id="options" aria-labelledby="opt-title">
       <div class="wrap">
         <header class="sec__head">
-          <span class="pill">Explore options</span>
-          <h2 id="opt-title" class="sec__title"><span class="ln">Find a card option</span> <span class="ln accent">that fits your needs</span></h2>
+          <span class="pill">Explore your options</span>
+          <h2 id="opt-title" class="sec__title"><span class="ln">Find a card option</span> <span class="ln">that <span class="accent">fits your needs</span></span></h2>
           <p class="sec__sub"><span class="ln">Explore card options that offer more flexibility in how you pay</span> <span class="ln">and manage your money.</span></p>
         </header>
         <div class="copts">
-          <article class="pcard pcard--muted pcard--tall"><div class="pm" aria-hidden="true">{{img:Cards/physical-card class="a-phys"}}</div><div class="pcard__text"><h3>Physical cards</h3><p>Explore physical card features and eligibility.</p><a class="pcard__link" href="#eligible">Learn more <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div></article>
-          <article class="pcard pcard--muted pcard--tall"><div class="pm" aria-hidden="true">{{img:Cards/virtual-card class="a-virt"}}</div><div class="pcard__text"><h3>Virtual cards</h3><p>Explore virtual card features and eligibility.</p><a class="pcard__link" href="#eligible">Learn more <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div></article>
+          <article class="pcard pcard--muted pcard--tall"><div class="pm" aria-hidden="true">{{img:Features/gift-logos class="a-gift2"}}</div><div class="pcard__text"><h3>Gift cards</h3><p>Explore gift card features and eligibility.</p><a class="pcard__link" href="#gifts">Learn more <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div></article>
+          <article class="pcard pcard--muted pcard--tall"><div class="pm" aria-hidden="true">{{img:Cards/virtual-card class="a-virt"}}</div><div class="pcard__text"><h3>Virtual cards</h3><p>Explore virtual card features and eligibility.</p><a class="pcard__link" href="#control">Learn more <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div></article>
         </div>
       </div>
     </section>
 
-    <!-- 3 · A card for the way you move (lavender) -->
-    <section class="sec sec--tint" id="move" aria-labelledby="move-title">
-      <div class="wrap split">
-        <div class="split__copy">
-          <span class="pill">Card benefits</span>
-          <h2 id="move-title" class="split__title split__title--pill"><span class="ln">A card for the</span> <span class="ln accent">way you move</span></h2>
-          <p><span class="ln">Get paid or receive a little appreciation,</span> <span class="ln">with every payment clearly tracked.</span></p>
-          <ul class="cl">
-            <li class="cl__item"><span class="cl__icon"><svg class="icon" aria-hidden="true"><use href="#i-card"/></svg></span><div><h3>A convenient way to pay</h3><p>Explore supported card payment features.</p></div></li>
-            <li class="cl__item"><span class="cl__icon"><svg class="icon" aria-hidden="true"><use href="#i-card"/></svg></span><div><h3>Manage your card</h3><p>Learn about available card controls.</p></div></li>
-            <li class="cl__item"><span class="cl__icon"><svg class="icon" aria-hidden="true"><use href="#i-card"/></svg></span><div><h3>Understand eligibility</h3><p>Check availability in your market.</p></div></li>
-          </ul>
-        </div>
-        <div class="split__media f-media">{{img:Cards/hand-cards alt="A hand holding three purple 316 Money cards" class="f-img"}}</div>
-      </div>
-    </section>
-
-    <!-- 4 · Start with 316 Money (white) -->
-    <section class="sec sec--white sec--roomy" id="start" aria-labelledby="start-title">
+    <!-- 3 · Your card, your control (lavender) -->
+    <section class="sec sec--tint" id="control" aria-labelledby="ctl-title">
       <div class="wrap">
         <header class="sec__head">
-          <span class="pill">Get started</span>
+          <span class="pill">Virtual cards</span>
+          <h2 id="ctl-title" class="sec__title"><span class="ln">Your card,</span> <span class="ln accent">your control</span></h2>
+          <p class="sec__sub"><span class="ln">Manage your virtual card with features designed to</span> <span class="ln">give you greater control, flexibility, and peace of mind.</span></p>
+        </header>
+        <!-- Artwork slots (.tile__art) are reserved: add the images later without any layout shift -->
+        <ul class="tiles">
+          <li class="pcard tile"><div class="pcard__text"><h3>Lock your card anytime</h3><p><span class="ln">Temporarily lock your card when you need to restrict its use,</span> <span class="ln">and unlock it when you’re ready.</span></p><a class="pcard__link" href="#">Explore feature <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div><div class="tile__art" aria-hidden="true"></div></li>
+          <li class="pcard tile"><div class="pcard__text"><h3>Stay in control</h3><p><span class="ln">Access your card settings and manage the options</span> <span class="ln">available to you.</span></p><a class="pcard__link" href="#">Explore feature <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div><div class="tile__art" aria-hidden="true"></div></li>
+          <li class="pcard tile"><div class="pcard__text"><h3>An extra layer of security</h3><p><span class="ln">Manage available security controls to help keep your</span> <span class="ln">card protected.</span></p><a class="pcard__link" href="#">Explore feature <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div><div class="tile__art" aria-hidden="true"></div></li>
+          <li class="pcard tile"><div class="pcard__text"><h3>Always know where you stand</h3><p><span class="ln">Check your card’s current status and see the options</span> <span class="ln">available to you.</span></p><a class="pcard__link" href="#">Explore feature <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div><div class="tile__art" aria-hidden="true"></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 4 · Gifts made simple (white) -->
+    <section class="sec sec--white" id="gifts" aria-labelledby="gift-title">
+      <div class="wrap">
+        <header class="sec__head">
+          <span class="pill">Digital gift cards</span>
+          <h2 id="gift-title" class="sec__title"><span class="ln">Gifts made <span class="accent">simple</span></span></h2>
+          <p class="sec__sub"><span class="ln">Explore digital gift cards available through 316 Money</span> <span class="ln">and find an option that suits the occasion.</span></p>
+        </header>
+        <ul class="tiles tiles--bento">
+          <li class="pcard tile tile--tall"><div class="pcard__text"><h3>Find a gift worth sharing</h3><p><span class="ln">Choose a gift card they’ll love and make every occasion feel</span> <span class="ln">special.</span></p><a class="pcard__link" href="#">Explore feature <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div><div class="tile__art" aria-hidden="true"></div></li>
+          <li class="pcard tile"><div class="pcard__text"><h3>Explore your favourites</h3><p><span class="ln">Discover gift cards from your favourite brands,</span> <span class="ln">all in one place.</span></p><a class="pcard__link" href="#">Explore feature <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div><div class="tile__art" aria-hidden="true"></div></li>
+          <li class="pcard tile"><div class="pcard__text"><h3>Keep track of your purchase</h3><p><span class="ln">View your gift card purchases, check transaction</span> <span class="ln">details, and keep your spending organised in one</span> <span class="ln">place.</span></p><a class="pcard__link" href="#">Explore feature <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div><div class="tile__art" aria-hidden="true"></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 5 · Start with 316 Money (lavender) -->
+    <section class="sec sec--tint sec--roomy" id="start" aria-labelledby="start-title">
+      <div class="wrap">
+        <header class="sec__head">
+          <span class="pill">Getting started</span>
           <h2 id="start-title" class="sec__title"><span class="ln">Start with</span> <span class="ln accent">316 Money</span></h2>
-          <p class="sec__sub"><span class="ln">Make receiving from the UK feel straightforward,</span> <span class="ln">with the details and guidance you need in a clear flow.</span></p>
+          <p class="sec__sub"><span class="ln">Get started with 316 Money in a few simple steps and discover</span> <span class="ln">a more flexible way to manage and use your money.</span></p>
         </header>
         <ul class="rq">
           <li class="rq__card"><span class="rq__icon"><svg class="icon"><use href="#i-download"/></svg></span><h3>Download the app</h3><p>Get started with 316 Money.</p></li>
           <li class="rq__card"><span class="rq__icon"><svg class="icon"><use href="#i-gear"/></svg></span><h3>Set up your account</h3><p>Complete any required checks.</p></li>
-          <li class="rq__card"><span class="rq__icon"><svg class="icon"><use href="#i-list"/></svg></span><h3>Check card options</h3><p>Explore the options available.</p></li>
+          <li class="rq__card"><span class="rq__icon"><svg class="icon"><use href="#i-list"/></svg></span><h3>Check your options</h3><p>Explore the card options available.</p></li>
         </ul>
       </div>
     </section>
 
-    <!-- 5 · Find your eligible card (lavender) -->
-    <section class="sec sec--tint" id="eligible" aria-labelledby="elig-title">
+    <!-- 6 · Is a virtual card available to you? (white) -->
+    <section class="sec sec--white" id="location" aria-labelledby="loc-title">
       <div class="wrap">
         <header class="sec__head">
-          <span class="pill">Eligibility matters</span>
-          <h2 id="elig-title" class="sec__title"><span class="ln">Find your</span> <span class="ln accent">eligible card</span></h2>
-          <p class="sec__sub"><span class="ln">Availability depends on your location and eligibility.</span> <span class="ln">Check your local options before getting started.</span></p>
+          <span class="pill">Your location matters</span>
+          <h2 id="loc-title" class="sec__title"><span class="ln">Is a virtual card</span> <span class="ln accent">available to you?</span></h2>
+          <p class="sec__sub"><span class="ln">Check the location and account requirements for the</span> <span class="ln">virtual card options available through 316 Money.</span></p>
         </header>
-        <ul class="pgrid2">
-          <li class="pcard pcard--icon"><span class="pcard__icon"><svg class="icon"><use href="#i-globe"/></svg></span><div class="pcard__text"><h3>Availability card options</h3><p><span class="ln">Card availability may vary by country</span> <span class="ln">and region.</span></p><a class="pcard__link" href="#">Check availability <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div></li>
-          <li class="pcard pcard--icon"><span class="pcard__icon"><svg class="icon"><use href="#i-check-circle"/></svg></span><div class="pcard__text"><h3>Eligibility requirements</h3><p><span class="ln">Check account and verification</span> <span class="ln">requirements for each card.</span></p><a class="pcard__link" href="#">Check requirements <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div></li>
+        <ul class="tiles tiles--wide">
+          <li class="pcard tile"><div class="pcard__text"><h3>Cards that fit your location</h3><p><span class="ln">Explore virtual card options and check whether they’re</span> <span class="ln">available where you live.</span></p><a class="pcard__link" href="#">Explore locations <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div><div class="tile__art" aria-hidden="true"></div></li>
+          <li class="pcard tile"><div class="pcard__text"><h3>Discover available gift cards</h3><p><span class="ln">Browse gift card options available to you, with selection</span> <span class="ln">depending on your location and provider availability.</span></p><a class="pcard__link" href="#">Browse catalogue <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div><div class="tile__art" aria-hidden="true"></div></li>
         </ul>
       </div>
     </section>
 
-    <!-- 6 · FAQ (white) -->
+    <!-- 7 · FAQ (white) -->
     <section class="sec sec--white" id="faq" aria-labelledby="faq-title">
       <div class="wrap faq">
         <div class="faq__intro">
@@ -94,10 +111,11 @@
           </div>
         </div>
         <div class="faq__list">
-          <details><summary>What card options are available?</summary><p>316 Money offers physical and virtual card options. Which ones you can use depends on your location and eligibility.</p></details>
-          <details><summary>Are cards available in my country?</summary><p>Card availability varies by country and region. Check the options for your market in the app before getting started.</p></details>
-          <details><summary>Can I manage my card in the app?</summary><p>Yes. Where card controls are available for your card, you can manage them from the 316 Money app.</p></details>
-          <details><summary>What are the eligibility requirements?</summary><p>Requirements depend on the card and your market, and may include account and verification checks. The app shows what applies to you.</p></details>
+          <details><summary>What’s the difference between virtual cards and gift cards?</summary><p>A virtual card is a digital card linked to your 316 Money account that you can use for online payments. A gift card is a prepaid digital card from a brand, bought to give or to spend with that brand.</p></details>
+          <details><summary>How do virtual cards work?</summary><p>Where available for your account, you can create a virtual card in the app, use its details for online payments, and manage it with the card controls shown in the app.</p></details>
+          <details><summary>How can I explore available gift cards?</summary><p>Browse the gift card catalogue in the 316 Money app. The brands shown depend on your location and provider availability.</p></details>
+          <details><summary>Are virtual cards available in every country?</summary><p>No. Virtual card availability depends on your location and account eligibility. The app shows the options available to you.</p></details>
+          <details><summary>Are all gift cards available in my location?</summary><p>Not always. The gift cards you can see depend on your location and on what each provider makes available there.</p></details>
         </div>
       </div>
     </section>

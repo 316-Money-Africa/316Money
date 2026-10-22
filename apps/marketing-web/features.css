@@ -266,8 +266,8 @@
 
 /* ---------- Cards page ---------- */
 /* Card artwork for the two option tiles (artwork sits at the top of each tile, text overlays the bottom) */
-.copts .a-phys { left: 0; top: -1%; width: 90%; } /* the artwork is cropped on its left edge, so it sits flush with the tile edge */
-.copts .a-virt { right: 0; top: 0; width: 80%; } /* cropped on its right edge: flush with the tile edge */
+.copts .a-gift2 { left: -8%; top: 6%; width: 140%; } /* gift-card grid, cropped by the tile like the design */
+.copts .a-virt { right: 0; top: 0; width: 88%; } /* artwork is cropped on its right edge: flush with the tile edge */
 
 /* "A card for the way you move": icon + title + text rows with hairline dividers */
 .cl { list-style: none; margin: 2rem 0 0; padding: 0; max-width: 30rem; }
@@ -284,3 +284,18 @@
 .pgrid2 .pcard--icon { min-height: clamp(15rem, 22vw, 18rem); }
 .pgrid2 .pcard--icon .pcard__text p { max-width: none; }
 @media (min-width: 40rem) { .pgrid2 { grid-template-columns: 1fr 1fr; } }
+
+/* Cards page: feature tiles (text top-left, a reserved artwork area underneath, fixed heights so adding images never shifts the layout) */
+.tiles { list-style: none; margin: 0 auto; padding: 0; display: grid; grid-template-columns: 1fr; gap: 1rem; max-width: 64rem; }
+.tile { justify-content: flex-start; gap: 0; min-height: clamp(13rem, 24vw, 17.5rem); padding: clamp(1.125rem, 2.4vw, 1.75rem); }
+.tile .pcard__text { position: relative; z-index: 2; }
+.tile h3 { font-size: clamp(1.0625rem, 0.9rem + 0.6vw, 1.4rem); }
+.tile p { max-width: none; }
+.tile__art { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.tiles--wide .tile { min-height: clamp(11.5rem, 17vw, 14rem); }
+@media (min-width: 40rem) {
+  .tiles { grid-template-columns: 1fr 1fr; }
+  .tiles--bento { grid-template-columns: 1.05fr 1fr; }
+  .tiles--bento .tile { min-height: clamp(12rem, 17vw, 14.5rem); }
+  .tiles--bento .tile--tall { grid-row: span 2; min-height: 0; }
+}
