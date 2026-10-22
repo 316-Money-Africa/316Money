@@ -25,7 +25,11 @@ const WIDTHS = {
   "SendReceive/send-money.png": 1320, "SendReceive/receive-money.png": 1320, "SendReceive/uk-man.png": 1320, "SendReceive/uk-payment.png": 620, "SendReceive/map.png": 2784,
   "CurrencyWallets/money-woman.png": 1190, "CurrencyWallets/wallets-card.png": 710, "CurrencyWallets/exchange-man.png": 1320,
   "Pots/request-status.png": 1320, "Pots/split-people.png": 1320, "Pots/reminder-woman.png": 1320, "Pots/reminder-bubble.png": 342,
-  "Cards/physical-card.png": 900, "Cards/virtual-card.png": 900, "Cards/hand-cards.png": 1320,
+  "Cards/virtual-card-tilt.png": 600, "Cards/gift-grid.png": 640, "Cards/spending-limits.png": 640, "Cards/lock-card.png": 640, "Cards/change-pin.png": 460, "Cards/card-status.png": 720, "Cards/cards-fan.png": 720, "Cards/purchases.png": 620, "Cards/gift-phone.png": 560, "Cards/woman-phone.png": 480,
+  "Cards/vc-lock.png": 640, "Cards/vc-security.png": 640, "Cards/vc-manage.png": 440, "Cards/vc-verified.png": 400, "Cards/vc-woman.png": 640, "Cards/vc-arch.png": 640,
+  "Cards/pin-ng.png": 200, "Cards/pin-ke.png": 200, "Cards/pin-uk.png": 160, "Cards/pin-cm.png": 160, "Cards/pin-us.png": 200,
+  "Cards/gift-family.png": 1000, "Cards/gift-browse.png": 336, "Cards/man-yellow.png": 640,
+  "Cards/logo-mastercard.png": 200, "Cards/logo-visa.png": 200, "Cards/logo-netflix.png": 200, "Cards/logo-switch.png": 200,
   "Features/virtual-card-3d.png": 1000, "Features/gift-logos.png": 1000, "Features/wallet-cards.png": 1000, "Features/wallet-phone.png": 900, "Features/checkout.png": 1320, "Features/save-smarter.png": 1320,
   "Pots/pot-progress-woman.png": 1120, "Pots/pot-success.png": 560, "Pots/pot-slider.png": 820, "Pots/pot-goals.png": 1320,
 };
@@ -33,7 +37,7 @@ const QUALITY = 86; // high enough that small UI text baked into the artwork sta
 
 let before = 0, after = 0;
 // every folder in assets-src/ (one per page) maps to the same folder in the served assets
-for (const dir of readdirSync(SRC_ROOT).filter((n) => statSync(join(SRC_ROOT, n)).isDirectory())) {
+for (const dir of readdirSync(SRC_ROOT).filter((n) => !n.startsWith("_") && statSync(join(SRC_ROOT, n)).isDirectory())) { // folders starting with "_" hold supplied-but-unused originals and are skipped
   const SRC = join(SRC_ROOT, dir), OUT = join(OUT_ROOT, dir);
   mkdirSync(OUT, { recursive: true });
   for (const f of readdirSync(SRC).filter((n) => /\.(png|jpe?g)$/i.test(n))) {
