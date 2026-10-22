@@ -361,24 +361,35 @@
 .wheel-svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
 
 /* Explore cards: the gift-card grid in "Find a card option" stays still */
-.copts .a-gift2 { left: 16%; top: -1%; right: auto; width: 68%; animation: none; transform: none; } /* zoomed out so most of the grid shows; the tile text area stays clear (clipped below) */
+.copts .a-gift2 { left: auto; right: 0; top: -5%; width: 90%; animation: none; transform: none; } /* zoomed out so most of the grid shows; the tile text area stays clear (clipped below) */
 
 @media (prefers-reduced-motion: reduce) {
   .v-pin, .v-arcs path, .t-lg { animation: none; }
 }
 
-/* Gift cards: tilted flag cards in the bottom-left of the Check availability tile; they drift diagonally, in two different directions */
+/* Gift cards: tilted flag cards (still) in the bottom-left of the Check availability tile */
 .g-flag { transform: translate(-50%, -50%) rotate(var(--r, 0deg)); box-shadow: 0 0.35rem 0.8rem rgba(20, 8, 60, .3); border-radius: 0.45rem; }
-.g-fke { left: 14%; top: 63%; width: 16.5%; --r: -24deg; animation: flag-drift-a 5s ease-in-out infinite; }
-.g-fgb { left: 27%; top: 81%; width: 19%; --r: -30deg; animation: flag-drift-a 5s ease-in-out infinite; animation-delay: -2.5s; }
-.g-fus { left: 7%; top: 86%; width: 18%; --r: 28deg; animation: flag-drift-b 5s ease-in-out infinite; }
-.g-fng { left: 20%; top: 94%; width: 15%; --r: 30deg; animation: flag-drift-b 5s ease-in-out infinite; animation-delay: -2.5s; }
-@keyframes flag-drift-a { 0%, 100% { translate: 0 0; } 50% { translate: 0.9rem -0.9rem; } } /* up and to the right */
-@keyframes flag-drift-b { 0%, 100% { translate: 0 0; } 50% { translate: -0.9rem -0.9rem; } } /* up and to the left */
-@media (prefers-reduced-motion: reduce) { .g-flag { animation: none; } }
+.g-fke { left: 16%; top: 60%; width: 15%; --r: 26deg; }
+.g-fgb { left: 28%; top: 82%; width: 16%; --r: 36deg; }
+.g-fus { left: 7%; top: 84%; width: 14%; --r: 30deg; }
+.g-fng { left: 18%; top: 97%; width: 15%; --r: -12deg; }
+
+/* Gift cards: the four category tiles (Shopping, Cryptocurrency, Entertainment, Gaming) */
+.tiles--cat .tile { min-height: clamp(15rem, 25vw, 19rem); }
+.c-shop { left: 18%; bottom: 3%; width: 64%; }
+.c-coin { height: auto; }
+.c-btc { right: 9%; top: 33%; width: 14%; }
+.c-eth { right: 3%; top: 56%; width: 6%; border-radius: 50%; }
+.c-ton { left: 18%; bottom: 10%; width: 17%; }
+.c-sol { right: 16%; bottom: 8%; width: 17%; }
+.c-music { left: 22%; bottom: 0; width: 42%; }
+.c-game { bottom: -12%; width: 31%; }
+.c-g1 { left: 4%; }
+.c-g2 { left: 34%; }
+.c-g3 { left: 65%; }
 
 /* keep the turning gift grid clear of the tile text */
-.copts .pcard:first-child .pm { clip-path: inset(0 0 36% 0); }
+.copts .pcard:first-child .pm { clip-path: inset(0 0 34% 0); }
 
 
 /* Explore cards: the fanned virtual cards are dealt in from the left side like playing cards, then settle, and repeat */
