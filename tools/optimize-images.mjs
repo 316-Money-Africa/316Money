@@ -25,15 +25,16 @@ const WIDTHS = {
   "SendReceive/send-money.png": 1320, "SendReceive/receive-money.png": 1320, "SendReceive/uk-man.png": 1320, "SendReceive/uk-payment.png": 620, "SendReceive/map.png": 2784,
   "CurrencyWallets/money-woman.png": 1190, "CurrencyWallets/wallets-card.png": 710, "CurrencyWallets/exchange-man.png": 1320,
   "Pots/request-status.png": 1320, "Pots/split-people.png": 1320, "Pots/reminder-woman.png": 1320, "Pots/reminder-bubble.png": 342,
-  "Cards/virtual-card-tilt.png": 600, "Cards/gift-grid.png": 640, "Cards/spending-limits.png": 640, "Cards/lock-card.png": 640, "Cards/change-pin.png": 460, "Cards/card-status.png": 720, "Cards/cards-fan.png": 720, "Cards/purchases.png": 620, "Cards/gift-phone.png": 560, "Cards/woman-phone.png": 480,
-  "Cards/vc-lock.png": 640, "Cards/vc-security.png": 640, "Cards/vc-manage.png": 440, "Cards/vc-verified.png": 400, "Cards/vc-woman.png": 640, "Cards/vc-arch.png": 640,
-  "Cards/pin-ng.png": 200, "Cards/pin-ke.png": 200, "Cards/pin-uk.png": 160, "Cards/pin-cm.png": 160, "Cards/pin-us.png": 200,
-  "Cards/gift-family.png": 1000, "Cards/gift-browse.png": 336, "Cards/man-yellow.png": 640,
-  "Cards/logo-mastercard.png": 200, "Cards/logo-visa.png": 200, "Cards/logo-netflix.png": 200, "Cards/logo-switch.png": 200,
-  "Features/virtual-card-3d.png": 1000, "Features/gift-logos.png": 1000, "Features/wallet-cards.png": 1000, "Features/wallet-phone.png": 900, "Features/checkout.png": 1320, "Features/save-smarter.png": 1320,
+  "Cards/virtual-card-tilt.png": 900, "Cards/gift-grid.png": 1100, "Cards/spending-limits.png": 1228, "Cards/lock-card.png": 998, "Cards/change-pin.png": 744, "Cards/card-status.png": 993, "Cards/cards-fan.png": 1111, "Cards/purchases.png": 926, "Cards/gift-phone.png": 768, "Cards/woman-phone.png": 872,
+  "Cards/gift-family.png": 1400, "Cards/gift-browse.png": 332, "Cards/man-yellow.png": 977,
+  "Cards/logo-mastercard.png": 294, "Cards/logo-visa.png": 294, "Cards/logo-netflix.png": 294, "Cards/logo-switch.png": 294,
+  "Cards/vc-lock.png": 1084, "Cards/vc-security.png": 1016, "Cards/vc-manage.png": 747, "Cards/vc-verified.png": 664, "Cards/vc-woman.png": 1245,
+  "Cards/pin-ng.png": 278, "Cards/pin-ke.png": 320, "Cards/pin-uk.png": 199, "Cards/pin-cm.png": 226, "Cards/pin-us.png": 342,
+  "Cards/gift-tile-amazon.png": 405, "Cards/gift-tile-binance.png": 405, "Cards/gift-tile-apple.png": 405, "Cards/gift-tile-shein.png": 405, "Cards/gift-tile-ea.png": 405, "Cards/gift-tile-mastercard.png": 405, "Cards/gift-tile-netflix.png": 405,
   "Pots/pot-progress-woman.png": 1120, "Pots/pot-success.png": 560, "Pots/pot-slider.png": 820, "Pots/pot-goals.png": 1320,
 };
-const QUALITY = 86; // high enough that small UI text baked into the artwork stays crisp
+const QUALITY = 86;
+const FOLDER_QUALITY = { Cards: 92 }; // card artwork carries small UI text, so it keeps more detail // high enough that small UI text baked into the artwork stays crisp
 
 let before = 0, after = 0;
 // every folder in assets-src/ (one per page) maps to the same folder in the served assets
@@ -45,7 +46,7 @@ for (const dir of readdirSync(SRC_ROOT).filter((n) => !n.startsWith("_") && stat
     const meta = await sharp(input).metadata();
     const width = Math.min(meta.width, WIDTHS[`${dir}/${f}`] ?? 1200);
     const out = join(OUT, parse(f).name + ".webp");
-    const info = await sharp(input).resize({ width }).webp({ quality: QUALITY, alphaQuality: 90, effort: 6 }).toFile(out);
+    const info = await sharp(input).resize({ width }).webp({ quality: FOLDER_QUALITY[dir] ?? QUALITY, alphaQuality: 90, effort: 6 }).toFile(out);
     before += statSync(input).size; after += info.size;
     console.log(`${dir}/${f.padEnd(24)} ${meta.width}x${meta.height} -> ${info.width}x${info.height}  ${(statSync(input).size / 1024).toFixed(0)}KB -> ${(info.size / 1024).toFixed(0)}KB`);
   }
