@@ -382,3 +382,18 @@
 
 /* keep the turning gift grid clear of the tile text */
 .copts .pcard:first-child .pm { clip-path: inset(0 0 40% 0); }
+
+/* Gift cards option tile: all seven cards ride a ring that turns clockwise (above the tile text) */
+.copts .pm.tile__art--wheel { container-type: inline-size; }
+.wheel--ring { bottom: auto; top: 31%; width: 80cqw; height: 80cqw; margin-left: -40cqw; margin-top: -40cqw; animation-duration: 36s; }
+.wheel--ring .wtile { width: 23cqw; margin-left: -11.5cqw; transform-origin: 50% 40cqw; }
+
+/* Explore cards: the fanned virtual cards are dealt in from the left side like playing cards, then settle, and repeat */
+.t-fan { transform-origin: 0% 100%; animation: cards-deal 7s cubic-bezier(.22,.8,.3,1) infinite; }
+@keyframes cards-deal {
+  0%   { transform: translateX(-60%) rotate(-24deg); opacity: 0; }
+  16%  { transform: translateX(0) rotate(0deg); opacity: 1; }
+  82%  { transform: translateX(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateX(-12%) rotate(-6deg); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .t-fan { animation: none; } }
