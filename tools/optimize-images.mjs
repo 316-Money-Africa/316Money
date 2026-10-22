@@ -27,6 +27,7 @@ const WIDTHS = {
   "Pots/request-status.png": 1320, "Pots/split-people.png": 1320, "Pots/reminder-woman.png": 1320, "Pots/reminder-bubble.png": 342,
   "Cards/virtual-card-tilt.png": 900, "Cards/gift-grid.png": 1100, "Cards/spending-limits.png": 1228, "Cards/lock-card.png": 998, "Cards/change-pin.png": 744, "Cards/card-status.png": 993, "Cards/cards-fan.png": 1111, "Cards/purchases.png": 926, "Cards/gift-phone.png": 768, "Cards/woman-phone.png": 872,
   "Cards/gift-family.png": 1400, "Cards/gift-browse.png": 332, "Cards/man-yellow.png": 977,
+  "Cards/gift-ps4.png": 1100, "Cards/gift-xbox.png": 1058, "Cards/gift-eth.png": 300, "Cards/gift-btc.png": 420, "Cards/gift-ton.png": 420, "Cards/gift-sol.png": 420, "Cards/gift-shop.png": 1240, "Cards/gift-music.png": 974, "Cards/gift-headset.png": 529,
   "Cards/logo-mastercard.png": 294, "Cards/logo-visa.png": 294, "Cards/logo-netflix.png": 294, "Cards/logo-switch.png": 294,
   "Cards/vc-lock.png": 1084, "Cards/vc-security.png": 1016, "Cards/vc-manage.png": 747, "Cards/vc-verified.png": 664, "Cards/vc-woman.png": 1245,
   "Cards/pin-ng.png": 278, "Cards/pin-ke.png": 320, "Cards/pin-uk.png": 199, "Cards/pin-cm.png": 226, "Cards/pin-us.png": 342,
