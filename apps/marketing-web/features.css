@@ -356,21 +356,15 @@
 .t-lg { animation: logo-float 3.6s ease-in-out infinite; }
 .t-mc { animation-delay: -0.9s; } .t-nf { animation-delay: -1.8s; } .t-sw { animation-delay: -2.7s; }
 
-/* Explore cards: gift cards travel clockwise round a wheel, like dealt cards.
-   Built from plain percentages and the individual rotate/translate properties (no container units in transform-origin),
-   so every card lands on its own spot of the wheel in every browser. */
-.wheel { position: absolute; left: 50%; top: 100%; width: 116%; aspect-ratio: 1; margin-top: 12%; translate: -50% -50%; animation: wheel-turn 70s linear infinite; }
-.wspoke { position: absolute; inset: 0; rotate: var(--a); }
-.wtile { position: absolute; left: 50%; top: 0; width: 18.5%; translate: -50% 0; padding: 1.3%; box-sizing: border-box; border-radius: 12%; background: rgba(34, 18, 84, .22); box-shadow: 0 0.6rem 1.2rem rgba(24, 10, 70, .28); }
-.wtile img { position: static; display: block; width: 100%; height: auto; border-radius: 9%; }
-@keyframes wheel-turn { to { rotate: 360deg; } }
+/* Explore cards: gift cards travel clockwise round a wheel, like dealt cards. It is a plain inline SVG turned by SMIL
+   (no CSS transform tricks), so it renders and moves the same in every browser; it is anchored to the tile's bottom edge. */
+.wheel-svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
 
-/* Explore cards: the gift-card grid in "Find a card option" turns slowly clockwise */
-.copts .a-gift2 { left: 50%; top: 34%; right: auto; width: 112%; margin: 0; transform: translate(-50%, -50%); transform-origin: 50% 50%; animation: grid-turn 80s linear infinite; }
-@keyframes grid-turn { to { transform: translate(-50%, -50%) rotate(360deg); } }
+/* Explore cards: the gift-card grid in "Find a card option" stays still */
+.copts .a-gift2 { left: -8%; top: 3%; right: auto; width: 140%; animation: none; transform: none; } /* static grid, as in the design; the tile text area stays clear (clipped below) */
 
 @media (prefers-reduced-motion: reduce) {
-  .v-pin, .v-arcs path, .t-lg, .wheel, .copts .a-gift2 { animation: none; }
+  .v-pin, .v-arcs path, .t-lg { animation: none; }
 }
 
 /* Gift cards: tilted flag cards in the bottom-left of the Check availability tile; they drift diagonally, in two different directions */
