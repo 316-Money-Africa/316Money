@@ -299,3 +299,6 @@
   .tiles--bento .tile { min-height: clamp(12rem, 17vw, 14.5rem); }
   .tiles--bento .tile--tall { grid-row: span 2; min-height: 0; }
 }
+
+/* Reserved media slot (lavender panel) until the artwork is supplied: fixed aspect ratio, so adding it causes no layout shift */
+.f-slot { width: 100%; aspect-ratio: 5 / 4; border-radius: 0.875rem; background: #cfc6ec; }
