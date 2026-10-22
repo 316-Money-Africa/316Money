@@ -296,7 +296,7 @@
 @media (min-width: 40rem) {
   .tiles { grid-template-columns: 1fr 1fr; }
   .tiles--bento { grid-template-columns: 1.05fr 1fr; }
-  .tiles--bento .tile { min-height: clamp(14rem, 21vw, 18rem); }
+  .tiles--bento .tile { min-height: clamp(11rem, 18.5vw, 12.75rem); }
   .tiles--bento .tile--tall { grid-row: span 2; min-height: 0; }
 }
 
@@ -322,14 +322,14 @@
 
 /* Virtual cards page tile artwork (% of the tile) */
 .v-lock { left: 17%; bottom: 0; width: 59%; }
-.v-sec { left: 26%; bottom: -6%; width: 64%; }
-.v-man { left: 28%; bottom: -4%; width: 40%; }
+.v-sec { left: 34%; bottom: -3%; width: 62%; }
+.v-man { left: 28%; bottom: -26%; width: 44%; }
 .v-pin { transform: translate(-50%, -50%); }
-.v-ng { left: 12%; top: 64%; width: 15%; }
-.v-ke { left: 25%; top: 76%; width: 16%; }
-.v-cm { left: 42%; top: 70%; width: 13%; }
-.v-uk { left: 6%; top: 88%; width: 13%; }
-.v-us { left: 54%; top: 90%; width: 17%; }
+.v-ng { left: 11%; top: 60%; width: 14%; }
+.v-ke { left: 23%; top: 80%; width: 16%; }
+.v-cm { left: 46%; top: 71%; width: 10%; }
+.v-uk { left: 5%; top: 91%; width: 12%; }
+.v-us { left: 56%; top: 91%; width: 16%; }
 .v-woman { left: 17%; bottom: 0; width: 63%; }
 .v-ver { left: 5%; bottom: 20%; width: 38%; }
 
@@ -338,11 +338,47 @@
 .g-man { left: 33%; bottom: -3%; width: 60%; }
 .g-browse { left: 40%; top: 40%; width: 19%; }
 
-/* Gift cards: tilted location pins cropped by the tile's bottom-left corner */
-.g-pin { transform: rotate(-32deg); transform-origin: 50% 50%; }
-.g-ng { left: 14%; top: 56%; width: 15%; }
-.g-ke { left: 26%; top: 66%; width: 17%; }
-.g-uk { left: 3%; top: 82%; width: 15%; }
-.g-us { left: 17%; top: 80%; width: 19%; }
 /* Explore cards: gift-card grid crops out of the bottom-left of the tall tile */
 .t-ggrid { left: 6%; bottom: -26%; width: 62%; }
+
+/* Virtual cards: dashed route arcs behind the location pins, and floating pins */
+.v-arcs { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.v-arcs path { fill: none; stroke: rgba(255,255,255,.4); stroke-width: 1.2; stroke-dasharray: 5 5; vector-effect: non-scaling-stroke; animation: arc-flow 3s linear infinite; }
+.v-arch { left: 28%; bottom: -70%; width: 64%; }
+@keyframes arc-flow { to { stroke-dashoffset: -20; } }
+@keyframes pin-float { 0%, 100% { transform: translate(-50%, -50%); } 50% { transform: translate(-50%, calc(-50% - 0.55rem)); } }
+.v-pin { animation: pin-float 3.2s ease-in-out infinite; }
+.v-ke { animation-delay: -0.8s; } .v-cm { animation-delay: -1.6s; } .v-uk { animation-delay: -2.2s; } .v-us { animation-delay: -2.8s; }
+
+/* Explore cards: taller location tiles with floating logo circles */
+.tiles--high .tile { min-height: clamp(18rem, 31vw, 24rem); }
+@keyframes logo-float { 0%, 100% { transform: translate(-50%, -50%); } 50% { transform: translate(-50%, calc(-50% - 0.7rem)); } }
+.t-lg { animation: logo-float 3.6s ease-in-out infinite; }
+.t-mc { animation-delay: -0.9s; } .t-nf { animation-delay: -1.8s; } .t-sw { animation-delay: -2.7s; }
+
+/* Explore cards: gift cards travel clockwise round a wheel, like dealt cards (sizes in cqw of the tile) */
+.tile__art--wheel { container-type: inline-size; }
+.wheel { position: absolute; left: 50%; bottom: -70cqw; width: 116cqw; height: 116cqw; margin-left: -58cqw; animation: wheel-turn 70s linear infinite; }
+.wtile { position: absolute; left: 50%; top: 0; width: 21cqw; margin-left: -10.5cqw; padding: 1.4cqw; border-radius: 2.4cqw; background: rgba(34, 18, 84, .22); box-shadow: 0 1.6cqw 3.2cqw rgba(24, 10, 70, .28); transform-origin: 50% 58cqw; transform: rotate(var(--a)); }
+.wtile img { position: static; display: block; width: 100%; height: auto; border-radius: 1.6cqw; }
+@keyframes wheel-turn { to { transform: rotate(360deg); } }
+
+/* Explore cards: the gift-card grid in "Find a card option" turns slowly clockwise */
+.copts .a-gift2 { left: 50%; top: 34%; right: auto; width: 112%; margin: 0; transform: translate(-50%, -50%); transform-origin: 50% 50%; animation: grid-turn 80s linear infinite; }
+@keyframes grid-turn { to { transform: translate(-50%, -50%) rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .v-pin, .v-arcs path, .t-lg, .wheel, .copts .a-gift2 { animation: none; }
+}
+
+/* Gift cards: tilted flag cards bobbing in the bottom-left of the Check availability tile */
+.g-flag { transform: translate(-50%, -50%) rotate(var(--r, 0deg)); box-shadow: 0 0.4rem 0.9rem rgba(20, 8, 60, .3); border-radius: 0.5rem; animation: flag-bob 3.4s ease-in-out infinite; }
+.g-fke { left: 15%; top: 62%; width: 18%; --r: -26deg; }
+.g-fus { left: 7%; top: 90%; width: 18%; --r: 28deg; animation-delay: -1.1s; }
+.g-fgb { left: 34%; top: 78%; width: 21%; --r: -32deg; animation-delay: -2.2s; }
+.g-fng { left: 19%; top: 99%; width: 17%; --r: 30deg; animation-delay: -0.6s; }
+@keyframes flag-bob { 0%, 100% { translate: 0 0; } 50% { translate: 0 -0.5rem; } }
+@media (prefers-reduced-motion: reduce) { .g-flag { animation: none; } }
+
+/* keep the turning gift grid clear of the tile text */
+.copts .pcard:first-child .pm { clip-path: inset(0 0 40% 0); }
