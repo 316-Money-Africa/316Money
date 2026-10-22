@@ -361,7 +361,7 @@
 .wheel-svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
 
 /* Explore cards: the gift-card grid in "Find a card option" stays still */
-.copts .a-gift2 { left: -8%; top: 3%; right: auto; width: 140%; animation: none; transform: none; } /* static grid, as in the design; the tile text area stays clear (clipped below) */
+.copts .a-gift2 { left: 16%; top: -1%; right: auto; width: 68%; animation: none; transform: none; } /* zoomed out so most of the grid shows; the tile text area stays clear (clipped below) */
 
 @media (prefers-reduced-motion: reduce) {
   .v-pin, .v-arcs path, .t-lg { animation: none; }
@@ -378,7 +378,7 @@
 @media (prefers-reduced-motion: reduce) { .g-flag { animation: none; } }
 
 /* keep the turning gift grid clear of the tile text */
-.copts .pcard:first-child .pm { clip-path: inset(0 0 40% 0); }
+.copts .pcard:first-child .pm { clip-path: inset(0 0 36% 0); }
 
 
 /* Explore cards: the fanned virtual cards are dealt in from the left side like playing cards, then settle, and repeat */
