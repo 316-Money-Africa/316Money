@@ -337,3 +337,12 @@
 .g-arch { position: absolute; left: 44%; bottom: -62%; width: 62%; aspect-ratio: 1; border-radius: 50%; background: rgba(255,255,255,.09); }
 .g-man { left: 33%; bottom: -3%; width: 60%; }
 .g-browse { left: 40%; top: 40%; width: 19%; }
+
+/* Gift cards: tilted location pins cropped by the tile's bottom-left corner */
+.g-pin { transform: rotate(-32deg); transform-origin: 50% 50%; }
+.g-ng { left: 14%; top: 56%; width: 15%; }
+.g-ke { left: 26%; top: 66%; width: 17%; }
+.g-uk { left: 3%; top: 82%; width: 15%; }
+.g-us { left: 17%; top: 80%; width: 19%; }
+/* Explore cards: gift-card grid crops out of the bottom-left of the tall tile */
+.t-ggrid { left: 6%; bottom: -26%; width: 62%; }
