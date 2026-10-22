@@ -383,7 +383,7 @@
 .c-ton { left: 49.5%; top: 79%; width: 15.7%; }
 .c-sol { left: 80.5%; top: 79%; width: 15.7%; }
 .c-music { left: 22%; bottom: 0; width: 42%; }
-.c-game { bottom: 4%; width: 28%; }
+.c-game { bottom: 0; width: 28%; } /* the artwork is cropped at its bottom: it ends exactly at the tile edge */
 .c-g1 { left: 0.5%; }
 .c-g2 { left: 30%; width: 31%; }
 .c-g3 { left: 62.5%; }
