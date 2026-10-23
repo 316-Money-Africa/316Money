@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Bill payment · 316 Money</title>
+  <meta name="description" content="Discover a simpler way to manage everyday payments with 316 Money. Explore the bill payment services available in your location.">
+  <link rel="icon" type="image/png" sizes="131x131" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap">
+  <link rel="preload" as="image" href="assets/Home/hero.webp" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="sections.css">
+  <link rel="stylesheet" href="features.css">
+</head>
+<body>
+  <svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-arrow-long" viewBox="0 0 24 16"><path d="M1 8h21M16 2l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chev-down" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chev-right" viewBox="0 0 16 16"><path d="M6 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M11 18.5h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 19c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5M16 5.3a3 3 0 010 5.6M18 14c2 .6 3.5 2.4 3.5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 10h18M7 15h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-headset" viewBox="0 0 24 24"><path d="M4.5 14v-2a7.5 7.5 0 0115 0v2M4.5 14h2.5v4h-2a1 1 0 01-1-1v-2a1 1 0 011-1zM19.5 14H17v4h2a1 1 0 001-1v-2a1 1 0 00-1-1zM17 18.5c0 1.4-1.8 2.5-5 2.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2.5L5 13.5h6l-1 8 8-11h-6l1-8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 8v7M8.5 12l3.5 3.5 3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-user-plus" viewBox="0 0 24 24"><circle cx="10" cy="8" r="3.4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 19.5c0-3.4 2.9-5.5 6.5-5.5 1.2 0 2.3.2 3.2.7M18 14v6M15 17h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-transfer" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 20.5h8M9 9l-2 2 2 2M15 9l2 2-2 2M7 11h10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-plug" viewBox="0 0 24 24"><rect x="5" y="3.5" width="14" height="17" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M9 8h6M9 12h6M10 16h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M3 9.5a13 13 0 0118 0M6 13a8.5 8.5 0 0112 0M9.2 16.3a4 4 0 015.6 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="19.2" r="1.2" fill="currentColor"/></symbol>
+    <symbol id="i-tv" viewBox="0 0 24 24"><rect x="4.5" y="3.5" width="15" height="17" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 17h8M8 7h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0113 0c0 5.4-6.5 11-6.5 11z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-history" viewBox="0 0 24 24"><rect x="4.5" y="3.5" width="15" height="17" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 8.5h8M8 12h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="15.5" cy="15.5" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M17.4 17.4L19.5 19.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 2.8v5.4c0 4.6-3 8-7 9.8-4-1.8-7-5.2-7-9.8V5.8L12 3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.8 12l2.2 2.2 4.2-4.4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4.5 20c0-3.8 3.4-6.3 7.5-6.3s7.5 2.5 7.5 6.3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-plane" viewBox="0 0 24 24"><path d="M20.5 3.5L3.5 10.2l6.3 2.5 2.5 6.3 8.2-15.5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9.8 12.7l4.4-4.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+    <symbol id="i-plus-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 8v8M8 12h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-plus-square" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 8.5v7M8.5 12h7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><path d="M4 16.5l5.5-5.5 3.5 3.5L20 7.5M15 7.5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 3.5l1.7 1.9 2.5-.5.9 2.4 2.4.9-.5 2.5 1.9 1.7-1.9 1.7.5 2.5-2.4.9-.9 2.4-2.5-.5L12 20.5l-1.7-1.9-2.5.5-.9-2.4-2.4-.9.5-2.5L3.1 12l1.9-1.7-.5-2.5 2.4-.9.9-2.4 2.5.5z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><rect x="4.5" y="4" width="15" height="16" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 9h8M8 12.5h8M8 16h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8.3 12.4l2.5 2.5 4.9-5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-gift" viewBox="0 0 24 24"><rect x="4" y="9" width="16" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 9h17v3.2h-17zM12 9v11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 9c-1.2-3.2-4.8-3.6-4.8-1.4S10.4 9 12 9zm0 0c1.2-3.2 4.8-3.6 4.8-1.4S13.6 9 12 9z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><rect x="5" y="4.5" width="14" height="6.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="5" y="13" width="14" height="6.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M7 3.5h8.5L19 7v13.5H7z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M10 11h6M10 14.5h6M10 18h3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-dollar" viewBox="0 0 24 24"><path d="M12 4v16M15.8 8.2c-.6-1.2-1.9-1.9-3.8-1.9-2.1 0-3.7 1-3.7 2.8 0 4 7.8 2 7.8 5.9 0 1.9-1.8 3-4.1 3-2 0-3.6-.8-4.2-2.3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+  <header class="nav">
+    <div class="container nav__inner">
+      <a class="nav__logo" href="./" aria-label="316 Money home">
+        <img src="assets/logo.png" alt="" width="131" height="131"><span class="nav__wordmark">MONEY</span>
+      </a>
+
+      <input class="nav__toggle" type="checkbox" id="nav-toggle" aria-label="Toggle menu">
+      <label class="nav__burger" for="nav-toggle" aria-hidden="true"><span></span></label>
+
+      <nav class="nav__menu" aria-label="Primary">
+        <ul class="nav__links">
+          <li class="nav__item">
+            <button class="nav__trigger" type="button" aria-expanded="false" aria-controls="mega-personal">Personal <i class="chev"></i></button>
+            <div class="mega" id="mega-personal">
+              <div class="mega__main">
+                <h2 class="mega__title"><a href="#">316 Money for you<svg class="icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h2>
+                <div class="mega__cols">
+            <div class="mega__col">
+              <h3><a href="#">Features<svg class="icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
+              <ul>
+                <li><a href="features.html">Explore all features</a></li>
+                <li><a href="send-and-receive.html">Send and receive</a></li>
+                <li><a href="request-money.html">Request money</a></li>
+                <li><a href="currency-wallets.html">Currency wallets</a></li>
+                <li><a href="saving-pots.html">Saving pots</a></li>
+              </ul>
+            </div>
+            <div class="mega__col">
+              <h3><a href="#">Cards<svg class="icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
+              <ul>
+                <li><a href="cards.html">Explore cards</a></li>
+                <li><a href="virtual-cards.html">Virtual cards</a></li>
+                <li><a href="gift-cards.html">Gift cards</a></li>
+              </ul>
+            </div>
+            <div class="mega__col">
+              <h3><a href="#">More<svg class="icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
+              <ul>
+                <li><a href="airtime-top-up.html">Airtime top-up</a></li>
+                <li><a href="bill-payment.html">Bill payment</a></li>
+                <li><a href="#">Pay with 316 Money</a></li>
+              </ul>
+            </div>
+                </div>
+              </div>
+              <aside class="mega__promo">
+                <h3>Get your 316 Money account</h3>
+                <p>Download the 316 App and create your account in a few easy steps. Hold and exchange multiple currencies. Create virtual cards.</p>
+                <img class="mega__media" src="assets/Home/nav-promo.webp" alt="" width="700" height="560" loading="lazy" decoding="async">
+              </aside>
+            </div>
+          </li>
+          <li class="nav__item">
+            <button class="nav__trigger" type="button" aria-expanded="false" aria-controls="mega-business">Business <i class="chev"></i></button>
+            <div class="mega" id="mega-business">
+              <div class="mega__main">
+                <h2 class="mega__title"><a href="#">316 for businesses<svg class="icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h2>
+                <div class="mega__cols">
+            <div class="mega__col">
+              <h3><a href="#">Payments<svg class="icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
+              <ul>
+                <li><a href="#">Accept online payments</a></li>
+                <li><a href="#">Payment links</a></li>
+                <li><a href="#">Online checkout page</a></li>
+                <li><a href="#">Invoicing</a></li>
+              </ul>
+            </div>
+            <div class="mega__col">
+              <h3><a href="#">Integrations<svg class="icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
+              <ul>
+                <li><a href="#">3rd party integrations</a></li>
+                <li><a href="#">Developers</a></li>
+              </ul>
+            </div>
+            <div class="mega__col">
+              <h3><a href="#">Extras<svg class="icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
+              <ul>
+                <li><a href="#">Offer rewards</a></li>
+                <li><a href="#">Accept donations</a></li>
+                <li><a href="#">Dispute resolution</a></li>
+              </ul>
+            </div>
+                </div>
+              </div>
+              <aside class="mega__promo">
+                <h3>Get a 316 Pay account for your business</h3>
+                <p>Download the 316 App and create your account in a few easy steps. Hold and exchange multiple currencies. Create virtual cards.</p>
+                <img class="mega__media" src="assets/Home/nav-promo.webp" alt="" width="700" height="560" loading="lazy" decoding="async">
+              </aside>
+            </div>
+          </li>
+          <li class="nav__item">
+            <button class="nav__trigger" type="button" aria-expanded="false" aria-controls="mega-partners">Partner with us <i class="chev"></i></button>
+            <div class="mega" id="mega-partners">
+              <div class="mega__main">
+                <h2 class="mega__title"><a href="#">Be a 316 Hotspot Agent<svg class="icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h2>
+                <div class="mega__cols">
+            <div class="mega__col">
+              <h3><a href="#">Collection Agent<svg class="icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
+              <ul>
+                <li><a href="#">Getting started</a></li>
+                <li><a href="#">How it works</a></li>
+                <li><a href="#">Benefits</a></li>
+                <li><a href="#">Compliance</a></li>
+              </ul>
+            </div>
+            <div class="mega__col">
+              <h3><a href="#">Payment Agent<svg class="icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
+              <ul>
+                <li><a href="#">Getting started</a></li>
+                <li><a href="#">How it works</a></li>
+                <li><a href="#">Benefits</a></li>
+                <li><a href="#">Compliance</a></li>
+              </ul>
+            </div>
+            <div class="mega__col">
+              <h3><a href="#">Extras<svg class="icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
+              <ul>
+                <li><a href="#">Offer rewards</a></li>
+                <li><a href="#">Accept donations</a></li>
+                <li><a href="#">Dispute resolution</a></li>
+              </ul>
+            </div>
+                </div>
+              </div>
+              <aside class="mega__promo">
+                <h3>Be a 316 Hotspot Agent, unlock financial benefit</h3>
+                <p>Download the 316 App and create your account in a few easy steps. Hold and exchange multiple currencies. Create virtual cards.</p>
+                <img class="mega__media" src="assets/Home/nav-promo.webp" alt="" width="700" height="560" loading="lazy" decoding="async">
+              </aside>
+            </div>
+          </li>
+          <li class="nav__item"><a class="nav__trigger" href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav__actions">
+          <a class="btn btn--outline btn--sm" href="#sign-in">Sign in</a>
+          <a class="btn btn--primary btn--sm" href="#sign-up">Sign up</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1 · Hero (gradient white -> lavender) -->
+    <section class="hero hero--features" aria-labelledby="bp-hero-title">
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <span class="pill">Bill payment</span>
+          <h1 id="bp-hero-title" class="hero__title hero__title--lines">
+            <span class="ln">Your bills,</span>
+            <span class="ln accent">taken care of</span>
+          </h1>
+          <p class="hero__lead"><span class="ln">Discover a simpler way to manage everyday payments with</span> <span class="ln">316 Money. Explore the bill payment services available in your</span> <span class="ln">location.</span></p>
+          <div class="hero__cta">
+            <a class="btn btn--primary btn--sm-rect" href="features.html">Explore features <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn--light btn--sm-rect" href="#download">Download the app</a>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <img src="assets/Home/hero.webp" alt="316 Money app showing wallet balances" width="1100" height="892" fetchpriority="high">
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 · Take care of everyday payments (white) -->
+    <section class="sec sec--white" id="categories" aria-labelledby="cat-title">
+      <div class="wrap">
+        <header class="sec__head">
+          <span class="pill">One place, more options</span>
+          <h2 id="cat-title" class="sec__title"><span class="ln">Take care of</span> <span class="ln accent">everyday payments</span></h2>
+          <p class="sec__sub"><span class="ln">Explore the bill payment categories available through 316 Money</span> <span class="ln">and find the services you need.</span></p>
+        </header>
+        <!-- Artwork slots (.tile__art) are reserved: add the images later without any layout shift -->
+        <ul class="tiles tiles--cat">
+          <li class="pcard tile"><div class="pcard__text"><h3>Electricity</h3><p>Explore available electricity bill payment options.</p><a class="pcard__link" href="#">Explore feature <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div><div class="tile__art" aria-hidden="true"></div></li>
+          <li class="pcard tile"><div class="pcard__text"><h3>TV &amp; Entertainment</h3><p><span class="ln">Find supported television and entertainment</span> <span class="ln">payment services.</span></p><a class="pcard__link" href="#">Explore feature <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div><div class="tile__art" aria-hidden="true"></div></li>
+          <li class="pcard tile"><div class="pcard__text"><h3>Internet &amp; Data</h3><p>Explore available internet and data payment options.</p><a class="pcard__link" href="#">Explore feature <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div><div class="tile__art" aria-hidden="true"></div></li>
+          <li class="pcard tile"><div class="pcard__text"><h3>Other Services</h3><p><span class="ln">Discover additional bill payment services</span> <span class="ln">available to you.</span></p><a class="pcard__link" href="#">Explore feature <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div><div class="tile__art" aria-hidden="true"></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 3 · A smoother way to pay (lavender) -->
+    <section class="sec sec--tint" id="smoother" aria-labelledby="sm-title">
+      <div class="wrap split">
+        <div class="split__copy">
+          <span class="pill">A better way to check out</span>
+          <h2 id="sm-title" class="split__title split__title--pill"><span class="ln">A smoother</span> <span class="ln accent">way to pay</span></h2>
+          <p><span class="ln">Discover how paying through 316 Money</span> <span class="ln">can make supported merchant checkout</span> <span class="ln">experiences more straightforward.</span></p>
+          <ul class="cl cl--dots">
+            <li class="cl__item"><span class="cl__dot" aria-hidden="true"></span><div><h3>Payments made simpler</h3><p>Explore bill payment services from your 316 Money app.</p></div></li>
+            <li class="cl__item"><span class="cl__dot" aria-hidden="true"></span><div><h3>Know what you’re paying</h3><p><span class="ln">Review the payment amount and any applicable charges</span> <span class="ln">before confirming your transaction.</span></p></div></li>
+            <li class="cl__item"><span class="cl__dot" aria-hidden="true"></span><div><h3>Keep your payments in view</h3><p><span class="ln">Review your transaction history and check the status of your</span> <span class="ln">bill payments.</span></p></div></li>
+          </ul>
+        </div>
+        <!-- Reserved media slot: add the phone + utility / internet / cable list artwork (assets-src/Bills/) -->
+        <div class="split__media f-media"><div class="f-slot f-slot--purple" role="img" aria-label="A phone with a list of bill payment services: Utility, Internet services and Cable TV"></div></div>
+      </div>
+    </section>
+
+    <!-- 4 · Pay your bills in a few simple steps (white) -->
+    <section class="sec sec--white sec--roomy" id="steps" aria-labelledby="steps-title">
+      <div class="wrap">
+        <header class="sec__head">
+          <span class="pill">Simple steps</span>
+          <h2 id="steps-title" class="sec__title"><span class="ln">Pay your bills in a</span> <span class="ln accent">few simple steps</span></h2>
+          <p class="sec__sub"><span class="ln">Find a supported service, review your payment details and</span> <span class="ln">complete your transaction through 316 Money.</span></p>
+        </header>
+        <ul class="rq">
+          <li class="rq__card"><span class="rq__icon"><svg class="icon"><use href="#i-gift"/></svg></span><h3>Choose a Service</h3><p>Select an available bill payment category and provider.</p></li>
+          <li class="rq__card"><span class="rq__icon"><svg class="icon"><use href="#i-dollar"/></svg></span><h3>Enter your details</h3><p>Provide the required account, meter or customer reference information.</p></li>
+          <li class="rq__card"><span class="rq__icon"><svg class="icon"><use href="#i-arrow"/></svg></span><h3>Review and confirm</h3><p>Check the recipient details, amount and applicable charges before authorising the payment.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 5 · Clarity at every step (lavender) -->
+    <section class="sec sec--tint" id="clarity" aria-labelledby="clar-title">
+      <div class="wrap">
+        <header class="sec__head">
+          <span class="pill">Your payments, your view</span>
+          <h2 id="clar-title" class="sec__title"><span class="ln">Clarity at <span class="accent">every step</span></span></h2>
+          <p class="sec__sub"><span class="ln">Review payment details and follow your transaction status</span> <span class="ln">with greater confidence.</span></p>
+        </header>
+        <ul class="tiles tiles--wide">
+          <li class="pcard tile"><div class="pcard__text"><h3>Find Your Payment History</h3><p><span class="ln">Return to previous transactions to review their</span> <span class="ln">details and status.</span></p><a class="pcard__link" href="#">Explore feature <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div><div class="tile__art" aria-hidden="true"></div></li>
+          <li class="pcard tile"><div class="pcard__text"><h3>Review every detail</h3><p><span class="ln">See your payment amount and applicable charges</span> <span class="ln">before you confirm.</span></p><a class="pcard__link" href="#">Explore feature <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div><div class="tile__art" aria-hidden="true"></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 6 · Find services available to you (white) -->
+    <section class="sec sec--white" id="location" aria-labelledby="loc-title">
+      <div class="wrap">
+        <header class="sec__head">
+          <span class="pill">Check your options</span>
+          <h2 id="loc-title" class="sec__title"><span class="ln">Find services</span> <span class="ln accent">available to you</span></h2>
+          <p class="sec__sub"><span class="ln">Bill payment options vary by location and provider.</span> <span class="ln">Explore the services supported in your market.</span></p>
+        </header>
+        <ul class="tiles tiles--wide">
+          <li class="pcard tile"><div class="pcard__text"><h3>Payments that fit your market</h3><p>Explore the bill payment services available where you live.</p><a class="pcard__link" href="#">Learn more <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div><div class="tile__art" aria-hidden="true"></div></li>
+          <li class="pcard tile"><div class="pcard__text"><h3>Clear details before confirmation</h3><p><span class="ln">Review the required payment information and any</span> <span class="ln">applicable charges before proceeding.</span></p><a class="pcard__link" href="#">Learn more <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div><div class="tile__art" aria-hidden="true"></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 7 · FAQ (white) -->
+    <section class="sec sec--white" id="faq" aria-labelledby="faq-title">
+      <div class="wrap faq">
+        <div class="faq__intro">
+          <h2 id="faq-title" class="faq__title"><span class="accent">Questions</span> you might want to ask</h2>
+          <div class="faq__users">
+            <img src="assets/Home/avatars.webp" alt="" alt="" width="446" height="196" loading="lazy" decoding="async">
+            <p><strong>more than 10K+</strong><br>users worldwide</p>
+          </div>
+        </div>
+        <div class="faq__list">
+          <details><summary>What bills can I pay with 316 Money?</summary><p>Supported categories include electricity, TV and entertainment, internet and data, and other services. What you can pay depends on your location and on provider availability.</p></details>
+          <details><summary>How do I pay a bill?</summary><p>Choose a service in the 316 Money app, enter the required account, meter or customer reference details, review the amount and charges, then confirm.</p></details>
+          <details><summary>Are all bill payment services available in every country?</summary><p>No. Bill payment services vary by location and provider. The app shows the services available to you.</p></details>
+          <details><summary>How can I check my payment status?</summary><p>You can follow the status of each bill payment in your transaction history in the app.</p></details>
+          <details><summary>What happens if my payment is pending?</summary><p>A pending payment is still being processed. Its status is shown in your transaction history and updates when it completes.</p></details>
+          <details><summary>What happens if a payment fails?</summary><p>If a payment does not complete, the app shows its status. Check your transaction history for the outcome and contact support if you need help.</p></details>
+          <details><summary>Are there additional charges?</summary><p>Any applicable charges are shown before you confirm your payment, so you can review them first.</p></details>
+          <details><summary>Can I pay school fees through 316 Money?</summary><p>School fee payments are available where supported. Check the options for your market in the app.</p></details>
+        </div>
+      </div>
+    </section>
+
+<!-- 11 · Download (lavender) -->
+    <section class="sec sec--tint sec--palm" id="download" aria-labelledby="palm-title">
+      <div class="wrap split">
+        <div class="split__copy">
+          <h2 id="palm-title" class="split__title split__title--md"><span class="ln">Experience <span class="accent">316 MONEY</span> in</span> <span class="ln">the palm of your hand</span></h2>
+          <p class="small"><span class="ln">Download for iOS and Android. Open your account in under 3 minutes with zero</span> <span class="ln">paperwork and bring more ease to your financial life.</span></p>
+          <div class="stores">
+            <a class="store" href="#download"><i class="store__logo store__logo--apple" aria-hidden="true"></i><span><small>Download on the</small><strong>Apple App Store</strong></span></a>
+            <a class="store" href="#download"><i class="store__logo store__logo--play" aria-hidden="true"></i><span><small>Get it on</small><strong>Google Play Store</strong></span></a>
+          </div>
+        </div>
+        <div class="split__media"><img src="assets/Home/app-phone.webp" alt="316 Money app on a smartphone" width="720" height="832" loading="lazy" decoding="async"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <div class="footer__brand">
+        <a class="footer__logo" href="./" aria-label="316 Money home"><img src="assets/logo.png" alt="" width="131" height="131"><span>Money</span></a>
+        <p>The next generation payment platform for individuals and businesses. Send money anywhere, instantly.</p>
+      </div>
+      <nav class="footer__cols" aria-label="Footer">
+        <div><h3>Company</h3><ul><li><a href="#">About us</a></li><li><a href="#">Careers</a></li><li><a href="#">Resources</a></li><li><a href="#">Help</a></li></ul></div>
+        <div><h3>For Individuals</h3><ul><li><a href="#get-started">Get started</a></li><li><a href="#features">Features</a></li><li><a href="#">Security</a></li><li><a href="#">Getting started</a></li></ul></div>
+        <div><h3>For Business</h3><ul><li><a href="#business">Get Started</a></li><li><a href="#features">Features</a></li><li><a href="#hotspots">Be a Partner</a></li><li><a href="#">Developer API</a></li></ul></div>
+        <div><h3>Legal</h3><ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">AML Policy</a></li><li><a href="#">Cookie Settings</a></li></ul></div>
+      </nav>
+    </div>
+    <div class="wrap footer__legal"><p>© 2026 316 Money. All rights reserved.</p></div>
+  </footer>
+  <script src="nav.js" defer></script>
+</body>
+</html>
