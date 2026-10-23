@@ -441,8 +441,8 @@
 .p-step { right: 3%; bottom: -14%; width: 50%; }
 .p-head { left: 22%; bottom: 22%; width: 36%; }
 .p-confirm { left: 22%; bottom: -8%; width: 62%; }
-.p-phone { left: 26%; bottom: -18%; width: 36%; }
-.p-methods { right: 6%; top: 40%; width: 26%; }
+.p-phone { left: 33.5%; bottom: 0; width: 31%; }
+.p-methods { right: auto; left: 47.5%; top: 46%; width: 18%; }
 .bm-media .pm-made { position: absolute; left: 3%; bottom: 20%; width: 46%; height: auto; max-width: none; }
 .tiles--pay .tile:not(.tile--tall) { min-height: clamp(15rem, 27vw, 17.5rem); }
 .b-hphone { left: 26%; bottom: 0; width: 29%; }
@@ -454,3 +454,9 @@
 .b-water { left: 56%; top: 52%; width: 26%; }
 .p-speaker { position: absolute; left: 24.7%; top: 54.6%; width: 25.5%; aspect-ratio: 1; box-sizing: border-box; padding: 4%; border-radius: 12%; background: #fff; box-shadow: 0 0.5rem 1.2rem rgba(24, 10, 70, .3); }
 .p-speaker::after { content: ""; display: block; width: 100%; height: 100%; border-radius: 8%; background: #d9d9d9; }
+
+/* Pay with 316: "Where you can pay" tiles (positions measured from the design) */
+.tiles--pay2 .g-fke { left: 12%; top: 77%; width: 16.5%; --r: -20deg; }
+.tiles--pay2 .g-fus { left: 6%; top: 94%; width: 13.5%; --r: 24deg; }
+.tiles--pay2 .g-fgb { left: 25%; top: 90%; width: 16%; --r: -24deg; }
+.tiles--pay2 .g-fng { left: 17%; top: 103%; width: 14.5%; --r: 18deg; }
