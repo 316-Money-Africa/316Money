@@ -1,6 +1,6 @@
 # marketing-web
 
-Public 316 Money website (static; Cloudflare Workers serves this folder, see `wrangler.jsonc`). Pages: `index.html` (home), `features.html`, `send-and-receive.html`, `request-money.html` and `currency-wallets.html` and `saving-pots.html` `cards.html` and `virtual-cards.html` and `gift-cards.html` and `airtime-top-up.html` and `bill-payment.html`. Page HTML is generated: edit `tools/pages/*.page.html` and the partials, then run `node tools/build-pages.mjs`.
+Public 316 Money website (static; Cloudflare Workers serves this folder, see `wrangler.jsonc`). Pages: `index.html` (home), `features.html`, `send-and-receive.html`, `request-money.html` and `currency-wallets.html` and `saving-pots.html` `cards.html` and `virtual-cards.html` and `gift-cards.html` and `airtime-top-up.html` and `bill-payment.html` and `pay-with-316.html`. Page HTML is generated: edit `tools/pages/*.page.html` and the partials, then run `node tools/build-pages.mjs`.
 
 Served assets live in `assets/` (WebP, `logo.png`, `favicon.png`, `flags/*`, `gift/*`). Original design PNGs are in `assets-src/` (not deployed); regenerate with `node tools/optimize-images.mjs`.
 
