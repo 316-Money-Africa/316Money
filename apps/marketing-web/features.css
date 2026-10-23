@@ -446,3 +446,9 @@
 .bm-media .pm-made { position: absolute; left: 3%; bottom: 20%; width: 46%; height: auto; max-width: none; }
 .tiles--pay .tile:not(.tile--tall) { min-height: clamp(15rem, 27vw, 17.5rem); }
 .b-hphone { left: 26%; bottom: 0; width: 29%; }
+
+/* Bill payment: location tiles */
+.b-tablet { left: 52%; top: 37%; width: 52%; }
+.b-iwoman { left: 4%; bottom: 0; width: 66%; }
+.b-momo { left: 42%; top: 56%; width: 29%; }
+.b-water { left: 56%; top: 52%; width: 26%; }
