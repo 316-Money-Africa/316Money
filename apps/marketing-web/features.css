@@ -408,3 +408,4 @@
 .cl--dots .cl__item:first-child { padding-top: 0.5rem; }
 .cl--dots .cl__dot { flex: none; width: 0.75rem; height: 0.75rem; margin-top: 0.4rem; border-radius: 0.15rem; background: #f27bc3; transform: rotate(18deg); }
 .cl--dots .cl__item h3 { font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.3125rem); font-weight: 500; color: var(--brand); }
+.f-slot--purple { aspect-ratio: 1.38; background: linear-gradient(180deg, #7d68cb 0%, #6a56b4 100%); }
