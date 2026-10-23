@@ -452,11 +452,5 @@
 .b-iwoman { left: 4%; bottom: 0; width: 66%; }
 .b-momo { left: 42%; top: 56%; width: 29%; }
 .b-water { left: 56%; top: 52%; width: 26%; }
-.p-speaker { position: absolute; left: 24.7%; top: 54.6%; width: 25.5%; aspect-ratio: 1; box-sizing: border-box; padding: 4%; border-radius: 12%; background: #fff; box-shadow: 0 0.5rem 1.2rem rgba(24, 10, 70, .3); }
-.p-speaker::after { content: ""; display: block; width: 100%; height: 100%; border-radius: 8%; background: #d9d9d9; }
 
-/* Pay with 316: "Where you can pay" tiles (positions measured from the design) */
-.tiles--pay2 .g-fke { left: 12%; top: 77%; width: 16.5%; --r: -20deg; }
-.tiles--pay2 .g-fus { left: 6%; top: 94%; width: 13.5%; --r: 24deg; }
-.tiles--pay2 .g-fgb { left: 25%; top: 90%; width: 16%; --r: -24deg; }
-.tiles--pay2 .g-fng { left: 17%; top: 103%; width: 14.5%; --r: 18deg; }
+.p-speaker { left: 22%; top: 52%; width: 30.4%; z-index: 2; } /* the speaker card sits on top of the watch and cap cards */
