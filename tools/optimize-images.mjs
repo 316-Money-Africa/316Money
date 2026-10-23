@@ -35,6 +35,7 @@ const WIDTHS = {
   "Airtime/networks.png": 1300, "Airtime/woman.png": 1200, "Airtime/net-mtn.png": 385, "Airtime/net-safaricom.png": 360, "Airtime/net-airtel.png": 335, "Airtime/amount-input.png": 836, "Airtime/phone-input.png": 918,
   "Bills/map-tablet.png": 914, "Bills/invoice-woman.png": 1481, "Bills/momo.png": 554, "Bills/water-bill.png": 575,
   "Bills/bulb.png": 900, "Bills/couple.png": 940, "Bills/arch.png": 800, "Bills/cable-success.png": 765, "Bills/man.png": 800, "Bills/phone-input.png": 920, "Bills/data-tiers.png": 760, "Bills/panel.png": 1300, "Bills/util-list.png": 900, "Bills/school.png": 900, "Bills/txn-card.png": 751, "Bills/bill-amount.png": 710, "Bills/history.png": 1254,
+  "Pay/speaker.png": 572,
   "Pay/cap.png": 875, "Pay/watch.png": 565, "Pay/methods.png": 401, "Pay/payment-made.png": 904, "Pay/pay-confirm.png": 943, "Pay/headphones.png": 477, "Pay/man.png": 1200, "Pay/phone.png": 587, "Pay/step-method.png": 656,
   "Pots/pot-progress-woman.png": 1120, "Pots/pot-success.png": 560, "Pots/pot-slider.png": 820, "Pots/pot-goals.png": 1320,
 };
