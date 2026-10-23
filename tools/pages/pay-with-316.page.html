@@ -29,10 +29,10 @@
           <p class="sec__sub"><span class="ln">Explore participating merchants and supported checkout</span> <span class="ln">experiences where you can use 316 Money.</span></p>
         </header>
         <!-- Artwork slots (.tile__art) are reserved: add the images later without any layout shift -->
-        <ul class="tiles tiles--bento">
-          <li class="pcard tile tile--tall"><div class="pcard__text"><h3>Online shopping</h3><p><span class="ln">Explore online shopping experiences that supports</span> <span class="ln">316 Money at checkout.</span></p><a class="pcard__link" href="#">Explore feature <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div><div class="tile__art" aria-hidden="true"></div></li>
-          <li class="pcard tile"><div class="pcard__text"><h3>Every day purchases</h3><p><span class="ln">Look out for participating businesses that offer</span> <span class="ln">316 Money as a payment option.</span></p><a class="pcard__link" href="#">Explore feature <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div><div class="tile__art" aria-hidden="true"></div></li>
-          <li class="pcard tile"><div class="pcard__text"><h3>Clear payment details</h3><p><span class="ln">Review the merchant and amount before you</span> <span class="ln">authorise your payment.</span></p><a class="pcard__link" href="#">Learn more <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div><div class="tile__art" aria-hidden="true"></div></li>
+        <ul class="tiles tiles--bento tiles--pay">
+          <li class="pcard tile tile--tall"><div class="pcard__text"><h3>Online shopping</h3><p><span class="ln">Explore online shopping experiences that supports</span> <span class="ln">316 Money at checkout.</span></p><a class="pcard__link" href="#">Explore feature <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div><div class="tile__art" aria-hidden="true">{{img:Pay/watch class="p-watch"}}{{img:Pay/cap class="p-cap"}}</div></li>
+          <li class="pcard tile"><div class="pcard__text"><h3>Every day purchases</h3><p><span class="ln">Look out for participating businesses that offer</span> <span class="ln">316 Money as a payment option.</span></p><a class="pcard__link" href="#">Explore feature <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div><div class="tile__art" aria-hidden="true">{{img:Pay/step-method class="p-step"}}{{img:Pay/headphones class="p-head"}}</div></li>
+          <li class="pcard tile"><div class="pcard__text"><h3>Clear payment details</h3><p><span class="ln">Review the merchant and amount before you</span> <span class="ln">authorise your payment.</span></p><a class="pcard__link" href="#">Learn more <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div><div class="tile__art" aria-hidden="true">{{img:Pay/pay-confirm class="p-confirm"}}</div></li>
         </ul>
       </div>
     </section>
@@ -50,8 +50,7 @@
             <li class="cl__item"><span class="cl__dot" aria-hidden="true"></span><div><h3>Keep track of your payments</h3><p><span class="ln">Review your transaction history and check the</span> <span class="ln">status of your payments.</span></p></div></li>
           </ul>
         </div>
-        <!-- Reserved media slot: add the man-with-phone artwork and "Payment made $50.22" confirmation (assets-src/Pay/) -->
-        <div class="split__media f-media"><div class="f-slot" role="img" aria-label="A man smiling at his phone, with a Payment made confirmation of $50.22"></div></div>
+        <div class="split__media f-media bm-media">{{img:Pay/man alt="A man smiling at his phone" class="f-img f-img--round"}}{{img:Pay/payment-made alt="Payment made, $50.22" class="pm-made"}}</div>
       </div>
     </section>
 
@@ -81,7 +80,7 @@
         </header>
         <ul class="tiles tiles--wide">
           <li class="pcard tile"><div class="pcard__text"><h3>Pay where 316 is accepted</h3><p><span class="ln">Explore checkout experiences that support 316 Money</span> <span class="ln">payments.</span></p><a class="pcard__link" href="#">Learn more <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div><div class="tile__art" aria-hidden="true">{{img:CurrencyWallets/flag-ke class="g-flag g-fke"}}{{img:CurrencyWallets/flag-us class="g-flag g-fus"}}{{img:CurrencyWallets/flag-gb class="g-flag g-fgb"}}{{img:CurrencyWallets/flag-ng class="g-flag g-fng"}}</div></li>
-          <li class="pcard tile"><div class="pcard__text"><h3>Start with your 316 Money balance</h3><p><span class="ln">Set up your account and explore the payment options</span> <span class="ln">available to you.</span></p><a class="pcard__link" href="#">Learn more <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div><div class="tile__art" aria-hidden="true"></div></li>
+          <li class="pcard tile"><div class="pcard__text"><h3>Start with your 316 Money balance</h3><p><span class="ln">Set up your account and explore the payment options</span> <span class="ln">available to you.</span></p><a class="pcard__link" href="#">Learn more <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div><div class="tile__art" aria-hidden="true">{{img:Pay/phone class="p-phone"}}{{img:Pay/methods class="p-methods"}}</div></li>
         </ul>
       </div>
     </section>

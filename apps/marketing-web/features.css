@@ -434,3 +434,14 @@
 .b-txn { left: 6%; bottom: 14%; width: 40%; }
 .bm-media { position: relative; }
 .bm-media .bm-list { position: absolute; right: 5%; top: 17%; width: 47%; height: auto; max-width: none; }
+
+/* Pay with 316 page artwork (% of the tile / panel) */
+.p-watch { left: -6%; top: 28%; width: 40%; }
+.p-cap { left: -8%; bottom: -6%; width: 50%; }
+.p-step { right: 3%; bottom: -14%; width: 50%; }
+.p-head { left: 22%; bottom: 22%; width: 36%; }
+.p-confirm { left: 22%; bottom: -8%; width: 62%; }
+.p-phone { left: 26%; bottom: -18%; width: 36%; }
+.p-methods { right: 6%; top: 40%; width: 26%; }
+.bm-media .pm-made { position: absolute; left: 3%; bottom: 20%; width: 46%; height: auto; max-width: none; }
+.tiles--pay .tile:not(.tile--tall) { min-height: clamp(15rem, 27vw, 17.5rem); }

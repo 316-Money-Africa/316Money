@@ -34,10 +34,11 @@ const WIDTHS = {
   "Cards/gift-tile-amazon.png": 405, "Cards/gift-tile-binance.png": 405, "Cards/gift-tile-apple.png": 405, "Cards/gift-tile-shein.png": 405, "Cards/gift-tile-ea.png": 405, "Cards/gift-tile-mastercard.png": 405, "Cards/gift-tile-netflix.png": 405,
   "Airtime/networks.png": 1300, "Airtime/woman.png": 1200, "Airtime/net-mtn.png": 385, "Airtime/net-safaricom.png": 360, "Airtime/net-airtel.png": 335, "Airtime/amount-input.png": 836, "Airtime/phone-input.png": 918,
   "Bills/bulb.png": 900, "Bills/couple.png": 940, "Bills/arch.png": 800, "Bills/cable-success.png": 765, "Bills/man.png": 800, "Bills/phone-input.png": 920, "Bills/data-tiers.png": 760, "Bills/panel.png": 1300, "Bills/util-list.png": 900, "Bills/school.png": 900, "Bills/txn-card.png": 751, "Bills/bill-amount.png": 710, "Bills/history.png": 1254,
+  "Pay/cap.png": 875, "Pay/watch.png": 565, "Pay/methods.png": 401, "Pay/payment-made.png": 904, "Pay/pay-confirm.png": 943, "Pay/headphones.png": 477, "Pay/man.png": 1200, "Pay/phone.png": 587, "Pay/step-method.png": 656,
   "Pots/pot-progress-woman.png": 1120, "Pots/pot-success.png": 560, "Pots/pot-slider.png": 820, "Pots/pot-goals.png": 1320,
 };
 const QUALITY = 86;
-const FOLDER_QUALITY = { Cards: 92, Airtime: 92, Bills: 92 }; // card artwork carries small UI text, so it keeps more detail // high enough that small UI text baked into the artwork stays crisp
+const FOLDER_QUALITY = { Cards: 92, Airtime: 92, Bills: 92, Pay: 92 }; // card artwork carries small UI text, so it keeps more detail // high enough that small UI text baked into the artwork stays crisp
 
 let before = 0, after = 0;
 // every folder in assets-src/ (one per page) maps to the same folder in the served assets
