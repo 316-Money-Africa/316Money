@@ -454,3 +454,17 @@
 .b-water { left: 56%; top: 52%; width: 26%; }
 
 .p-speaker { left: 22%; top: 52%; width: 30.4%; z-index: 2; } /* the speaker card sits on top of the watch and cap cards */
+
+/* ===== Personal > More corrections: positions measured from the corrected designs. Tile artwork is sized in cqw (of the tile
+   width) so its vertical placement stays right whatever height the tile has. ===== */
+.tile__art { container-type: inline-size; }
+.b-elec { left: 1.5%; top: 25cqw; width: 60%; }
+.b-bolt { left: 47%; top: 21cqw; width: 16.5%; }
+.b-phone { left: 45%; bottom: 0; width: 47%; }
+.b-data { right: 7%; top: 26cqw; width: 30%; }
+.at-amount { right: 6%; top: 30cqw; width: 50%; }
+.at-phone { left: 25%; bottom: 0; width: 47%; }
+.p-head { left: 22%; bottom: 8cqw; width: 28%; }
+.p-step { left: 44%; right: auto; bottom: -2cqw; width: 49%; }
+.bm-media .pm-wallet { position: absolute; left: 0.5%; top: 49%; width: 27%; height: auto; max-width: none; }
+.bm-media .pm-made { left: 13.5%; bottom: auto; top: 42%; width: 22%; }
