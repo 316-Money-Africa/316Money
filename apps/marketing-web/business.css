@@ -197,3 +197,6 @@
 
 /* Businesses we support: more air between the description and the cards */
 #support .bz-head { margin-bottom: clamp(3rem, 2rem + 5vw, 6.25rem); }
+
+/* Go live: Join waitlist sits a little lower; the band's bottom padding is unchanged, so the section simply grows taller */
+#golive .bz-center { margin-top: clamp(3.25rem, 2.25rem + 4vw, 5.25rem); }
