@@ -183,8 +183,7 @@
 .bz-api { position: relative; overflow: hidden; }
 .bz-api > .bz-wrap { position: relative; z-index: 1; }
 .bz-poly { position: absolute; z-index: 0; height: auto; max-width: none; pointer-events: none; }
-.bz-poly--a { right: 0; top: 14%; width: min(46%, 40rem); }
-.bz-poly--b { right: 0; bottom: 0; width: min(62%, 54rem); }
+.bz-poly--a { right: 0; bottom: 0; top: auto; height: 79%; width: auto; } /* one clean triangle, apex at the top-right, tip pointing left */
 
 /* a little more air between a description and the buttons under it */
 .bz-body { margin-bottom: clamp(2rem, 1.6rem + 1vw, 2.75rem); }
@@ -200,3 +199,7 @@
 
 /* Go live: Join waitlist sits a little lower; the band's bottom padding is unchanged, so the section simply grows taller */
 #golive .bz-center { margin-top: clamp(3.25rem, 2.25rem + 4vw, 5.25rem); }
+
+/* API checklist: purple boxes and ticks */
+.bz-checks--rich i { border-color: #7355F2; border-radius: 0.25rem; background: rgba(115, 85, 242, .08); }
+.bz-checks--rich i::after { border-right-color: #7355F2; border-bottom-color: #7355F2; }
