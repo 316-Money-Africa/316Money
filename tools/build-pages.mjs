@@ -29,7 +29,7 @@ function expandImages(html) {
     const file = join(OUT, "assets", `${name}.webp`);
     if (!existsSync(file)) throw new Error(`missing image: assets/${name}.webp (run tools/optimize-images.mjs)`);
     const [w, h] = webpSize(file);
-    const hasAlt = /alt="/.test(attrs);
+    const hasAlt = /(^|\s)alt="/.test(attrs);
     return `<img src="assets/${name}.webp"${hasAlt ? "" : ' alt=""'}${attrs} width="${w}" height="${h}" loading="lazy" decoding="async">`;
   });
 }
@@ -66,9 +66,9 @@ for (const f of readdirSync(PAGES).filter((n) => n.endsWith(".page.html"))) {
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap">
 ${preload}${css}
 </head>
-<body>
+<body${meta.bodyclass ? ` class="${meta.bodyclass}"` : ""}>
   ${partials.sprite}
-  ${partials.header}
+  ${meta.wordmark ? partials.header.replace('<span class="nav__wordmark">MONEY</span>', `<span class="nav__wordmark">${meta.wordmark}</span>`) : partials.header}
 
   <main>
 ${body}
