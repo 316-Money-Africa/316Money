@@ -84,10 +84,10 @@
 
 @media (min-width: 40rem) {
   .dk-grid--bento { grid-template-columns: repeat(6, 1fr); }
-  .dk-grid--bento .dk-card--w3 { grid-column: span 3; aspect-ratio: 1.58; min-height: 0; }
-  .dk-grid--bento .dk-card--w2 { grid-column: span 2; aspect-ratio: 1.16; min-height: 0; }
+  .dk-grid--bento .dk-card--w3 { grid-column: span 3; aspect-ratio: 1.54; min-height: 0; }
+  .dk-grid--bento .dk-card--w2 { grid-column: span 2; aspect-ratio: 1; min-height: 0; }
   .dk-grid--four { grid-template-columns: 1fr 1fr; max-width: 60rem; margin-inline: auto; }
-  .dk-grid--four .dk-card { aspect-ratio: 1.32; min-height: 0; }
+  .dk-grid--four .dk-card { aspect-ratio: 1.21; min-height: 0; }
 }
 
 /* ---------- Split rows ---------- */
@@ -147,21 +147,33 @@
 /* ---------- Card artwork (cqw of the card width, so every card scales as one) ---------- */
 .dk-card__art { container-type: inline-size; }
 .dk-card__art img { position: absolute; display: block; height: auto; max-width: none; }
-.k-links { left: 22%; bottom: 0; width: 56%; }
-.k-hosted { left: 12%; bottom: 0; width: 80%; }
-.k-posphone { left: 17%; bottom: -14cqw; width: 36%; }
-.k-posrec { left: 38%; top: 55cqw; width: 62%; }
-.k-payouts { left: 4%; bottom: 0; width: 90%; }
-.k-invwoman { right: 0; bottom: 0; width: 80%; }
-.k-invcard { left: 6%; top: 48cqw; width: 52%; }
-.k-stores { left: 14%; bottom: -2cqw; width: 72%; }
-.k-mast { left: 10%; top: 24cqw; width: 80%; }
-.k-rec { left: 12%; top: 42cqw; width: 64%; }
-.k-mp { width: 24%; }
-.k-julie { left: 8%; top: 46cqw; }
-.k-mary { left: 38%; top: 38cqw; }
-.k-frank { left: 66%; top: 48cqw; }
-.k-shops { left: 2%; bottom: 0; width: 98%; }
+.k-links { left: 21%; bottom: 0; width: 58%; }
+.k-hosted { left: 10%; top: 34cqw; width: 80%; }
+.k-posphone { left: 15%; top: 42cqw; width: 34%; }
+.k-posrec { left: 38%; top: 41cqw; width: 52%; }
+.k-payouts { left: 3.5%; top: 50cqw; width: 86%; }
+.k-invwoman { left: 0; bottom: 0; width: 60%; }
+.k-invcard { left: 49%; top: 40cqw; width: 44%; }
+.k-stores { left: 20%; bottom: 0; width: 57%; }
+.k-rec { left: 9%; top: 58cqw; width: 64%; }
+.k-mast { left: 13%; top: 39cqw; width: 79%; }
+.k-mp { width: 22%; }
+.k-julie { left: 10%; top: 51cqw; }
+.k-mary { left: 41%; top: 29cqw; }
+.k-frank { left: 69%; top: 52cqw; }
+.k-arc { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.k-arc path { fill: none; stroke: rgba(255, 255, 255, .45); stroke-width: 1.2; stroke-dasharray: 5 5; vector-effect: non-scaling-stroke; }
+.k-shops { left: 0; bottom: 0; width: 94%; }
+
+/* ---------- Gift cards under your own brand ---------- */
+.bz-split--gb .bz-split__media { max-width: 24rem; margin-inline: 0 auto; }
+.bz-img--round { border-radius: 0.5rem; }
+
+/* ---------- Your payments, all in one view ---------- */
+.bz-dash { position: relative; width: 100%; max-width: 54rem; margin-inline: auto; }
+.bz-dash__bg { display: block; width: 100%; height: auto; border-radius: 0.5rem; }
+.bz-dash__table { position: absolute; left: 20.5%; top: 6%; width: 57%; height: auto; max-width: none; }
+.bz-dash__card { position: absolute; left: 66%; top: 52%; width: 27%; height: auto; max-width: none; }
 
 /* ---------- API code with the purple polygons behind ---------- */
 .bz-api__code { position: relative; isolation: isolate; padding: 0; }
