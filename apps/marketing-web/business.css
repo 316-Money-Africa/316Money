@@ -206,3 +206,6 @@
 
 /* Multiple Payment Methods checklist: no dividers between rows */
 #methods .bz-checks li { border-bottom: 0; }
+
+/* second wedge along the bottom edge: its upper edge meets the big triangle, giving two sharp edges */
+.bz-poly--b { right: 0; bottom: 0; top: auto; width: 55%; height: auto; z-index: 0; }
