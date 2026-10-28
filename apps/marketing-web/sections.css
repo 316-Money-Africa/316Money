@@ -222,9 +222,6 @@ section[id] { scroll-margin-top: var(--nav-h); }
   .bento__send { grid-row: auto; }
   .txs { padding-top: 1.5rem; }
   .split { grid-template-columns: 1fr; }
-  .split__media { order: 2; }
-  .sec--dark .split__media, .sec--palm .split__media { order: 2; }
-  #savings .split__media { order: 2; }
 }
 @media (max-width: 40rem) {
   .bcard--line { flex-direction: column; align-items: stretch; }
