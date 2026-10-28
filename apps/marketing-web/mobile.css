@@ -1,0 +1,96 @@
+/* Phones and small tablets: one reading order for every page (personal pages and the business theme).
+   Rules (CLAUDE.md "Responsive UI and scaling invariants"): rem/em/% only, single column, 2.75rem touch targets,
+   no horizontal overflow, and NO broken words: headings and copy wrap on whole words only.
+
+   Reading order inside a split row (copy + image) on a phone:
+     eyebrow -> title -> [image A] -> description -> [image B] -> list -> buttons
+   Rows alternate: image A (above the description) and image B (below the description). The image is NEVER below the buttons.
+   The copy wrapper uses display: contents so title, description, list and buttons can be interleaved with the image
+   (flex `order`). Loaded after every other stylesheet. */
+
+/* ---------- Personal pages: .split / .hero__inner (single column from 60rem down) ---------- */
+@media (max-width: 60rem) {
+  :root { --section-pad: clamp(4.5rem, 14vw, 5.75rem); }
+  .sec__head { margin-bottom: clamp(2.5rem, 9vw, 3.5rem); }
+  .center { margin-top: clamp(2.5rem, 8vw, 3.5rem); }
+
+  .split, .hero__inner { display: flex; flex-direction: column; align-items: stretch; gap: 0; }
+  .split__copy, .hero__copy { display: contents; }
+
+  /* default slot (anything unlisted) sits with the list/buttons group */
+  .split__copy > *, .hero__copy > * { order: 6; }
+  .split__copy > .pill, .split__copy > .eyebrow, .hero__copy > .pill, .hero__copy > .badge { order: 1; align-self: flex-start; margin: 0 0 1.25rem; }
+  .split__copy > h1, .split__copy > h2, .split__copy > h3, .hero__copy > h1 { order: 2; }
+  .split__copy > p:not(.eyebrow), .hero__copy > p.hero__lead { order: 4; margin: 1.25rem 0 0; max-width: none; }
+  .hero__copy > .hero__lead { order: 3; }
+  .split__copy > ul, .split__copy > ol { order: 6; margin: 1.5rem 0 0; }
+  .split__copy > .btn, .split__copy > .stores, .split__copy > .hero__cta, .split__copy > .vc__cta { order: 7; margin: 1.75rem 0 0; }
+  .split__copy > .btn { align-self: flex-start; }
+  .hero__copy > .hero__cta { order: 5; }
+  .hero__copy > .social-proof { order: 6; }
+
+  /* images: A above the description on one row, B below it on the next */
+  .split__media, .hero__visual { margin: 1.75rem auto 0.5rem; width: 100%; }
+  .split > .split__media { order: 5; }
+  main > section:nth-of-type(even) .split > .split__media { order: 3; }
+  .hero__inner > .hero__visual { order: 4; margin-top: 2.25rem; }
+  .split--rev > .split__media { order: 5; }
+  main > section:nth-of-type(even) .split--rev > .split__media { order: 3; }
+
+  /* the home virtual-card section: card above, then copy (never below the buttons) */
+  .vc { display: flex; flex-direction: column; }
+  .vc__copy { margin-top: 2rem; }
+
+  /* whole words only: designed lines wrap at word boundaries when the column is narrow */
+  .hero__title--lines .ln, .hero__title .ln, .sec__title .ln, .split__title .ln, h1 .ln, h2 .ln { white-space: normal; }
+  h1, h2, h3, .split__title, .sec__title, .hero__title { text-wrap: balance; overflow-wrap: normal; word-break: normal; hyphens: manual; }
+}
+
+/* ---------- Business theme (dark): .bz-* rows (single column below 52rem) ---------- */
+@media (max-width: 51.99rem) {
+  .bz { padding-block: clamp(4.5rem, 14vw, 5.75rem); }
+  .bz-head { margin-bottom: clamp(2.5rem, 9vw, 3.5rem); }
+  #support .bz-head { margin-bottom: clamp(2.5rem, 9vw, 3.5rem); }
+  .bz-split + .bz-split { margin-top: clamp(4.5rem, 14vw, 5.75rem); }
+
+  .bz-split, .bz-hero__inner, .bz-api__inner { display: flex; flex-direction: column; align-items: stretch; gap: 0; }
+  .bz-split__copy, .bz-hero__copy, .bz-api__copy { display: contents; }
+  .bz-split__copy > *, .bz-hero__copy > *, .bz-api__copy > * { order: 6; }
+  .bz-hero__copy > .badge { order: 1; align-self: flex-start; }
+  .bz-eyebrow { order: 1; margin: 0 0 0.75rem; }
+  .bz-split__copy > h2, .bz-api__copy > h2, .bz-hero__copy > h1 { order: 2; }
+  .bz-split__copy > p, .bz-api__copy > p, .bz-hero__copy > p { order: 4; margin: 1.25rem 0 0; max-width: none; }
+  .bz-split__copy > ul, .bz-api__copy > ul { order: 6; margin: 1.5rem 0 0; }
+  .bz-split__copy > .btn, .bz-split__copy > .bz-cta, .bz-api__copy > .bz-cta { order: 7; margin: 1.75rem 0 0; }
+  .bz-split__copy > .btn { align-self: flex-start; }
+  .bz-hero__copy > .bz-cta { order: 5; margin-top: 1.75rem; }
+
+  .bz-split > .bz-split__media, .bz-hero__media, .bz-api__code { width: 100%; margin: 1.75rem auto 0.5rem; }
+  /* rows alternate: image above the description (3) / below it (5); never after the buttons */
+  .bz-split > .bz-split__media { order: 3; }
+  #methods .bz-split + .bz-split > .bz-split__media, #hotspots .bz-split > .bz-split__media { order: 5; }
+  .bz-hero__media { order: 4; margin-top: 2.25rem; }
+  .bz-api__code { order: 5; }
+
+  .bz-hero__title .ln, .bz-h2 .ln, .bz-h2--sm .ln { white-space: normal; }
+  .bz-hero__title, .bz-h2 { text-wrap: balance; overflow-wrap: normal; word-break: normal; hyphens: manual; }
+}
+
+/* ---------- Every phone: copy never overflows the viewport; whole words only ---------- */
+@media (max-width: 40rem) {
+  html, body { overflow-x: clip; }
+  p, li, h1, h2, h3, summary, .pcard__link, .dk-link, .ulink { overflow-wrap: normal; word-break: normal; hyphens: manual; }
+  /* a designed line that cannot fit wraps by whole words instead of being cut off */
+  .ln { white-space: normal; }
+  .pcard__text p, .tile p, .dk-card p { max-width: none; }
+}
+
+/* ---------- Phone titles: smaller, so a title reads in two lines (designed lines stay whole where they fit) ---------- */
+@media (max-width: 40rem) {
+  .hero__title, .hero__title--lines, .bz-hero__title { font-size: clamp(1.3rem, 6.3vw, 1.85rem); line-height: 1.15; letter-spacing: -0.005em; }
+  .sec__title, .split__title, .split__title--pill, .split__title--md, .bz-h2, .bz-h2--md, .bz-h2--sm, .faq__title { font-size: clamp(1.2rem, 5.5vw, 1.65rem); line-height: 1.18; }
+  .mega__title { font-size: 1.125rem; }
+}
+
+/* the long two-line instalments heading flows as one paragraph on phones (3 lines instead of 4) */
+@media (max-width: 40rem) { #instalments .bz-h2 .ln { display: inline; } }

@@ -47,7 +47,7 @@ for (const f of readdirSync(PAGES).filter((n) => n.endsWith(".page.html"))) {
   body = expandImages(body);
   if (/\{\{\w+\}\}/.test(body)) throw new Error(`${f}: unresolved placeholder ${body.match(/\{\{\w+\}\}/)[0]}`);
 
-  const css = ["styles.css", "sections.css", ...(meta.css ? meta.css.split(/\s+/).filter(Boolean) : [])]
+  const css = ["styles.css", "sections.css", ...(meta.css ? meta.css.split(/\s+/).filter(Boolean) : []), "mobile.css"]
     .map((c) => `  <link rel="stylesheet" href="${c}">`).join("\n");
   const preload = meta.preload
     ? `  <link rel="preload" as="image" href="${meta.preload}" type="image/webp" fetchpriority="high">\n` : "";
