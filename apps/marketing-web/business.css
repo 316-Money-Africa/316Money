@@ -178,6 +178,15 @@
 /* ---------- API code with the purple polygons behind ---------- */
 .bz-api__code { position: relative; isolation: isolate; padding: 0; }
 .bz-codeimg { position: relative; z-index: 1; display: block; width: 100%; height: auto; border-radius: 0.5rem; }
-.bz-poly { position: absolute; z-index: 0; height: auto; max-width: none; }
-.bz-poly--a { right: -12%; bottom: -14%; width: 62%; }
-.bz-poly--b { left: -14%; bottom: -8%; width: 70%; }
+
+/* Powerful APIs: the purple polygons are full-bleed section backgrounds (right edge to bottom), the code card sits on top */
+.bz-api { position: relative; overflow: hidden; }
+.bz-api > .bz-wrap { position: relative; z-index: 1; }
+.bz-poly { position: absolute; z-index: 0; height: auto; max-width: none; pointer-events: none; }
+.bz-poly--a { right: 0; top: 14%; width: min(46%, 40rem); }
+.bz-poly--b { right: 0; bottom: 0; width: min(62%, 54rem); }
+
+/* a little more air between a description and the buttons under it */
+.bz-body { margin-bottom: clamp(2rem, 1.6rem + 1vw, 2.75rem); }
+#hotspots .bz-cta, #collect .bz-split__copy .btn { margin-top: 0; }
+#hotspots .bz-body { margin-bottom: clamp(1.75rem, 1.4rem + 1vw, 2.5rem); }
