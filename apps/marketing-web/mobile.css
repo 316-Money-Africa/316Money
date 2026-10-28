@@ -94,3 +94,79 @@
 
 /* the long two-line instalments heading flows as one paragraph on phones (3 lines instead of 4) */
 @media (max-width: 40rem) { #instalments .bz-h2 .ln { display: inline; } }
+
+/* ---------- Phone tiles: the text block keeps its own space and the artwork gets a reserved zone underneath ----------
+   Tile art is positioned in % of the tile (bottom-anchored). On a phone the text takes far more of the tile than on a desktop,
+   so the tile gets extra bottom padding (a share of the tile width) and the art sits fully inside that zone, never over the text. */
+@media (max-width: 40rem) {
+  :root { --tw: calc(100vw - 2 * clamp(1.25rem, 5vw, 2rem)); }
+  .tile, .dk-card { aspect-ratio: auto !important; min-height: 0 !important; padding-bottom: calc(var(--tw) * (var(--artzone, 0.52) + var(--artoff, 0))); }
+  .tile--tall { padding-bottom: calc(var(--tw) * (var(--artzone, 0.6) + var(--artoff, 0))); }
+  /* artwork that is positioned from the top of the tile starts lower on a phone (the text block is taller) */
+  .tile__art, .dk-card__art { top: calc(var(--tw) * var(--artoff, 0)); }
+}
+
+/* Per-tile art zone (share of the tile width) = the tallest/lowest artwork in that tile, plus a little air */
+@media (max-width: 40rem) {
+  :is(.tile, .dk-card):has(.v-lock) { --artzone: 0.54; }
+  :is(.tile, .dk-card):has(.v-sec) { --artzone: 0.3; }
+  :is(.tile, .dk-card):has(.v-man) { --artzone: 0.3; }
+  :is(.tile, .dk-card):has(.v-pin) { --artzone: 0.51; }
+  :is(.tile, .dk-card):has(.v-woman) { --artzone: 0.39; }
+  :is(.tile, .dk-card):has(.c-shop) { --artzone: 0.41; }
+  :is(.tile, .dk-card):has(.c-coin) { --artzone: 0.46; }
+  :is(.tile, .dk-card):has(.c-music) { --artzone: 0.35; }
+  :is(.tile, .dk-card):has(.c-game) { --artzone: 0.32; }
+  :is(.tile, .dk-card):has(.g-flag) { --artzone: 0.55; }
+  :is(.tile, .dk-card):has(.g-man) { --artzone: 0.6; }
+  :is(.tile, .dk-card):has(.at-mtn) { --artzone: 0.64; }
+  :is(.tile, .dk-card):has(.at-phone) { --artzone: 0.67; }
+  :is(.tile, .dk-card):has(.b-elec) { --artzone: 0.41; }
+  :is(.tile, .dk-card):has(.b-arch) { --artzone: 0.45; }
+  :is(.tile, .dk-card):has(.b-man) { --artzone: 0.66; }
+  :is(.tile, .dk-card):has(.b-school) { --artzone: 0.4; }
+  :is(.tile, .dk-card):has(.b-hphone) { --artzone: 0.5; }
+  :is(.tile, .dk-card):has(.b-amount) { --artzone: 0.33; }
+  :is(.tile, .dk-card):has(.b-tablet) { --artzone: 0.46; }
+  :is(.tile, .dk-card):has(.b-iwoman) { --artzone: 0.5; }
+  :is(.tile, .dk-card):has(.p-watch) { --artzone: 0.75; }
+  :is(.tile, .dk-card):has(.p-step) { --artzone: 0.31; }
+  :is(.tile, .dk-card):has(.p-confirm) { --artzone: 0.35; }
+  :is(.tile, .dk-card):has(.p-phone) { --artzone: 0.55; }
+  :is(.tile, .dk-card):has(.t-lock) { --artzone: 0.33; }
+  :is(.tile, .dk-card):has(.t-limits) { --artzone: 0.32; }
+  :is(.tile, .dk-card):has(.t-woman) { --artzone: 0.39; }
+  :is(.tile, .dk-card):has(.t-status) { --artzone: 0.43; }
+  :is(.tile, .dk-card):has(.t-gphone) { --artzone: 0.36; }
+  :is(.tile, .dk-card):has(.t-purch) { --artzone: 0.3; }
+  :is(.tile, .dk-card):has(.t-fan) { --artzone: 0.53; }
+  :is(.tile, .dk-card):has(.t-woman2) { --artzone: 0.59; }
+  :is(.tile, .dk-card):has(.k-links) { --artzone: 0.39; }
+  :is(.tile, .dk-card):has(.k-hosted) { --artzone: 0.46; }
+  :is(.tile, .dk-card):has(.k-posphone) { --artzone: 0.57; }
+  :is(.tile, .dk-card):has(.k-payouts) { --artzone: 0.56; }
+  :is(.tile, .dk-card):has(.k-invwoman) { --artzone: 0.62; }
+  :is(.tile, .dk-card):has(.k-stores) { --artzone: 0.47; }
+  :is(.tile, .dk-card):has(.k-rec) { --artzone: 0.48; }
+  :is(.tile, .dk-card):has(.k-mp) { --artzone: 0.56; }
+  :is(.tile, .dk-card):has(.k-shops) { --artzone: 0.61; }
+}
+
+@media (max-width: 40rem) {
+  :is(.tile, .dk-card):has(.k-hosted) { --artoff: 0.1; }
+  :is(.tile, .dk-card):has(.k-posphone) { --artoff: 0.09; }
+  :is(.tile, .dk-card):has(.k-invwoman) { --artoff: 0.05; }
+  :is(.tile, .dk-card):has(.k-rec) { --artoff: 0.06; }
+  :is(.tile, .dk-card):has(.k-mp) { --artoff: 0.1; }
+  :is(.tile, .dk-card):has(.b-elec) { --artoff: 0.11; }
+  :is(.tile, .dk-card):has(.b-man) { --artoff: 0.07; }
+  :is(.tile, .dk-card):has(.b-tablet) { --artoff: 0.08; }
+  :is(.tile, .dk-card):has(.at-phone) { --artoff: 0.09; }
+}
+
+/* Tile art cropped by the bottom edge: the crop depth is tied to the tile width (not to a phone tile's taller height) */
+@media (max-width: 40rem) {
+  .t-status { bottom: -4.4cqw; } .t-gphone { bottom: -2.2cqw; } .t-purch { bottom: -3.3cqw; } .t-fan { bottom: -5.5cqw; } .t-woman2 { bottom: -1cqw; }
+  .v-sec { bottom: -1.7cqw; } .v-man { bottom: -4cqw; } .g-man { bottom: -1.7cqw; } .at-airtel { bottom: -3.3cqw; }
+  .b-school { bottom: -1.7cqw; } .p-confirm { bottom: -4.4cqw; }
+}
