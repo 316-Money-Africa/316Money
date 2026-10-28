@@ -37,6 +37,8 @@ jobs:
           test -f apps/marketing-web/airtime-top-up.html
           test -f apps/marketing-web/bill-payment.html
           test -f apps/marketing-web/pay-with-316.html
+          test -f apps/marketing-web/accept-online-payments.html
+          test -f apps/marketing-web/business.css
           test -f apps/marketing-web/styles.css
       - name: Images must be compressed (WebP, no large raw PNG/JPG)
         run: |
@@ -44,7 +46,7 @@ jobs:
           if [ -n "$big" ]; then echo "Uncompressed images found (run tools/optimize-images.mjs):"; echo "$big"; exit 1; fi
           total=$(find apps/marketing-web/assets -type f \( -name '*.webp' -o -name '*.png' -o -name '*.svg' \) -exec wc -c {} + | tail -1 | awk '{print $1}')
           echo "asset weight: $total bytes"
-          if [ "$total" -gt 8388608 ]; then echo "Total asset weight above 8 MB"; exit 1; fi
+          if [ "$total" -gt 12582912 ]; then echo "Total asset weight above 12 MB"; exit 1; fi
           for d in apps/marketing-web/assets/*/; do
             w=$(find "$d" -type f -exec wc -c {} + | tail -1 | awk '{print $1}')
             echo "$d $w bytes"

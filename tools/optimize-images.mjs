@@ -36,12 +36,13 @@ const WIDTHS = {
   "Bills/map-tablet.png": 914, "Bills/invoice-woman.png": 1481, "Bills/momo.png": 554, "Bills/water-bill.png": 575,
   "Bills/bulb.png": 900, "Bills/couple.png": 940, "Bills/arch.png": 800, "Bills/cable-success.png": 765, "Bills/man.png": 800, "Bills/phone-input.png": 906, "Bills/data-tiers.png": 645, "Bills/panel.png": 1300, "Bills/util-list.png": 900, "Bills/school.png": 900, "Bills/txn-card.png": 751, "Bills/bill-amount.png": 710, "Bills/history.png": 1254,
   "Bills/electricity-card.png": 1200, "Bills/bolt.png": 338, "Pay/wallet-balance.png": 555,
+  "Business/hero-phones.png": 1000, "Business/checkout-trio.png": 760, "Business/pay-links.png": 800, "Business/hosted-checkout.png": 900, "Business/pos-phone.png": 526, "Business/pos-received.png": 640, "Business/payouts.png": 800, "Business/invoice-card.png": 520, "Business/invoice-woman.png": 640, "Business/methods.png": 1100, "Business/inst-woman.png": 1000, "Business/hot-woman.png": 1000, "Business/stores.png": 640, "Business/school-masthead.png": 700, "Business/school-record.png": 560, "Business/mp-julie.png": 380, "Business/mp-mary.png": 380, "Business/mp-frank.png": 380, "Business/shops.png": 900, "Business/api-code.png": 1100, "Business/poly-a.png": 700, "Business/poly-b.png": 700, "Business/collect-woman.png": 900,
   "Pay/speaker.png": 572,
   "Pay/cap.png": 875, "Pay/watch.png": 565, "Pay/methods.png": 401, "Pay/payment-made.png": 463, "Pay/pay-confirm.png": 943, "Pay/headphones.png": 477, "Pay/man.png": 1200, "Pay/phone.png": 587, "Pay/step-method.png": 656,
   "Pots/pot-progress-woman.png": 1120, "Pots/pot-success.png": 560, "Pots/pot-slider.png": 820, "Pots/pot-goals.png": 1320,
 };
 const QUALITY = 86;
-const FOLDER_QUALITY = { Cards: 92, Airtime: 92, Bills: 92, Pay: 92 }; // card artwork carries small UI text, so it keeps more detail // high enough that small UI text baked into the artwork stays crisp
+const FOLDER_QUALITY = { Cards: 92, Airtime: 92, Bills: 92, Pay: 92, Business: 90 }; // card artwork carries small UI text, so it keeps more detail // high enough that small UI text baked into the artwork stays crisp
 
 let before = 0, after = 0;
 // every folder in assets-src/ (one per page) maps to the same folder in the served assets
