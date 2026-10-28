@@ -203,3 +203,6 @@
 /* API checklist: purple boxes and ticks */
 .bz-checks--rich i { border-color: #7355F2; border-radius: 0.25rem; background: rgba(115, 85, 242, .08); }
 .bz-checks--rich i::after { border-right-color: #7355F2; border-bottom-color: #7355F2; }
+
+/* Multiple Payment Methods checklist: no dividers between rows */
+#methods .bz-checks li { border-bottom: 0; }
