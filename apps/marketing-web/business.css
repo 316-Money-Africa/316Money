@@ -3321,3 +3321,73 @@
 @keyframes ph-spin { to { transform: rotate(360deg); } } .ph-spin { animation: ph-spin 1s linear infinite; }
 @keyframes ph-pulse { 0% { transform: scale(1); opacity: .6; } 100% { transform: scale(1.7); opacity: 0; } } .ph-pulse { animation: ph-pulse 1.8s ease-out infinite; } .ph-pulse2 { animation-delay: .9s; }
 /* @end bento-checkout-anim */
+
+/* @generated:gift-notif-anim (scratch generator) */
+@keyframes gn1 {
+  0.000% { opacity: 0.000; transform: translate(0.00px, -8.00px); }
+  82.500% { opacity: 0.000; transform: translate(0.00px, -8.00px); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
+  86.250% { opacity: 1.000; transform: translate(0.00px, 0.00px); }
+  95.833% { opacity: 1.000; transform: translate(0.00px, 0.00px); }
+  98.750% { opacity: 0.000; transform: translate(0.00px, 0.00px); }
+  100.000% { opacity: 0.000; transform: translate(0.00px, -8.00px); }
+}
+.gn1 { animation: gn1 12s linear infinite; }
+@keyframes gn2 {
+  0.000% { opacity: 0.000; transform: translate(0.00px, 6.00px); }
+  84.583% { opacity: 0.000; transform: translate(0.00px, 6.00px); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
+  87.500% { opacity: 1.000; transform: translate(0.00px, 0.00px); }
+  95.833% { opacity: 1.000; transform: translate(0.00px, 0.00px); }
+  98.750% { opacity: 0.000; transform: translate(0.00px, 0.00px); }
+  100.000% { opacity: 0.000; transform: translate(0.00px, 6.00px); }
+}
+.gn2 { animation: gn2 12s linear infinite; }
+@keyframes gn3 {
+  0.000% { opacity: 0.000; transform: translate(0.00px, 6.00px); }
+  87.083% { opacity: 0.000; transform: translate(0.00px, 6.00px); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
+  90.000% { opacity: 1.000; transform: translate(0.00px, 0.00px); }
+  95.833% { opacity: 1.000; transform: translate(0.00px, 0.00px); }
+  98.750% { opacity: 0.000; transform: translate(0.00px, 0.00px); }
+  100.000% { opacity: 0.000; transform: translate(0.00px, 6.00px); }
+}
+.gn3 { animation: gn3 12s linear infinite; }
+@keyframes gn4 {
+  0.000% { opacity: 0.000; transform: translate(0.00px, 6.00px); }
+  89.583% { opacity: 0.000; transform: translate(0.00px, 6.00px); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
+  92.500% { opacity: 1.000; transform: translate(0.00px, 0.00px); }
+  95.833% { opacity: 1.000; transform: translate(0.00px, 0.00px); }
+  98.750% { opacity: 0.000; transform: translate(0.00px, 0.00px); }
+  100.000% { opacity: 0.000; transform: translate(0.00px, 6.00px); }
+}
+.gn4 { animation: gn4 12s linear infinite; }
+@keyframes gn5 {
+  0.000% { opacity: 0.000; transform: scale(0.200); }
+  78.333% { opacity: 0.000; transform: scale(0.200); }
+  78.500% { opacity: 0.750; transform: scale(0.200); animation-timing-function: ease-out; }
+  85.833% { opacity: 0.000; transform: scale(1.800); }
+  100.000% { opacity: 0.000; transform: scale(0.200); }
+}
+.gn5 { animation: gn5 12s linear infinite; }
+@keyframes gn6 {
+  0.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.200); }
+  79.167% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.200); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
+  80.833% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(1.000); }
+  95.833% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(1.000); }
+  98.750% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(1.000); }
+  100.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.200); }
+}
+.gn6 { animation: gn6 12s linear infinite; }
+@keyframes gn7 {
+  0.000% { opacity: 1.000; transform: rotate(0.0deg); }
+  78.333% { opacity: 1.000; transform: rotate(0.0deg); }
+  79.167% { opacity: 1.000; transform: rotate(-16.0deg); }
+  80.000% { opacity: 1.000; transform: rotate(14.0deg); }
+  80.833% { opacity: 1.000; transform: rotate(-10.0deg); }
+  81.667% { opacity: 1.000; transform: rotate(6.0deg); }
+  82.500% { opacity: 1.000; transform: rotate(0.0deg); }
+  100.000% { opacity: 1.000; transform: rotate(0.0deg); }
+}
+.gn7 { animation: gn7 12s linear infinite; }
+.bz-visual__notif { position: absolute; inset: 0; width: 100%; height: 100%; display: block; max-width: none; pointer-events: none; }
+.bz-visual__notif text { font-family: var(--font); }
+@media (prefers-reduced-motion: reduce) { .bz-visual__notif { display: none; } }
+/* @end gift-notif-anim */
