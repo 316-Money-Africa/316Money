@@ -34,6 +34,7 @@
 .bz-img { display: block; width: 100%; height: auto; }
 .slot { display: block; width: 100%; }
 .accent { color: var(--bz-brand); }
+.nb { white-space: nowrap; }
 .plum { color: var(--bz-plum); }
 .ln { text-wrap: balance; }
 
@@ -178,17 +179,17 @@
 .bz-tabs__bar label:hover { background: #F5F7FB; }
 #bz-tab-1:checked ~ .bz-tabs__bar label[for="bz-tab-1"], #bz-tab-2:checked ~ .bz-tabs__bar label[for="bz-tab-2"], #bz-tab-3:checked ~ .bz-tabs__bar label[for="bz-tab-3"], #bz-tab-4:checked ~ .bz-tabs__bar label[for="bz-tab-4"] { background: #000; border-color: #000; color: #fff; }
 #bz-tab-1:focus-visible ~ .bz-tabs__bar label[for="bz-tab-1"], #bz-tab-2:focus-visible ~ .bz-tabs__bar label[for="bz-tab-2"], #bz-tab-3:focus-visible ~ .bz-tabs__bar label[for="bz-tab-3"], #bz-tab-4:focus-visible ~ .bz-tabs__bar label[for="bz-tab-4"] { outline: 0.125rem solid var(--brand); outline-offset: 0.1875rem; }
-.bz-panel { display: none; }
-#bz-tab-1:checked ~ .bz-tabs__panels .bz-panel--1 { display: block; }
-#bz-tab-2:checked ~ .bz-tabs__panels .bz-panel--2, #bz-tab-3:checked ~ .bz-tabs__panels .bz-panel--3, #bz-tab-4:checked ~ .bz-tabs__panels .bz-panel--4 { display: grid; }
-.bz-panel--2, .bz-panel--3, .bz-panel--4 { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: center; padding: clamp(1.25rem, 3.8%, 3rem); border-radius: 1.25rem; background: #F5F7FB; }
-.bz-panel__label { margin: 0; font-size: clamp(0.8125rem, 0.7rem + 0.4vw, 1.0625rem); font-weight: 500; text-transform: uppercase; color: var(--bz-plum); }
-.bz-panel__copy h3 { margin: 1rem 0 0; font-size: clamp(1.375rem, 0.9rem + 1.6vw, 2.25rem); line-height: 1.2; font-weight: 600; text-wrap: balance; }
-.bz-panel__copy p:not(.bz-panel__label) { margin: 1.25rem 0 0; font-size: clamp(0.875rem, 0.7rem + 0.7vw, 1.4375rem); line-height: 1.45; color: #606060; }
-.bz-panel__link { display: inline-flex; align-items: center; min-height: 2.75rem; margin-top: clamp(1rem, 2vw, 1.75rem); font-size: clamp(1rem, 0.8rem + 0.7vw, 1.5rem); font-weight: 500; color: var(--bz-eyebrow); }
-.bz-panel__art { display: grid; place-items: center; overflow: hidden; border-radius: 1.25rem; background: linear-gradient(135deg, #F7F2FF 0%, #E4D8F6 55%, #CDB8EF 100%); aspect-ratio: 1.66 / 1; }
-.bz-panel__pos { display: block; height: 92%; width: auto; max-width: 100%; object-fit: contain; }
-.bz-panel__art--pos { padding-top: 4%; }
+.bz-panel { display: none; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; padding: 3.5% 1.7% 3.5% 0; border-radius: 1.25rem; background: #F5F7FB; }
+#bz-tab-1:checked ~ .bz-tabs__panels .bz-panel--1, #bz-tab-2:checked ~ .bz-tabs__panels .bz-panel--2, #bz-tab-3:checked ~ .bz-tabs__panels .bz-panel--3, #bz-tab-4:checked ~ .bz-tabs__panels .bz-panel--4 { display: grid; }
+.bz-panel__copy { padding-left: clamp(1.25rem, 5%, 4.5rem); padding-right: 1rem; }
+.bz-panel__label { margin: 0; font-size: clamp(0.75rem, 0.65rem + 0.4vw, 1rem); font-weight: 500; text-transform: uppercase; color: var(--bz-plum); }
+.bz-panel__copy h3 { margin: 1rem 0 0; font-size: clamp(1.375rem, 0.9rem + 1.3vw, 1.875rem); line-height: 1.2; font-weight: 600; color: #000; }
+.bz-panel__desc { margin: 1.25rem 0 0; font-size: clamp(0.875rem, 0.7rem + 0.65vw, 1.375rem); line-height: 1.45; color: #606060; }
+.bz-panel__copy .ln { display: inline; }
+@media (min-width: 64rem) { .bz-panel__copy .ln { display: block; } }
+.bz-panel__link { display: inline-flex; align-items: center; min-height: 2.75rem; margin-top: clamp(1rem, 2vw, 1.75rem); font-size: clamp(1rem, 0.8rem + 0.6vw, 1.375rem); font-weight: 500; color: var(--bz-eyebrow); }
+.bz-panel__link:hover { text-decoration: underline; }
+.bz-panel__art { overflow: hidden; border-radius: 2.25% / 2.65%; }
 
 /* ---------- 8 · Powerful APIs ---------- */
 .bz-api { position: relative; overflow: hidden; }
@@ -244,7 +245,7 @@
   .bz-cols { grid-template-columns: 1fr; max-width: 40rem; }
   .bz-bento__row { grid-template-columns: repeat(2, 1fr); }
   .bz-bento__row > :last-child { grid-column: 1 / -1; }
-  .bz-panel--2, .bz-panel--3, .bz-panel--4 { grid-template-columns: 1fr; }
+  .bz-panel { grid-template-columns: 1fr; }
   .bz-split--methods .bz-split__media { max-width: 36rem; margin-inline: auto; }
 }
 @media (max-width: 47.99rem) {
