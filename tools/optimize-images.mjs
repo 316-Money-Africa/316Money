@@ -1,5 +1,5 @@
 // Converts the design-source PNGs in assets-src/ into the small WebP files the site serves from apps/marketing-web/assets/.
-// Run: npm i --no-save sharp && node tools/optimize-images.mjs
+// Run: npm i --no-save sharp && node tools/optimize-images.mjs   (ONLY=Business limits it to one folder)
 // Widths are ~2x the largest rendered size (retina) so images stay sharp without shipping multi-megabyte PNGs.
 import { createRequire } from "node:module";
 import { readdirSync, mkdirSync, statSync } from "node:fs";
@@ -36,8 +36,9 @@ const WIDTHS = {
   "Bills/map-tablet.png": 914, "Bills/invoice-woman.png": 1481, "Bills/momo.png": 554, "Bills/water-bill.png": 575,
   "Bills/bulb.png": 900, "Bills/couple.png": 940, "Bills/arch.png": 800, "Bills/cable-success.png": 765, "Bills/man.png": 800, "Bills/phone-input.png": 906, "Bills/data-tiers.png": 645, "Bills/panel.png": 1300, "Bills/util-list.png": 900, "Bills/school.png": 900, "Bills/txn-card.png": 751, "Bills/bill-amount.png": 710, "Bills/history.png": 1254,
   "Bills/electricity-card.png": 1200, "Bills/bolt.png": 338, "Pay/wallet-balance.png": 555,
-  "Business/gift-brand.png": 900, "Business/accounts.png": 1100, "Business/dash-bg.png": 1400, "Business/tasty-card.png": 520,
-  "Business/hero-phones.png": 1000, "Business/checkout-trio.png": 760, "Business/pay-links.png": 800, "Business/hosted-checkout.png": 900, "Business/pos-phone.png": 526, "Business/pos-received.png": 640, "Business/payouts.png": 800, "Business/invoice-card.png": 520, "Business/invoice-woman.png": 640, "Business/methods.png": 1100, "Business/inst-woman.png": 1000, "Business/hot-woman.png": 1000, "Business/stores.png": 640, "Business/school-masthead.png": 700, "Business/school-record.png": 560, "Business/mp-julie.png": 380, "Business/mp-mary.png": 380, "Business/mp-frank.png": 380, "Business/shops.png": 900, "Business/api-code.png": 1100, "Business/poly-a.png": 700, "Business/poly-b.png": 700, "Business/collect-woman.png": 900,
+  "Business/hero.png": 1920, "Business/card-checkout.png": 1800, "Business/card-invoices.png": 1100, "Business/collections-chart.png": 800, "Business/link-chat-1.png": 700, "Business/link-chat-2.png": 700, "Business/giftcard-phone.png": 700,
+  "Business/trio.png": 1100, "Business/methods.png": 1400, "Business/pss-dashboard.png": 1400, "Business/pss-order.png": 600, "Business/pss-reminder.png": 818, "Business/pss-active-plans.png": 900,
+  "Business/giftvouchers-visual.png": 2400, "Business/panel-online-stores.png": 2400, "Business/banner-bg.png": 2000, "Business/pos-terminal.png": 700, "Business/api-code.png": 1400, "Business/poly-a.png": 700, "Business/poly-b.png": 700,
   "Pay/speaker.png": 572,
   "Pay/cap.png": 875, "Pay/watch.png": 565, "Pay/methods.png": 401, "Pay/payment-made.png": 463, "Pay/pay-confirm.png": 943, "Pay/headphones.png": 477, "Pay/man.png": 1200, "Pay/phone.png": 587, "Pay/step-method.png": 656,
   "Pots/pot-progress-woman.png": 1120, "Pots/pot-success.png": 560, "Pots/pot-slider.png": 820, "Pots/pot-goals.png": 1320,
@@ -47,7 +48,7 @@ const FOLDER_QUALITY = { Cards: 92, Airtime: 92, Bills: 92, Pay: 92, Business: 9
 
 let before = 0, after = 0;
 // every folder in assets-src/ (one per page) maps to the same folder in the served assets
-for (const dir of readdirSync(SRC_ROOT).filter((n) => !n.startsWith("_") && statSync(join(SRC_ROOT, n)).isDirectory())) { // folders starting with "_" hold supplied-but-unused originals and are skipped
+for (const dir of readdirSync(SRC_ROOT).filter((n) => (!process.env.ONLY || n === process.env.ONLY) && !n.startsWith("_") && statSync(join(SRC_ROOT, n)).isDirectory())) { // folders starting with "_" hold supplied-but-unused originals and are skipped
   const SRC = join(SRC_ROOT, dir), OUT = join(OUT_ROOT, dir);
   mkdirSync(OUT, { recursive: true });
   for (const f of readdirSync(SRC).filter((n) => /\.(png|jpe?g)$/i.test(n))) {
