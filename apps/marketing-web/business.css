@@ -2278,8 +2278,8 @@
 /* @end bento-links-anim */
 
 /* @generated:hero-process (scratch generator: do not hand-edit) */
-.bz-deck { animation: bz-deck-v 39s linear infinite; animation-delay: calc(-1 * var(--sh, 0s)); }
-.bz-deck, .bz-deck * { animation-delay: calc(-1 * var(--sh, 0s)); }
+.bz-deck { animation: bz-deck-v 39s linear infinite; animation-delay: calc(-1 * (var(--sh, 0s) + 1s)); }
+.bz-deck, .bz-deck * { animation-delay: calc(-1 * (var(--sh, 0s) + 1s)); }
 .bz-deck > .bz-scr { position: absolute; inset: 0; width: 100%; height: 100%; display: block; max-width: none; }
 .bz-scr text { font-family: var(--font); }
 .bz-hero__media { position: relative; } .bz-phone-top { position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: 6; pointer-events: none; max-width: none; }
