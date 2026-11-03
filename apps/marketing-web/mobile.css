@@ -53,7 +53,7 @@
   .bz-hero { padding-bottom: 0; }
 
   /* split rows: eyebrow -> title -> [image] -> description -> list -> buttons; the image is never after the buttons */
-  .bz-split, .bz-api__inner, #bz-tab-2:checked ~ .bz-tabs__panels .bz-panel--2, #bz-tab-3:checked ~ .bz-tabs__panels .bz-panel--3, #bz-tab-4:checked ~ .bz-tabs__panels .bz-panel--4 { display: flex; flex-direction: column; align-items: stretch; gap: 0; }
+  .bz-split, .bz-api__inner, #bz-tab-1:checked ~ .bz-tabs__panels .bz-panel--1, #bz-tab-2:checked ~ .bz-tabs__panels .bz-panel--2, #bz-tab-3:checked ~ .bz-tabs__panels .bz-panel--3, #bz-tab-4:checked ~ .bz-tabs__panels .bz-panel--4 { display: flex; flex-direction: column; align-items: stretch; gap: 0; }
   .bz-split__copy, .bz-api__copy, .bz-panel__copy { display: contents; }
   .bz-split__copy > *, .bz-api__copy > *, .bz-panel__copy > * { order: 6; }
   .bz-eyebrow, .bz-panel__label { order: 1; margin: 0 0 0.75rem; }
@@ -66,7 +66,8 @@
   /* rows alternate: methods = image above the description (3); online-store style panels and the API code block follow the same rule */
   .bz-split > .bz-split__media { order: 3; margin: 1.75rem auto 0.5rem; }
   .bz-api__code { order: 3; width: 100%; margin: 1.75rem auto 0.5rem; }
-  .bz-panel--2 > .bz-panel__art, .bz-panel--3 > .bz-panel__art, .bz-panel--4 > .bz-panel__art { order: 5; margin: 1.75rem 0 0; }
+  .bz-panel > .bz-panel__art { order: 5; margin: 1.75rem 0 0; }
+  .bz-panel { padding: 1.5rem 1.25rem 1.25rem; }
   .bz-trio__media { order: -1; }
 
   .bz-hero__title .ln, .bz-h2 .ln, .bz-h2--sm .ln { white-space: normal; }
