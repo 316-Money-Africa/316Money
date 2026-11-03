@@ -286,27 +286,155 @@ img.bz-online__dash { box-shadow: 0 0.5rem 2rem rgba(80, 50, 160, .1); }
   .bz-hero__media { width: 100%; }
 }
 
-/* ---------- Hero: the front checkout window changes every 3 seconds (base screen, then two overlays, 9s loop) ----------
-   The overlay sits exactly over the front browser window of the hero artwork. Everything inside is laid out in design
-   units: 1u = 1/968 of the window width, so the screens scale with the artwork and stay sharp at any size. */
+/* ---------- Hero: the front checkout window is a deck of cards. Each deck shows its screens 3s apart, then drops out of the hero
+   like a falling card and goes to the back of the stack while the next deck comes forward. The screens are inline SVG on a
+   968 x 686 design box, so they scale exactly with the artwork (no unit maths, nothing to mis-render). ---------- */
 .bz-hero__media { position: relative; }
-.bz-hero__screens { position: absolute; left: 38.29%; top: 0.63%; width: 61.12%; height: 96.07%; overflow: hidden; border-radius: 1.5% / 2.1%; container-type: inline-size; pointer-events: none; }
-.bz-scr { position: absolute; inset: 0; --u: calc(100cqw / 968); background: #fff; opacity: 0; font-family: var(--font); }
-.bz-scr--a { animation: bz-scr-a 9s ease-in-out infinite; }
-.bz-scr--b { animation: bz-scr-b 9s ease-in-out infinite; }
-.bz-scr .t, .bz-scr .b, .bz-scr .i { position: absolute; left: calc(var(--u) * var(--x)); top: calc(var(--u) * var(--y)); margin: 0; }
-.bz-scr .t { font-size: calc(var(--u) * var(--s, 12)); font-weight: var(--w, 500); color: var(--c, #111); line-height: 1; white-space: nowrap; font-style: normal; transform: translateY(-50%); }
-.bz-scr .t.r { transform: translate(-100%, -50%); }
-.bz-scr .t.m { transform: translate(-50%, -50%); }
-.bz-scr .t b { font-weight: 700; }
-.bz-scr .b, .bz-scr .i { width: calc(var(--u) * var(--bw)); height: calc(var(--u) * var(--bh)); display: block; box-sizing: border-box; max-width: none; }
-.bz-scr .dot { background: #E5E5EA; border-radius: 50%; }
-.bz-scr--b .ring { animation: bz-ring 9s ease-out infinite; }
-.bz-scr--b .ok { animation: bz-pop 9s cubic-bezier(.3, 1.6, .5, 1) infinite; }
-.bz-scr--a .spin { animation: bz-spin 3s linear infinite; }
-@keyframes bz-scr-a { 0%, 33.33% { opacity: 0; transform: translateY(2.5%); } 37.5%, 66.67% { opacity: 1; transform: none; } 70.5%, 100% { opacity: 0; transform: translateY(-1.5%); } }
-@keyframes bz-scr-b { 0%, 66.67% { opacity: 0; transform: translateY(2.5%); } 70.5%, 96.67% { opacity: 1; transform: none; } 100% { opacity: 0; transform: translateY(-1.5%); } }
-@keyframes bz-pop { 0%, 69% { scale: 0; } 74% { scale: 1.12; } 77%, 100% { scale: 1; } }
-@keyframes bz-ring { 0%, 71% { scale: 0.6; opacity: 0; } 78% { scale: 1.1; opacity: 1; } 82%, 100% { scale: 1; opacity: 1; } }
+.bz-hero__screens { position: absolute; left: 38.29%; top: 0.63%; width: 61.12%; height: 96.07%; pointer-events: none; }
+.bz-deck { position: absolute; inset: 0; transform-origin: 50% 0; border-radius: 1.5% / 2.1%; background: #fff; box-shadow: 0 0.75rem 2rem rgba(70, 40, 150, .18); overflow: hidden; will-change: transform, opacity; opacity: 0; }
+.bz-deck > .bz-scr { position: absolute; inset: 0; width: 100%; height: 100%; display: block; max-width: none; opacity: 0; }
+.bz-scr text { font-family: var(--font); dominant-baseline: central; }
+.bz-scr .spin { animation: bz-spin 3s linear infinite; transform-box: fill-box; transform-origin: center; }
 @keyframes bz-spin { to { rotate: 360deg; } }
 @media (prefers-reduced-motion: reduce) { .bz-hero__screens { display: none; } }
+
+/* @generated:hero-decks (tools: scratch generator, do not hand-edit this block) */
+.bz-deck { animation-duration: 30s; animation-timing-function: linear; animation-iteration-count: infinite; }
+@keyframes bz-deck-1 {
+  0.000% { transform: translateY(-3.4%) scale(.966); opacity: 1; z-index: 2; animation-timing-function: cubic-bezier(.25,.8,.3,1); }
+  3.000% { transform: translateY(0) scale(1); opacity: 1; z-index: 3; }
+  29.967% { transform: translateY(0) scale(1); opacity: 1; z-index: 3; }
+  30.000% { transform: translateY(0) scale(1); opacity: 1; z-index: 4; animation-timing-function: cubic-bezier(.55,0,.9,.5); }
+  33.000% { transform: translateY(112%) rotate(9deg) scale(1); opacity: 0; z-index: 4; }
+  33.033% { transform: translateY(-6.8%) scale(.932); opacity: 0; z-index: 1; }
+  34.667% { transform: translateY(-6.8%) scale(.932); opacity: 1; z-index: 1; }
+  60.000% { transform: translateY(-6.8%) scale(.932); opacity: 1; z-index: 1; animation-timing-function: cubic-bezier(.25,.8,.3,1); }
+  63.000% { transform: translateY(-3.4%) scale(.966); opacity: 1; z-index: 2; }
+  100.000% { transform: translateY(-3.4%) scale(.966); opacity: 1; z-index: 2; }
+}
+.bz-deck--1 { animation-name: bz-deck-1; }
+@keyframes bz-d1s0 {
+  0.000% { opacity: 1.000; }
+  9.583% { opacity: 1.000; }
+  10.417% { opacity: 0.000; }
+  32.983% { opacity: 0.000; }
+  33.000% { opacity: 1.000; }
+  100.000% { opacity: 1.000; }
+}
+@keyframes bz-d1s1 {
+  0.000% { opacity: 0.000; }
+  9.583% { opacity: 0.000; }
+  10.417% { opacity: 1.000; }
+  19.583% { opacity: 1.000; }
+  20.417% { opacity: 0.000; }
+  32.983% { opacity: 0.000; }
+  33.000% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+@keyframes bz-d1s2 {
+  0.000% { opacity: 0.000; }
+  19.583% { opacity: 0.000; }
+  20.417% { opacity: 1.000; }
+  32.983% { opacity: 1.000; }
+  33.000% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.bz-deck--1 > :nth-child(1) { animation: bz-d1s0 30s linear infinite; }
+.bz-deck--1 > :nth-child(2) { animation: bz-d1s1 30s linear infinite; }
+.bz-deck--1 > :nth-child(3) { animation: bz-d1s2 30s linear infinite; }
+@keyframes bz-deck-2 {
+  0.000% { transform: translateY(-6.8%) scale(.932); opacity: 1; z-index: 1; animation-timing-function: cubic-bezier(.25,.8,.3,1); }
+  3.000% { transform: translateY(-3.4%) scale(.966); opacity: 1; z-index: 2; }
+  30.000% { transform: translateY(-3.4%) scale(.966); opacity: 1; z-index: 2; animation-timing-function: cubic-bezier(.25,.8,.3,1); }
+  33.000% { transform: translateY(0) scale(1); opacity: 1; z-index: 3; }
+  59.967% { transform: translateY(0) scale(1); opacity: 1; z-index: 3; }
+  60.000% { transform: translateY(0) scale(1); opacity: 1; z-index: 4; animation-timing-function: cubic-bezier(.55,0,.9,.5); }
+  63.000% { transform: translateY(112%) rotate(9deg) scale(1); opacity: 0; z-index: 4; }
+  63.033% { transform: translateY(-6.8%) scale(.932); opacity: 0; z-index: 1; }
+  64.667% { transform: translateY(-6.8%) scale(.932); opacity: 1; z-index: 1; }
+  100.000% { transform: translateY(-6.8%) scale(.932); opacity: 1; z-index: 1; }
+}
+.bz-deck--2 { animation-name: bz-deck-2; }
+@keyframes bz-d2s0 {
+  0.000% { opacity: 1.000; }
+  39.583% { opacity: 1.000; }
+  40.417% { opacity: 0.000; }
+  62.983% { opacity: 0.000; }
+  63.000% { opacity: 1.000; }
+  100.000% { opacity: 1.000; }
+}
+@keyframes bz-d2s1 {
+  0.000% { opacity: 0.000; }
+  39.583% { opacity: 0.000; }
+  40.417% { opacity: 1.000; }
+  49.583% { opacity: 1.000; }
+  50.417% { opacity: 0.000; }
+  62.983% { opacity: 0.000; }
+  63.000% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+@keyframes bz-d2s2 {
+  0.000% { opacity: 0.000; }
+  49.583% { opacity: 0.000; }
+  50.417% { opacity: 1.000; }
+  62.983% { opacity: 1.000; }
+  63.000% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.bz-deck--2 > :nth-child(1) { animation: bz-d2s0 30s linear infinite; }
+.bz-deck--2 > :nth-child(2) { animation: bz-d2s1 30s linear infinite; }
+.bz-deck--2 > :nth-child(3) { animation: bz-d2s2 30s linear infinite; }
+@keyframes bz-deck-3 {
+  0.000% { transform: translateY(0) scale(1); opacity: 1; z-index: 4; }
+  0.000% { transform: translateY(0) scale(1); opacity: 1; z-index: 4; animation-timing-function: cubic-bezier(.55,0,.9,.5); }
+  3.000% { transform: translateY(112%) rotate(9deg) scale(1); opacity: 0; z-index: 4; }
+  3.033% { transform: translateY(-6.8%) scale(.932); opacity: 0; z-index: 1; }
+  4.667% { transform: translateY(-6.8%) scale(.932); opacity: 1; z-index: 1; }
+  30.000% { transform: translateY(-6.8%) scale(.932); opacity: 1; z-index: 1; animation-timing-function: cubic-bezier(.25,.8,.3,1); }
+  33.000% { transform: translateY(-3.4%) scale(.966); opacity: 1; z-index: 2; }
+  60.000% { transform: translateY(-3.4%) scale(.966); opacity: 1; z-index: 2; animation-timing-function: cubic-bezier(.25,.8,.3,1); }
+  63.000% { transform: translateY(0) scale(1); opacity: 1; z-index: 3; }
+  100.000% { transform: translateY(0) scale(1); opacity: 1; z-index: 4; }
+}
+.bz-deck--3 { animation-name: bz-deck-3; }
+@keyframes bz-d3s0 {
+  0.000% { opacity: 0.000; }
+  2.983% { opacity: 0.000; }
+  3.000% { opacity: 1.000; }
+  69.583% { opacity: 1.000; }
+  70.417% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+@keyframes bz-d3s1 {
+  0.000% { opacity: 0.000; }
+  2.983% { opacity: 0.000; }
+  3.000% { opacity: 0.000; }
+  69.583% { opacity: 0.000; }
+  70.417% { opacity: 1.000; }
+  79.583% { opacity: 1.000; }
+  80.417% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+@keyframes bz-d3s2 {
+  0.000% { opacity: 0.000; }
+  2.983% { opacity: 0.000; }
+  3.000% { opacity: 0.000; }
+  79.583% { opacity: 0.000; }
+  80.417% { opacity: 1.000; }
+  89.583% { opacity: 1.000; }
+  90.417% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+@keyframes bz-d3s3 {
+  0.000% { opacity: 1.000; }
+  2.983% { opacity: 1.000; }
+  3.000% { opacity: 0.000; }
+  89.583% { opacity: 0.000; }
+  90.417% { opacity: 1.000; }
+  100.000% { opacity: 1.000; }
+}
+.bz-deck--3 > :nth-child(1) { animation: bz-d3s0 30s linear infinite; }
+.bz-deck--3 > :nth-child(2) { animation: bz-d3s1 30s linear infinite; }
+.bz-deck--3 > :nth-child(3) { animation: bz-d3s2 30s linear infinite; }
+.bz-deck--3 > :nth-child(4) { animation: bz-d3s3 30s linear infinite; }
+/* @end hero-decks */

@@ -4,6 +4,7 @@
 // Run: node tools/build-pages.mjs   (no dependencies). Commit the generated HTML; Cloudflare serves it as-is.
 import { readFileSync, readdirSync, writeFileSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
+import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -48,6 +49,9 @@ function expandImages(html) {
   });
 }
 
+// stylesheets and scripts carry a content hash, so a browser (or CDN) can never pair new HTML with a stale cached file
+const ver = (f) => createHash("sha1").update(readFileSync(join(OUT, f))).digest("hex").slice(0, 8);
+
 const OUTPUT_NAMES = { home: "index.html" }; // everything else -> <name>.html
 
 for (const f of readdirSync(PAGES).filter((n) => n.endsWith(".page.html"))) {
@@ -62,7 +66,7 @@ for (const f of readdirSync(PAGES).filter((n) => n.endsWith(".page.html"))) {
   if (/\{\{\w+\}\}/.test(body)) throw new Error(`${f}: unresolved placeholder ${body.match(/\{\{\w+\}\}/)[0]}`);
 
   const css = ["styles.css", "sections.css", ...(meta.css ? meta.css.split(/\s+/).filter(Boolean) : []), "mobile.css"]
-    .map((c) => `  <link rel="stylesheet" href="${c}">`).join("\n");
+    .map((c) => `  <link rel="stylesheet" href="${c}?v=${ver(c)}">`).join("\n");
   const preload = meta.preload
     ? `  <link rel="preload" as="image" href="${meta.preload}" type="image/webp" fetchpriority="high">\n` : "";
 
@@ -89,7 +93,7 @@ ${body}
   </main>
 
   ${partials.footer}
-  <script src="nav.js" defer></script>
+  <script src="nav.js?v=${ver("nav.js")}" defer></script>
 </body>
 </html>
 `;
