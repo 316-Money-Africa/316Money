@@ -46,122 +46,114 @@
   h1, h2, h3, .split__title, .sec__title, .hero__title { text-wrap: balance; overflow-wrap: normal; word-break: normal; hyphens: manual; }
 }
 
-/* ---------- Business theme (dark): .bz-* rows (single column below 52rem) ---------- */
-@media (max-width: 51.99rem) {
-  .bz { padding-block: clamp(4.5rem, 14vw, 5.75rem); }
+/* ---------- Business theme (light): single column below 64rem, same reading order ---------- */
+@media (max-width: 63.99rem) {
+  .bz-sec, .bz-ready { padding-block: clamp(4.5rem, 14vw, 5.75rem); }
   .bz-head { margin-bottom: clamp(2.5rem, 9vw, 3.5rem); }
-  #support .bz-head { margin-bottom: clamp(2.5rem, 9vw, 3.5rem); }
-  .bz-split + .bz-split { margin-top: clamp(4.5rem, 14vw, 5.75rem); }
+  .bz-hero { padding-bottom: 0; }
 
-  .bz-split, .bz-hero__inner, .bz-api__inner { display: flex; flex-direction: column; align-items: stretch; gap: 0; }
-  .bz-split__copy, .bz-hero__copy, .bz-api__copy { display: contents; }
-  .bz-split__copy > *, .bz-hero__copy > *, .bz-api__copy > * { order: 6; }
-  .bz-hero__copy > .badge { order: 1; align-self: flex-start; }
-  .bz-eyebrow { order: 1; margin: 0 0 0.75rem; }
-  .bz-split__copy > h2, .bz-api__copy > h2, .bz-hero__copy > h1 { order: 2; }
-  .bz-split__copy > p, .bz-api__copy > p, .bz-hero__copy > p { order: 4; margin: 1.25rem 0 0; max-width: none; }
+  /* split rows: eyebrow -> title -> [image] -> description -> list -> buttons; the image is never after the buttons */
+  .bz-split, .bz-api__inner, #bz-tab-2:checked ~ .bz-tabs__panels .bz-panel--2, #bz-tab-3:checked ~ .bz-tabs__panels .bz-panel--3, #bz-tab-4:checked ~ .bz-tabs__panels .bz-panel--4 { display: flex; flex-direction: column; align-items: stretch; gap: 0; }
+  .bz-split__copy, .bz-api__copy, .bz-panel__copy { display: contents; }
+  .bz-split__copy > *, .bz-api__copy > *, .bz-panel__copy > * { order: 6; }
+  .bz-eyebrow, .bz-panel__label { order: 1; margin: 0 0 0.75rem; }
+  .bz-split__copy > h2, .bz-api__copy > h2, .bz-panel__copy > h3 { order: 2; margin-top: 0; }
+  .bz-split__copy > p, .bz-api__copy > p, .bz-panel__copy > p:not(.bz-panel__label) { order: 4; margin: 1.25rem 0 0; max-width: none; }
   .bz-split__copy > ul, .bz-api__copy > ul { order: 6; margin: 1.5rem 0 0; }
-  .bz-split__copy > .btn, .bz-split__copy > .bz-cta, .bz-api__copy > .bz-cta { order: 7; margin: 1.75rem 0 0; }
-  .bz-split__copy > .btn { align-self: flex-start; }
-  .bz-hero__copy > .bz-cta { order: 5; margin-top: 1.75rem; }
+  .bz-api__copy > .bz-cta { order: 7; margin: 1.75rem 0 0; }
+  .bz-panel__copy > .bz-panel__link { order: 7; align-self: flex-start; }
 
-  .bz-split > .bz-split__media, .bz-hero__media, .bz-api__code { width: 100%; margin: 1.75rem auto 0.5rem; }
-  /* rows alternate: image above the description (3) / below it (5); never after the buttons */
-  .bz-split > .bz-split__media { order: 3; }
-  #methods .bz-split + .bz-split > .bz-split__media, #hotspots .bz-split > .bz-split__media { order: 5; }
-  .bz-hero__media { order: 4; margin-top: 2.25rem; }
-  .bz-api__code { order: 5; }
+  /* rows alternate: methods = image above the description (3); online-store style panels and the API code block follow the same rule */
+  .bz-split > .bz-split__media { order: 3; margin: 1.75rem auto 0.5rem; }
+  .bz-api__code { order: 3; width: 100%; margin: 1.75rem auto 0.5rem; }
+  .bz-panel--2 > .bz-panel__art, .bz-panel--3 > .bz-panel__art, .bz-panel--4 > .bz-panel__art { order: 5; margin: 1.75rem 0 0; }
+  .bz-trio__media { order: -1; }
 
   .bz-hero__title .ln, .bz-h2 .ln, .bz-h2--sm .ln { white-space: normal; }
   .bz-hero__title, .bz-h2 { text-wrap: balance; overflow-wrap: normal; word-break: normal; hyphens: manual; }
 }
 
+/* Pay Small Small art on phones: a taller art box so the dashboard is as large as the card allows */
+@media (max-width: 47.99rem) {
+  .bz-pss__art { aspect-ratio: 1.05 / 1; }
+  .bz-pss__dash { left: 30%; top: 0; width: 70%; }
+  .bz-pss__rem { left: 2%; top: 30%; width: 46%; }
+  .bz-pss__order { left: 2%; top: 42%; width: 46%; }
+  .bz-pss__conn { display: none; }
+}
+
 /* ---------- Every phone: copy never overflows the viewport; whole words only ---------- */
 @media (max-width: 40rem) {
   html, body { overflow-x: clip; }
-  p, li, h1, h2, h3, summary, .pcard__link, .dk-link, .ulink { overflow-wrap: normal; word-break: normal; hyphens: manual; }
+  p, li, h1, h2, h3, summary, .pcard__link, .ulink { overflow-wrap: normal; word-break: normal; hyphens: manual; }
   /* a designed line that cannot fit wraps by whole words instead of being cut off */
   .ln { white-space: normal; }
-  .pcard__text p, .tile p, .dk-card p { max-width: none; }
+  .pcard__text p, .tile p, .bz-card__desc { max-width: none; }
 }
 
 /* ---------- Phone titles: smaller, so a title reads in two lines (designed lines stay whole where they fit) ---------- */
 @media (max-width: 40rem) {
-  .hero__title, .hero__title--lines, .bz-hero__title { font-size: clamp(1.3rem, 6.3vw, 1.85rem); line-height: 1.15; letter-spacing: -0.005em; }
+  .hero__title, .hero__title--lines, .bz-hero__title, .bz-h2--sandbox, .bz-ready__title { font-size: clamp(1.3rem, 6.3vw, 1.85rem); line-height: 1.15; letter-spacing: -0.005em; }
   .sec__title, .split__title, .split__title--pill, .split__title--md, .bz-h2, .bz-h2--md, .bz-h2--sm, .faq__title { font-size: clamp(1.2rem, 5.5vw, 1.65rem); line-height: 1.18; }
   .mega__title { font-size: 1.125rem; }
 }
 
-/* the long two-line instalments heading flows as one paragraph on phones (3 lines instead of 4) */
-@media (max-width: 40rem) { #instalments .bz-h2 .ln { display: inline; } }
+/* long designed headings flow as one paragraph on phones */
+@media (max-width: 40rem) { .bz-h2 .ln, .bz-lead .ln, .bz-sub .ln { display: inline; } }
 
 /* ---------- Phone tiles: the text block keeps its own space and the artwork gets a reserved zone underneath ----------
    Tile art is positioned in % of the tile (bottom-anchored). On a phone the text takes far more of the tile than on a desktop,
    so the tile gets extra bottom padding (a share of the tile width) and the art sits fully inside that zone, never over the text. */
 @media (max-width: 40rem) {
   :root { --tw: calc(100vw - 2 * clamp(1.25rem, 5vw, 2rem)); }
-  .tile, .dk-card { aspect-ratio: auto !important; min-height: 0 !important; padding-bottom: calc(var(--tw) * (var(--artzone, 0.52) + var(--artoff, 0))); }
+  .tile { aspect-ratio: auto !important; min-height: 0 !important; padding-bottom: calc(var(--tw) * (var(--artzone, 0.52) + var(--artoff, 0))); }
   .tile--tall { padding-bottom: calc(var(--tw) * (var(--artzone, 0.6) + var(--artoff, 0))); }
   /* artwork that is positioned from the top of the tile starts lower on a phone (the text block is taller) */
-  .tile__art, .dk-card__art { top: calc(var(--tw) * var(--artoff, 0)); }
+  .tile__art { top: calc(var(--tw) * var(--artoff, 0)); }
 }
 
 /* Per-tile art zone (share of the tile width) = the tallest/lowest artwork in that tile, plus a little air */
 @media (max-width: 40rem) {
-  :is(.tile, .dk-card):has(.v-lock) { --artzone: 0.54; }
-  :is(.tile, .dk-card):has(.v-sec) { --artzone: 0.3; }
-  :is(.tile, .dk-card):has(.v-man) { --artzone: 0.3; }
-  :is(.tile, .dk-card):has(.v-pin) { --artzone: 0.51; }
-  :is(.tile, .dk-card):has(.v-woman) { --artzone: 0.39; }
-  :is(.tile, .dk-card):has(.c-shop) { --artzone: 0.41; }
-  :is(.tile, .dk-card):has(.c-coin) { --artzone: 0.46; }
-  :is(.tile, .dk-card):has(.c-music) { --artzone: 0.35; }
-  :is(.tile, .dk-card):has(.c-game) { --artzone: 0.32; }
-  :is(.tile, .dk-card):has(.g-flag) { --artzone: 0.55; }
-  :is(.tile, .dk-card):has(.g-man) { --artzone: 0.6; }
-  :is(.tile, .dk-card):has(.at-mtn) { --artzone: 0.64; }
-  :is(.tile, .dk-card):has(.at-phone) { --artzone: 0.67; }
-  :is(.tile, .dk-card):has(.b-elec) { --artzone: 0.41; }
-  :is(.tile, .dk-card):has(.b-arch) { --artzone: 0.45; }
-  :is(.tile, .dk-card):has(.b-man) { --artzone: 0.66; }
-  :is(.tile, .dk-card):has(.b-school) { --artzone: 0.4; }
-  :is(.tile, .dk-card):has(.b-hphone) { --artzone: 0.5; }
-  :is(.tile, .dk-card):has(.b-amount) { --artzone: 0.33; }
-  :is(.tile, .dk-card):has(.b-tablet) { --artzone: 0.46; }
-  :is(.tile, .dk-card):has(.b-iwoman) { --artzone: 0.5; }
-  :is(.tile, .dk-card):has(.p-watch) { --artzone: 0.75; }
-  :is(.tile, .dk-card):has(.p-step) { --artzone: 0.31; }
-  :is(.tile, .dk-card):has(.p-confirm) { --artzone: 0.35; }
-  :is(.tile, .dk-card):has(.p-phone) { --artzone: 0.55; }
-  :is(.tile, .dk-card):has(.t-lock) { --artzone: 0.33; }
-  :is(.tile, .dk-card):has(.t-limits) { --artzone: 0.32; }
-  :is(.tile, .dk-card):has(.t-woman) { --artzone: 0.39; }
-  :is(.tile, .dk-card):has(.t-status) { --artzone: 0.43; }
-  :is(.tile, .dk-card):has(.t-gphone) { --artzone: 0.36; }
-  :is(.tile, .dk-card):has(.t-purch) { --artzone: 0.3; }
-  :is(.tile, .dk-card):has(.t-fan) { --artzone: 0.53; }
-  :is(.tile, .dk-card):has(.t-woman2) { --artzone: 0.59; }
-  :is(.tile, .dk-card):has(.k-links) { --artzone: 0.39; }
-  :is(.tile, .dk-card):has(.k-hosted) { --artzone: 0.46; }
-  :is(.tile, .dk-card):has(.k-posphone) { --artzone: 0.57; }
-  :is(.tile, .dk-card):has(.k-payouts) { --artzone: 0.56; }
-  :is(.tile, .dk-card):has(.k-invwoman) { --artzone: 0.62; }
-  :is(.tile, .dk-card):has(.k-stores) { --artzone: 0.47; }
-  :is(.tile, .dk-card):has(.k-rec) { --artzone: 0.48; }
-  :is(.tile, .dk-card):has(.k-mp) { --artzone: 0.56; }
-  :is(.tile, .dk-card):has(.k-shops) { --artzone: 0.61; }
+  :is(.tile):has(.v-lock) { --artzone: 0.54; }
+  :is(.tile):has(.v-sec) { --artzone: 0.3; }
+  :is(.tile):has(.v-man) { --artzone: 0.3; }
+  :is(.tile):has(.v-pin) { --artzone: 0.51; }
+  :is(.tile):has(.v-woman) { --artzone: 0.39; }
+  :is(.tile):has(.c-shop) { --artzone: 0.41; }
+  :is(.tile):has(.c-coin) { --artzone: 0.46; }
+  :is(.tile):has(.c-music) { --artzone: 0.35; }
+  :is(.tile):has(.c-game) { --artzone: 0.32; }
+  :is(.tile):has(.g-flag) { --artzone: 0.55; }
+  :is(.tile):has(.g-man) { --artzone: 0.6; }
+  :is(.tile):has(.at-mtn) { --artzone: 0.64; }
+  :is(.tile):has(.at-phone) { --artzone: 0.67; }
+  :is(.tile):has(.b-elec) { --artzone: 0.41; }
+  :is(.tile):has(.b-arch) { --artzone: 0.45; }
+  :is(.tile):has(.b-man) { --artzone: 0.66; }
+  :is(.tile):has(.b-school) { --artzone: 0.4; }
+  :is(.tile):has(.b-hphone) { --artzone: 0.5; }
+  :is(.tile):has(.b-amount) { --artzone: 0.33; }
+  :is(.tile):has(.b-tablet) { --artzone: 0.46; }
+  :is(.tile):has(.b-iwoman) { --artzone: 0.5; }
+  :is(.tile):has(.p-watch) { --artzone: 0.75; }
+  :is(.tile):has(.p-step) { --artzone: 0.31; }
+  :is(.tile):has(.p-confirm) { --artzone: 0.35; }
+  :is(.tile):has(.p-phone) { --artzone: 0.55; }
+  :is(.tile):has(.t-lock) { --artzone: 0.33; }
+  :is(.tile):has(.t-limits) { --artzone: 0.32; }
+  :is(.tile):has(.t-woman) { --artzone: 0.39; }
+  :is(.tile):has(.t-status) { --artzone: 0.43; }
+  :is(.tile):has(.t-gphone) { --artzone: 0.36; }
+  :is(.tile):has(.t-purch) { --artzone: 0.3; }
+  :is(.tile):has(.t-fan) { --artzone: 0.53; }
+  :is(.tile):has(.t-woman2) { --artzone: 0.59; }
 }
 
 @media (max-width: 40rem) {
-  :is(.tile, .dk-card):has(.k-hosted) { --artoff: 0.1; }
-  :is(.tile, .dk-card):has(.k-posphone) { --artoff: 0.09; }
-  :is(.tile, .dk-card):has(.k-invwoman) { --artoff: 0.05; }
-  :is(.tile, .dk-card):has(.k-rec) { --artoff: 0.06; }
-  :is(.tile, .dk-card):has(.k-mp) { --artoff: 0.1; }
-  :is(.tile, .dk-card):has(.b-elec) { --artoff: 0.11; }
-  :is(.tile, .dk-card):has(.b-man) { --artoff: 0.07; }
-  :is(.tile, .dk-card):has(.b-tablet) { --artoff: 0.08; }
-  :is(.tile, .dk-card):has(.at-phone) { --artoff: 0.09; }
+  :is(.tile):has(.b-elec) { --artoff: 0.11; }
+  :is(.tile):has(.b-man) { --artoff: 0.07; }
+  :is(.tile):has(.b-tablet) { --artoff: 0.08; }
+  :is(.tile):has(.at-phone) { --artoff: 0.09; }
 }
 
 /* Tile art cropped by the bottom edge: the crop depth is tied to the tile width (not to a phone tile's taller height) */

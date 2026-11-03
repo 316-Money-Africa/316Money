@@ -4,18 +4,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Accept online payments · 316 Pay</title>
-  <meta name="description" content="316 Money helps individuals and businesses hold, send, and receive money securely, instantly, in multiple currencies and with zero fees. Collect online payments in Africa.">
+  <meta name="description" content="Collect payments from customers, simplify your operations and reach more of your market with payment infrastructure designed around African businesses.">
   <link rel="icon" type="image/png" sizes="131x131" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap">
+  <link rel="preload" as="image" href="assets/Business/hero.webp" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="sections.css">
   <link rel="stylesheet" href="business.css">
   <link rel="stylesheet" href="mobile.css">
 </head>
-<body class="theme-dark">
+<body class="theme-pay">
   <svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
   <defs>
     <symbol id="i-arrow" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
@@ -197,35 +198,75 @@
   </header>
 
   <main>
-    <!-- 1 · Hero (#000) -->
-    <section class="bz bz--black bz-hero" aria-labelledby="bz-hero-title">
-      <div class="bz-wrap bz-hero__inner">
-        <div class="bz-hero__copy">
-          <a class="badge" href="#markets">
-            <span class="badge__tag">New</span>
-            <span class="badge__text">316 Money is soon live in</span>
-            <span class="flags" aria-label="Kenya, Cameroon and Nigeria"><i class="flag flag--ke"></i><i class="flag flag--cm"></i><i class="flag flag--ng"></i></span>
-            <svg class="icon badge__arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
-          </a>
-          <h1 id="bz-hero-title" class="bz-hero__title">
-            <span class="ln accent">We make it easy</span>
-            <span class="ln">to collect payments in Africa</span>
-          </h1>
-          <p class="bz-lead"><span class="ln">316 Money helps individuals and businesses hold, send, and receive</span> <span class="ln">money securely, instantly, in multiple currencies and with zero fees.</span> <span class="ln">Join thousands of satisfied users today.</span></p>
-          <div class="bz-cta">
-            <a class="btn btn--primary btn--sm-rect" href="#golive">Get early access <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-            <a class="btn btn--light bz-btn-white" href="#contact">Contact Sales</a>
+    <!-- 1 · Hero (gradient #FBF8FF → #E8D7FF → #AF7BFA) -->
+    <section class="bz-hero" aria-labelledby="bz-hero-title">
+      <div class="bz-hero__text">
+        <h1 id="bz-hero-title" class="bz-hero__title"><span class="ln accent">We make it easy</span> <span class="ln">to collect payments in Africa</span></h1>
+        <p class="bz-lead"><span class="ln">Collect payments from customers, simplify your operations and reach more</span> <span class="ln">of your market with payment infrastructure designed around African</span> <span class="ln">businesses.</span></p>
+      </div>
+      <div class="bz-hero__media"><img src="assets/Business/hero.webp" alt="A phone showing a payment confirmation in front of three checkout screens: mobile money, bank transfer and card" class="bz-img" fetchpriority="high" width="1920" height="866" decoding="async"></div>
+    </section>
+
+    <!-- 2 · Payments should move at the speed of your business (white) -->
+    <section class="bz-sec bz-sec--white" id="flexible" aria-labelledby="flex-title">
+      <div class="bz-wrap">
+        <header class="bz-head bz-head--left">
+          <p class="bz-eyebrow bz-eyebrow--caps">Flexible payments. Bigger possibilities.</p>
+          <h2 id="flex-title" class="bz-h2"><span class="ln">Payments should move at the</span> <span class="ln">speed of your business.</span></h2>
+          <p class="bz-sub"><span class="ln">316 Money helps individuals and businesses hold, send, and receive money securely, instantly,</span> <span class="ln">in multiple currencies and with zero fees. Join thousands of satisfied users today.</span></p>
+        </header>
+
+        <div class="bz-bento">
+          <div class="bz-bento__top">
+            <a class="bz-imgcard" href="#checkout" id="checkout"><img src="assets/Business/card-checkout.webp" alt="01 / Checkout. Accept payments wherever your customers are. Whether you’re selling on social media, running an online store or building a digital platform, 316 Pay is designed to make collecting payments simpler to integrate and easier to manage. A phone showing Select payment method beside a browser checkout for B &amp; Sons Furniture." class="bz-img" width="1800" height="1405" loading="lazy" decoding="async"></a>
+            <a class="bz-imgcard" href="#invoices" id="invoices"><img src="assets/Business/card-invoices.webp" alt="02 / Invoices. Get paid with invoices. Generate professional invoices, share them instantly, and get paid faster through multiple payment options. An invoices list showing a payment score of 80." class="bz-img" width="1100" height="1982" loading="lazy" decoding="async"></a>
+          </div>
+
+          <div class="bz-bento__row">
+            <article class="bz-card bz-card--white" id="collections">
+              <div class="bz-card__text">
+                <p class="bz-card__label">03 / Collections</p>
+                <h3>Keep every collection in view.</h3>
+                <p class="bz-card__desc">Track whats paid, what’s pending and what’s ready for follow-up — all in one place.</p>
+                <a class="bz-explore" href="#">Explore <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              </div>
+              <div class="bz-card__art bz-card__art--chart"><img src="assets/Business/collections-chart.webp" alt="Transaction volume: 1,037 total transactions, with deposits, transfers and withdrawals" class="bz-img" width="800" height="730" loading="lazy" decoding="async"></div>
+            </article>
+
+            <article class="bz-card bz-card--links" id="links">
+              <div class="bz-card__text">
+                <p class="bz-card__label">04 / Payment links</p>
+                <h3>Turn a link into a payment.</h3>
+                <p class="bz-card__desc">Create and share secure payment links in seconds. Let customers pay through WhatsApp, social media, email or SMS — no website or coding required.</p>
+                <a class="bz-explore" href="#">Explore <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              </div>
+              <div class="bz-card__art bz-card__art--links">
+                <img src="assets/Business/link-chat-1.webp" alt="WhatsApp: Hi Amaka, Good news! The new collection is now ready. The pieces you were after are back in stock in your size." class="bz-chat bz-chat--a" width="700" height="155" loading="lazy" decoding="async">
+                <img src="assets/Business/link-chat-2.webp" alt="WhatsApp reply: Oh wow good news, please send me a payment link to reserve before they sell out again. Sharp sharp" class="bz-chat bz-chat--b" width="700" height="157" loading="lazy" decoding="async">
+                <span class="slot bz-links__products" style="aspect-ratio:2.2/1" data-slot="Business/links-products" aria-hidden="true"></span>
+              </div>
+            </article>
+
+            <article class="bz-card bz-card--gift" id="giftcards">
+              <div class="bz-card__text">
+                <p class="bz-card__label">05 / Gift cards</p>
+                <h3>Accept store gift cards.</h3>
+                <p class="bz-card__desc">Let customers pay with your branded gift cards — simple, secure and fully integrated with 316 Pay.</p>
+                <a class="bz-explore" href="#">Explore <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              </div>
+              <div class="bz-card__art bz-card__art--gift"><img src="assets/Business/giftcard-phone.webp" alt="A checkout screen at step 3, Gift Card, showing a Home Electrical Supplies gift card worth N50,000" class="bz-img" width="700" height="884" loading="lazy" decoding="async"></div>
+            </article>
           </div>
         </div>
-        <div class="bz-hero__media"><img src="assets/Business/hero-phones.webp" alt="Two phones showing the 316 Pay app" class="bz-img" fetchpriority="high" width="1000" height="1061" loading="lazy" decoding="async"></div>
       </div>
     </section>
 
-    <!-- 2 · You have a great business (#2C2C2E) -->
-    <section class="bz bz--grey" id="great" aria-labelledby="great-title">
+    <!-- 3 · You have a great business (#F5F7FB) -->
+    <section class="bz-sec bz-sec--page" id="great" aria-labelledby="great-title">
       <div class="bz-wrap">
         <header class="bz-head">
-          <h2 id="great-title" class="bz-h2"><span class="ln"><span class="accent">You have a great business,</span> lets help</span> <span class="ln">you collect online payments</span></h2>
+          <p class="bz-eyebrow">One platform, more possibilities</p>
+          <h2 id="great-title" class="bz-h2 bz-h2--mid"><span class="ln"><span class="plum">You have a great business,</span> lets help</span> <span class="ln">you collect online payments</span></h2>
           <p class="bz-sub"><span class="ln">316 Money helps individuals and businesses hold, send, and receive money securely, instantly, in</span> <span class="ln">multiple currencies and with zero fees. Join thousands of satisfied users today.</span></p>
         </header>
         <div class="bz-trio">
@@ -234,7 +275,7 @@
             <p><span class="ln">Our online checkout features our</span> <span class="ln">smart payment ordering system,</span> <span class="ln">incredible speed, and beautiful</span> <span class="ln">simplicity. It’s designed to grow</span> <span class="ln">your revenue and provide the</span> <span class="ln">best payment experience to your</span> <span class="ln">customers</span></p>
             <a class="ulink" href="#">Learn more</a>
           </div>
-          <div class="bz-trio__media"><img src="assets/Business/checkout-trio.webp" alt="A woman holding up an orange fabric, with a payment checkout card on a phone" class="bz-img" width="760" height="1031" loading="lazy" decoding="async"></div>
+          <div class="bz-trio__media"><img src="assets/Business/trio.webp" alt="A tailor holding up an orange fabric, with a phone checkout showing a dress and the ways to pay" class="bz-img" width="1100" height="1492" loading="lazy" decoding="async"></div>
           <div class="bz-trio__side bz-trio__side--r">
             <div class="bz-trio__item">
               <h3 class="bz-h3">Accept payments</h3>
@@ -251,32 +292,14 @@
       </div>
     </section>
 
-    <!-- 3 · Everything you need to get paid (#000) -->
-    <section class="bz bz--black" id="everything" aria-labelledby="every-title">
+    <!-- 4 · Multiple payment methods (#F5F7FB) -->
+    <section class="bz-sec bz-sec--page bz-sec--methods" id="methods" aria-labelledby="methods-title">
       <div class="bz-wrap">
-        <header class="bz-head">
-          <h2 id="every-title" class="bz-h2"><span class="ln">Everything you need <span class="accent">to get paid</span></span></h2>
-          <p class="bz-sub"><span class="ln">Take payments online, in person and by link,</span> <span class="ln">from one 316 Pay account.</span></p>
-        </header>
-        
-        <ul class="dk-grid dk-grid--bento">
-          <li class="dk-card dk-card--w3"><div class="dk-card__text"><h3>Payment links</h3><p>Create and share a one-time or reusable link by WhatsApp, SMS or email. No website needed.</p><a class="dk-link" href="#">Explore feature <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div><div class="dk-card__art" aria-hidden="true"><img src="assets/Business/pay-links.webp" alt="" class="k-links" width="800" height="457" loading="lazy" decoding="async"></div></li>
-          <li class="dk-card dk-card--w3"><div class="dk-card__text"><h3>Hosted checkout</h3><p>Give customers a streamlined checkout experience with payment options tailored to their market.</p><a class="dk-link" href="#">Explore feature <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div><div class="dk-card__art" aria-hidden="true"><img src="assets/Business/hosted-checkout.webp" alt="" class="k-hosted" width="900" height="454" loading="lazy" decoding="async"></div></li>
-          <li class="dk-card dk-card--w2"><div class="dk-card__text"><h3>Digital POS and QR</h3><p>Manage cashier sessions, collect payments with QR requests, and keep track of receipts and shift reconciliation.</p><a class="dk-link" href="#">Explore feature <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div><div class="dk-card__art" aria-hidden="true"><img src="assets/Business/pos-phone.webp" alt="" class="k-posphone" width="526" height="776" loading="lazy" decoding="async"><img src="assets/Business/pos-received.webp" alt="" class="k-posrec" width="640" height="347" loading="lazy" decoding="async"></div></li>
-          <li class="dk-card dk-card--w2"><div class="dk-card__text"><h3>Payouts and settlements</h3><p>Pay suppliers, staff and partners individually or in bulk, with settlements to your approved account.</p><a class="dk-link" href="#">Learn more <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div><div class="dk-card__art" aria-hidden="true"><img src="assets/Business/payouts.webp" alt="" class="k-payouts" width="800" height="462" loading="lazy" decoding="async"></div></li>
-          <li class="dk-card dk-card--w2"><div class="dk-card__text"><h3>Invoicing</h3><p>Send invoices with payment options and track which are paid, pending or overdue.</p><a class="dk-link" href="#">Explore feature <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div><div class="dk-card__art" aria-hidden="true"><img src="assets/Business/invoice-woman.webp" alt="" class="k-invwoman" width="640" height="508" loading="lazy" decoding="async"><img src="assets/Business/invoice-card.webp" alt="" class="k-invcard" width="520" height="447" loading="lazy" decoding="async"></div></li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- 4 · Multiple payment methods + instalments (#2C2C2E) -->
-    <section class="bz bz--grey" id="methods" aria-labelledby="methods-title">
-      <div class="bz-wrap">
-        <div class="bz-split">
-          <div class="bz-split__media bz-split__media--bare"><img src="assets/Business/methods.webp" alt="A craftsman in a workshop, with stacked checkout screens showing payment methods" class="bz-img" width="1100" height="1132" loading="lazy" decoding="async"></div>
+        <div class="bz-split bz-split--methods">
+          <div class="bz-split__media"><img src="assets/Business/methods.webp" alt="A craftsman at a drill press, with stacked checkout screens listing the payment methods" class="bz-img" width="1400" height="1441" loading="lazy" decoding="async"></div>
           <div class="bz-split__copy">
-            <h2 id="methods-title" class="bz-h2 bz-h2--left bz-h2--sm"><span class="ln">Provide your customers flexibility</span> <span class="ln">with <span class="accent">Multiple Payment Methods</span></span></h2>
-            <p class="bz-body"><span class="ln">316 Money helps individuals and businesses hold, send, and</span> <span class="ln">receive money securely, instantly, in multiple currencies and with</span> <span class="ln">zero fees. Join thousands of satisfied users today.</span></p>
+            <h2 id="methods-title" class="bz-h2 bz-h2--sm"><span class="ln">Provide your customers flexibility</span> <span class="ln">with <span class="accent">Multiple Payment Methods</span></span></h2>
+            <p class="bz-body"><span class="ln">316 Money helps individuals and businesses hold, send, and</span> <span class="ln">receive money securely, instantly, in multiple currencies and</span> <span class="ln">with zero fees. Join thousands of satisfied users today.</span></p>
             <ul class="bz-checks">
               <li><i aria-hidden="true"></i>Mobile Money</li>
               <li><i aria-hidden="true"></i>Card</li>
@@ -284,130 +307,223 @@
               <li><i aria-hidden="true"></i>USSD</li>
               <li><i aria-hidden="true"></i>316 Wallet Balance</li>
               <li><i aria-hidden="true"></i>Gift cards &amp; Vouchers</li>
+              <li><i aria-hidden="true"></i>Pay Small Small (PSS)</li>
             </ul>
           </div>
-        </div>
-        <div class="bz-split bz-split--rev" id="instalments">
-          <div class="bz-split__copy">
-            <h2 class="bz-h2 bz-h2--left bz-h2--sm"><span class="ln">Accept <span class="accent">instalment payments</span> and</span> <span class="ln">let 316 Pay handle the rest for you</span></h2>
-            <p class="bz-body"><span class="ln">Give your customers the flexibility to pay in instalments while 316</span> <span class="ln">Pay manages the payment process, making every purchase easier</span> <span class="ln">and more convenient.</span></p>
-            <a class="btn btn--primary btn--sm-rect" href="#">Learn more <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          </div>
-          <div class="bz-split__media bz-split__media--bare"><img src="assets/Business/inst-woman.webp" alt="A woman checking her phone beside a laptop in a kitchen" class="bz-img" width="1000" height="986" loading="lazy" decoding="async"></div>
         </div>
       </div>
     </section>
 
-    <!-- 5 · Businesses we support (#000) -->
-    <section class="bz bz--black" id="support" aria-labelledby="support-title">
+    <!-- 5 · Instalments (white) -->
+    <section class="bz-sec bz-sec--white" id="instalments" aria-labelledby="inst-title">
       <div class="bz-wrap">
-        <header class="bz-head">
-          <h2 id="support-title" class="bz-h2"><span class="ln">Businesses <span class="accent">we support</span></span></h2>
-          <p class="bz-sub"><span class="ln">From online stores to schools and local shops, explore payment</span> <span class="ln">tools designed to help businesses collect and manage payments.</span></p>
+        <header class="bz-head bz-head--left">
+          <p class="bz-eyebrow bz-eyebrow--caps">Flexible payments. Bigger possibilities.</p>
+          <h2 id="inst-title" class="bz-h2"><span class="ln">Turn bigger purchases into smaller</span> <span class="ln">instalments.</span></h2>
+          <p class="bz-sub bz-sub--wide"><span class="ln">Give your customers the freedom to shop now and pay in instalments. With Pay Small Small,</span> <span class="ln">you can offer flexible payment plans at checkout, making bigger purchases more accessible</span> <span class="ln">and helping turn more shoppers into paying customers.</span></p>
         </header>
-        <ul class="dk-grid dk-grid--four">
-          <li class="dk-card"><div class="dk-card__text"><h3>Online stores</h3><p>Accept online payments through hosted checkout and shareable payment links.</p><a class="dk-link" href="#">Explore feature <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div><div class="dk-card__art" aria-hidden="true"><img src="assets/Business/stores.webp" alt="" class="k-stores" width="640" height="456" loading="lazy" decoding="async"></div></li>
-          <li class="dk-card"><div class="dk-card__text"><h3>Schools and training</h3><p>Collect school fees and training payments through supported payment channels.</p><a class="dk-link" href="#">Explore feature <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div><div class="dk-card__art" aria-hidden="true"><img src="assets/Business/school-record.webp" alt="" class="k-rec" width="560" height="279" loading="lazy" decoding="async"><img src="assets/Business/school-masthead.webp" alt="" class="k-mast" width="700" height="195" loading="lazy" decoding="async"></div></li>
-          <li class="dk-card"><div class="dk-card__text"><h3>Marketplaces</h3><p>Manage seller payments and explore bulk payout options for your marketplace.</p><a class="dk-link" href="#">Explore feature <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div><div class="dk-card__art" aria-hidden="true"><svg class="k-arc" viewBox="0 0 100 83" preserveAspectRatio="none"><path d="M12 80 A 37 37 0 0 1 86 80"/></svg><img src="assets/Business/mp-julie.webp" alt="" class="k-mp k-julie" width="374" height="480" loading="lazy" decoding="async"><img src="assets/Business/mp-mary.webp" alt="" class="k-mp k-mary" width="379" height="470" loading="lazy" decoding="async"><img src="assets/Business/mp-frank.webp" alt="" class="k-mp k-frank" width="380" height="472" loading="lazy" decoding="async"></div></li>
-          <li class="dk-card"><div class="dk-card__text"><h3>Shops and services</h3><p>Accept customer payments in person through supported QR and payment options.</p><a class="dk-link" href="#">Learn more <svg class="icon" aria-hidden="true"><use href="#i-arrow-long"/></svg></a></div><div class="dk-card__art" aria-hidden="true"><img src="assets/Business/shops.webp" alt="" class="k-shops" width="900" height="530" loading="lazy" decoding="async"></div></li>
+
+        <div class="bz-pss">
+          <article class="bz-card bz-card--pss">
+            <div class="bz-card__text">
+              <p class="bz-card__label bz-card__label--dark">Pay Small Small</p>
+              <h3>Increase sales with smaller instalment Payments.</h3>
+            </div>
+            <div class="bz-pss__art">
+              <span class="bz-pss__conn" aria-hidden="true"></span>
+              <img src="assets/Business/pss-dashboard.webp" alt="The Pay Small Small dashboard: active instalment plans, expected instalments, due this week and a list of instalment plans" class="bz-pss__dash" width="1400" height="1297" loading="lazy" decoding="async">
+              <img src="assets/Business/pss-reminder.webp" alt="Payment reminder from Urban Styles Lagos: your balance of NGN 57,000 is due tomorrow" class="bz-pss__rem" width="818" height="168" loading="lazy" decoding="async">
+              <img src="assets/Business/pss-order.webp" alt="Urban Styles Lagos order confirmation: NGN 100,000 paid today, NGN 57,000 due on 20 Feb, 2026" class="bz-pss__order" width="600" height="742" loading="lazy" decoding="async">
+            </div>
+          </article>
+
+          <article class="bz-card bz-card--manage">
+            <div class="bz-card__text">
+              <p class="bz-card__label bz-card__label--dark">Smart instalment management</p>
+              <h3><span class="ln">Every Instalment. Every payment.</span> <span class="ln">under Control.</span></h3>
+            </div>
+            <div class="bz-card__art bz-card__art--plans"><img src="assets/Business/pss-active-plans.webp" alt="Active instalment plans: 42 plans, up 16.7% on last month" class="bz-img" width="900" height="656" loading="lazy" decoding="async"></div>
+            <div class="bz-card__foot">
+              <p class="bz-card__desc">Make every purchase more accessible with flexible instalment payments. From creating payment plans to tracking collections, Pay Small Small gives your business the tools to sell more and manage payments effortlessly.</p>
+              <a class="bz-explore" href="#">Explore <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+          </article>
+        </div>
+
+        <ul class="bz-cols">
+          <li>
+            <span class="bz-cols__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 9.5a12 12 0 0 1 17 0M7 13a7 7 0 0 1 10 0"/><circle cx="12" cy="17.5" r="1.2"/></svg></span>
+            <p><strong>Activate in your dashboard.</strong> Easily enable and configure Pay Small Small (PSS) for eligible products or payment journeys, giving customers more flexible ways to pay.</p>
+            <a class="bz-more" href="#">Speak to our team</a>
+          </li>
+          <li>
+            <span class="bz-cols__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4v8h8"/></svg></span>
+            <p><strong>Offer smaller instalments.</strong> Allow customers to spread purchases across manageable payments. Make larger transactions more affordable and, subject to applicable terms.</p>
+            <a class="bz-more" href="#">Speak to our team</a>
+          </li>
+          <li>
+            <span class="bz-cols__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 4-8 4 8 4 8-4-8-4ZM4 12l8 4 8-4M4 16l8 4 8-4"/></svg></span>
+            <p><strong>Keep collections organised.</strong> Manage instalment payments through your 316 Pay workflow, with clear visibility into payment activity and collections.</p>
+            <a class="bz-more" href="#">Speak to our team</a>
+          </li>
         </ul>
       </div>
     </section>
 
-    <!-- 5b · Sell gift cards and vouchers (#2C2C2E) -->
-    <section class="bz bz--grey" id="giftbrand" aria-labelledby="gb-title">
-      <div class="bz-wrap bz-split bz-split--gb">
-        <div class="bz-split__copy">
-          <h2 id="gb-title" class="bz-h2 bz-h2--left bz-h2--md"><span class="ln">Sell gift cards and vouchers</span> <span class="ln accent">under your own brand</span></h2>
-          <p class="bz-body"><span class="ln">Let customers buy for friends and family, and reach hundreds</span> <span class="ln">of partner vouchers through the 316 catalogue.</span></p>
-          <a class="btn btn--primary btn--sm-rect" href="#">Learn more <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        </div>
-        <div class="bz-split__media bz-split__media--bare bz-gb"><img src="assets/Business/gift-brand.webp" alt="Gift card brands: Amazon, Binance, adidas, Apple, SHEIN, Crypto, EA, Mastercard and Netflix" class="bz-img bz-img--round" width="900" height="901" loading="lazy" decoding="async"></div>
+    <!-- 6 · Gift cards and vouchers (lilac) -->
+    <section class="bz-sec bz-sec--lilac" id="gifts" aria-labelledby="gifts-title">
+      <div class="bz-wrap">
+        <header class="bz-head bz-head--left">
+          <p class="bz-eyebrow">Gift cards and vouchers</p>
+          <h2 id="gifts-title" class="bz-h2"><span class="ln">Give customers another reason to</span> <span class="ln">choose you.</span></h2>
+          <p class="bz-sub bz-sub--wide"><span class="ln">We help businesses turn gifting, promotions and prepaid value into new customer</span> <span class="ln">experiences with digital gift cards and vouchers.</span></p>
+        </header>
+        <div class="bz-visual"><img src="assets/Business/giftvouchers-visual.webp" alt="A Gift cards &amp; vouchers dashboard for Home Electrical Supplies showing total sales of NGN 450,000, beside a phone checkout paying with a gift card" class="bz-img" width="2400" height="1349" loading="lazy" decoding="async"></div>
+        <ul class="bz-cols bz-cols--tight">
+          <li>
+            <span class="bz-cols__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="9" width="16" height="11" rx="1.5"/><path d="M12 9v11M4 13.5h16M12 9C9 9 8.2 5 10.6 5S12 9 12 9Zm0 0c3 0 3.8-4 1.4-4S12 9 12 9Z"/></svg></span>
+            <p><strong>Digital gifting.</strong> Give customers an easy way to purchase and share digital gift cards with loved ones, offering a convenient and flexible gifting experience.</p>
+            <a class="bz-more" href="#">Learn more</a>
+          </li>
+          <li>
+            <span class="bz-cols__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19c0-2.5 1-3.8 3-4l-1.2-3C10 6 14.500 4 19 4c0 4.500-2 9-8 12.200l-3-1.200c-.200 2-1.500 3-3 4Z"/><circle cx="14.500" cy="9.500" r="1.400"/></svg></span>
+            <p><strong>Promotional campaigns.</strong> Create vouchers for special offers, customer rewards and seasonal promotions to encourage purchases and strengthen customer loyalty.</p>
+            <a class="bz-more" href="#">Learn more</a>
+          </li>
+          <li>
+            <span class="bz-cols__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 17 6-6 4 4 6-8M15 7h5v5"/></svg></span>
+            <p><strong>More ways to engage.</strong> Expand beyond payment collection with gifting and prepaid-value options that encourage repeat spending and build lasting customer relationships.</p>
+            <a class="bz-more" href="#">Learn more</a>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <!-- 5c · Your payments, all in one view (#000) -->
-    <section class="bz bz--black" id="oneview" aria-labelledby="ov-title">
+    <!-- 7 · Built around your business (white): four tabs, CSS only -->
+    <section class="bz-sec bz-sec--white" id="built" aria-labelledby="built-title">
       <div class="bz-wrap">
         <header class="bz-head">
-          <h2 id="ov-title" class="bz-h2"><span class="ln">Your payments,</span> <span class="ln accent">all in one view</span></h2>
-          <p class="bz-sub"><span class="ln">View your collections, track pending transactions,</span> <span class="ln">and review your settlement details from one dashboard.</span></p>
+          <p class="bz-eyebrow">Built around your business</p>
+          <h2 id="built-title" class="bz-h2 bz-h2--mid"><span class="ln">Different businesses. Different ways</span> <span class="ln">to get paid</span></h2>
+          <p class="bz-sub"><span class="ln">Choose the path that best describes your business. Explore a starting point for your payment</span> <span class="ln">journey, whether you need to get live quickly or build payments into your own platform.</span></p>
         </header>
-        <div class="bz-dash">
-          <img src="assets/Business/dash-bg.webp" alt="" class="bz-dash__bg" width="1400" height="754" loading="lazy" decoding="async">
-          <img src="assets/Business/accounts.webp" alt="Accounts dashboard listing each account with its country, payment balance and volume" class="bz-dash__table" width="1100" height="806" loading="lazy" decoding="async">
-          <img src="assets/Business/tasty-card.webp" alt="Tasty food order summary" class="bz-dash__card" width="520" height="377" loading="lazy" decoding="async">
+
+        <div class="bz-tabs">
+          <input class="bz-tabs__r" type="radio" name="bz-tab" id="bz-tab-1" checked>
+          <input class="bz-tabs__r" type="radio" name="bz-tab" id="bz-tab-2">
+          <input class="bz-tabs__r" type="radio" name="bz-tab" id="bz-tab-3">
+          <input class="bz-tabs__r" type="radio" name="bz-tab" id="bz-tab-4">
+          <div class="bz-tabs__bar" role="group" aria-label="Business types">
+            <label for="bz-tab-1">Online stores</label>
+            <label for="bz-tab-2">Schools and training</label>
+            <label for="bz-tab-3">Marketplaces</label>
+            <label for="bz-tab-4">Shops and services</label>
+          </div>
+          <div class="bz-tabs__panels">
+            <div class="bz-panel bz-panel--1">
+              <div class="bz-panel__img"><img src="assets/Business/panel-online-stores.webp" alt="Online stores. Multiple ways to collect payments for your online store. Grow your online store with seamless checkout experiences, secure payments and flexible payment options that make shopping easier for your customers. A checkout listing bank transfer, USSD and 316 Money balance beside a wireless earbuds product page." class="bz-img" width="2400" height="1147" loading="lazy" decoding="async"></div>
+            </div>
+            <div class="bz-panel bz-panel--2">
+              <div class="bz-panel__copy">
+                <p class="bz-panel__label">Schools and training</p>
+                <h3>Collect fees and training payments with ease</h3>
+                <p>Let parents and learners pay school fees and training payments through supported payment channels, with a clear record of every transaction.</p>
+                <a class="bz-panel__link" href="#">Explore</a>
+              </div>
+              <div class="bz-panel__art"><span class="slot bz-panel__slot" style="aspect-ratio:1.66/1" data-slot="Business/panel-schools" aria-hidden="true"></span></div>
+            </div>
+            <div class="bz-panel bz-panel--3">
+              <div class="bz-panel__copy">
+                <p class="bz-panel__label">Marketplaces</p>
+                <h3>Manage seller payments in one place</h3>
+                <p>Collect from buyers, keep track of what each seller is owed and explore bulk payout options for your marketplace.</p>
+                <a class="bz-panel__link" href="#">Explore</a>
+              </div>
+              <div class="bz-panel__art"><span class="slot bz-panel__slot" style="aspect-ratio:1.66/1" data-slot="Business/panel-marketplaces" aria-hidden="true"></span></div>
+            </div>
+            <div class="bz-panel bz-panel--4">
+              <div class="bz-panel__copy">
+                <p class="bz-panel__label">Shops and services</p>
+                <h3>Accept customer payments in person</h3>
+                <p>Take payments at the counter through supported QR and payment options, and keep track of every sale and shift.</p>
+                <a class="bz-panel__link" href="#">Explore</a>
+              </div>
+              <div class="bz-panel__art bz-panel__art--pos"><img src="assets/Business/pos-terminal.webp" alt="A payment terminal on the amount screen for Le Relais Restaurant, showing 12 500 XAF" class="bz-panel__pos" width="700" height="1359" loading="lazy" decoding="async"></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 6 · Go live in a few easy steps (#2C2C2E) -->
-    <section class="bz bz--grey" id="golive" aria-labelledby="golive-title">
-      <div class="bz-wrap">
-        <header class="bz-head">
-          <h2 id="golive-title" class="bz-h2"><span class="ln">Go live <span class="accent">in a few easy steps</span></span></h2>
-          <p class="bz-sub"><span class="ln">Set up your business account, complete the required verification, and explore the payment tools</span> <span class="ln">available to your business to get online faster.</span></p>
-        </header>
-        <ol class="bz-steps">
-          <li><span class="bz-step__disc"><svg class="icon" aria-hidden="true"><use href="#i-user-plus"/></svg><b>1</b></span><h3>Create an Account</h3><p>Sign up in minutes with just your email and phone number.</p></li>
-          <li><span class="bz-step__disc"><svg class="icon" aria-hidden="true"><use href="#i-key"/></svg><b>2</b></span><h3>Get your API keys</h3><p>Generate test keys instantly and your production keys once verified.</p></li>
-          <li><span class="bz-step__disc"><svg class="icon" aria-hidden="true"><use href="#i-plug"/></svg><b>3</b></span><h3>Connect your platform</h3><p>Integrate 316 Business with your website or app.</p></li>
-          <li><span class="bz-step__disc"><svg class="icon" aria-hidden="true"><use href="#i-card"/></svg><b>4</b></span><h3>Start Transacting</h3><p>Accept your first payment and track every transaction from your dashboard.</p></li>
-        </ol>
-        <div class="bz-center"><a class="btn btn--primary btn--sm-rect" href="#">Join waitlist <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
-      </div>
-    </section>
-
-    <!-- 7 · Powerful APIs (#000) -->
-    <section class="bz bz--black bz-api" id="api" aria-labelledby="api-title">
+    <!-- 8 · Powerful APIs (#000) -->
+    <section class="bz-sec bz-sec--black bz-api" id="api" aria-labelledby="api-title">
       <img class="bz-poly bz-poly--a" src="assets/Business/poly-a.webp" alt="" width="700" height="746" loading="lazy" decoding="async"><img class="bz-poly bz-poly--b" src="assets/Business/poly-b.webp" alt="" width="700" height="241" loading="lazy" decoding="async">
       <div class="bz-wrap bz-api__inner">
         <div class="bz-api__copy">
+          <p class="bz-eyebrow">For the people building what’s next</p>
           <h2 id="api-title" class="bz-h2 bz-h2--left"><span class="ln">Powerful APIs.</span> <span class="ln accent">Built for developers.</span></h2>
           <p class="bz-body"><span class="ln">Create a payment with one request, then let signed</span> <span class="ln">webhooks tell your system what happened.</span></p>
           <ul class="bz-checks bz-checks--rich">
             <li><i aria-hidden="true"></i><div><h3>Separate test and live keys</h3><p>Build in the sandbox, then go live when your business is verified.</p></div></li>
-            <li><i aria-hidden="true"></i><div><h3>Safe retries</h3><p>Idempotency keys stop duplicate charges when a request is retried.</p></div></li>
+            <li><i aria-hidden="true"></i><div><h3>Safe retries</h3><p>Idempotency keys stop duplicate charges when a request is repeated.</p></div></li>
             <li><i aria-hidden="true"></i><div><h3>Signed, timestamped webhooks</h3><p>Retried with backoff and safe to replay.</p></div></li>
           </ul>
           <div class="bz-cta">
-            <a class="btn btn--primary btn--sm-rect" href="#">Read the Docs</a>
-            <a class="btn btn--light bz-btn-white" href="#contact">Book Demo</a>
+            <a class="btn btn--primary btn--sm-rect" href="#sandbox">Get Started</a>
+            <a class="btn bz-btn-white" href="#contact">Talk to our team</a>
           </div>
         </div>
-        <div class="bz-api__code"><img src="assets/Business/api-code.webp" alt="Example API request creating a payment, the response, and a signed webhook" class="bz-codeimg" width="1100" height="859" loading="lazy" decoding="async"></div>
+        <div class="bz-api__code"><img src="assets/Business/api-code.webp" alt="Example API request creating a payment with curl, the response, and a signed webhook event" class="bz-codeimg" width="1400" height="1081" loading="lazy" decoding="async"></div>
       </div>
     </section>
 
-    <!-- 8 · Looking to collect business payments? (#2C2C2E) -->
-    <section class="bz bz--grey" id="collect" aria-labelledby="collect-title">
-      <div class="bz-wrap bz-split">
-        <div class="bz-split__copy">
-          <h2 id="collect-title" class="bz-h2 bz-h2--left"><span class="ln">Looking to collect</span> <span class="ln accent">business payments?</span></h2>
-          <p class="bz-body bz-body--grey"><span class="ln">316 Money helps individuals and businesses hold, send, and receive money securely,</span> <span class="ln">instantly, in multiple currencies and with zero fees. Join thousands of satisfied users</span> <span class="ln">today.</span></p>
-          <a class="btn btn--primary btn--sm-rect" href="#">Learn more</a>
+    <!-- 9 · Sandbox steps (white) -->
+    <section class="bz-sec bz-sec--white" id="sandbox" aria-labelledby="sandbox-title">
+      <div class="bz-wrap">
+        <h2 id="sandbox-title" class="bz-h2 bz-h2--sandbox"><span class="ln accent">Start exploring our sandbox</span> <span class="ln">Here’s some simple steps to get started</span></h2>
+        <ol class="bz-steps">
+          <li><span class="bz-steps__n">1</span><h3>Create an account</h3><p>Sign up in minutes with just your email and phone number.</p></li>
+          <li><span class="bz-steps__n">2</span><h3>Get your API keys</h3><p>Generate your credentials and prepare your payment integration.</p></li>
+          <li><span class="bz-steps__n">3</span><h3>Connect your platform</h3><p>Integrate 316 Business with your website or app.</p></li>
+          <li><span class="bz-steps__n">4</span><h3>Start transacting</h3><p>Accept payments and track transactions and settlements from one dashboard.</p></li>
+        </ol>
+        <div class="bz-steps__cta">
+          <a class="btn btn--primary btn--sm-rect" href="#contact">Book Demo</a>
+          <a class="bz-textlink" href="#">Get Started</a>
         </div>
-        <div class="bz-split__media bz-split__media--bare"><img src="assets/Business/collect-woman.webp" alt="A smiling woman with a headband looking at her phone" class="bz-img" width="900" height="841" loading="lazy" decoding="async"></div>
       </div>
     </section>
 
-    <!-- 9 · 316 Hotspots (#000) -->
-    <section class="bz bz--black" id="hotspots" aria-labelledby="hot-title">
-      <div class="bz-wrap bz-split bz-split--hot">
-        <div class="bz-split__media bz-split__media--bare"><img src="assets/Business/hot-woman.webp" alt="A woman checking her phone beside a laptop in a kitchen" class="bz-img" width="1000" height="1004" loading="lazy" decoding="async"></div>
-        <div class="bz-split__copy">
-          <p class="bz-eyebrow">316 Hotspots</p>
-          <h2 id="hot-title" class="bz-h2 bz-h2--left bz-h2--md"><span class="ln">Join our partner network</span> <span class="ln">and unlock massive financial</span> <span class="ln">benefits</span></h2>
-          <p class="bz-body bz-body--sm"><span class="ln">316 Money helps individuals and businesses hold, send, and receive</span> <span class="ln">money securely, instantly, in multiple currencies and with zero fees. Join</span> <span class="ln">thousands of satisfied users today.</span></p>
+    <!-- 10 · Ready to get started (purple waves) -->
+    <section class="bz-ready" id="contact" aria-labelledby="ready-title">
+      <div class="bz-wrap bz-ready__inner">
+        <div class="bz-ready__copy">
+          <p class="bz-ready__eyebrow">Get Started</p>
+          <h2 id="ready-title" class="bz-ready__title">Ready to get started ?</h2>
+          <p class="bz-ready__desc"><span class="ln">We help businesses turn gifting, promotions and prepaid value</span> <span class="ln">into new customer experiences with digital gift cards and</span> <span class="ln">vouchers.</span></p>
           <div class="bz-cta">
-            <a class="btn bz-btn-pink" href="#">Join</a>
-            <a class="btn btn--light bz-btn-white" href="#">Learn more</a>
+            <a class="btn btn--primary btn--sm-rect" href="#">Start now</a>
+            <a class="btn bz-btn-ghost" href="#">Contact sales</a>
           </div>
         </div>
+        <ul class="bz-ready__feats">
+          <li>
+            <span class="bz-ready__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12V4h8l10 10-8 8L3 12Z"/><circle cx="7.500" cy="7.500" r="1.300"/></svg></span>
+            <h3>Simple, transparent pricing</h3>
+            <p>Explore payment fees designed to help your business grow, with clear pricing and no surprises.</p>
+            <a class="bz-ready__link" href="#">Explore pricing <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+          </li>
+          <li>
+            <span class="bz-ready__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="9" r="2"/><path d="M6 8v8M18 11c0 4-6 3-12 5"/></svg></span>
+            <h3>Built for easy integration</h3>
+            <p>Get started with payment links, hosted checkout or developer-friendly APIs for your business.</p>
+            <a class="bz-ready__link" href="#">Explore Docs <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <!-- 10 · FAQ (white) -->
+    <!-- 11 · FAQ (white) -->
     <section class="sec sec--white" id="faq" aria-labelledby="faq-title">
       <div class="wrap faq">
         <div class="faq__intro">

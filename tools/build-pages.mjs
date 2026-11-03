@@ -24,13 +24,27 @@ function webpSize(file) {
   if (tag === "VP8L") { const v = b.readUInt32LE(21); return [1 + (v & 0x3fff), 1 + ((v >> 14) & 0x3fff)]; }
   throw new Error(`${file}: not a WebP`);
 }
+// {{slot:Folder/name ratio="4/3" class="x" ...}} -> the compressed WebP when assets/Folder/name.webp exists, otherwise an empty
+// reserved box with that aspect ratio (CLAUDE.md "Reserved media slots"): dropping the artwork in later changes nothing in the layout.
+function expandSlots(html) {
+  return html.replace(/\{\{slot:([\w\/-]+)((?:\s+[\w-]+="[^"]*")*)\}\}/g, (_, name, attrs) => {
+    const ratio = (attrs.match(/(?:^|\s)ratio="([^"]*)"/) || [])[1];
+    const rest = attrs.replace(/(?:^|\s)ratio="[^"]*"/, "");
+    if (existsSync(join(OUT, "assets", `${name}.webp`))) return `{{img:${name}${rest}}}`;
+    if (!ratio) throw new Error(`slot ${name}: add ratio="w/h" so the empty box reserves its space`);
+    const cls = (rest.match(/(?:^|\s)class="([^"]*)"/) || [])[1] || "";
+    return `<span class="slot${cls ? " " + cls : ""}" style="aspect-ratio:${ratio}" data-slot="${name}" aria-hidden="true"></span>`;
+  });
+}
 function expandImages(html) {
+  html = expandSlots(html);
   return html.replace(/\{\{img:([\w\/-]+)((?:\s+[\w-]+="[^"]*")*)\}\}/g, (_, name, attrs) => {
     const file = join(OUT, "assets", `${name}.webp`);
     if (!existsSync(file)) throw new Error(`missing image: assets/${name}.webp (run tools/optimize-images.mjs)`);
     const [w, h] = webpSize(file);
     const hasAlt = /(^|\s)alt="/.test(attrs);
-    return `<img src="assets/${name}.webp"${hasAlt ? "" : ' alt=""'}${attrs} width="${w}" height="${h}" loading="lazy" decoding="async">`;
+    const eager = /fetchpriority="high"/.test(attrs); // the hero image is preloaded and never lazy
+    return `<img src="assets/${name}.webp"${hasAlt ? "" : ' alt=""'}${attrs} width="${w}" height="${h}"${eager ? "" : ' loading="lazy"'} decoding="async">`;
   });
 }
 
