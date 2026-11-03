@@ -67,7 +67,10 @@
 .bz-hero__title { margin: 0; font-size: clamp(1.875rem, 1rem + 2.7vw, 2.875rem); line-height: 1.15; font-weight: 600; }
 .bz-hero__title .ln { display: block; }
 .bz-lead { max-width: 56rem; margin: clamp(1.25rem, 2.4vw, 2rem) auto 0; font-size: clamp(0.9375rem, 0.75rem + 0.75vw, 1.3125rem); line-height: 1.5; color: #1a1a1a; }
-.bz-hero__media { width: min(100%, 64rem); margin: clamp(2rem, 4.5vw, 4rem) auto 0; }
+.bz-hero__text, .bz-hero__media { position: relative; z-index: 1; }
+.bz-hero__lines { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; pointer-events: none; }
+.bz-hero__lines path { stroke-width: 1.2; vector-effect: non-scaling-stroke; }
+.bz-hero__media { width: min(82%, 74rem); margin: clamp(2rem, 4.5vw, 4rem) auto 0; }
 .bz-hero__media .bz-img { width: 100%; }
 
 /* ---------- 2 · Bento ---------- */
@@ -90,8 +93,8 @@
 .bz-card__art { position: relative; margin-top: auto; }
 
 /* 03 Collections: white card, chart under the copy */
-.bz-card--white { background: #fff; border: 0.0625rem solid #ECE8F8; }
-.bz-card__art--chart { margin-top: clamp(1.25rem, 4%, 2rem); padding: 0 6% 0; }
+.bz-card--white { background: radial-gradient(circle at center, rgba(160, 130, 240, .22) 0.0625rem, transparent 0.125rem) 0 0 / 1.25rem 1.25rem, linear-gradient(135deg, #FDFCFF 0%, #F8F5FF 100%); }
+.bz-card__art--chart { margin-top: clamp(1.25rem, 4%, 2rem); padding: 0 5% 0; }
 
 /* 04 Payment links: lilac with a dot field, chats and a product panel */
 .bz-card--links, .bz-card--gift {
@@ -134,8 +137,9 @@
 /* ---------- 5 · Instalments ---------- */
 .bz-sub--wide { max-width: 64rem; }
 .bz-pss { display: grid; grid-template-columns: 2.04fr 1fr; gap: var(--bz-gap); align-items: stretch; }
-.bz-card--pss { background: linear-gradient(160deg, #FBFAFF 0%, #F6F2FE 55%, #EFE8FD 100%); isolation: isolate; }
-.bz-card--pss::before { content: ""; position: absolute; z-index: -1; left: 0; bottom: 0; width: 55%; height: 62%; background: linear-gradient(60deg, #DCCDFD 0%, #E9E0FE 100%); clip-path: polygon(0 100%, 0 45%, 100% 100%); }
+.bz-card--pss { background: linear-gradient(135deg, #FAF9FF 0%, #F6F3FF 60%, #F4F1FE 100%); isolation: isolate; }
+.bz-card--pss::before { content: ""; position: absolute; z-index: -1; left: 0; bottom: 0; width: 48%; height: 22%; background: linear-gradient(90deg, #D3C1FD 0%, #D9CAFD 100%); clip-path: polygon(0 100%, 0 38%, 100% 100%); }
+.bz-card--pss::after { content: ""; position: absolute; z-index: -1; left: 0; bottom: 0; width: 58%; height: 13%; background: #E9E1FE; clip-path: polygon(0 100%, 0 20%, 100% 100%); }
 .bz-card--pss .bz-card__text { padding-bottom: 0; }
 .bz-card--pss h3 { max-width: 14em; font-size: clamp(1.125rem, 0.8rem + 0.8vw, 1.5rem); }
 .bz-card__label--dark { color: var(--bz-eyebrow); }
@@ -145,7 +149,7 @@
 .bz-pss__rem { left: 22.3%; top: 23.6%; width: 25.4%; z-index: 2; filter: drop-shadow(0 0.25rem 0.75rem rgba(80, 50, 160, .12)); }
 .bz-pss__order { left: 22.3%; top: 33%; width: 25.4%; z-index: 2; filter: drop-shadow(0 0.25rem 0.75rem rgba(80, 50, 160, .12)); }
 .bz-pss__conn { position: absolute; left: 31%; top: 13.4%; width: 13.7%; height: 10.5%; border-top: 0.09375rem dashed #7557F1; border-left: 0.09375rem dashed #7557F1; opacity: .7; }
-.bz-card--manage { background: linear-gradient(190deg, #F4F1FE 0%, #D9CCFD 38%, #AE98FB 70%, #A38DFA 100%); }
+.bz-card--manage { background: linear-gradient(195deg, #F5F2FF 0%, #F4F1FE 22%, #D9CAFD 46%, #AC82F9 72%, #A68FFB 100%); }
 .bz-card--manage h3 { font-size: clamp(1rem, 0.8rem + 0.55vw, 1.3125rem); }
 .bz-card__art--plans { margin-top: clamp(1.25rem, 8%, 2rem); padding: 0 4%; }
 .bz-card__art--plans .bz-img { box-shadow: 0 0.5rem 2rem rgba(70, 40, 150, .15); border-radius: 0.875rem; }
@@ -189,9 +193,7 @@
 /* ---------- 8 · Powerful APIs ---------- */
 .bz-api { position: relative; overflow: hidden; }
 .bz-api > .bz-wrap { position: relative; z-index: 1; }
-.bz-poly { position: absolute; z-index: 0; height: auto; max-width: none; pointer-events: none; }
-.bz-poly--a { right: 0; bottom: 0; top: auto; height: 79%; width: auto; }
-.bz-poly--b { right: 0; bottom: 0; top: auto; width: 55%; height: auto; }
+.bz-api__bg { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; pointer-events: none; }
 .bz-api__inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: clamp(2rem, 6vw, 5rem); align-items: center; }
 .bz-api .bz-h2 { color: #fff; font-size: clamp(1.625rem, 0.9rem + 2vw, 2.375rem); }
 .bz-api .bz-body { color: rgba(255, 255, 255, .9); font-size: clamp(0.875rem, 0.75rem + 0.4vw, 1.0625rem); }
@@ -260,3 +262,25 @@
 .theme-pay .faq__list details[open] summary::after { transform: rotate(180deg); }
 .theme-pay .faq__list summary .ln { display: inline; }
 @media (min-width: 48rem) { .theme-pay .faq__list summary .ln { display: block; } }
+
+/* ---------- Accept payments online and in person ---------- */
+.bz-online { position: relative; overflow: hidden; margin-top: clamp(2.5rem, 5vw, 4.5rem); background: linear-gradient(180deg, #F4F0FE 0%, #F7F4FF 22%, #FFFFFF 78%); }
+.bz-online__head { padding: clamp(1.5rem, 3.6%, 3rem) clamp(1.25rem, 3.6%, 3rem) 0; }
+.bz-online__title { margin: 0; font-size: clamp(1.25rem, 0.9rem + 1.1vw, 1.75rem); line-height: 1.25; font-weight: 600; color: #000; }
+.bz-online__title .ln { display: block; }
+.bz-online__desc { margin: 0.875rem 0 0; font-size: clamp(0.75rem, 0.68rem + 0.3vw, 0.9375rem); line-height: 1.5; color: #1a1a1a; }
+@media (min-width: 64rem) { .bz-online__desc .ln { display: block; } }
+.bz-online__art { position: relative; aspect-ratio: 2.14 / 1; margin-top: clamp(1.5rem, 3.2%, 2.75rem); }
+.bz-online__art > * { position: absolute; display: block; max-width: none; }
+.bz-online__wedge { left: 0; bottom: 0; width: 34%; height: 62%; background: linear-gradient(120deg, #EDE5FE 0%, #DCCEFC 100%); clip-path: polygon(0 100%, 0 26%, 100% 100%); }
+.bz-online__pos { left: 7.6%; top: 11%; height: 83%; width: auto; z-index: 2; filter: drop-shadow(0 0.75rem 1.5rem rgba(80, 50, 160, .22)); }
+.bz-online__dash { left: 29.3%; top: 4.4%; width: 70.7%; height: auto; z-index: 1; }
+img.bz-online__dash { box-shadow: 0 0.5rem 2rem rgba(80, 50, 160, .1); }
+@media (max-width: 47.99rem) {
+  .bz-online__art { aspect-ratio: auto; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; padding: 1.5rem 1.25rem 0; }
+  .bz-online__art > * { position: static; }
+  .bz-online__wedge { display: none; }
+  .bz-online__pos { height: 22rem; width: auto; max-width: 100%; }
+  .bz-online__dash { width: 100%; }
+  .bz-hero__media { width: 100%; }
+}

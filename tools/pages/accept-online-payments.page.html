@@ -1,6 +1,16 @@
 <!--page title="Accept online payments · 316 Pay" description="Collect payments from customers, simplify your operations and reach more of your market with payment infrastructure designed around African businesses." preload="assets/Business/hero.webp" css="business.css" bodyclass="theme-pay" wordmark="PAY"-->
     <!-- 1 · Hero (gradient #FBF8FF → #E8D7FF → #AF7BFA) -->
     <section class="bz-hero" aria-labelledby="bz-hero-title">
+      <svg class="bz-hero__lines" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <g fill="none" stroke="#fff" stroke-linecap="round">
+          <path d="M-20 700 C 110 660 230 590 380 520" opacity=".55"/>
+          <path d="M-20 760 C 130 715 270 640 430 560" opacity=".45"/>
+          <path d="M-20 820 C 150 770 300 690 480 600" opacity=".35"/>
+          <path d="M1460 560 C 1340 570 1240 520 1110 450" opacity=".5"/>
+          <path d="M1460 630 C 1350 640 1250 590 1130 520" opacity=".4"/>
+          <path d="M1460 700 C 1360 705 1270 660 1160 590" opacity=".3"/>
+        </g>
+      </svg>
       <div class="bz-hero__text">
         <h1 id="bz-hero-title" class="bz-hero__title"><span class="ln accent">We make it easy</span> <span class="ln">to collect payments in Africa</span></h1>
         <p class="bz-lead"><span class="ln">Collect payments from customers, simplify your operations and reach more</span> <span class="ln">of your market with payment infrastructure designed around African</span> <span class="ln">businesses.</span></p>
@@ -57,6 +67,18 @@
               </div>
               <div class="bz-card__art bz-card__art--gift">{{img:Business/giftcard-phone alt="A checkout screen at step 3, Gift Card, showing a Home Electrical Supplies gift card worth N50,000" class="bz-img"}}</div>
             </article>
+          </div>
+        </div>
+
+        <div class="bz-online" id="online">
+          <div class="bz-online__head">
+            <h3 class="bz-online__title"><span class="ln">Accept payments online</span> <span class="ln">and in person.</span></h3>
+            <p class="bz-online__desc"><span class="ln">Give customers a clear checkout experience, with payment methods that fit your market</span> <span class="ln">and your business.</span></p>
+          </div>
+          <div class="bz-online__art">
+            <span class="bz-online__wedge" aria-hidden="true"></span>
+            {{img:Business/pos-terminal alt="A payment terminal on the amount screen for Le Relais Restaurant, showing 12 500 XAF" class="bz-online__pos"}}
+            {{slot:Business/pos-dashboard ratio="1.58/1" class="bz-online__dash"}}
           </div>
         </div>
       </div>
@@ -258,7 +280,17 @@
 
     <!-- 8 · Powerful APIs (#000) -->
     <section class="bz-sec bz-sec--black bz-api" id="api" aria-labelledby="api-title">
-      <img class="bz-poly bz-poly--a" src="assets/Business/poly-a.webp" alt="" width="700" height="746" loading="lazy" decoding="async"><img class="bz-poly bz-poly--b" src="assets/Business/poly-b.webp" alt="" width="700" height="241" loading="lazy" decoding="async">
+      <svg class="bz-api__bg" viewBox="0 0 1500 900" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="bz-f1" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#443761"/><stop offset="1" stop-color="#6a6299"/></linearGradient>
+          <linearGradient id="bz-f2" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#8a5fd8"/><stop offset="1" stop-color="#9a80ea"/></linearGradient>
+          <linearGradient id="bz-f3" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8b66dc"/><stop offset="1" stop-color="#9490e0"/></linearGradient>
+        </defs>
+        <polygon points="0,900 1500,240 1500,900" fill="url(#bz-f1)"/>
+        <polygon points="260,900 1500,470 1500,900" fill="url(#bz-f2)"/>
+        <polygon points="700,900 1500,600 1500,900" fill="url(#bz-f3)"/>
+        <line x1="330" y1="900" x2="1500" y2="560" stroke="#fff" stroke-opacity=".85" stroke-width="2" vector-effect="non-scaling-stroke"/>
+      </svg>
       <div class="bz-wrap bz-api__inner">
         <div class="bz-api__copy">
           <p class="bz-eyebrow">For the people building what’s next</p>
