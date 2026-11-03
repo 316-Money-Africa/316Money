@@ -43,7 +43,7 @@ function expandImages(html) {
     if (!existsSync(file)) throw new Error(`missing image: assets/${name}.webp (run tools/optimize-images.mjs)`);
     const [w, h] = webpSize(file);
     const hasAlt = /(^|\s)alt="/.test(attrs);
-    const eager = /fetchpriority="high"/.test(attrs); // the hero image is preloaded and never lazy
+    const eager = /fetchpriority="high"/.test(attrs) || /(^|\s)loading="/.test(attrs); // the hero image is preloaded and never lazy; an explicit loading attribute wins
     return `<img src="assets/${name}.webp"${hasAlt ? "" : ' alt=""'}${attrs} width="${w}" height="${h}"${eager ? "" : ' loading="lazy"'} decoding="async">`;
   });
 }

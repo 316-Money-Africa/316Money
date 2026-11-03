@@ -285,3 +285,28 @@ img.bz-online__dash { box-shadow: 0 0.5rem 2rem rgba(80, 50, 160, .1); }
   .bz-online__dash { width: 100%; }
   .bz-hero__media { width: 100%; }
 }
+
+/* ---------- Hero: the front checkout window changes every 3 seconds (base screen, then two overlays, 9s loop) ----------
+   The overlay sits exactly over the front browser window of the hero artwork. Everything inside is laid out in design
+   units: 1u = 1/968 of the window width, so the screens scale with the artwork and stay sharp at any size. */
+.bz-hero__media { position: relative; }
+.bz-hero__screens { position: absolute; left: 38.29%; top: 0.63%; width: 61.12%; height: 96.07%; overflow: hidden; border-radius: 1.5% / 2.1%; container-type: inline-size; pointer-events: none; }
+.bz-scr { position: absolute; inset: 0; --u: calc(100cqw / 968); background: #fff; opacity: 0; font-family: var(--font); }
+.bz-scr--a { animation: bz-scr-a 9s ease-in-out infinite; }
+.bz-scr--b { animation: bz-scr-b 9s ease-in-out infinite; }
+.bz-scr .t, .bz-scr .b, .bz-scr .i { position: absolute; left: calc(var(--u) * var(--x)); top: calc(var(--u) * var(--y)); margin: 0; }
+.bz-scr .t { font-size: calc(var(--u) * var(--s, 12)); font-weight: var(--w, 500); color: var(--c, #111); line-height: 1; white-space: nowrap; font-style: normal; transform: translateY(-50%); }
+.bz-scr .t.r { transform: translate(-100%, -50%); }
+.bz-scr .t.m { transform: translate(-50%, -50%); }
+.bz-scr .t b { font-weight: 700; }
+.bz-scr .b, .bz-scr .i { width: calc(var(--u) * var(--bw)); height: calc(var(--u) * var(--bh)); display: block; box-sizing: border-box; max-width: none; }
+.bz-scr .dot { background: #E5E5EA; border-radius: 50%; }
+.bz-scr--b .ring { animation: bz-ring 9s ease-out infinite; }
+.bz-scr--b .ok { animation: bz-pop 9s cubic-bezier(.3, 1.6, .5, 1) infinite; }
+.bz-scr--a .spin { animation: bz-spin 3s linear infinite; }
+@keyframes bz-scr-a { 0%, 33.33% { opacity: 0; transform: translateY(2.5%); } 37.5%, 66.67% { opacity: 1; transform: none; } 70.5%, 100% { opacity: 0; transform: translateY(-1.5%); } }
+@keyframes bz-scr-b { 0%, 66.67% { opacity: 0; transform: translateY(2.5%); } 70.5%, 96.67% { opacity: 1; transform: none; } 100% { opacity: 0; transform: translateY(-1.5%); } }
+@keyframes bz-pop { 0%, 69% { scale: 0; } 74% { scale: 1.12; } 77%, 100% { scale: 1; } }
+@keyframes bz-ring { 0%, 71% { scale: 0.6; opacity: 0; } 78% { scale: 1.1; opacity: 1; } 82%, 100% { scale: 1; opacity: 1; } }
+@keyframes bz-spin { to { rotate: 360deg; } }
+@media (prefers-reduced-motion: reduce) { .bz-hero__screens { display: none; } }
