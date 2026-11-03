@@ -36,6 +36,8 @@ Frontend standards:
 - **No broken words.** Text never splits mid-word at any width (`overflow-wrap: normal; word-break: normal; hyphens: manual`; `white-space: nowrap` for nav labels, buttons and short labels). When a row cannot fit, change the layout instead: collapse the nav to a drawer earlier, wrap whole words, or stack columns. Headings use `text-wrap: balance`.
 - **Reserved media slots.** Where imagery is added later, keep the structure and fixed aspect-ratio box in place so adding the asset causes no layout shift.
 
+- **No inline `style="..."` attributes, ever.** Production sends a Content-Security-Policy (`apps/marketing-web/_headers`, `style-src 'self' https://fonts.googleapis.com`) that blocks them, so anything that depends on one silently breaks only after deploy (the hero decks all ran on one clock and stacked on top of each other). Put per-element values in classes or CSS custom properties defined in a stylesheet; SVG gets classes too. `tools/dev-server.py` now sends the same headers, so a CSP violation shows in the browser console locally: check it, and check the animated pages in the real (CSP-enforcing) dev server, before pushing.
+
 ## Git commits
 - Never add `Co-Authored-By` or any Claude attribution trailer to commits or PR descriptions in this repo (user instruction, overrides default attribution).
 

@@ -34,7 +34,8 @@ function expandSlots(html) {
     if (existsSync(join(OUT, "assets", `${name}.webp`))) return `{{img:${name}${rest}}}`;
     if (!ratio) throw new Error(`slot ${name}: add ratio="w/h" so the empty box reserves its space`);
     const cls = (rest.match(/(?:^|\s)class="([^"]*)"/) || [])[1] || "";
-    return `<span class="slot${cls ? " " + cls : ""}" style="aspect-ratio:${ratio}" data-slot="${name}" aria-hidden="true"></span>`;
+    const [rw, rh] = ratio.split("/").map(Number);   // an empty <svg> reserves the box through its viewBox: no inline style="" (the site CSP blocks it)
+    return `<svg class="slot${cls ? " " + cls : ""}" viewBox="0 0 ${rw} ${rh || 1}" data-slot="${name}" aria-hidden="true" focusable="false"></svg>`;
   });
 }
 function expandImages(html) {

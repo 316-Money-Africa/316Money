@@ -3318,3 +3318,8 @@
 @keyframes hp-load { 0% { transform: translateX(0); } 100% { transform: translateX(224px); } } .hp-load { animation: hp-load 1.4s ease-in-out infinite alternate; animation-delay: 0s !important; }
 @media (prefers-reduced-motion: reduce) { .bz-deck, .bz-deck * { animation: none !important; } .bz-ov { display: none; } .bz-deck--1 { transform: translate(0%,0%) rotate(0deg); z-index: 3; } .bz-deck--2 { transform: translate(-15.56%,13.26%) rotate(0deg); z-index: 2; } .bz-deck--3 { transform: translate(-33.55%,22.27%) rotate(0deg); z-index: 1; } }
 /* @end hero-process */
+
+/* @csp-safe: the site CSP (apps/marketing-web/_headers) blocks inline style="" attributes, so per-element values live in classes */
+.tc { transform-box: fill-box; transform-origin: center; }
+.bz-deck--1 { --sh: 0s; } .bz-deck--2 { --sh: 26s; } .bz-deck--3 { --sh: 13s; }
+/* @end csp-safe */
