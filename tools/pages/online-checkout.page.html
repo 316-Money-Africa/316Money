@@ -1,0 +1,153 @@
+<!--page title="Online checkout · 316 Pay" description="Give your customers a convenient way to pay and manage your business payments all in one place, with online checkout, payment links and developer-friendly integrations." css="checkout.css" js="checkout.js" bodyclass="theme-pay theme-oc" wordmark="PAY"-->
+    <!-- 1 · Hero (gradient #FBF8FF → #E8D7FF → #AF7BFA) -->
+    <section class="oc-hero" aria-labelledby="oc-hero-title">
+      <svg class="oc-hero__lines" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <g class="oc-hero__strokes">
+          <path d="M-20 780 C 160 740 330 690 520 650 S 760 610 900 640"/>
+          <path d="M-20 820 C 170 780 340 740 530 705 S 780 665 900 690"/>
+          <path d="M-20 860 C 180 820 350 790 540 760 S 790 725 900 745"/>
+        </g>
+      </svg>
+      <div class="oc-wrap oc-hero__inner">
+        <div class="oc-hero__copy">
+          <p class="oc-eyebrow">Online payments</p>
+          <h1 id="oc-hero-title" class="oc-h1"><span class="ln">Accept payments online,</span> <span class="ln oc-accent">without the complexity</span></h1>
+          <p class="oc-lead"><span class="ln">Give your customers a convenient way to pay</span> <span class="ln">and manage your business payments all in</span> <span class="ln">one place.</span></p>
+          <div class="oc-cta">
+            <a class="btn btn--primary oc-btn" href="#contact">Get started</a>
+            <a class="btn oc-btn oc-btn--white" href="#contact">Contact sales</a>
+          </div>
+        </div>
+        <div class="oc-hero__media">{{slot:Checkout/hero-store ratio="1.25/1" class="oc-art oc-art--window"}}</div>
+      </div>
+    </section>
+
+    <!-- 2 · A smoother way to get paid (white, lilac card with switchable panels) -->
+    <section class="oc-sec oc-sec--white oc-scroll" id="methods" aria-labelledby="oc-methods-title">
+      <div class="oc-wrap">
+        <header class="oc-head">
+          <p class="oc-eyebrow">Built for the way Africa pays</p>
+          <h2 id="oc-methods-title" class="oc-h2 oc-h2--sm">A smoother way to get paid</h2>
+          <p class="oc-sub"><span class="ln">Meet customers where they already transact. From mobile money to cards and transfers,</span> <span class="ln">bring familiar payment experiences into every online sale.</span></p>
+        </header>
+
+        <div class="oc-acc">
+          <input class="oc-acc__r" type="radio" name="oc-acc" id="oc-acc-1" checked>
+          <input class="oc-acc__r" type="radio" name="oc-acc" id="oc-acc-2">
+          <input class="oc-acc__r" type="radio" name="oc-acc" id="oc-acc-3">
+          <input class="oc-acc__r" type="radio" name="oc-acc" id="oc-acc-4">
+          <input class="oc-acc__r" type="radio" name="oc-acc" id="oc-acc-5">
+          <input class="oc-acc__r" type="radio" name="oc-acc" id="oc-acc-6">
+          <div class="oc-acc__card">
+            <ul class="oc-acc__list">
+              <li class="oc-acc__item oc-acc__item--1">
+                <label for="oc-acc-1"><span class="oc-acc__tag">Seamless experiences</span><span class="oc-acc__t"><span class="oc-t-open">Online checkout</span><span class="oc-t-closed">Online Check-out</span></span></label>
+                <p class="oc-acc__d"><span class="ln">Collect payments directly through your website, app or</span> <span class="ln">online storefront with a checkout experience that keeps</span> <span class="ln">customers moving.</span></p>
+              </li>
+              <li class="oc-acc__item oc-acc__item--2">
+                <label for="oc-acc-2"><span class="oc-acc__tag">Relevant by market</span><span class="oc-acc__t">Local payment choices</span></label>
+                <p class="oc-acc__d"><span class="ln">Offer payment options familiar to customers in</span> <span class="ln">supported markets, including mobile money, cards and</span> <span class="ln">bank transfers through available integrations.</span></p>
+              </li>
+              <li class="oc-acc__item oc-acc__item--3">
+                <label for="oc-acc-3"><span class="oc-acc__tag">Sell anywhere</span><span class="oc-acc__t"><span class="oc-t-open">Payment links</span><span class="oc-t-closed">Payment Links</span></span></label>
+                <p class="oc-acc__d"><span class="ln">Create and share payment requests with customers</span> <span class="ln">through messaging, email or social channels—without</span> <span class="ln">needing a full online store.</span></p>
+              </li>
+              <li class="oc-acc__item oc-acc__item--4">
+                <label for="oc-acc-4"><span class="oc-acc__tag">Ready-made flow</span><span class="oc-acc__t">Hosted checkout</span></label>
+                <p class="oc-acc__d"><span class="ln">Launch a ready-made payment experience with less</span> <span class="ln">development effort, while maintaining a professional</span> <span class="ln">and consistent customer journey.</span></p>
+              </li>
+              <li class="oc-acc__item oc-acc__item--5">
+                <label for="oc-acc-5"><span class="oc-acc__tag">One clear view</span><span class="oc-acc__t">Payment visibility</span></label>
+                <p class="oc-acc__d"><span class="ln">Collect payments directly through your website, app or</span> <span class="ln">online storefront with a checkout experience that keeps</span> <span class="ln">customers moving.</span></p>
+              </li>
+              <li class="oc-acc__item oc-acc__item--6">
+                <label for="oc-acc-6"><span class="oc-acc__tag">Built to connect</span><span class="oc-acc__t">Developer flexibility</span></label>
+                <p class="oc-acc__d"><span class="ln">Connect payment experiences to your platform through</span> <span class="ln">integration approaches that suit your business and</span> <span class="ln">technical requirements.</span></p>
+              </li>
+            </ul>
+            <div class="oc-acc__panel">{{slot:Checkout/panel-methods ratio="0.893/1" class="oc-art oc-art--panel"}}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 · Built for every way you sell (lilac gradient) -->
+    <section class="oc-sec oc-sec--lilac" id="platforms" aria-labelledby="oc-platforms-title">
+      <div class="oc-wrap bz-split oc-split">
+        <div class="bz-split__copy oc-split__copy">
+          <p class="oc-eyebrow bz-eyebrow">Payment platforms</p>
+          <h2 id="oc-platforms-title" class="oc-h2"><span class="ln">Built for every way</span> <span class="ln">you sell</span></h2>
+          <p class="oc-body"><span class="ln">Get paid on your website, social channels and</span> <span class="ln">mobile devices.</span></p>
+          <a class="btn btn--primary oc-btn" href="#contact">Explore</a>
+        </div>
+        <div class="bz-split__media oc-split__media">{{slot:Checkout/platforms ratio="1.52/1" class="oc-art oc-art--photo"}}</div>
+      </div>
+    </section>
+
+    <!-- 4 · Stay in control of every payment (#F5F7FB) -->
+    <section class="oc-sec oc-sec--grey" id="control" aria-labelledby="oc-control-title">
+      <div class="oc-wrap bz-split oc-split oc-split--media-first">
+        <div class="bz-split__media oc-split__media">{{slot:Checkout/control ratio="1.21/1" class="oc-art oc-art--shot"}}</div>
+        <div class="bz-split__copy oc-split__copy">
+          <p class="oc-eyebrow bz-eyebrow">Payment management</p>
+          <h2 id="oc-control-title" class="oc-h2"><span class="ln">Stay in control of every</span> <span class="ln">payment</span></h2>
+          <p class="oc-body"><span class="ln">Keep track of incoming payments, review</span> <span class="ln">transaction details and understand what’s been</span> <span class="ln">paid, what’s pending and what needs your</span> <span class="ln">attention.</span></p>
+          <ul class="oc-checks">
+            <li><i aria-hidden="true"></i>Transaction Visibility</li>
+            <li><i aria-hidden="true"></i>Refunds and disputes</li>
+            <li><i aria-hidden="true"></i>Easy reconciliation</li>
+          </ul>
+          <a class="btn btn--primary oc-btn" href="#contact">Explore</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 · Simple integration, flexible setup (#F3ECFE) -->
+    <section class="oc-sec oc-sec--soft" id="integration" aria-labelledby="oc-int-title">
+      <div class="oc-wrap bz-split oc-split">
+        <div class="bz-split__copy oc-split__copy">
+          <p class="oc-eyebrow bz-eyebrow">Connect your business</p>
+          <h2 id="oc-int-title" class="oc-h2"><span class="ln">Simple integration,</span> <span class="ln">flexible setup</span></h2>
+          <p class="oc-body"><span class="ln">Connect your payment experience with the</span> <span class="ln">tools your business relies on, helping you</span> <span class="ln">manage transactions within your existing</span> <span class="ln">workflow.</span></p>
+          <a class="btn btn--primary oc-btn" href="#contact">Explore</a>
+        </div>
+        <div class="bz-split__media oc-split__media">{{slot:Checkout/integration ratio="1.48/1" class="oc-art oc-art--photo"}}</div>
+      </div>
+    </section>
+
+    <!-- 6 · FAQ (white) -->
+    <section class="sec sec--white oc-faq" id="faq" aria-labelledby="faq-title">
+      <div class="wrap faq">
+        <div class="faq__intro">
+          <h2 id="faq-title" class="faq__title"><span class="accent">Questions</span> <span class="ln">you might want to ask</span></h2>
+          <div class="faq__users">
+            {{img:Home/avatars alt=""}}
+            <p><strong>more than 10K+</strong><br>users worldwide</p>
+          </div>
+        </div>
+        <div class="faq__list">
+          <details><summary>Which payment methods can I accept?</summary><p>Where available in your market: mobile money, cards, bank transfer, USSD, 316 wallet balance, and gift cards and vouchers.</p></details>
+          <details><summary>Is there a transaction fee?</summary><p>Any applicable fees are shown to you before you confirm a transaction. Check the fee details in your dashboard for your market.</p></details>
+          <details><summary>How fast do I receive payments?</summary><p>Settlement timing depends on the payment method and your market. Paid and pending payments are visible in your dashboard as they happen.</p></details>
+          <details><summary>How do I track my transactions?</summary><p>Every payment appears in your dashboard with its status, amount and reference, so you can review details and reconcile with ease.</p></details>
+          <details><summary>Can I integrate 316 with my website?</summary><p>Yes. Use hosted checkout and payment links with no code, or integrate through the API and signed webhooks.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 · Make accepting payments easier (deep purple waves) -->
+    <section class="oc-band" id="contact" aria-labelledby="oc-band-title">
+      <svg class="oc-band__arrow oc-band__arrow--a" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M3 9 9 3M4.500 3H9v4.500"/></svg>
+      <svg class="oc-band__arrow oc-band__arrow--b" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M3 9 9 3M4.500 3H9v4.500"/></svg>
+      <div class="oc-wrap oc-band__inner">
+        <p class="oc-band__eyebrow">Your business, ready for more</p>
+        <h2 id="oc-band-title" class="oc-band__title">Make accepting payments easier</h2>
+        <p class="oc-band__desc"><span class="ln">Take the next step towards a simpler way to collect and manage</span> <span class="ln">payments for your business.</span></p>
+        <div class="oc-cta oc-cta--center">
+          <a class="btn btn--primary oc-btn" href="#">Start now</a>
+          <a class="btn oc-btn oc-btn--ghost" href="#">Contact sales</a>
+        </div>
+      </div>
+    </section>
+
+    {{download}}

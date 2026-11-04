@@ -1,0 +1,154 @@
+/* Online checkout page (316 Pay). Matched to the supplied UI:
+   hero gradient 135deg #FBF8FF 0% / #E8D7FF 50% / #AF7BFA 100%; accordion card #F8F4FF; platforms band 135deg #F4EDFF > #DAC0FC;
+   control band #F5F7FB; integration band #F3ECFE; CTA band deep purple waves; footer flat #4A1E7E with the circle arc.
+   Rules: rem/em/% only, 90rem cap, 2.75rem touch targets, designed lines (.ln) wrap on whole words, no inline style="" (CSP),
+   reserved media slots (svg.slot) so supplied artwork never shifts the layout. Phone reading order lives in mobile.css. */
+:root {
+  --oc-ink: #000;
+  --oc-plum: #381850;
+  --oc-eyebrow: #A619C9;
+  --oc-brand: #7557F1;
+  --oc-gut: clamp(1.25rem, 5.3vw, 4.75rem);
+  --oc-hero: linear-gradient(135deg, #FBF8FF 0%, #E8D7FF 50%, #AF7BFA 100%);
+}
+
+/* ---------- Navigation: transparent over the hero, solid once the page scrolls (same behaviour as the other 316 Pay pages) ---------- */
+.theme-pay { background: #fff; }
+.theme-pay .nav { background: transparent; backdrop-filter: none; }
+.theme-pay .nav:has(.is-open), .theme-pay .nav:has(.nav__item:hover .mega), .theme-pay .nav:has(.nav__item:has(:focus-visible) .mega) { background: #fff; border-bottom-color: var(--line); }
+@supports (animation-timeline: scroll()) {
+  .theme-pay .nav { animation: oc-navbg linear both; animation-timeline: scroll(); animation-range: 0 3.5rem; }
+  @keyframes oc-navbg { to { background-color: rgba(255, 255, 255, .92); backdrop-filter: blur(0.5rem); border-bottom-color: var(--line); } }
+}
+@supports not (animation-timeline: scroll()) { .theme-pay .nav { background: rgba(251, 248, 255, .94); } }
+
+/* ---------- Shared ---------- */
+.oc-wrap { width: 100%; max-width: 90rem; margin-inline: auto; padding-inline: var(--oc-gut); }
+.oc-art { display: block; width: 100%; height: auto; max-width: none; }
+svg.oc-art--window { background: #fff; border-radius: 0.9rem 0 0 0.9rem; box-shadow: 0 1rem 3rem rgba(80, 50, 160, .18); }
+svg.oc-art--panel { background: linear-gradient(180deg, #DAC9FD 0%, #D9C7FD 50%, #BBA1F7 100%); border-radius: 0.65rem; }
+svg.oc-art--photo { background: rgba(255, 255, 255, .55); border-radius: 0.75rem; }
+svg.oc-art--shot { background: #fff; border-radius: 0.5rem; box-shadow: 0 0.75rem 2.25rem rgba(80, 50, 160, .12); }
+img.oc-art--window { border-radius: 0.9rem 0 0 0.9rem; }
+img.oc-art--panel { border-radius: 0.65rem; }
+img.oc-art--photo { border-radius: 0.75rem; }
+
+.oc-eyebrow { margin: 0 0 clamp(0.875rem, 1.4vw, 1.25rem); font-size: clamp(0.75rem, 0.68rem + 0.3vw, 0.875rem); font-weight: 500; letter-spacing: 0.015em; text-transform: uppercase; color: var(--oc-eyebrow); }
+.oc-h1 { margin: 0; font-size: clamp(2rem, 1rem + 2.9vw, 2.875rem); line-height: 1.17; font-weight: 600; color: var(--oc-ink); text-wrap: balance; }
+.oc-h1 .ln, .oc-h2 .ln { display: block; }
+.oc-accent { color: var(--oc-brand); }
+.oc-h2 { margin: 0; font-size: clamp(1.75rem, 1rem + 2vw, 2.5rem); line-height: 1.17; font-weight: 600; color: var(--oc-ink); text-wrap: balance; }
+.oc-h2--sm { font-size: clamp(1.5rem, 1rem + 1.3vw, 1.875rem); }
+.oc-lead, .oc-body { margin: clamp(1.25rem, 2.2vw, 1.75rem) 0 0; font-size: clamp(0.9375rem, 0.78rem + 0.5vw, 1.25rem); line-height: 1.45; color: #1a1a1a; }
+.oc-lead .ln, .oc-body .ln, .oc-sub .ln, .oc-acc__d .ln, .oc-band__desc .ln { display: inline; }
+@media (min-width: 64rem) { .oc-lead .ln, .oc-body .ln, .oc-sub .ln, .oc-acc__d .ln, .oc-band__desc .ln { display: block; } }
+.oc-sub { margin: clamp(1rem, 1.8vw, 1.5rem) auto 0; font-size: clamp(0.9375rem, 0.78rem + 0.4vw, 1.1875rem); line-height: 1.45; color: #1a1a1a; }
+.oc-btn { min-height: 3.1rem; padding: 0.75rem clamp(1.75rem, 2.4vw, 2.4rem); border-radius: 0.5rem; font-size: 0.9375rem; font-weight: 500; white-space: nowrap; }
+.oc-btn--white { background: #fff; color: #7446ED; box-shadow: none; }
+.oc-btn--white:hover { background: #f6f2ff; }
+.oc-btn--ghost { background: transparent; color: #fff; border-color: rgba(255, 255, 255, .7); }
+.oc-btn--ghost:hover { background: rgba(255, 255, 255, .12); }
+.oc-cta { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: clamp(1.75rem, 3.4vw, 3rem); }
+.oc-cta--center { justify-content: center; }
+
+/* ---------- 1 · Hero ---------- */
+.oc-hero { position: relative; overflow: hidden; margin-top: calc(-1 * var(--nav-h)); padding: calc(var(--nav-h) + clamp(1.5rem, 1.5rem + 8.5vw, 9rem)) 0 clamp(3rem, 7vw, 6.5rem); background: var(--oc-hero); }
+.oc-hero__lines { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; pointer-events: none; max-width: none; }
+.oc-hero__strokes { fill: none; stroke: #fff; stroke-width: 1.2; stroke-opacity: .6; }
+.oc-hero__strokes path { vector-effect: non-scaling-stroke; }
+.oc-hero__inner { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); align-items: center; gap: clamp(2rem, 4vw, 4.5rem); }
+.oc-hero__copy { display: flex; flex-direction: column; align-items: flex-start; }
+.oc-hero__media { margin-right: calc(-1 * var(--oc-gut)); }
+
+/* ---------- 2 · A smoother way to get paid ---------- */
+.oc-sec { padding-block: clamp(4.5rem, 9.4vw, 8.4rem); }
+.oc-sec--white { background: #fff; }
+.oc-head { text-align: center; margin-bottom: clamp(2.5rem, 5vw, 4.5rem); }
+.oc-head .oc-eyebrow { margin-bottom: clamp(1rem, 1.6vw, 1.5rem); }
+.oc-acc__r { position: absolute; width: 0.0625rem; height: 0.0625rem; opacity: 0; pointer-events: none; }
+.oc-acc__card { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.93fr); align-items: center; gap: clamp(1.5rem, 3.4vw, 3.2rem); padding: clamp(1.25rem, 2.4vw, 2.2rem) clamp(1rem, 1.5vw, 1.3rem) clamp(1.25rem, 2.4vw, 2.2rem) clamp(1.5rem, 4.2vw, 3.9rem); background: #F8F4FF; border-radius: 0.25rem; }
+.oc-acc__list { max-width: 36rem; }
+.oc-acc__item { border-bottom: 0.0625rem solid #E5DEF6; }
+.oc-acc__item:last-child { border-bottom: 0; }
+.oc-acc__item label { display: flex; flex-direction: column; justify-content: center; min-height: 2.75rem; padding-block: clamp(1.1rem, 1.9vw, 1.7rem); cursor: pointer; }
+.oc-acc__tag { display: none; margin-bottom: 0.9rem; font-size: clamp(0.75rem, 0.68rem + 0.25vw, 0.875rem); font-weight: 700; color: var(--oc-eyebrow); }
+.oc-acc__t { font-size: clamp(1.25rem, 0.9rem + 1.1vw, 1.8rem); line-height: 1.2; font-weight: 600; color: #C49AFA; transition: color .2s; }
+.oc-acc__item label:hover .oc-acc__t { color: #A67BF0; }
+.oc-t-open { display: none; }
+.oc-acc__d { display: none; margin: 1rem 0 clamp(1.25rem, 2vw, 1.9rem); font-size: clamp(0.875rem, 0.74rem + 0.4vw, 1.1rem); line-height: 1.45; color: #1a1a1a; }
+.oc-acc__panel { width: 100%; }
+.oc-acc__r:focus-visible + .oc-acc__r, .oc-acc__r:focus-visible ~ .oc-acc__card { outline: none; }
+#oc-acc-1:checked ~ .oc-acc__card .oc-acc__item--1, #oc-acc-2:checked ~ .oc-acc__card .oc-acc__item--2, #oc-acc-3:checked ~ .oc-acc__card .oc-acc__item--3,
+#oc-acc-4:checked ~ .oc-acc__card .oc-acc__item--4, #oc-acc-5:checked ~ .oc-acc__card .oc-acc__item--5, #oc-acc-6:checked ~ .oc-acc__card .oc-acc__item--6 { border-bottom-color: #E5DEF6; }
+#oc-acc-1:checked ~ .oc-acc__card .oc-acc__item--1 .oc-acc__tag, #oc-acc-2:checked ~ .oc-acc__card .oc-acc__item--2 .oc-acc__tag, #oc-acc-3:checked ~ .oc-acc__card .oc-acc__item--3 .oc-acc__tag,
+#oc-acc-4:checked ~ .oc-acc__card .oc-acc__item--4 .oc-acc__tag, #oc-acc-5:checked ~ .oc-acc__card .oc-acc__item--5 .oc-acc__tag, #oc-acc-6:checked ~ .oc-acc__card .oc-acc__item--6 .oc-acc__tag { display: block; }
+#oc-acc-1:checked ~ .oc-acc__card .oc-acc__item--1 .oc-acc__t, #oc-acc-2:checked ~ .oc-acc__card .oc-acc__item--2 .oc-acc__t, #oc-acc-3:checked ~ .oc-acc__card .oc-acc__item--3 .oc-acc__t,
+#oc-acc-4:checked ~ .oc-acc__card .oc-acc__item--4 .oc-acc__t, #oc-acc-5:checked ~ .oc-acc__card .oc-acc__item--5 .oc-acc__t, #oc-acc-6:checked ~ .oc-acc__card .oc-acc__item--6 .oc-acc__t { color: var(--oc-plum); font-size: clamp(1.375rem, 0.95rem + 1.3vw, 1.95rem); }
+#oc-acc-1:checked ~ .oc-acc__card .oc-acc__item--1 .oc-acc__d, #oc-acc-2:checked ~ .oc-acc__card .oc-acc__item--2 .oc-acc__d, #oc-acc-3:checked ~ .oc-acc__card .oc-acc__item--3 .oc-acc__d,
+#oc-acc-4:checked ~ .oc-acc__card .oc-acc__item--4 .oc-acc__d, #oc-acc-5:checked ~ .oc-acc__card .oc-acc__item--5 .oc-acc__d, #oc-acc-6:checked ~ .oc-acc__card .oc-acc__item--6 .oc-acc__d { display: block; }
+#oc-acc-1:checked ~ .oc-acc__card .oc-t-closed, #oc-acc-3:checked ~ .oc-acc__card .oc-t-closed { display: none; }
+#oc-acc-1:checked ~ .oc-acc__card .oc-t-open, #oc-acc-3:checked ~ .oc-acc__card .oc-t-open { display: inline; }
+#oc-acc-1:focus-visible ~ .oc-acc__card .oc-acc__item--1 label, #oc-acc-2:focus-visible ~ .oc-acc__card .oc-acc__item--2 label, #oc-acc-3:focus-visible ~ .oc-acc__card .oc-acc__item--3 label,
+#oc-acc-4:focus-visible ~ .oc-acc__card .oc-acc__item--4 label, #oc-acc-5:focus-visible ~ .oc-acc__card .oc-acc__item--5 label, #oc-acc-6:focus-visible ~ .oc-acc__card .oc-acc__item--6 label { outline: 0.125rem solid var(--brand); outline-offset: 0.125rem; border-radius: 0.25rem; }
+
+/* scroll mode (checkout.js adds .is-scroll on wide screens): the card stays pinned while the page scrolls through six steps, the active item follows the
+   scroll position and the illustration drifts slower than the page (--oc-p is the 0..1 progress set by the script) */
+.oc-acc.is-scroll { height: calc(100vh * var(--oc-track, 3.3) + 100vh); }
+.oc-acc.is-scroll .oc-acc__card { position: sticky; top: calc(var(--nav-h) + 1rem); }
+.oc-acc.is-scroll .oc-acc__panel { transform: translateY(calc((0.5 - var(--oc-p, 0.5)) * 3.5rem)); will-change: transform; }
+.oc-acc.is-scroll .oc-acc__list { transform: translateY(calc((var(--oc-p, 0.5) - 0.5) * -1.25rem)); will-change: transform; }
+
+/* ---------- 3-5 · Split bands ---------- */
+.oc-sec--lilac { position: relative; overflow: hidden; background: linear-gradient(135deg, #F4EDFF 0%, #DAC0FC 100%); }
+.oc-sec--lilac::after { content: ""; position: absolute; right: -12%; bottom: -34%; width: 58%; aspect-ratio: 1; border-radius: 50%; background: rgba(255, 255, 255, .22); pointer-events: none; }
+.oc-sec--lilac > .oc-wrap { position: relative; z-index: 1; }
+.oc-sec--grey { background: #F5F7FB; }
+.oc-sec--soft { background: #F3ECFE; }
+.oc-sec--soft { padding-block: clamp(4.5rem, 7vw, 6.25rem); }
+.oc-split { display: grid; grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr); align-items: center; gap: clamp(2rem, 5vw, 5rem); }
+.oc-split--media-first { grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); }
+.oc-split__copy { display: flex; flex-direction: column; align-items: flex-start; }
+.oc-split__copy .oc-btn { margin-top: clamp(1.75rem, 3vw, 2.5rem); }
+.oc-split__media { width: 100%; }
+.oc-checks { margin: clamp(1.25rem, 2.2vw, 1.75rem) 0 0; padding: 0; }
+.oc-checks li { display: flex; align-items: center; gap: 1.1rem; min-height: clamp(2.75rem, 3.4vw, 3.4rem); font-size: clamp(0.9375rem, 0.8rem + 0.45vw, 1.125rem); font-weight: 500; color: var(--oc-plum); }
+.oc-checks i { position: relative; flex: none; width: 1.5rem; height: 1.5rem; border: 0.125rem solid var(--oc-plum); border-radius: 0.2rem; }
+.oc-checks i::after { content: ""; position: absolute; left: 0.45rem; top: 0.1rem; width: 0.35rem; height: 0.75rem; border-right: 0.125rem solid var(--oc-plum); border-bottom: 0.125rem solid var(--oc-plum); transform: rotate(40deg); }
+
+/* ---------- 6 · FAQ (reuses the shared .faq layout; triangle markers and the taller rows from the design) ---------- */
+.theme-oc .faq__title { font-size: clamp(1.75rem, 1rem + 2vw, 2.5rem); line-height: 1.15; max-width: none; }
+.theme-oc .faq__title .ln { display: block; }
+.theme-oc .faq__list summary { padding-block: clamp(1.4rem, 3vw, 2.9rem) clamp(1.2rem, 2.4vw, 2.3rem); font-size: clamp(1rem, 0.85rem + 0.5vw, 1.25rem); line-height: 1.35; }
+.theme-oc .faq__list summary::after { width: 0; height: 0; border: 0; border-left: 0.3125rem solid transparent; border-right: 0.3125rem solid transparent; border-top: 0.4375rem solid var(--oc-plum); transform: none; }
+.theme-oc .faq__list details[open] summary::after { transform: rotate(180deg); }
+.theme-oc .faq__list details { border-bottom-color: #B9B5C6; }
+.theme-oc .oc-faq { padding-block: clamp(4.5rem, 10vw, 9.5rem); }
+
+/* ---------- 7 · CTA band ---------- */
+.oc-band { position: relative; isolation: isolate; overflow: hidden; padding-block: clamp(4.5rem, 8vw, 7.5rem); background: #41146f url("assets/Business/banner-bg.webp") center / cover no-repeat; color: #fff; text-align: center; }
+.oc-band__inner { position: relative; z-index: 1; }
+.oc-band__eyebrow { margin: 0 0 clamp(1rem, 1.6vw, 1.5rem); font-size: clamp(0.75rem, 0.68rem + 0.3vw, 0.9375rem); font-weight: 500; letter-spacing: 0.015em; text-transform: uppercase; color: #CDB6F5; }
+.oc-band__title { margin: 0; font-size: clamp(1.625rem, 1rem + 1.7vw, 2.25rem); line-height: 1.2; font-weight: 600; text-wrap: balance; }
+.oc-band__desc { margin: clamp(1rem, 1.8vw, 1.5rem) auto 0; max-width: 40rem; font-size: clamp(0.9375rem, 0.8rem + 0.4vw, 1.125rem); line-height: 1.45; color: rgba(255, 255, 255, .92); }
+.oc-band__arrow { position: absolute; z-index: 1; width: 0.9rem; height: 0.9rem; fill: none; stroke: rgba(255, 255, 255, .45); stroke-width: 1; stroke-linecap: round; stroke-linejoin: round; }
+.oc-band__arrow--a { left: 59%; top: 68%; }
+.oc-band__arrow--b { left: 79%; top: 68%; }
+
+/* ---------- Footer: flat #4A1E7E with the circle arc (this page only) ---------- */
+.theme-oc .footer { position: relative; overflow: hidden; background: #4A1E7E; container-type: inline-size; }
+.theme-oc .footer::before { content: ""; position: absolute; z-index: 0; left: 72.5cqw; top: 2.5cqw; width: 105cqw; aspect-ratio: 1; border-radius: 50%; background: #7649AC; pointer-events: none; }
+.theme-oc .footer::after { content: ""; position: absolute; z-index: 0; left: 67.5cqw; top: -2.5cqw; width: 115cqw; aspect-ratio: 1; border-radius: 50%; border: 0.0625rem solid rgba(255, 255, 255, .5); pointer-events: none; }
+.theme-oc .footer .wrap { position: relative; z-index: 1; }
+.theme-oc .footer__legal { margin-top: clamp(3rem, 12vw, 11rem); }
+
+/* ---------- Tablets and phones ---------- */
+@media (max-width: 63.99rem) {
+  .oc-hero__inner, .oc-split, .oc-split--media-first { grid-template-columns: 1fr; }
+  .oc-hero__media { margin-right: 0; }
+  svg.oc-art--window, img.oc-art--window { border-radius: 0.9rem; }
+  .oc-acc__card { grid-template-columns: 1fr; padding: 1.25rem; }
+  .oc-acc__list { max-width: none; }
+  .oc-acc__panel { max-width: 28rem; margin-inline: auto; }
+  .oc-band__arrow { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .theme-pay .nav { animation: none; } }

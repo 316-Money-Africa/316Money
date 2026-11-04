@@ -68,6 +68,8 @@ for (const f of readdirSync(PAGES).filter((n) => n.endsWith(".page.html"))) {
 
   const css = ["styles.css", "sections.css", ...(meta.css ? meta.css.split(/\s+/).filter(Boolean) : []), "mobile.css"]
     .map((c) => `  <link rel="stylesheet" href="${c}?v=${ver(c)}">`).join("\n");
+  const scripts = (meta.js ? meta.js.split(/\s+/).filter(Boolean) : []).map((j) => `
+  <script src="${j}?v=${ver(j)}" defer></script>`).join("");
   const preload = meta.preload
     ? `  <link rel="preload" as="image" href="${meta.preload}" type="image/webp" fetchpriority="high">\n` : "";
 
@@ -94,7 +96,7 @@ ${body}
   </main>
 
   ${partials.footer}
-  <script src="nav.js?v=${ver("nav.js")}" defer></script>
+  <script src="nav.js?v=${ver("nav.js")}" defer></script>${scripts}
 </body>
 </html>
 `;
