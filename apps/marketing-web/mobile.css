@@ -83,6 +83,30 @@
   .bz-pss__conn { display: none; }
 }
 
+/* ---------- Online checkout page (.oc-*) and the eyebrow fix for shared split rows ---------- */
+@media (max-width: 63.99rem) {
+  /* the eyebrow is a <p>: without this the generic "p -> order 4" rule above would push it below the title */
+  .bz-split__copy > .bz-eyebrow, .bz-api__copy > .bz-eyebrow { order: 1; margin: 0 0 0.75rem; }
+  .oc-hero__inner { display: flex; flex-direction: column; align-items: stretch; gap: 0; }
+  .oc-hero__copy { display: contents; }
+  .oc-hero__copy > * { order: 6; }
+  .oc-hero__copy > .oc-eyebrow { order: 1; margin: 0 0 0.75rem; }
+  .oc-hero__copy > h1 { order: 2; }
+  .oc-hero__copy > .oc-lead { order: 3; margin: 1.25rem 0 0; }
+  .oc-hero__media { order: 4; margin: 2rem 0 0; }
+  .oc-hero__copy > .oc-cta { order: 5; margin-top: 1.75rem; }
+  .oc-split__copy > .oc-eyebrow { order: 1; margin: 0 0 0.75rem; }
+  #control .bz-split > .bz-split__media { order: 5; }
+  .oc-sec { padding-block: clamp(4.5rem, 14vw, 5.75rem); }
+  .oc-head { margin-bottom: clamp(2.5rem, 9vw, 3.5rem); }
+}
+@media (max-width: 40rem) {
+  .oc-h1 { font-size: clamp(1.3rem, 6.3vw, 1.85rem); line-height: 1.15; }
+  .oc-h2, .oc-h2--sm, .oc-band__title, .theme-oc .faq__title { font-size: clamp(1.2rem, 5.5vw, 1.65rem); line-height: 1.18; }
+  .oc-acc__t { font-size: clamp(1.15rem, 5vw, 1.4rem); }
+  .oc-btn { white-space: normal; }
+}
+
 /* ---------- Every phone: copy never overflows the viewport; whole words only ---------- */
 @media (max-width: 40rem) {
   html, body { overflow-x: clip; }

@@ -38,6 +38,9 @@ jobs:
           test -f apps/marketing-web/bill-payment.html
           test -f apps/marketing-web/pay-with-316.html
           test -f apps/marketing-web/accept-online-payments.html
+          test -f apps/marketing-web/online-checkout.html
+          test -f apps/marketing-web/checkout.css
+          test -f apps/marketing-web/checkout.js
           test -f apps/marketing-web/business.css
           test -f apps/marketing-web/mobile.css
           test -f apps/marketing-web/styles.css
