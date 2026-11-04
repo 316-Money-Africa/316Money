@@ -76,10 +76,10 @@
 
 /* Pay Small Small art on phones: a taller art box so the dashboard is as large as the card allows */
 @media (max-width: 47.99rem) {
-  .bz-pss__art { aspect-ratio: 1.05 / 1; }
+  .bz-pss__art { aspect-ratio: 1 / 1; }
   .bz-pss__dash { left: 30%; top: 0; width: 70%; }
-  .bz-pss__rem { left: 2%; top: 30%; width: 46%; }
-  .bz-pss__order { left: 2%; top: 42%; width: 46%; }
+  .bz-pss__rem { left: 2%; top: 24%; width: 46%; }
+  .bz-pss__order { left: 2%; top: 39%; width: 46%; }
   .bz-pss__conn { display: none; }
 }
 
