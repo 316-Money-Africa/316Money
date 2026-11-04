@@ -46,12 +46,15 @@ function expandImages(html) {
     const [w, h] = webpSize(file);
     const hasAlt = /(^|\s)alt="/.test(attrs);
     const eager = /fetchpriority="high"/.test(attrs) || /(^|\s)loading="/.test(attrs); // the hero image is preloaded and never lazy; an explicit loading attribute wins
-    return `<img src="assets/${name}.webp"${hasAlt ? "" : ' alt=""'}${attrs} width="${w}" height="${h}"${eager ? "" : ' loading="lazy"'} decoding="async">`;
+    return `<img src="assets/${name}.webp?v=${imgVer(file)}"${hasAlt ? "" : ' alt=""'}${attrs} width="${w}" height="${h}"${eager ? "" : ' loading="lazy"'} decoding="async">`;
   });
 }
 
 // stylesheets and scripts carry a content hash, so a browser (or CDN) can never pair new HTML with a stale cached file
-const ver = (f) => createHash("sha1").update(readFileSync(join(OUT, f))).digest("hex").slice(0, 8);
+// text files are hashed with LF endings so a Windows checkout (CRLF) and CI (LF) produce the same version string
+const ver = (f) => createHash("sha1").update(readFileSync(join(OUT, f), "utf8").replace(/\r\n/g, "\n")).digest("hex").slice(0, 8);
+// images keep their file name but carry a content hash too: /assets/* is cached for a week, so a replaced image would otherwise never reach returning visitors
+const imgVer = (file) => createHash("sha1").update(readFileSync(file)).digest("hex").slice(0, 8);
 
 const OUTPUT_NAMES = { home: "index.html" }; // everything else -> <name>.html
 
@@ -71,7 +74,7 @@ for (const f of readdirSync(PAGES).filter((n) => n.endsWith(".page.html"))) {
   const scripts = (meta.js ? meta.js.split(/\s+/).filter(Boolean) : []).map((j) => `
   <script src="${j}?v=${ver(j)}" defer></script>`).join("");
   const preload = meta.preload
-    ? `  <link rel="preload" as="image" href="${meta.preload}" type="image/webp" fetchpriority="high">\n` : "";
+    ? `  <link rel="preload" as="image" href="${meta.preload}?v=${imgVer(join(OUT, meta.preload))}" type="image/webp" fetchpriority="high">\n` : "";
 
   const html = `<!doctype html>
 <html lang="en">
