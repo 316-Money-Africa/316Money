@@ -294,7 +294,7 @@
    like a falling card and goes to the back of the stack while the next deck comes forward. The screens are inline SVG on a
    968 x 686 design box, so they scale exactly with the artwork (no unit maths, nothing to mis-render). ---------- */
 .bz-hero__media { position: relative; }
-.bz-hero__screens { position: absolute; left: 38.29%; top: 0.553%; width: 61.12%; height: 84.39%; pointer-events: none; }
+.bz-hero__screens { position: absolute; left: 38.29%; top: 0.63%; width: 61.12%; height: 96.07%; pointer-events: none; }
 .bz-deck { position: absolute; inset: 0; transform-origin: 50% 0; border-radius: 1.5% / 2.1%; background: #fff; box-shadow: 0 0.75rem 2rem rgba(70, 40, 150, .18); overflow: hidden; will-change: transform, opacity; }
 .bz-deck > .bz-base, .bz-deck > .bz-ov { position: absolute; inset: 0; width: 100%; height: 100%; display: block; max-width: none; }
 .bz-ov text { font-family: var(--font); }
