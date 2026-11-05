@@ -2555,3 +2555,19 @@ img.oc-art--photo { border-radius: 0.75rem; }
 .oc-int text { font-family: var(--font); }
 @media (prefers-reduced-motion: reduce) { .oc-int [class^="pi"], .oc-int [class*=" pi"] { animation: none !important; opacity: 0; } .oc-pulse { display: none; } }
 /* @end oc-int */
+
+/* closing band: lilac, copy centred, the dashboard peeking from the bottom edge (supplied artwork drops into the slot) */
+.oc-cta2 { position: relative; isolation: isolate; overflow: hidden; padding-top: clamp(4.5rem, 8vw, 7rem); background: linear-gradient(180deg, #EEE6FF 0%, #D9C8FD 55%, #C4AAFA 100%); text-align: center; }
+.oc-cta2::before, .oc-cta2::after { content: ""; position: absolute; z-index: -1; border-radius: 50%; pointer-events: none; }
+.oc-cta2::before { left: -34%; top: 14%; width: 76%; aspect-ratio: 1; background: rgba(255, 255, 255, .3); }
+.oc-cta2::after { right: -30%; top: 38%; width: 70%; aspect-ratio: 1; background: rgba(150, 110, 240, .22); }
+.oc-cta2__inner { display: flex; flex-direction: column; align-items: center; }
+.oc-cta2__eyebrow { margin: 0 0 clamp(0.75rem, 1.4vw, 1.1rem); font-size: clamp(0.8125rem, 0.75rem + 0.25vw, 0.9375rem); font-weight: 500; color: var(--oc-eyebrow); }
+.oc-cta2 .oc-h2 .ln { display: block; }
+.oc-cta2__desc { max-width: 32rem; margin-inline: auto; font-size: clamp(0.875rem, 0.8rem + 0.3vw, 1rem); }
+.oc-cta2 .oc-cta { margin-top: clamp(1.5rem, 2.6vw, 2.25rem); }
+.oc-cta2__ghost { border: 0.0625rem solid #7455F0; }
+.oc-cta2__shot { width: min(100%, 62rem); margin-top: clamp(2.5rem, 5vw, 4rem); border-radius: 1rem 1rem 0 0; overflow: hidden; background: #fff; box-shadow: 0 -0.5rem 3rem rgba(80, 40, 160, .16); }
+.oc-cta2__img { display: block; width: 100%; height: auto; max-width: none; }
+svg.oc-cta2__img { background: #fff; }
+@media (max-width: 40rem) { .oc-cta2 .oc-cta { flex-direction: column; align-items: stretch; width: min(100%, 18rem); } .oc-cta2 .oc-cta .oc-btn { justify-content: center; } }
