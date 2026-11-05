@@ -187,3 +187,7 @@
   .v-sec { bottom: -1.7cqw; } .v-man { bottom: -4cqw; } .g-man { bottom: -1.7cqw; } .at-airtel { bottom: -3.3cqw; }
   .b-school { bottom: -1.7cqw; } .p-confirm { bottom: -4.4cqw; }
 }
+
+/* Type weight, uniform on every page (user-mandated): section and hero titles are bold, the subtitles under them medium, so none reads faint */
+.hero__title, .sec__title, .split__title, .faq__title, .vc__copy h2, .bz-hero__title, .bz-h2, .bz-ready__title, .oc-h1, .oc-h2, .oc-band__title { font-weight: 700; }
+.hero__lead, .sec__sub, .bz-sub, .bz-lead, .bz-body, .bz-ready__desc, .oc-lead, .oc-sub, .oc-body, .oc-band__desc { font-weight: 500; }
