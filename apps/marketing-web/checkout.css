@@ -2152,3 +2152,67 @@ img.oc-art--photo { border-radius: 0.75rem; }
 .oc-tl { transform-origin: 0 0; transform-box: fill-box; } .oc-tr { transform-origin: 100% 0; transform-box: fill-box; }
 @media (prefers-reduced-motion: reduce) { .oc-pf--chat .oc-pf__fx { display: none; } }
 /* @end oc-panel4 */
+
+/* @generated:oc-local (scratch generator: do not hand-edit) */
+/* platforms photo: the supplied image with the supplied "Payment sent" toast laid over it */
+.oc-plat { position: relative; width: 100%; }
+.oc-plat > img { display: block; width: 100%; height: auto; max-width: none; }
+.oc-plat .oc-plat__toast { position: absolute; left: 74.5%; top: 41%; width: 24%; height: auto; filter: drop-shadow(0 0.5rem 1rem rgba(60, 30, 140, .18)); }
+/* local payment choices */
+.oc-sr { position: absolute; width: 0.0625rem; height: 0.0625rem; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.oc-local__grid { align-items: end; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.oc-local__copy .oc-btn { margin-top: clamp(1.25rem, 2vw, 1.75rem); gap: 0.6rem; }
+.oc-local .oc-body .ln { display: inline; }
+.oc-local .oc-body { max-width: 34rem; }
+.oc-local__arr { width: 1rem; height: 1rem; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.oc-feats { list-style: none; margin: clamp(2rem, 4vw, 3.25rem) 0 0; padding: 0; display: grid; gap: clamp(1.5rem, 2.6vw, 2.25rem); }
+.oc-feat { display: grid; grid-template-columns: 2.25rem minmax(0, 1fr); gap: 1.1rem; align-items: start; }
+.oc-feat__i svg { display: block; width: 2rem; height: 2rem; fill: none; stroke: #6A47D8; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.oc-feat__i .oc-fi__bg { fill: #fff; }
+.oc-feat__i .oc-fi--solid { fill: #6A47D8; stroke: none; }
+.oc-feat__t { margin: 0; font-size: clamp(0.9375rem, 0.85rem + 0.3vw, 1.0625rem); font-weight: 700; color: #14123A; }
+.oc-feat__d { margin: 0.4rem 0 0; font-size: clamp(0.875rem, 0.8rem + 0.25vw, 1rem); line-height: 1.5; font-weight: 500; color: #1a1a1a; }
+.oc-local__media { display: flex; flex-direction: column; align-items: stretch; gap: clamp(1rem, 1.8vw, 1.5rem); min-width: 0; }
+.oc-lt__r { position: absolute; width: 0.0625rem; height: 0.0625rem; opacity: 0; pointer-events: none; }
+.oc-lt { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0.5rem clamp(0.5rem, 1.6vw, 1rem); }
+.oc-lt label { display: inline-flex; align-items: center; justify-content: center; min-height: 2.75rem; padding: 0 clamp(1.1rem, 2vw, 1.6rem); border-radius: 62.4375rem; font-size: clamp(0.9375rem, 0.85rem + 0.3vw, 1.0625rem); font-weight: 600; color: #14123A; cursor: pointer; white-space: nowrap; transition: background-color .2s, color .2s; }
+.oc-lt label:hover { background: #F1ECFE; }
+#oc-lt-ng:checked ~ .oc-lt label[for="oc-lt-ng"], #oc-lt-cm:checked ~ .oc-lt label[for="oc-lt-cm"], #oc-lt-ke:checked ~ .oc-lt label[for="oc-lt-ke"] { background: #7455F0; color: #fff; }
+#oc-lt-ng:focus-visible ~ .oc-lt label[for="oc-lt-ng"], #oc-lt-cm:focus-visible ~ .oc-lt label[for="oc-lt-cm"], #oc-lt-ke:focus-visible ~ .oc-lt label[for="oc-lt-ke"] { outline: 0.125rem solid #14123A; outline-offset: 0.125rem; }
+.oc-lpanel { position: relative; display: grid; place-items: center; aspect-ratio: 294 / 300; padding: 8% 0; background: radial-gradient(120% 90% at 100% 0%, #D9C6FF 0%, rgba(217, 198, 255, 0) 55%), #9F7BEF; }
+.oc-lcard { grid-area: 1 / 1; width: 69%; container-type: inline-size; display: none; }
+#oc-lt-ng:checked ~ .oc-lpanel .oc-lcard--ng, #oc-lt-cm:checked ~ .oc-lpanel .oc-lcard--cm, #oc-lt-ke:checked ~ .oc-lpanel .oc-lcard--ke { display: block; animation: oc-lc-in .45s cubic-bezier(.2, .7, .2, 1) both; }
+@keyframes oc-lc-in { from { opacity: 0; transform: translateY(0.75rem); } to { opacity: 1; transform: none; } }
+.oc-lc { font-size: 3.57cqw; padding: 1.2em; border-radius: 0.8em; background: #fff; box-shadow: 0 1em 2.6em rgba(60, 30, 140, .28); color: #14123A; }
+.oc-lc__head { display: flex; align-items: center; gap: 0.6em; padding-bottom: 0.8em; border-bottom: 0.0625rem solid #ECECF3; }
+.oc-lc__mark { width: 2.1em; height: 2.1em; }
+.oc-lc__pay { font-size: 1.15em; font-weight: 700; letter-spacing: 0.14em; color: #3D3A5C; }
+.oc-lc__row { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 0.9em; margin-top: 0.9em; padding-bottom: 0.9em; border-bottom: 0.0625rem solid #ECECF3; }
+.oc-lc__cap { width: 3.9em; height: 3.4em; object-fit: cover; border-radius: 0.5em; background: #F2F2F2; }
+.oc-lc__prod { display: grid; gap: 0.2em; min-width: 0; }
+.oc-lc__prod strong { font-size: 1.15em; font-weight: 600; }
+.oc-lc__prod span { font-size: 0.95em; color: #666; }
+.oc-lc__price { font-size: 1.25em; font-weight: 700; white-space: nowrap; }
+.oc-lc__ask { margin: 1em 0 0.6em; font-size: 1.2em; font-weight: 700; }
+.oc-lc__opts { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.55em; }
+.oc-lc__opt { display: flex; align-items: center; gap: 0.7em; min-height: 3.2em; padding: 0 0.9em; border: 0.0625rem solid #D9DCE6; border-radius: 0.6em; font-size: 1em; font-weight: 500; color: #3D3A5C; }
+.oc-lc__opt.is-sel { border: 0.125rem solid #7455F0; color: #14123A; }
+.oc-lc__radio { flex: none; width: 1.1em; height: 1.1em; border: 0.0625rem solid #B9BCCB; border-radius: 50%; }
+.oc-lc__opt.is-sel .oc-lc__radio { border: 0.0625rem solid #7455F0; background: radial-gradient(circle, #7455F0 0 38%, #fff 42%); }
+.oc-ic { flex: none; width: 1.15em; height: 1.15em; color: #555; }
+.oc-lc__lbl { min-width: 0; }
+.oc-lc__logos { margin-left: auto; display: flex; align-items: center; gap: 0.5em; }
+.oc-lg { display: block; height: 1.45em; width: auto; }
+.oc-lg--sq { height: 1.7em; }
+.oc-lg__t { font-family: var(--font); font-weight: 700; }
+.oc-lg__visa { font-family: Arial, Helvetica, sans-serif; font-weight: 800; font-style: italic; font-size: 14px; fill: #1A1F71; }
+.oc-lg__verve { font-size: 11px; fill: #1B1B1F; } .oc-lg__amex { font-size: 5.4px; fill: #fff; } .oc-lg__opay { font-size: 11px; fill: #1DB289; }
+.oc-lg__mtn { font-size: 7.4px; fill: #111; } .oc-lg__om { font-size: 6.4px; fill: #fff; } .oc-lg__mpesa { font-size: 8px; fill: #fff; } .oc-lg__316 { font-size: 4.4px; fill: #fff; } .oc-lg__316b { font-size: 5.6px; fill: #fff; }
+@media (max-width: 64rem) {
+  .oc-local__grid { grid-template-columns: 1fr; align-items: stretch; }
+  .oc-lt { justify-content: flex-start; }
+  .oc-lcard { width: 88%; }
+  .oc-lpanel { padding: 9% 0; }
+}
+@media (prefers-reduced-motion: reduce) { .oc-lcard { animation: none !important; } }
+/* @end oc-local */
