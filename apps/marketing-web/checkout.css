@@ -53,6 +53,11 @@ img.oc-art--window { border-radius: 0.9rem 0 0 0.9rem; }
 #oc-acc-3:checked ~ .oc-acc__card .oc-pf--chat { display: block; }
 #oc-acc-3:checked ~ .oc-acc__card .oc-pf--flow { display: none; }
 .oc-pf__fx--open { overflow: visible; }
+/* items 5 and 6 show the supplied static artwork */
+.oc-ps { display: none; width: 100%; }
+.oc-ps__img { display: block; width: 100%; height: auto; max-width: none; }
+#oc-acc-5:checked ~ .oc-acc__card .oc-ps--vis, #oc-acc-6:checked ~ .oc-acc__card .oc-ps--dev { display: block; }
+#oc-acc-5:checked ~ .oc-acc__card .oc-pf--flow, #oc-acc-6:checked ~ .oc-acc__card .oc-pf--flow { display: none; }
 .oc-pf__fx text { font-family: var(--font); }
 .oc-store__fx { position: absolute; left: 0; top: 0; width: 100%; height: 100%; max-width: none; pointer-events: none; }
 img.oc-art--panel { border-radius: 0.65rem; }
