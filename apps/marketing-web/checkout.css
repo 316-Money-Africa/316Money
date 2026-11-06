@@ -2067,7 +2067,7 @@ svg.oc-cta2__img { background: #fff; }
 .oc-bt__bar label:hover { background: #F5F3FB; }
 #oc-bt-1:checked ~ .oc-bt__bar label[for="oc-bt-1"], #oc-bt-2:checked ~ .oc-bt__bar label[for="oc-bt-2"], #oc-bt-3:checked ~ .oc-bt__bar label[for="oc-bt-3"], #oc-bt-4:checked ~ .oc-bt__bar label[for="oc-bt-4"] { background: #000; border-color: #000; color: #fff; }
 #oc-bt-1:focus-visible ~ .oc-bt__bar label[for="oc-bt-1"], #oc-bt-2:focus-visible ~ .oc-bt__bar label[for="oc-bt-2"], #oc-bt-3:focus-visible ~ .oc-bt__bar label[for="oc-bt-3"], #oc-bt-4:focus-visible ~ .oc-bt__bar label[for="oc-bt-4"] { outline: 0.125rem solid #14123A; outline-offset: 0.1875rem; }
-.oc-bp { display: none; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; padding: 3.5% 1.7% 3.5% 0; border-radius: 1.25rem; background: #F5F4FA; }
+.oc-bp { display: none; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr); align-items: center; overflow: hidden; border-radius: 1.1rem; background: linear-gradient(90deg, #F5F5FA 0%, #F8F3FD 45%); }
 #oc-bt-1:checked ~ .oc-bt__panels .oc-bp--1, #oc-bt-2:checked ~ .oc-bt__panels .oc-bp--2, #oc-bt-3:checked ~ .oc-bt__panels .oc-bp--3, #oc-bt-4:checked ~ .oc-bt__panels .oc-bp--4 { display: grid; animation: oc-lc-in .45s cubic-bezier(.2, .7, .2, 1) both; }
 .oc-bp__copy { padding-left: clamp(1.25rem, 5%, 4.5rem); padding-right: 1rem; }
 .oc-bp__label { margin: 0; font-size: clamp(0.75rem, 0.68rem + 0.3vw, 0.9375rem); font-weight: 600; text-transform: uppercase; color: var(--oc-plum); }
@@ -2075,14 +2075,14 @@ svg.oc-cta2__img { background: #fff; }
 .oc-bp__d { margin: 1.1rem 0 0; font-size: clamp(0.9375rem, 0.8rem + 0.45vw, 1.1875rem); line-height: 1.5; font-weight: 500; color: #4A4A5E; }
 .oc-bp__link { display: inline-flex; align-items: center; min-height: 2.75rem; margin-top: clamp(0.75rem, 1.6vw, 1.5rem); font-size: clamp(1rem, 0.85rem + 0.45vw, 1.1875rem); font-weight: 600; color: var(--oc-eyebrow); }
 .oc-bp__link:hover { text-decoration: underline; }
-.oc-bp__art { overflow: hidden; border-radius: 2.25% / 2.65%; }
+.oc-bp__art { overflow: hidden; align-self: stretch; }
 .oc-bp__img { display: block; width: 100%; height: auto; max-width: none; }
-@media (max-width: 64rem) { .oc-bp { grid-template-columns: 1fr; padding: 1.5rem 1.25rem; gap: 1.5rem; } .oc-bp__copy { padding: 0; } }
+@media (max-width: 64rem) { .oc-bp { grid-template-columns: 1fr; padding: 1.5rem 0 0; gap: 1.5rem; } .oc-bp__copy { padding: 0 1.25rem; } }
 @media (max-width: 40rem) {
-  .oc-bp { gap: 0; }
+  .oc-bp { gap: 0; padding: 1.5rem 1.25rem; }
   #oc-bt-1:checked ~ .oc-bt__panels .oc-bp--1, #oc-bt-2:checked ~ .oc-bt__panels .oc-bp--2, #oc-bt-3:checked ~ .oc-bt__panels .oc-bp--3, #oc-bt-4:checked ~ .oc-bt__panels .oc-bp--4 { display: flex; flex-direction: column; align-items: stretch; }
   .oc-bp__copy { display: contents; }
-  .oc-bp__label { order: 1; } .oc-bp__t { order: 2; margin-top: 0.75rem; } .oc-bp__art { order: 3; margin-top: 1.25rem; } .oc-bp__d { order: 4; } .oc-bp__link { order: 5; align-self: flex-start; }
+  .oc-bp__label { order: 1; } .oc-bp__t { order: 2; margin-top: 0.75rem; } .oc-bp__art { order: 3; margin: 1.25rem -1.25rem 0; border-radius: 0.5rem; } .oc-bp__d { order: 4; } .oc-bp__link { order: 5; align-self: flex-start; }
   .oc-bt__bar label { padding-inline: 1.125rem; }
 }
 @media (prefers-reduced-motion: reduce) { .oc-bp { animation: none !important; } }
