@@ -52,3 +52,19 @@
   (mq.addEventListener ? mq.addEventListener("change", enable) : mq.addListener(enable));
   enable();
 })();
+
+// Panel animations (scroll-driven accordion): they wait on their first frame and start from the beginning each time the panel scrolls into view,
+// and pause again when it leaves. Without JavaScript or IntersectionObserver they simply play.
+(() => {
+  const panel = document.querySelector(".oc-scroll .oc-acc__panel");
+  const root = panel && panel.closest(".oc-acc");
+  if (!root || !("IntersectionObserver" in window)) return;
+  const restart = () => panel.getAnimations({ subtree: true }).forEach((a) => { try { a.currentTime = 0; } catch (e) { /* not seekable */ } });
+  root.classList.add("oc-acc--wait");
+  let live = false;
+  new IntersectionObserver((entries) => {
+    const r = entries[entries.length - 1].intersectionRatio;
+    if (!live && r >= 0.45) { live = true; restart(); root.classList.remove("oc-acc--wait"); }
+    else if (live && r < 0.12) { live = false; root.classList.add("oc-acc--wait"); }
+  }, { threshold: [0, 0.12, 0.45, 1] }).observe(panel);
+})();
