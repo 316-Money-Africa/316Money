@@ -1,0 +1,136 @@
+<!--page title="Payment links · 316 Pay" description="Create payment links for your products, share them with customers and collect payments without needing a website." css="pay-pages.css" bodyclass="theme-pay theme-oc" wordmark="PAY"-->
+    <!-- 1 · Hero (gradient #FBF8FF → #E8D7FF → #AF7BFA) -->
+    <section class="oc-hero" aria-labelledby="pl-hero-title">
+      <svg class="oc-hero__lines" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <g class="oc-hero__strokes">
+          <path d="M-20 780 C 160 740 330 690 520 650 S 760 610 900 640"/>
+          <path d="M-20 820 C 170 780 340 740 530 705 S 780 665 900 690"/>
+          <path d="M-20 860 C 180 820 350 790 540 760 S 790 725 900 745"/>
+        </g>
+      </svg>
+      <div class="oc-wrap oc-hero__inner">
+        <div class="oc-hero__copy">
+          <p class="oc-eyebrow">Payment links</p>
+          <h1 id="pl-hero-title" class="oc-h1"><span class="ln oc-accent">Get paid with a link.</span> <span class="ln">Anywhere</span></h1>
+          <p class="oc-lead"><span class="ln">Create payment links for your products and</span> <span class="ln">share them with customers and make it easier</span> <span class="ln">to collect payments without needing a website.</span></p>
+          <div class="oc-cta">
+            <a class="btn btn--primary oc-btn" href="#contact">Get started</a>
+            <a class="btn oc-btn oc-btn--white" href="#start">Contact sales</a>
+          </div>
+        </div>
+        <div class="oc-hero__media">{{slot:Links/hero ratio="1.3/1" class="oc-art pl-slot" alt="A chat where a customer asks to pay and the merchant replies with a payment link for a box of eggs"}}</div>
+      </div>
+    </section>
+
+    <!-- 2 · Simple by design -->
+    <section class="oc-sec oc-sec--white pl-sec" id="steps" aria-labelledby="pl-steps-title">
+      <div class="oc-wrap">
+        <header class="pl-head">
+          <p class="oc-eyebrow">Simple by design</p>
+          <h2 id="pl-steps-title" class="oc-h2 oc-h2--sm"><span class="ln">From link creation to payment</span> <span class="ln">in three steps</span></h2>
+          <p class="oc-body">Create and share payment links effortlessly, letting customers pay through a simple checkout.</p>
+        </header>
+        <ol class="pl-steps">
+          <li class="pl-step">
+            <span class="pl-step__ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><span class="pl-step__n">1</span></span>
+            <h3 class="pl-step__t">Create your link</h3>
+            <p class="pl-step__d">Sell products, services, and subscriptions with ease. Create shareable links customized with your brand logo and colors for a consistent customer experience.</p>
+            <span class="pl-step__bar" aria-hidden="true"></span>
+          </li>
+          <li class="pl-step">
+            <span class="pl-step__ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 3 10 14"/><path d="M21 3l-7 18-4-7-7-4z"/></svg><span class="pl-step__n">2</span></span>
+            <h3 class="pl-step__t">Share it anywhere</h3>
+            <p class="pl-step__d">Share or embed your payment link anywhere. Use one link to reach multiple customers and accept payments across different channels with ease.</p>
+            <span class="pl-step__bar" aria-hidden="true"></span>
+          </li>
+          <li class="pl-step">
+            <span class="pl-step__ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 4.5-3.2 8-8 9-4.8-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><span class="pl-step__n">3</span></span>
+            <h3 class="pl-step__t">Get paid securely</h3>
+            <p class="pl-step__d">Receive instant payment notifications through your Dashboard or email, while your funds are securely transferred to your bank account.</p>
+            <span class="pl-step__bar" aria-hidden="true"></span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 3 · Checkout customisation visual -->
+    <section class="oc-sec--white pl-visual" aria-label="A branded checkout and its customisation settings">
+      <div class="oc-wrap">
+        <div class="pl-visual__box">{{slot:Links/customise ratio="2.2/1" class="oc-art pl-slot" alt="A branded payment link checkout for a baking class subscription beside the Customize your checkout settings and a Settings card with coupon code and shipping address options"}}</div>
+      </div>
+    </section>
+
+    <!-- 4 · Link personalization (light lilac) -->
+    <section class="oc-sec pl-sec pl-sec--soft" id="personalise" aria-labelledby="pl-conf-title">
+      <div class="oc-wrap bz-split oc-split">
+        <div class="bz-split__copy oc-split__copy">
+          <p class="oc-eyebrow bz-eyebrow">Link personalization</p>
+          <h2 id="pl-conf-title" class="oc-h2 oc-h2--sm"><span class="ln">Configure your link.</span> <span class="ln">Get paid with ease</span></h2>
+          <p class="oc-body"><span class="ln">Whether you’re selling products, collecting</span> <span class="ln">subscriptions, or accepting donations, create</span> <span class="ln">and share payment links that make getting</span> <span class="ln">paid effortless.</span></p>
+          <a class="btn btn--primary oc-btn" href="#contact">Explore</a>
+        </div>
+        <div class="bz-split__media oc-split__media">{{slot:Links/personalise ratio="1.46/1" class="oc-art pl-slot" alt="A payment link form with payment type, product and price, beside the customer checkout with an Additional options card"}}</div>
+      </div>
+    </section>
+
+    <!-- 5 · Flexible payment integration (white) -->
+    <section class="oc-sec oc-sec--white pl-sec" id="api" aria-labelledby="pl-api-title">
+      <div class="oc-wrap bz-split oc-split oc-split--media-first">
+        <div class="bz-split__media oc-split__media pl-api__art">{{slot:Links/api ratio="1.29/1" class="oc-art pl-slot" alt="A node.js code editor creating a payment link with the 316 API"}}</div>
+        <div class="bz-split__copy oc-split__copy">
+          <p class="oc-eyebrow bz-eyebrow">Flexible payment integration</p>
+          <h2 id="pl-api-title" class="oc-h2 oc-h2--sm"><span class="ln">Automate payment links</span> <span class="ln">with powerful APIs</span></h2>
+          <p class="oc-body"><span class="ln">Integrate payment link generation into your existing</span> <span class="ln">workflows to simplify operations, automate collections,</span> <span class="ln">and manage payments at scale.</span></p>
+          <ul class="pl-checks">
+            <li><i aria-hidden="true"></i><span>Enable your marketing and sales teams to generate and share payment links directly through promotional emails and CRM tools.</span></li>
+            <li><i aria-hidden="true"></i><span>Integrate Payment Links into your platform using our API and Connect, allowing customers to create and manage payment links directly from their dashboards.</span></li>
+          </ul>
+          <a class="btn btn--primary oc-btn" href="#contact">Explore</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ (white) -->
+    <section class="sec sec--white oc-faq" id="faq" aria-labelledby="faq-title">
+      <div class="wrap faq">
+        <div class="faq__intro">
+          <h2 id="faq-title" class="faq__title"><span class="accent">Questions</span> <span class="ln">you might want to ask</span></h2>
+          <div class="faq__users">
+            {{img:Home/avatars alt=""}}
+            <p><strong>more than 10K+</strong><br>users worldwide</p>
+          </div>
+        </div>
+        <div class="faq__list">
+          <details><summary>Can I customise my payment link?</summary><p>Yes. Add your brand logo, colors and details so every link looks like your business.</p></details>
+          <details><summary>Do payment links expire?</summary><p>A link stays active until you switch it off. You can also set an optional expiry date.</p></details>
+          <details><summary>Will I get notified when someone pays?</summary><p>Yes. You get an instant notification in your dashboard and by email as soon as a payment is made.</p></details>
+          <details><summary>Can I use one payment link multiple times?</summary><p>Yes. Share one link with many customers and use it again and again, or limit it to a single payment.</p></details>
+          <details><summary>How do I track payments made through my links?</summary><p>Every payment appears in your dashboard with its status, amount and reference, so you can review details and reconcile with ease.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing band (deep purple waves) -->
+    <section class="oc-band" id="start" aria-labelledby="oc-band-title">
+      <svg class="oc-band__arrow oc-band__arrow--a" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M3 9 9 3M4.500 3H9v4.500"/></svg>
+      <svg class="oc-band__arrow oc-band__arrow--b" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M3 9 9 3M4.500 3H9v4.500"/></svg>
+      <div class="oc-wrap oc-band__inner">
+        <p class="oc-band__eyebrow">Ready when you are</p>
+        <h2 id="oc-band-title" class="oc-band__title">Create your first payment link</h2>
+        <p class="oc-band__desc"><span class="ln">Start collecting payments with a simple link you can share</span> <span class="ln">wherever your customers are.</span></p>
+        <div class="oc-cta oc-cta--center">
+          <a class="btn btn--primary oc-btn" href="#">Start now</a>
+          <a class="btn oc-btn oc-btn--ghost" href="#">Contact sales</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Money, made simpler (lilac band with the dashboard peeking from the bottom) -->
+    <section class="oc-cta2 oc-cta2--plain" id="contact" aria-labelledby="oc-money-title">
+      <div class="oc-wrap oc-cta2__inner">
+        <p class="oc-cta2__eyebrow">Money, made simpler</p>
+        <h2 id="oc-money-title" class="oc-h2 oc-h2--sm"><span class="ln">Your financial life deserves</span> <span class="ln">an upgrade</span></h2>
+        <p class="oc-body oc-cta2__desc"><span class="ln">One app for everyday payments, effortless transfers</span> <span class="ln">and smarter money management.</span></p>
+        <div class="oc-cta2__shot">{{slot:Checkout/dashboard ratio="1.75/1" class="oc-art oc-cta2__img" alt="The 316 dashboard: collections, successful payments, pending settlements, account activity and invoices"}}</div>
+      </div>
+    </section>
