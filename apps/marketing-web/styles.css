@@ -201,3 +201,9 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
 .sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+/* Business menu: compact link rows on a mouse or trackpad (touch screens keep the 44px targets) */
+@media (hover: hover) and (pointer: fine) {
+  #mega-business .mega__col ul { margin-top: 1.1rem; gap: 0.25rem; }
+  #mega-business .mega__col li a { min-height: 1.75rem; }
+}
