@@ -1,0 +1,135 @@
+<!--page title="Business invoicing · 316 Pay" description="Create professional invoices, send them to your customers and keep track of every payment from one place." css="pay-pages.css" bodyclass="theme-pay theme-oc" wordmark="PAY"-->
+    <!-- 1 · Hero (gradient #FBF8FF → #E8D7FF → #AF7BFA) -->
+    <section class="oc-hero" aria-labelledby="pl-hero-title">
+      <svg class="oc-hero__lines" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <g class="oc-hero__strokes">
+          <path d="M-20 780 C 160 740 330 690 520 650 S 760 610 900 640"/>
+          <path d="M-20 820 C 170 780 340 740 530 705 S 780 665 900 690"/>
+          <path d="M-20 860 C 180 820 350 790 540 760 S 790 725 900 745"/>
+        </g>
+      </svg>
+      <div class="oc-wrap oc-hero__inner">
+        <div class="oc-hero__copy">
+          <p class="oc-eyebrow">Business invoicing</p>
+          <h1 id="pl-hero-title" class="oc-h1"><span class="ln">Send invoices.</span> <span class="ln">Collect payments.</span> <span class="ln">Stay in control</span></h1>
+          <p class="oc-lead"><span class="ln">Create professional invoices and keep track of every</span> <span class="ln">payment from one beautifully simple place.</span></p>
+          <div class="oc-cta">
+            <a class="btn btn--primary oc-btn" href="#contact">Get started</a>
+            <a class="btn oc-btn oc-btn--white" href="#start">Contact sales</a>
+          </div>
+        </div>
+        <div class="oc-hero__media">{{slot:Invoicing/hero ratio="1.3/1" class="oc-art pl-slot" alt="A stack of invoice and checkout cards: invoice INV-001 for KSH 150,000 with an Invoice sent and a Payment received notification"}}</div>
+      </div>
+    </section>
+
+    <!-- 2 · Simple from start to finish -->
+    <section class="oc-sec oc-sec--white pl-sec" id="steps" aria-labelledby="iv-steps-title">
+      <div class="oc-wrap">
+        <header class="pl-head">
+          <p class="oc-eyebrow">Simple from start to finish</p>
+          <h2 id="iv-steps-title" class="oc-h2 oc-h2--sm"><span class="ln">From invoice creation to payment</span> <span class="ln">collection</span></h2>
+          <p class="oc-body">Manage your invoicing process in a few straightforward steps. Create an invoice, send it to your customer and track its payment status.</p>
+        </header>
+        <ol class="pl-steps">
+          <li class="pl-step">
+            <span class="pl-step__ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4h6v3H9zM9 12h6M9 16h4"/></svg><span class="pl-step__n">1</span></span>
+            <h3 class="pl-step__t">Create invoice</h3>
+            <p class="pl-step__d">Add customer, service and payment details in a few simple steps and customize your invoice.</p>
+            <span class="pl-step__bar" aria-hidden="true"></span>
+          </li>
+          <li class="pl-step">
+            <span class="pl-step__ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 3 10 14"/><path d="M21 3l-7 18-4-7-7-4z"/></svg><span class="pl-step__n">2</span></span>
+            <h3 class="pl-step__t">Send invoice</h3>
+            <p class="pl-step__d">Share a secure invoice with your customer by email or link.</p>
+            <span class="pl-step__bar" aria-hidden="true"></span>
+          </li>
+          <li class="pl-step">
+            <span class="pl-step__ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 20V10M12 20V5M19 20v-7"/></svg><span class="pl-step__n">3</span></span>
+            <h3 class="pl-step__t">Track payment</h3>
+            <p class="pl-step__d">Monitor payment progress and know the moment you get paid.</p>
+            <span class="pl-step__bar" aria-hidden="true"></span>
+          </li>
+        </ol>
+      </div>
+    </section>
+    <section class="oc-sec--white pl-visual" aria-label="An invoice and its customisation settings">
+      <div class="oc-wrap">
+        <div class="pl-visual__box">{{slot:Invoicing/customise ratio="2.2/1" class="oc-art pl-slot" alt="Invoice INV-001 for website design, KSH 150,000, beside the Customize your checkout settings"}}</div>
+      </div>
+    </section>
+
+    <!-- 3 · Connected business workflows (white) -->
+    <section class="oc-sec oc-sec--white pl-sec" id="sync" aria-labelledby="iv-sync-title">
+      <div class="oc-wrap bz-split oc-split">
+        <div class="bz-split__copy oc-split__copy">
+          <p class="oc-eyebrow bz-eyebrow">Connected business workflows</p>
+          <h2 id="iv-sync-title" class="oc-h2 oc-h2--sm"><span class="ln">Keep your invoicing and</span> <span class="ln">business tools in sync</span></h2>
+          <p class="oc-body"><span class="ln">Connect invoicing with your existing business</span> <span class="ln">tools to keep payment records and financial</span> <span class="ln">data organised while reducing manual work.</span></p>
+          <a class="btn btn--primary oc-btn" href="third-party-integrations.html">Explore</a>
+        </div>
+        <div class="bz-split__media oc-split__media pl-api__art">{{slot:Invoicing/tools ratio="1.3/1" class="oc-art pl-slot" alt="Logos of business tools that connect with invoicing, including Jumia, Kopo Kopo, Shopify and Soko"}}</div>
+      </div>
+    </section>
+
+    <!-- 4 · Built for developers (light lilac) -->
+    <section class="oc-sec pl-sec pl-sec--paper" id="api" aria-labelledby="iv-api-title">
+      <div class="oc-wrap bz-split oc-split">
+        <div class="bz-split__copy oc-split__copy">
+          <p class="oc-eyebrow bz-eyebrow">Built for developers</p>
+          <h2 id="iv-api-title" class="oc-h2 oc-h2--sm"><span class="ln">Automate invoicing with</span> <span class="ln">powerful APIs</span></h2>
+          <p class="oc-body"><span class="ln">Build smarter invoicing workflows with APIs that let you</span> <span class="ln">create, deliver, and manage invoices effortlessly.</span> <span class="ln">Connect your billing processes with existing tools and</span> <span class="ln">scale without complexity.</span></p>
+          <ul class="pl-checks">
+            <li><i aria-hidden="true"></i><span>Automate invoice creation and delivery</span></li>
+            <li><i aria-hidden="true"></i><span>Manage recurring payments with stored customer details</span></li>
+            <li><i aria-hidden="true"></i><span>Enable invoice payments directly within your platform</span></li>
+          </ul>
+          <a class="btn btn--primary oc-btn" href="developers.html">Explore</a>
+        </div>
+        <div class="bz-split__media oc-split__media pl-api__art">{{slot:Invoicing/code ratio="1.29/1" class="oc-art pl-slot" alt="A node.js editor creating an invoice item, an invoice and sending it with the 316 API"}}</div>
+      </div>
+    </section>
+
+    <!-- FAQ (white) -->
+    <section class="sec sec--white oc-faq" id="faq" aria-labelledby="faq-title">
+      <div class="wrap faq">
+        <div class="faq__intro">
+          <h2 id="faq-title" class="faq__title"><span class="accent">Questions</span> <span class="ln">you might want to ask</span></h2>
+          <div class="faq__users">
+            {{img:Home/avatars alt=""}}
+            <p><strong>more than 10K+</strong><br>users worldwide</p>
+          </div>
+        </div>
+        <div class="faq__list">
+          <details><summary>How do I create an invoice?</summary><p>Add your customer, the service or product and the payment details, then review and customise your invoice before you send it.</p></details>
+          <details><summary>Can I customise my invoices?</summary><p>Yes. Add your logo, brand name and colors so every invoice looks like your business.</p></details>
+          <details><summary>How can I send invoices to customers?</summary><p>Share a secure invoice with your customer by email or as a link.</p></details>
+          <details><summary>Can customers pay invoices online?</summary><p>Yes. Customers can open the invoice and pay online through a simple checkout.</p></details>
+          <details><summary>How do I track outstanding invoices?</summary><p>Every invoice shows its payment status in your dashboard, so you can see what is paid, pending or overdue and know the moment you get paid.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing band (deep purple waves) -->
+    <section class="oc-band" id="start" aria-labelledby="oc-band-title">
+      <svg class="oc-band__arrow oc-band__arrow--a" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M3 9 9 3M4.500 3H9v4.500"/></svg>
+      <svg class="oc-band__arrow oc-band__arrow--b" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M3 9 9 3M4.500 3H9v4.500"/></svg>
+      <div class="oc-wrap oc-band__inner">
+        <p class="oc-band__eyebrow">Ready when you are</p>
+        <h2 id="oc-band-title" class="oc-band__title">Spend less time chasing.<br> More time growing</h2>
+        <p class="oc-band__desc"><span class="ln">Create your first professional invoice in minutes.</span></p>
+        <div class="oc-cta oc-cta--center">
+          <a class="btn btn--primary oc-btn" href="#">Start now</a>
+          <a class="btn oc-btn oc-btn--ghost" href="#">Contact sales</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Money, made simpler (lilac band with the dashboard peeking from the bottom) -->
+    <section class="oc-cta2 oc-cta2--plain" id="contact" aria-labelledby="oc-money-title">
+      <div class="oc-wrap oc-cta2__inner">
+        <p class="oc-cta2__eyebrow">Money, made simpler</p>
+        <h2 id="oc-money-title" class="oc-h2 oc-h2--sm"><span class="ln">Your financial life deserves</span> <span class="ln">an upgrade</span></h2>
+        <p class="oc-body oc-cta2__desc"><span class="ln">One app for everyday payments, effortless transfers</span> <span class="ln">and smarter money management.</span></p>
+        <div class="oc-cta2__shot">{{slot:Checkout/dashboard ratio="1.75/1" class="oc-art oc-cta2__img" alt="The 316 dashboard: collections, successful payments, pending settlements, account activity and invoices"}}</div>
+      </div>
+    </section>
