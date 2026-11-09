@@ -201,6 +201,11 @@ img.pl-slot { border-radius: 0.75rem; }
 .dv-card__link svg { width: 1.1rem; height: 1.1rem; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
 .dv-card__link:hover { text-decoration: underline; }
 
+/* third-party integrations: tool list with its button, and the logo wall */
+.dv-tools__col { display: grid; gap: clamp(1.75rem, 3vw, 2.75rem); justify-items: start; align-content: start; }
+.dv-tools__col .dv-tools__cta { margin-top: 0; }
+.pl-logos { border-radius: 0.9rem; overflow: hidden; background: linear-gradient(135deg, #E6DCFC 0%, #D7C8F8 100%); }
+
 /* closing 'Money, made simpler' section without buttons */
 .oc-cta2--plain .oc-cta2__desc { margin-bottom: 0; }
 
