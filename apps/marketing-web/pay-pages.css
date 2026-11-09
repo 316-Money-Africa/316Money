@@ -159,6 +159,13 @@ img.pl-slot { border-radius: 0.75rem; }
 /* big product visual under the steps */
 .pl-visual { padding-bottom: clamp(3rem, 6vw, 5.5rem); }
 .pl-visual__box { border-radius: 0.9rem; overflow: hidden; background: linear-gradient(90deg, #D9D0F0 0%, #F6F0FF 58%, #F9F5FF 100%); }
+/* artwork taller than the band: centred at the band's height (the gradient fills the sides); phones show it at full width */
+.pl-visual__box--center { position: relative; aspect-ratio: 2.2 / 1; }
+.pl-visual__box--center > img.pl-slot { position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; width: auto; height: 100%; max-width: 100%; border-radius: 0; }
+@media (max-width: 48rem) {
+  .pl-visual__box--center { aspect-ratio: auto; }
+  .pl-visual__box--center > img.pl-slot { position: static; width: 100%; height: auto; }
+}
 
 /* rich checklist (long items) */
 .pl-checks { list-style: none; margin: clamp(1.75rem, 3vw, 2.5rem) 0 0; padding: 0; display: grid; gap: clamp(1.25rem, 2.2vw, 1.9rem); }
