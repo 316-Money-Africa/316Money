@@ -1,4 +1,4 @@
-<!--page js="parallax-x.js linkflow.js" preload="assets/Developers/hero.webp" title="Developers · 316 Pay" description="Build payment experiences with 316: developer tools, APIs, webhooks, SDKs and technical resources." css="pay-pages.css developers.css linkflow.css" bodyclass="theme-pay theme-oc" wordmark="PAY"-->
+<!--page js="parallax-x.js linkflow.js devrun.js" preload="assets/Developers/hero.webp" title="Developers · 316 Pay" description="Build payment experiences with 316: developer tools, APIs, webhooks, SDKs and technical resources." css="pay-pages.css developers.css linkflow.css" bodyclass="theme-pay theme-oc" wordmark="PAY"-->
     <!-- 1 · Hero (gradient #FBF8FF → #E8D7FF → #AF7BFA) -->
     <section class="oc-hero" aria-labelledby="pl-hero-title">
       <svg class="oc-hero__lines" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true" focusable="false">
@@ -105,7 +105,14 @@
           <h2 id="dv-built-title" class="oc-h2 oc-h2--sm"><span class="ln">Integrate payments</span> <span class="ln">with a few lines of code</span></h2>
           <p class="oc-body">Explore how your application can communicate with 316 through APIs to create payment workflows that fit your product requirements.</p>
         </header>
-        <div class="dv-code">{{slot:Developers/editor ratio="3608/1658" class="oc-art pl-slot" alt="A node.js editor with a payments request and a response panel showing Press Run to send a request"}}</div>
+        <div class="dv-code" id="dv-run">{{slot:Developers/editor ratio="3608/1658" class="oc-art pl-slot" alt="A node.js editor with a payments request and a response panel showing Press Run to send a request"}}
+          <button class="dv-run__btn" type="button" aria-label="Run the request" aria-controls="dv-run-out"></button>
+          <span class="dv-run__status" aria-hidden="true">200 OK</span>
+          <div class="dv-run__out" id="dv-run-out" role="status" aria-live="polite">
+            <p class="dv-run__wait"><i class="dv-run__spin" aria-hidden="true"></i>Sending request&hellip;</p>
+            <pre class="dv-run__json"><span class="dv-l">{</span><span class="dv-l">  <b>"status"</b>: <em class="s">"success"</em>,</span><span class="dv-l">  <b>"reference"</b>: <em class="s">"316PAY_8F3A2C"</em>,</span><span class="dv-l">  <b>"amount"</b>: <em class="n">150000</em>,</span><span class="dv-l">  <b>"currency"</b>: <em class="s">"NGN"</em>,</span><span class="dv-l">  <b>"email"</b>: <em class="s">"ada@example.com"</em></span><span class="dv-l">}</span></pre>
+          </div>
+        </div>
       </div>
     </section>
 

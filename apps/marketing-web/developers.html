@@ -14,8 +14,8 @@
   <link rel="stylesheet" href="styles.css?v=77986a3b">
   <link rel="stylesheet" href="sections.css?v=373b85c0">
   <link rel="stylesheet" href="pay-pages.css?v=59429695">
-  <link rel="stylesheet" href="developers.css?v=71184ca5">
-  <link rel="stylesheet" href="linkflow.css?v=43f56600">
+  <link rel="stylesheet" href="developers.css?v=3650bc23">
+  <link rel="stylesheet" href="linkflow.css?v=9f17bf07">
   <link rel="stylesheet" href="mobile.css?v=26768ea6">
 </head>
 <body class="theme-pay theme-oc">
@@ -310,7 +310,14 @@
           <h2 id="dv-built-title" class="oc-h2 oc-h2--sm"><span class="ln">Integrate payments</span> <span class="ln">with a few lines of code</span></h2>
           <p class="oc-body">Explore how your application can communicate with 316 through APIs to create payment workflows that fit your product requirements.</p>
         </header>
-        <div class="dv-code"><img src="assets/Developers/editor.webp?v=022a4cbd" class="oc-art pl-slot" alt="A node.js editor with a payments request and a response panel showing Press Run to send a request" width="2400" height="1103" loading="lazy" decoding="async"></div>
+        <div class="dv-code" id="dv-run"><img src="assets/Developers/editor.webp?v=43bc4ece" class="oc-art pl-slot" alt="A node.js editor with a payments request and a response panel showing Press Run to send a request" width="2400" height="1103" loading="lazy" decoding="async">
+          <button class="dv-run__btn" type="button" aria-label="Run the request" aria-controls="dv-run-out"></button>
+          <span class="dv-run__status" aria-hidden="true">200 OK</span>
+          <div class="dv-run__out" id="dv-run-out" role="status" aria-live="polite">
+            <p class="dv-run__wait"><i class="dv-run__spin" aria-hidden="true"></i>Sending request&hellip;</p>
+            <pre class="dv-run__json"><span class="dv-l">{</span><span class="dv-l">  <b>"status"</b>: <em class="s">"success"</em>,</span><span class="dv-l">  <b>"reference"</b>: <em class="s">"316PAY_8F3A2C"</em>,</span><span class="dv-l">  <b>"amount"</b>: <em class="n">150000</em>,</span><span class="dv-l">  <b>"currency"</b>: <em class="s">"NGN"</em>,</span><span class="dv-l">  <b>"email"</b>: <em class="s">"ada@example.com"</em></span><span class="dv-l">}</span></pre>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -392,5 +399,6 @@
   <script src="nav.js?v=b940ea32" defer></script>
   <script src="parallax-x.js?v=e8e571d5" defer></script>
   <script src="linkflow.js?v=6bd66842" defer></script>
+  <script src="devrun.js?v=0f268a4c" defer></script>
 </body>
 </html>
