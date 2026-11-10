@@ -20,7 +20,8 @@
   const enable = () => {
     const top = stickTop();
     root.classList.toggle("is-pin", mq.matches);                 // measure the steps in their pinned (compact) layout
-    const stepsH = pin.offsetHeight - stage.offsetHeight;
+    const side = root.classList.contains("pl-flow--side");     // list and picture side by side: the card padding is all that sits around the picture
+    const stepsH = side ? 5 * rem() : pin.offsetHeight - stage.offsetHeight;
     const h = Math.min(36 * rem(), window.innerHeight - top - stepsH - 1.25 * rem());
     on = mq.matches && h >= 17 * rem();
     root.classList.toggle("is-pin", on);
