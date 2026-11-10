@@ -91,9 +91,6 @@ img.oc-art--window { border-radius: 0.9rem 0 0 0.9rem; }
 .oc-band__eyebrow { margin: 0 0 clamp(1rem, 1.6vw, 1.5rem); font-size: clamp(0.75rem, 0.68rem + 0.3vw, 0.9375rem); font-weight: 500; letter-spacing: 0.015em; text-transform: uppercase; color: #CDB6F5; }
 .oc-band__title { margin: 0; font-size: clamp(1.625rem, 1rem + 1.7vw, 2.25rem); line-height: 1.2; font-weight: 600; text-wrap: balance; }
 .oc-band__desc { margin: clamp(1rem, 1.8vw, 1.5rem) auto 0; max-width: 40rem; font-size: clamp(0.9375rem, 0.8rem + 0.4vw, 1.125rem); line-height: 1.45; color: rgba(255, 255, 255, .92); }
-.oc-band__arrow { position: absolute; z-index: 1; width: 0.9rem; height: 0.9rem; fill: none; stroke: rgba(255, 255, 255, .45); stroke-width: 1; stroke-linecap: round; stroke-linejoin: round; }
-.oc-band__arrow--a { left: 59%; top: 68%; }
-.oc-band__arrow--b { left: 79%; top: 68%; }
 
 /* ---------- Footer: flat #4A1E7E with the circle arc (this page only) ---------- */
 .theme-oc .footer { position: relative; overflow: hidden; background: #4A1E7E; container-type: inline-size; }
@@ -110,7 +107,6 @@ img.oc-art--window { border-radius: 0.9rem 0 0 0.9rem; }
   .oc-acc__card { grid-template-columns: 1fr; padding: 1.25rem; }
   .oc-acc__list { max-width: none; }
   .oc-acc__panel { max-width: 28rem; margin-inline: auto; }
-  .oc-band__arrow { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { .theme-pay .nav { animation: none; } }
 /* closing band: lilac, copy centred, the dashboard peeking from the bottom edge (supplied artwork drops into the slot) */
@@ -184,7 +180,7 @@ img.pl-slot { border-radius: 0.75rem; }
 .dv-tools__cta { margin-top: clamp(1.75rem, 3vw, 2.75rem); justify-self: start; }
 .dv-tabs { position: relative; min-width: 0; }
 .dv-tabs__r { position: absolute; width: 0.0625rem; height: 0.0625rem; opacity: 0; pointer-events: none; }
-.dv-tabs__bar { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0.5rem clamp(0.5rem, 1.6vw, 1.25rem); margin-bottom: clamp(1rem, 2vw, 1.75rem); }
+.dv-tabs__bar { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem clamp(0.5rem, 1.6vw, 1.25rem); margin-bottom: clamp(1rem, 2vw, 1.75rem); }
 .dv-tabs__bar label { display: inline-flex; align-items: center; justify-content: center; min-height: 2.75rem; padding: 0 clamp(1.1rem, 2vw, 1.75rem); border-radius: 62.4375rem; font-size: clamp(0.9375rem, 0.85rem + 0.3vw, 1.0625rem); font-weight: 600; color: #14123A; cursor: pointer; white-space: nowrap; transition: background-color .2s, color .2s; }
 .dv-tabs__bar label:hover { background: #F1ECFE; }
 #dv-t-1:checked ~ .dv-tabs__bar label[for="dv-t-1"], #dv-t-2:checked ~ .dv-tabs__bar label[for="dv-t-2"], #dv-t-3:checked ~ .dv-tabs__bar label[for="dv-t-3"], #dv-t-4:checked ~ .dv-tabs__bar label[for="dv-t-4"] { background: #7446ED; color: #fff; }
@@ -219,7 +215,7 @@ img.pl-slot { border-radius: 0.75rem; }
 @media (max-width: 63.99rem) {
   .pl-steps { grid-template-columns: 1fr; gap: 2.5rem; }
   .dv-tools { grid-template-columns: 1fr; row-gap: 2rem; }
-  .dv-tabs__bar { justify-content: flex-start; }
+  .dv-tabs__bar { justify-content: center; }
   .dv-cards { grid-template-columns: 1fr; max-width: 28rem; }
   .dv-card { min-height: 14rem; }
 }
