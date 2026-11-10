@@ -3529,3 +3529,7 @@
 }
 .cm7 { animation: cm7 12s linear infinite; }
 /* @end pss-coin-anim */
+
+/* the small PAY mark on the hero phone is drawn as vector so it stays sharp (the supplied art is too small to read) */
+.bz-phone-logo { position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: 7; pointer-events: none; max-width: none; }
+.bz-phone-logo text { font-family: var(--font); }
