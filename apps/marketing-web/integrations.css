@@ -381,3 +381,32 @@
   [data-parallax-x] > img.pl-slot { scale: 1.08; translate: calc(var(--px) * -3.5%) 0; will-change: translate; }
 }
 /* @end ti-anim */
+
+/* @generated:ti-panes (scratch generator: do not hand-edit) */
+/* tab panes built from the supplied pieces: Accounting (dashboard, revenue, invoices) and Automation (316 -> gear -> two tasks) */
+.dv-pane__box.ti-compose { position: relative; aspect-ratio: 2044 / 1580; background: linear-gradient(180deg, #DDD0FB 0%, #EEE8FF 100%); }
+.ti-compose > img { position: absolute; display: block; height: auto; max-width: none; border-radius: 0; }
+.ti-acc__dash { left: 5%; top: 11%; width: 64%; filter: drop-shadow(0 0.75rem 1.5rem rgba(70, 40, 150, .18)); }
+.ti-acc__rev { left: 44%; top: 6%; width: 50%; filter: drop-shadow(0 0.75rem 1.5rem rgba(70, 40, 150, .2)); }
+.ti-acc__inv { left: 52%; top: 46%; width: 42%; filter: drop-shadow(0 0.75rem 1.5rem rgba(70, 40, 150, .22)); }
+.ti-auto__lines { position: absolute; inset: 0; width: 100%; height: 100%; }
+.ti-auto__flow { fill: none; stroke: #7446ED; stroke-width: 5; stroke-linecap: round; stroke-dasharray: 3 16; }
+.ti-auto__hub { left: 8%; top: 35.5%; width: 18%; }
+.ti-auto__gear { left: 40%; top: 36.5%; width: 16%; }
+.ti-auto__n1 { left: 50%; top: 21.5%; width: 46%; }
+.ti-auto__n2 { left: 50%; top: 52.5%; width: 46%; }
+@keyframes ti-spin { to { rotate: 360deg; } }
+@keyframes ti-flow { to { stroke-dashoffset: -57; } }
+@keyframes ti-chip { 0%, 12% { opacity: 0; translate: 2rem 0; } 22%, 86% { opacity: 1; translate: 0 0; } 96%, 100% { opacity: 0; translate: 0 0; } }
+@keyframes ti-pop { 0%, 3% { opacity: 0; scale: .8; } 12%, 94% { opacity: 1; scale: 1; } 99%, 100% { opacity: 0; scale: 1; } }
+@keyframes ti-bob { 0%, 100% { translate: 0 -0.35rem; } 50% { translate: 0 0.35rem; } }
+@media (prefers-reduced-motion: no-preference) {
+  .ti-auto__hub { animation: ti-pop 9s ease-out infinite; }
+  .ti-auto__gear { animation: ti-spin 9s linear infinite; }
+  .ti-auto__flow { animation: ti-flow 1.6s linear infinite; }
+  .ti-auto__n1 { animation: ti-chip 9s cubic-bezier(.2, .7, .2, 1) infinite; animation-delay: 1s; }
+  .ti-auto__n2 { animation: ti-chip 9s cubic-bezier(.2, .7, .2, 1) infinite; animation-delay: 2.4s; }
+  .ti-acc__rev { animation: ti-bob 7s ease-in-out infinite; }
+  .ti-acc__inv { animation: ti-bob 7s ease-in-out infinite reverse; }
+}
+/* @end ti-panes */
