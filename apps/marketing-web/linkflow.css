@@ -165,3 +165,7 @@
 }
 .pl-flow__layer.is-cur .fp10 { animation: fp10 8s linear 1 both; }
 /* @end pl-flow */
+
+/* tighter header on the pinned steps sections (title, text and steps sit closer together) */
+.pl-flow .pl-head { margin-bottom: clamp(1.5rem, 3vw, 2.75rem); }
+.pl-flow .pl-head .oc-body { margin-top: clamp(0.9rem, 1.8vw, 1.6rem); }
