@@ -1,0 +1,170 @@
+<!--page title="Offer store gift cards · 316 Pay" description="Let customers buy store gift cards that give friends and family a reason to shop with your business, customised with your brand and managed from one place." css="pay-pages.css linkflow.css giftcards.css" js="linkflow.js" bodyclass="theme-pay theme-oc" wordmark="PAY"-->
+    <!-- 1 · Hero (gradient #FBF8FF → #E8D7FF → #AF7BFA) -->
+    <section class="oc-hero" aria-labelledby="pl-hero-title">
+      <svg class="oc-hero__lines" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <g class="oc-hero__strokes">
+          <path d="M-20 780 C 160 740 330 690 520 650 S 760 610 900 640"/>
+          <path d="M-20 820 C 170 780 340 740 530 705 S 780 665 900 690"/>
+          <path d="M-20 860 C 180 820 350 790 540 760 S 790 725 900 745"/>
+        </g>
+      </svg>
+      <div class="oc-wrap oc-hero__inner">
+        <div class="oc-hero__copy">
+          <p class="oc-eyebrow">Store gift cards</p>
+          <h1 id="pl-hero-title" class="oc-h1"><span class="ln oc-accent">Give customers a gift</span> <span class="ln">worth sharing</span></h1>
+          <p class="oc-lead"><span class="ln">Let customers purchase store gift cards giving</span> <span class="ln">friends and family a reason to shop with your</span> <span class="ln">business.</span></p>
+          <div class="oc-cta">
+            <a class="btn btn--primary oc-btn" href="#start">Get started</a>
+            <a class="btn oc-btn oc-btn--white" href="#start">Contact sales</a>
+          </div>
+        </div>
+        <div class="oc-hero__media">{{slot:GiftCards/hero ratio="1.25/1" class="oc-art pl-slot" alt="Two store gift cards beside a customer with a Gift card purchased notification and a You got a gift card message"}}</div>
+      </div>
+    </section>
+
+    <!-- 2 · The value of gift cards (white) -->
+    <section class="oc-sec oc-sec--white pl-sec" id="value" aria-labelledby="gc-value-title">
+      <div class="oc-wrap bz-split oc-split">
+        <div class="bz-split__copy oc-split__copy">
+          <p class="oc-eyebrow bz-eyebrow">The value of gift cards</p>
+          <h2 id="gc-value-title" class="oc-h2 oc-h2--sm"><span class="ln">More than a gift.</span> <span class="ln">Another way to grow</span> <span class="ln">your business</span></h2>
+          <p class="oc-body"><span class="ln">Give customers a convenient way to introduce your brand to</span> <span class="ln">others, create new opportunities and make shopping with</span> <span class="ln">your business more rewarding.</span></p>
+          <ul class="pl-checks pl-checks--tight">
+            <li><i aria-hidden="true"></i><span>New customer opportunities</span></li>
+            <li><i aria-hidden="true"></i><span>Brand discovery</span></li>
+            <li><i aria-hidden="true"></i><span>More purchase opportunities</span></li>
+          </ul>
+          <a class="btn btn--primary oc-btn" href="#start">Explore</a>
+        </div>
+        <div class="bz-split__media oc-split__media pl-api__art">{{slot:GiftCards/value ratio="1.2/1" class="oc-art pl-slot" alt="A checkout where a customer chooses how to pay, with Gift card or voucher selected"}}</div>
+      </div>
+    </section>
+
+    <!-- 3 · From gift purchase to a memorable experience (light grey, pinned steps) -->
+    <section class="oc-sec pl-sec pl-sec--grey pl-flow gc-flow" id="experience" aria-labelledby="gc-exp-title">
+      <div class="oc-wrap">
+        <header class="pl-head">
+          <p class="oc-eyebrow">The gifting experience</p>
+          <h2 id="gc-exp-title" class="oc-h2 oc-h2--sm"><span class="ln">From gift purchase to a</span> <span class="ln">memorable experience</span></h2>
+          <p class="oc-body">Flexible options reduce friction for customers and help businesses complete more sales.</p>
+        </header>
+        <div class="pl-flow__pin">
+        <ol class="pl-steps">
+                  <li class="pl-step">
+                    <span class="pl-step__ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="9" width="16" height="11" rx="1.5"/><path d="M12 9v11M4 13.5h16M12 9C9 9 8.2 5 10.6 5S12 9 12 9Zm0 0c3 0 3.8-4 1.4-4S12 9 12 9Z"/></svg><span class="pl-step__n">1</span></span>
+                    <h3 class="pl-step__t">Choose a gift card</h3>
+                    <p class="pl-step__d">Customers can browse available gift cards.</p>
+                    <span class="pl-step__bar" aria-hidden="true"></span>
+                  </li>
+                  <li class="pl-step">
+                    <span class="pl-step__ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 3 10 14"/><path d="M21 3l-7 18-4-7-7-4z"/></svg><span class="pl-step__n">2</span></span>
+                    <h3 class="pl-step__t">Purchase and share</h3>
+                    <p class="pl-step__d">Customers buy and share gift cards with others.</p>
+                    <span class="pl-step__bar" aria-hidden="true"></span>
+                  </li>
+                  <li class="pl-step">
+                    <span class="pl-step__ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 9l1.5-5h13L20 9M4 9v11h16V9M4 9c0 2 4 2 4 0 0 2 4 2 4 0 0 2 4 2 4 0 0 2 4 2 4 0"/><path d="M10 20v-5h4v5"/></svg><span class="pl-step__n">3</span></span>
+                    <h3 class="pl-step__t">Redeem in store</h3>
+                    <p class="pl-step__d">Recipients use gift cards for eligible purchases.</p>
+                    <span class="pl-step__bar" aria-hidden="true"></span>
+                  </li>
+                </ol>
+          <div class="pl-flow__stage">
+            <div class="pl-flow__layer pl-flow__layer--1 is-cur">
+              <div class="pl-visual__box pl-visual__box--center"><div class="pl-cust pl-cust--g1">{{slot:GiftCards/choose ratio="1.6/1" class="oc-art pl-slot" alt="A customer choosing a gift card from the available cards"}}</div></div>
+            </div>
+            <div class="pl-flow__layer pl-flow__layer--2">
+              <div class="pl-visual__box pl-visual__box--center"><div class="pl-cust pl-cust--g2">{{slot:GiftCards/share ratio="1.6/1" class="oc-art pl-slot" alt="A customer buying a gift card and sharing it with a friend"}}</div></div>
+            </div>
+            <div class="pl-flow__layer pl-flow__layer--3">
+              <div class="pl-visual__box pl-visual__box--center"><div class="pl-cust pl-cust--g3">{{slot:GiftCards/redeem ratio="1.6/1" class="oc-art pl-slot" alt="A recipient redeeming a gift card in store"}}</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="pl-flow__runway" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- 4 · Put your brand on every gift (white) -->
+    <section class="oc-sec oc-sec--white pl-sec" id="brand" aria-labelledby="gc-brand-title">
+      <div class="oc-wrap">
+        <header class="pl-head pl-head--center">
+          <p class="oc-eyebrow">Personalise your gift cards</p>
+          <h2 id="gc-brand-title" class="oc-h2 oc-h2--sm"><span class="ln">Put your brand on</span> <span class="ln">every gift</span></h2>
+          <p class="oc-body">Create a recognisable gift card experience that reflects your brand and gives customers something worth sharing.</p>
+        </header>
+        <div class="pl-visual__box gc-brandbox">{{slot:GiftCards/brand ratio="2.2/1" class="oc-art pl-slot" alt="Gift card settings with brand logo, card colour and card denomination beside a Fabulous Jewelries gift card of N50,000"}}</div>
+      </div>
+    </section>
+
+    <!-- 5 · Make every occasion more memorable (light lilac) -->
+    <section class="oc-sec pl-sec pl-sec--paper" id="occasion" aria-labelledby="gc-occ-title">
+      <div class="oc-wrap bz-split oc-split">
+        <div class="bz-split__copy oc-split__copy">
+          <p class="oc-eyebrow bz-eyebrow">More reasons to give</p>
+          <h2 id="gc-occ-title" class="oc-h2 oc-h2--sm"><span class="ln">Make every occasion</span> <span class="ln">more memorable</span></h2>
+          <p class="oc-body"><span class="ln">Give customers a way to celebrate, appreciate and</span> <span class="ln">share special moments with the people who matter.</span></p>
+          <a class="btn btn--primary oc-btn" href="#start">Explore</a>
+        </div>
+        <div class="bz-split__media oc-split__media pl-api__art">{{slot:GiftCards/occasion ratio="1.2/1" class="oc-art pl-slot" alt="A phone showing a gift card message shared with a friend"}}</div>
+      </div>
+    </section>
+
+    <!-- 6 · Keep every gift card in view (white) -->
+    <section class="oc-sec oc-sec--white pl-sec" id="manage" aria-labelledby="gc-man-title">
+      <div class="oc-wrap bz-split oc-split oc-split--media-first">
+        <div class="bz-split__media oc-split__media pl-api__art">{{slot:GiftCards/manage ratio="1.25/1" class="oc-art pl-slot" alt="The gift card management dashboard with issued, redeemed and balance totals and a table of gift cards"}}</div>
+        <div class="bz-split__copy oc-split__copy">
+          <p class="oc-eyebrow bz-eyebrow">Simple gift card management</p>
+          <h2 id="gc-man-title" class="oc-h2 oc-h2--sm"><span class="ln">Keep every gift</span> <span class="ln">card in view</span></h2>
+          <p class="oc-body"><span class="ln">Keep track of gift card activity and manage your store’s</span> <span class="ln">gift card operations from one place.</span></p>
+          <a class="btn btn--primary oc-btn" href="#start">Explore</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing band (deep purple waves) -->
+    <section class="oc-band" id="start" aria-labelledby="oc-band-title">
+      <svg class="oc-band__arrow oc-band__arrow--a" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M3 9 9 3M4.500 3H9v4.500"/></svg>
+      <svg class="oc-band__arrow oc-band__arrow--b" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M3 9 9 3M4.500 3H9v4.500"/></svg>
+      <div class="oc-wrap oc-band__inner">
+        <p class="oc-band__eyebrow">Make your brand giftable</p>
+        <h2 id="oc-band-title" class="oc-band__title">Give customers another way to share your brand</h2>
+        <p class="oc-band__desc"><span class="ln">Introduce store gift cards and create more opportunities for customers to discover,</span> <span class="ln">experience and shop with your business.</span></p>
+        <div class="oc-cta oc-cta--center">
+          <a class="btn btn--primary oc-btn" href="#">Start now</a>
+          <a class="btn oc-btn oc-btn--ghost" href="#">Contact sales</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ (white) -->
+    <section class="sec sec--white oc-faq" id="faq" aria-labelledby="faq-title">
+      <div class="wrap faq">
+        <div class="faq__intro">
+          <h2 id="faq-title" class="faq__title"><span class="accent">Questions</span> <span class="ln">you might want to ask</span></h2>
+          <div class="faq__users">
+            {{img:Home/avatars alt=""}}
+            <p><strong>more than 10K+</strong><br>users worldwide</p>
+          </div>
+        </div>
+        <div class="faq__list">
+          <details><summary>What are store gift cards?</summary><p>A store gift card is a digital card with a value that a customer can buy for someone else. The recipient uses it to pay for eligible purchases with your business.</p></details>
+          <details><summary>How can my business offer gift cards?</summary><p>Set up your gift card from your dashboard, choose how it looks and the amounts customers can buy, then share your store link or add it to your website.</p></details>
+          <details><summary>Can I customise my gift cards with my brand?</summary><p>Yes. Add your logo, choose the card colour and set the denominations so every gift card looks like your business.</p></details>
+          <details><summary>Can customers purchase gift cards for other people?</summary><p>Yes. Customers can buy a gift card and share it with a friend or family member by message or link.</p></details>
+          <details><summary>How do recipients redeem gift cards?</summary><p>Recipients enter the gift card code at checkout, or show it in store, and the value is applied to their purchase.</p></details>
+          <details><summary>Can gift cards be used for multiple purchases?</summary><p>Yes. A gift card keeps its remaining balance after each purchase until the full value has been used.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Money, made simpler (lilac band with the dashboard peeking from the bottom) -->
+    <section class="oc-cta2 oc-cta2--plain" id="contact" aria-labelledby="oc-money-title">
+      <div class="oc-wrap oc-cta2__inner">
+        <p class="oc-cta2__eyebrow">Money, made simpler</p>
+        <h2 id="oc-money-title" class="oc-h2 oc-h2--sm"><span class="ln">Your financial life deserves</span> <span class="ln">an upgrade</span></h2>
+        <p class="oc-body oc-cta2__desc"><span class="ln">One app for everyday payments, effortless transfers</span> <span class="ln">and smarter money management.</span></p>
+        <div class="oc-cta2__shot">{{slot:Checkout/dashboard ratio="1.75/1" class="oc-art oc-cta2__img" alt="The 316 dashboard: collections, successful payments, pending settlements, account activity and invoices"}}</div>
+      </div>
+    </section>
