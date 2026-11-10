@@ -10,9 +10,9 @@
   const stepsEl = [...root.querySelectorAll(".pl-step")];
   const layers = [...root.querySelectorAll(".pl-flow__layer")];
   const mq = window.matchMedia("(min-width: 64rem) and (prefers-reduced-motion: no-preference)");
-  const TRACK = 2.6;                        // viewport heights of scrolling for the three steps
-  const SEG = [null, [0.2, 0.42], [0.6, 0.82]]; // scroll progress at which picture 2 and 3 come in
-  const ease = (t) => 1 - Math.pow(1 - t, 3);
+  const TRACK = 3.2;                        // viewport heights of scrolling for the three steps
+  const SEG = [null, [0.16, 0.46], [0.54, 0.84]]; // scroll progress at which picture 2 and 3 come in
+  const ease = (t) => t * t * (3 - 2 * t);
   let on = false, raf = 0;
 
   const rem = () => parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
@@ -22,7 +22,7 @@
     root.classList.toggle("is-pin", mq.matches);                 // measure the steps in their pinned (compact) layout
     const side = root.classList.contains("pl-flow--side");     // list and picture side by side: the card padding is all that sits around the picture
     const stepsH = side ? 5 * rem() : pin.offsetHeight - stage.offsetHeight;
-    const h = Math.min(36 * rem(), window.innerHeight - top - stepsH - 1.25 * rem());
+    const h = Math.min(40 * rem(), window.innerHeight - top - stepsH - 0.5 * rem());
     on = mq.matches && h >= 17 * rem();
     root.classList.toggle("is-pin", on);
     if (on) {
@@ -31,26 +31,38 @@
       root.style.setProperty("--pf-stage", Math.round(h) + "px");
     } else ["--pf-top", "--pf-track", "--pf-stage", "--s2", "--s3"].forEach((v) => root.style.removeProperty(v));
     stepsEl.forEach((el) => el.classList.remove("is-on"));
-    layers.forEach((el, i) => el.classList.toggle("is-cur", i === 0));
+    layers.forEach((el, i) => { el.classList.toggle("is-cur", i === 0); el.classList.toggle("is-off", i > 0); });
     update();
   };
   const progress = () => {
     const travel = runway.offsetHeight || 1;
     return Math.min(1, Math.max(0, (stickTop() + pin.offsetHeight - runway.getBoundingClientRect().top) / travel));
   };
-  const update = () => {
-    raf = 0;
-    if (!on) return;
+  // the scroll sets a target for each picture; the picture glides to it (eased every frame), so a wheel click or a fast swipe still moves smoothly
+  const cur = [1, 0, 0], tgt = [1, 0, 0];
+  const compute = () => {
     const p = progress();
-    const s = [1, 0, 0];
-    for (let i = 1; i < 3; i++) s[i] = ease(Math.min(1, Math.max(0, (p - SEG[i][0]) / (SEG[i][1] - SEG[i][0]))));
-    root.style.setProperty("--s2", s[1].toFixed(3));
-    root.style.setProperty("--s3", s[2].toFixed(3));
+    for (let i = 1; i < 3; i++) tgt[i] = ease(Math.min(1, Math.max(0, (p - SEG[i][0]) / (SEG[i][1] - SEG[i][0]))));
+  };
+  const apply = () => {
+    root.style.setProperty("--s2", cur[1].toFixed(4));
+    root.style.setProperty("--s3", cur[2].toFixed(4));
     let active = 0;
-    s.forEach((v, i) => { if (v >= 0.5) active = i; layers[i].classList.toggle("is-cur", i === 0 || v > 0.02); });
+    cur.forEach((v, i) => { if (v >= 0.5) active = i; layers[i].classList.toggle("is-cur", i === 0 || v > 0.02); layers[i].classList.toggle("is-off", i > 0 && v < 0.002); });
     stepsEl.forEach((el, i) => el.classList.toggle("is-on", i === active));
   };
-  const request = () => { if (!raf) raf = requestAnimationFrame(update); };
+  const tick = () => {
+    raf = 0;
+    let moving = false;
+    for (let i = 1; i < 3; i++) {
+      const d = tgt[i] - cur[i];
+      if (Math.abs(d) > 0.0007) { cur[i] += d * 0.14; moving = true; } else cur[i] = tgt[i];
+    }
+    apply();
+    if (moving) raf = requestAnimationFrame(tick);
+  };
+  const request = () => { if (!on) return; compute(); if (!raf) raf = requestAnimationFrame(tick); };
+  const update = () => { if (!on) return; compute(); cur[1] = tgt[1]; cur[2] = tgt[2]; apply(); };
 
   const goto = (i) => {
     if (!on) return;
