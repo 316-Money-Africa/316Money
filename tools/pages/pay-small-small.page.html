@@ -55,14 +55,15 @@
       </div>
     </section>
 
-    <!-- 3 · Three steps (light grey) -->
-    <section class="oc-sec pl-sec pl-sec--grey ps-sync" id="steps" aria-labelledby="ps-steps-title">
+    <!-- 3 · Three steps (light grey): pinned while scrolling; each picture comes in from the right and is animated as a process -->
+    <section class="oc-sec pl-sec pl-sec--grey pl-flow ps-flow" id="steps" aria-labelledby="ps-steps-title">
       <div class="oc-wrap">
         <header class="pl-head">
           <p class="oc-eyebrow">Simple from start to finish</p>
           <h2 id="ps-steps-title" class="oc-h2 oc-h2--sm"><span class="ln">Three steps.</span> <span class="ln">One smooth purchases</span></h2>
           <p class="oc-body">Flexible options remove friction for customers and help businesses complete more sales.</p>
         </header>
+        <div class="pl-flow__pin">
         <ol class="pl-steps">
           <li class="pl-step">
             <span class="pl-step__ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4h6v3H9zM9 12h6M9 16h4"/></svg><span class="pl-step__n">1</span></span>
@@ -83,11 +84,19 @@
             <span class="pl-step__bar" aria-hidden="true"></span>
           </li>
         </ol>
-      </div>
-    </section>
-    <section class="pl-sec--grey pl-visual" aria-label="The three steps of a Pay Small Small purchase">
-      <div class="oc-wrap">
-        <div class="pl-visual__box ps-steps">{{slot:PaySmall/steps-1 ratio="4292/2097" class="oc-art pl-slot ps-steps__1" alt="Step 1, choose a payment plan: Bisi accessories checkout for a G-shock watch with Today NGN 250,000, after 30 days NGN 250,000 and after 60 days NGN 200,000"}}{{slot:PaySmall/steps-2 ratio="1921/1505" class="oc-art pl-slot ps-steps__2" alt="Step 2, make the first payment: choose a payment method and enter card details"}}{{slot:PaySmall/steps-3 ratio="2030/1594" class="oc-art pl-slot ps-steps__3" alt="Step 3, complete installments: Payment successful, and a reminder that the next payment is due on 25 Oct 2026"}}</div>
+          <div class="pl-flow__stage">
+            <div class="pl-flow__layer pl-flow__layer--1 is-cur">
+              <div class="pl-visual__box pl-visual__box--center"><div class="pl-cust pl-cust--s1">{{slot:PaySmall/steps-1 ratio="4292/2097" class="oc-art pl-slot" alt="Step 1, choose a payment plan: Bisi accessories checkout for a G-shock watch with Today NGN 250,000, after 30 days NGN 250,000 and after 60 days NGN 200,000"}}<!--ps-s1:start--><svg class="pl-cust__fx" viewBox="0 0 1000 488.6" aria-hidden="true" focusable="false"><g class="sa1"><rect x="378" y="295" width="291" height="42" rx="12" fill="rgba(116,85,240,.10)" stroke="#7455F0" stroke-width="3"/></g><g class="sa2"><rect x="378" y="329" width="291" height="42" rx="12" fill="rgba(116,85,240,.10)" stroke="#7455F0" stroke-width="3"/></g><g class="sa3"><rect x="378" y="363" width="291" height="42" rx="12" fill="rgba(116,85,240,.10)" stroke="#7455F0" stroke-width="3"/></g><g class="sa4"><g transform="scale(1.1)"><path d="M0 0 L0 38 L9.5 29.5 L16 44 L24 40.5 L17.5 27 L30 27 Z" fill="#111" stroke="#fff" stroke-width="3.2" stroke-linejoin="round"/></g></g><g class="sa5 ps-tc"><circle cx="520" cy="444" r="26" fill="none" stroke="#7455F0" stroke-width="4"/></g><g class="sa6"><rect x="379" y="424" width="290" height="40" rx="12" fill="rgba(116,85,240,.10)" stroke="#17A05F" stroke-width="3"/></g></svg><!--ps-s1:end--></div></div>
+            </div>
+            <div class="pl-flow__layer pl-flow__layer--2">
+              <div class="pl-visual__box pl-visual__box--center"><div class="pl-cust pl-cust--s2">{{slot:PaySmall/steps-2 ratio="1921/1505" class="oc-art pl-slot" alt="Step 2, make the first payment: choose a payment method and enter card details"}}<!--ps-s2:start--><svg class="pl-cust__fx" viewBox="0 0 1000 783.4" aria-hidden="true" focusable="false"><g class="sb1"><g transform="scale(1.3)"><path d="M0 0 L0 38 L9.5 29.5 L16 44 L24 40.5 L17.5 27 L30 27 Z" fill="#111" stroke="#fff" stroke-width="3.2" stroke-linejoin="round"/></g></g><g class="sb2 ps-tc"><circle cx="360" cy="573" r="30" fill="none" stroke="#7455F0" stroke-width="4"/></g><g class="sb3"><rect x="43" y="520" width="613" height="106" rx="18" fill="rgba(116,85,240,.10)" stroke="#7455F0" stroke-width="3"/></g><g class="sb4"><rect x="523" y="410" width="431" height="64" rx="14" fill="rgba(116,85,240,.10)" stroke="#7455F0" stroke-width="3"/></g><g class="sb5 ps-tc"><circle cx="738" cy="442" r="30" fill="none" stroke="#7455F0" stroke-width="4"/></g><g class="sb6"><rect x="523" y="410" width="431" height="64" rx="14" fill="rgba(116,85,240,.10)" stroke="#17A05F" stroke-width="3"/></g></svg><!--ps-s2:end--></div></div>
+            </div>
+            <div class="pl-flow__layer pl-flow__layer--3">
+              <div class="pl-visual__box pl-visual__box--center"><div class="pl-cust pl-cust--s3">{{slot:PaySmall/steps-3 ratio="2030/1594" class="oc-art pl-slot" alt="Step 3, complete installments: Payment successful, and a reminder that the next payment is due on 25 Oct 2026"}}<!--ps-s3:start--><svg class="pl-cust__fx" viewBox="0 0 1000 785.4" aria-hidden="true" focusable="false"><g class="sc1 ps-tc"><circle cx="386" cy="260" r="58" fill="none" stroke="#17A05F" stroke-width="6"/></g><g class="sc2"><rect x="517" y="108" width="470" height="117" rx="26" fill="rgba(116,85,240,.10)" stroke="#7455F0" stroke-width="3"/></g></svg><!--ps-s3:end--></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="pl-flow__runway" aria-hidden="true"></div>
       </div>
     </section>
 

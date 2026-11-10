@@ -198,3 +198,9 @@
   .pl-flow--side.is-pin .pl-step { padding-block: clamp(1rem, 1.8vw, 1.5rem); }
   .pl-flow--side.is-pin .pl-flow__stage { height: var(--pf-stage, 30rem); }
 }
+
+/* the pinned block takes the colour of its section so no white bar shows while it sticks */
+@media (min-width: 64rem) and (prefers-reduced-motion: no-preference) {
+  .pl-flow.pl-sec--grey.is-pin .pl-flow__pin { background: #EDEDED; }
+  .pl-flow.pl-sec--paper.is-pin .pl-flow__pin { background: #F6F3FD; }
+}
