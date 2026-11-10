@@ -210,6 +210,7 @@
   .pl-flow:not(.pl-flow--side).is-pin .pl-flow__layer .pl-visual__box--center > .pl-cust { top: 7%; height: 86%; }
 }
 
-/* Pay Small Small, Easier affordability: the picture is a full lilac panel, so it fills the whole stage and the stage shows one uniform shade */
-.pl-flow--side .pl-cust.pl-cust--pbt { top: 0; left: 0; width: 100%; height: 100%; transform: none; aspect-ratio: auto; }
-.pl-flow--side .pl-cust--pbt > img.pl-slot { object-fit: cover; }
+/* one flat shade behind every picture of a pinned section: the pictures are cut out (transparent), so no second shade or inner panel shows */
+.pl-flow:not(.gc-flow) .pl-visual__box { background: #E8E0F9; }
+.pl-flow--side .pl-visual__box { background: #C3AAF1; }
+.pl-flow--side .pl-cust > img.pl-slot, .pl-cust--dk > img.pl-slot { filter: drop-shadow(0 0.7rem 1.4rem rgba(60, 30, 120, .2)); }

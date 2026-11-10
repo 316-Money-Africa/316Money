@@ -1031,3 +1031,47 @@
 @keyframes dv-gone { to { opacity: 0; visibility: hidden; height: 0; } }
 @keyframes dv-spin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .dv-code.is-run .dv-run__json .dv-l, .dv-code.is-run .dv-run__status { animation: none; opacity: 1; } .dv-code.is-run .dv-run__wait { display: none; } .dv-code:not(.is-ran) .dv-run__btn::after { animation: none; } }
+
+/* @generated:wh (scratch generator: do not hand-edit) */
+.wh-svg { display: block; width: 100%; height: auto; }
+.wh-tc { transform-box: fill-box; transform-origin: center; }
+@keyframes wh1 {
+  0.000% { opacity: 1.000; clip-path: inset(0 46.00% 0 0); }
+  7.500% { opacity: 1.000; clip-path: inset(0 46.00% 0 0); animation-timing-function: cubic-bezier(.45,0,.2,1); }
+  20.000% { opacity: 1.000; clip-path: inset(0 26.00% 0 0); }
+  90.000% { opacity: 1.000; clip-path: inset(0 26.00% 0 0); }
+  96.250% { opacity: 0.000; clip-path: inset(0 26.00% 0 0); }
+  99.875% { opacity: 0.000; clip-path: inset(0 46.00% 0 0); }
+  100.000% { opacity: 1.000; clip-path: inset(0 46.00% 0 0); }
+}
+.wh1 { animation: wh1 8s linear infinite; }
+@keyframes wh2 {
+  0.000% { opacity: 1.000; clip-path: inset(66.00% 0 0 0); }
+  20.000% { opacity: 1.000; clip-path: inset(66.00% 0 0 0); animation-timing-function: cubic-bezier(.45,0,.2,1); }
+  32.500% { opacity: 1.000; clip-path: inset(47.00% 0 0 0); }
+  90.000% { opacity: 1.000; clip-path: inset(47.00% 0 0 0); }
+  96.250% { opacity: 0.000; clip-path: inset(47.00% 0 0 0); }
+  99.875% { opacity: 0.000; clip-path: inset(66.00% 0 0 0); }
+  100.000% { opacity: 1.000; clip-path: inset(66.00% 0 0 0); }
+}
+.wh2 { animation: wh2 8s linear infinite; }
+@keyframes wh3 {
+  0.000% { opacity: 0.000; transform: scale(0.200); }
+  33.125% { opacity: 0.000; transform: scale(0.200); }
+  33.375% { opacity: 0.750; transform: scale(0.200); animation-timing-function: ease-out; }
+  44.375% { opacity: 0.000; transform: scale(1.800); }
+  100.000% { opacity: 0.000; transform: scale(0.200); }
+}
+.wh3 { animation: wh3 8s linear infinite; }
+@keyframes wh4 {
+  0.000% { opacity: 0.000; transform: translate(0.00px, 14.00px); }
+  34.375% { opacity: 0.000; transform: translate(0.00px, 14.00px); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
+  40.000% { opacity: 1.000; transform: translate(0.00px, 0.00px); }
+  90.000% { opacity: 1.000; transform: translate(0.00px, 0.00px); }
+  96.250% { opacity: 0.000; transform: translate(0.00px, 0.00px); }
+  99.875% { opacity: 0.000; transform: translate(0.00px, 14.00px); }
+  100.000% { opacity: 0.000; transform: translate(0.00px, 14.00px); }
+}
+.wh4 { animation: wh4 8s linear infinite; }
+@media (prefers-reduced-motion: reduce) { .wh-svg * { animation: none !important; } }
+/* @end wh */
