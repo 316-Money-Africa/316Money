@@ -1,0 +1,167 @@
+/* Payment links, "Simple by design": three steps whose pictures come in from the right while the page scrolls (pinned, see linkflow.js).
+   Without JavaScript, on phones/tablets or with reduced motion the section is a plain stack: the steps, then the three pictures one under the other. */
+.pl-flow .pl-step { height: 100%; }
+.pl-flow .pl-step__d { margin-bottom: clamp(1.25rem, 2.4vw, 2.1rem); }
+.pl-flow .pl-step__bar { margin-top: auto; }                       /* every step's line sits on the same horizontal line, whatever the text length */
+.pl-flow:not(.is-pin) .pl-step__bar { display: none; }             /* the line marks the active step, so it only exists while the steps are pinned */
+.pl-flow__stage { display: grid; gap: clamp(1rem, 2vw, 1.5rem); margin-top: clamp(2.5rem, 5vw, 4rem); }
+.pl-flow__layer { position: relative; }
+.pl-flow__runway { display: none; }
+.pl-cust--share .pl-cust__fx, .pl-cust--paid .pl-cust__fx { display: none; }
+@media (min-width: 64rem) and (prefers-reduced-motion: no-preference) {
+  .pl-flow.is-pin .pl-flow__pin { position: sticky; top: var(--pf-top, 6rem); z-index: 2; background: #fff; padding-bottom: 0.25rem; }
+  .pl-flow.is-pin .pl-flow__runway { display: block; height: calc(var(--pf-track, 2.6) * 100vh); }
+  .pl-flow.is-pin .pl-flow__stage { display: block; position: relative; height: var(--pf-stage, 32rem); margin-top: clamp(1.25rem, 2.2vw, 2rem); overflow: hidden; border-radius: 0.9rem; isolation: isolate; }
+  .pl-flow.is-pin .pl-flow__layer { position: absolute; inset: 0; z-index: 1; translate: calc((1 - var(--s, 1)) * 38%) 0; opacity: var(--s, 1); will-change: translate, opacity; }
+  .pl-flow.is-pin .pl-flow__layer--1 { --s: 1; }
+  .pl-flow.is-pin .pl-flow__layer--2 { --s: var(--s2, 0); z-index: 2; }
+  .pl-flow.is-pin .pl-flow__layer--3 { --s: var(--s3, 0); z-index: 3; }
+  .pl-flow.is-pin .pl-flow__layer > .pl-visual__box { position: absolute; inset: 0; width: auto; height: auto; aspect-ratio: auto; border-radius: 0; }
+  .pl-flow.is-pin .pl-cust--share .pl-cust__fx, .pl-flow.is-pin .pl-cust--paid .pl-cust__fx { display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: visible; }
+  .pl-flow.is-pin .pl-cust--share > img.pl-slot, .pl-flow.is-pin .pl-cust--paid > img.pl-slot { visibility: hidden; }
+  .pl-flow.is-pin .pl-step { cursor: pointer; }
+  .pl-flow.is-pin .pl-step__ico { width: 3.25rem; }
+  .pl-flow.is-pin .pl-step__n { width: 1.5rem; height: 1.5rem; font-size: 0.75rem; bottom: -0.35rem; }
+  .pl-flow.is-pin .pl-step__t { margin-top: 0.75rem; font-size: clamp(1.125rem, 0.95rem + 0.5vw, 1.375rem); }
+  .pl-flow.is-pin .pl-step__d { margin-top: 0.45rem; margin-bottom: 0.9rem; font-size: 0.9375rem; line-height: 1.5; }
+  .pl-flow.is-pin .pl-step__bar { margin-top: auto; }
+  .pl-flow.is-pin .pl-step__bar { transform: scaleX(0); transform-origin: 0 50%; opacity: 0; transition: transform .55s cubic-bezier(.2, .7, .2, 1), opacity .3s ease; }
+  .pl-flow.is-pin .pl-step.is-on .pl-step__bar { transform: none; opacity: 1; }
+}
+
+/* @generated:pl-flow (scratch generator: do not hand-edit) */
+.pl-cust--share { aspect-ratio: 1638 / 1002; }
+.pl-cust--paid { aspect-ratio: 1479 / 1293; }
+.pl-tc { transform-box: fill-box; transform-origin: center; } .pl-bl { transform-box: fill-box; transform-origin: 0 100%; } .pl-br { transform-box: fill-box; transform-origin: 100% 100%; }
+@keyframes fs1 {
+  0.000% { opacity: 0.000; transform: translate(0.00px, 34.00px); }
+  4.605% { opacity: 0.000; transform: translate(0.00px, 34.00px); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
+  15.132% { opacity: 1.000; transform: translate(0.00px, 0.00px); }
+  100.000% { opacity: 1.000; transform: translate(0.00px, 0.00px); }
+}
+.pl-flow__layer.is-cur .fs1 { animation: fs1 7.6s linear 1 both; }
+@keyframes fs2 {
+  0.000% { opacity: 0.000; transform: translate(0.00px, 18.00px); }
+  21.053% { opacity: 0.000; transform: translate(0.00px, 18.00px); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
+  28.947% { opacity: 1.000; transform: translate(0.00px, 0.00px); }
+  100.000% { opacity: 1.000; transform: translate(0.00px, 0.00px); }
+}
+.pl-flow__layer.is-cur .fs2 { animation: fs2 7.6s linear 1 both; }
+@keyframes fs3 {
+  0.000% { opacity: 0.000; transform: scale(0.000); }
+  27.632% { opacity: 0.000; transform: scale(0.000); }
+  27.763% { opacity: 1.000; transform: scale(0.400); animation-timing-function: cubic-bezier(.3,1.4,.5,1); }
+  31.974% { opacity: 1.000; transform: scale(1.120); }
+  34.868% { opacity: 1.000; transform: scale(1.000); }
+  100.000% { opacity: 1.000; transform: scale(1.000); }
+}
+.pl-flow__layer.is-cur .fs3 { animation: fs3 7.6s linear 1 both; }
+@keyframes fs4 {
+  0.000% { opacity: 0.000; transform: translate(0.00px, 10.00px) scale(0.860); }
+  38.158% { opacity: 0.000; transform: translate(0.00px, 10.00px) scale(0.860); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
+  44.079% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(1.000); }
+  100.000% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(1.000); }
+}
+.pl-flow__layer.is-cur .fs4 { animation: fs4 7.6s linear 1 both; }
+@keyframes fs5 {
+  0.000% { opacity: 0.000; transform: translate(0.00px, 10.00px) scale(0.860); }
+  51.316% { opacity: 0.000; transform: translate(0.00px, 10.00px) scale(0.860); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
+  57.237% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(1.000); }
+  100.000% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(1.000); }
+}
+.pl-flow__layer.is-cur .fs5 { animation: fs5 7.6s linear 1 both; }
+@keyframes fs6 {
+  0.000% { opacity: 0.000; transform: translate(0.00px, 10.00px) scale(0.860); }
+  64.474% { opacity: 0.000; transform: translate(0.00px, 10.00px) scale(0.860); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
+  70.395% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(1.000); }
+  100.000% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(1.000); }
+}
+.pl-flow__layer.is-cur .fs6 { animation: fs6 7.6s linear 1 both; }
+@keyframes fs7 {
+  0.000% { opacity: 0.000; transform: translate(0.00px, 10.00px) scale(0.860); }
+  77.632% { opacity: 0.000; transform: translate(0.00px, 10.00px) scale(0.860); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
+  83.553% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(1.000); }
+  100.000% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(1.000); }
+}
+.pl-flow__layer.is-cur .fs7 { animation: fs7 7.6s linear 1 both; }
+@keyframes fp1 {
+  0.000% { opacity: 1.000; }
+  11.250% { opacity: 1.000; }
+  15.000% { opacity: 0.000; }
+  99.875% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.pl-flow__layer.is-cur .fp1 { animation: fp1 8s linear 1 both; }
+@keyframes fp2 {
+  0.000% { opacity: 1.000; }
+  17.500% { opacity: 1.000; }
+  21.250% { opacity: 0.000; }
+  99.875% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.pl-flow__layer.is-cur .fp2 { animation: fp2 8s linear 1 both; }
+@keyframes fp3 {
+  0.000% { opacity: 1.000; }
+  23.750% { opacity: 1.000; }
+  27.500% { opacity: 0.000; }
+  99.875% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.pl-flow__layer.is-cur .fp3 { animation: fp3 8s linear 1 both; }
+@keyframes fp4 {
+  0.000% { opacity: 1.000; }
+  30.000% { opacity: 1.000; }
+  33.750% { opacity: 0.000; }
+  99.875% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.pl-flow__layer.is-cur .fp4 { animation: fp4 8s linear 1 both; }
+@keyframes fp5 {
+  0.000% { opacity: 1.000; }
+  36.250% { opacity: 1.000; }
+  40.000% { opacity: 0.000; }
+  99.875% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.pl-flow__layer.is-cur .fp5 { animation: fp5 8s linear 1 both; }
+@keyframes fp6 {
+  0.000% { opacity: 1.000; }
+  42.500% { opacity: 1.000; }
+  46.250% { opacity: 0.000; }
+  99.875% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.pl-flow__layer.is-cur .fp6 { animation: fp6 8s linear 1 both; }
+@keyframes fp7 {
+  0.000% { opacity: 1.000; transform: scale(1.000); }
+  53.750% { opacity: 1.000; transform: scale(1.000); animation-timing-function: ease-out; }
+  56.500% { opacity: 1.000; transform: scale(1.070); }
+  60.625% { opacity: 1.000; transform: scale(1.000); }
+  100.000% { opacity: 1.000; transform: scale(1.000); }
+}
+.pl-flow__layer.is-cur .fp7 { animation: fp7 8s linear 1 both; }
+@keyframes fp8 {
+  0.000% { opacity: 0.000; transform: scale(0.500); }
+  53.750% { opacity: 0.000; transform: scale(0.500); }
+  54.000% { opacity: 0.700; transform: scale(0.500); animation-timing-function: ease-out; }
+  67.500% { opacity: 0.000; transform: scale(1.900); }
+  100.000% { opacity: 0.000; transform: scale(1.900); }
+}
+.pl-flow__layer.is-cur .fp8 { animation: fp8 8s linear 1 both; }
+@keyframes fp9 {
+  0.000% { opacity: 1.000; transform: scale(1.000); }
+  66.250% { opacity: 1.000; transform: scale(1.000); animation-timing-function: ease-out; }
+  69.000% { opacity: 1.000; transform: scale(1.070); }
+  73.125% { opacity: 1.000; transform: scale(1.000); }
+  100.000% { opacity: 1.000; transform: scale(1.000); }
+}
+.pl-flow__layer.is-cur .fp9 { animation: fp9 8s linear 1 both; }
+@keyframes fp10 {
+  0.000% { opacity: 0.000; transform: scale(0.500); }
+  66.250% { opacity: 0.000; transform: scale(0.500); }
+  66.500% { opacity: 0.700; transform: scale(0.500); animation-timing-function: ease-out; }
+  80.000% { opacity: 0.000; transform: scale(1.900); }
+  100.000% { opacity: 0.000; transform: scale(1.900); }
+}
+.pl-flow__layer.is-cur .fp10 { animation: fp10 8s linear 1 both; }
+/* @end pl-flow */
