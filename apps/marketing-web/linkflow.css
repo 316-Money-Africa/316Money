@@ -174,8 +174,7 @@
 /* side-by-side variant (Pay Small Small): the list sits left of the picture inside one lilac card; the picture of each item comes in from the right */
 .pl-flow--side .pl-flow__pin { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(1.5rem, 3.4vw, 3.25rem); align-items: center; background: #F5F2FE; border-radius: 1rem; padding: clamp(1.25rem, 2.6vw, 2.4rem); }
 .pl-flow--side .pl-steps { grid-template-columns: 1fr; gap: 0; }
-.pl-flow--side .pl-step { height: auto; border-bottom: 0.0625rem solid #E5DEF6; padding-block: clamp(1rem, 1.8vw, 1.5rem); }
-.pl-flow--side .pl-step:last-child { border-bottom: 0; }
+.pl-flow--side .pl-step { height: auto; border-bottom: 0; padding-block: clamp(1rem, 1.8vw, 1.5rem); }   /* no divider lines between items: the purple line under the active item is enough */
 .pl-flow--side .pl-step__t { margin: 0; font-size: clamp(1.25rem, 0.95rem + 0.9vw, 1.7rem); color: #14123A; transition: color .3s ease; }
 .pl-flow--side .pl-step__d { margin: 0.75rem 0 0; max-width: 28rem; font-size: clamp(0.9375rem, 0.85rem + 0.3vw, 1.0625rem); line-height: 1.5; }
 .pl-flow--side .pl-flow .pl-step__bar, .pl-flow--side .pl-step__bar { width: min(100%, 14rem); margin-top: 1.1rem; }
