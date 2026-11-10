@@ -2,8 +2,8 @@
 // right (scroll-linked, so it reads as parallax) and only when the third one is in does the page move on to the next section. The line under a step shows
 // only for the active step. Without JavaScript, on phones/tablets or with reduced motion nothing is pinned and the section is a plain stack.
 (() => {
-  const root = document.querySelector(".pl-flow");
-  if (!root) return;
+  document.querySelectorAll(".pl-flow").forEach(init);   // a page can hold more than one pinned steps section
+  function init(root) {
   const pin = root.querySelector(".pl-flow__pin");
   const stage = root.querySelector(".pl-flow__stage");
   const runway = root.querySelector(".pl-flow__runway");
@@ -69,4 +69,5 @@
   window.addEventListener("resize", () => { enable(); tab(); });
   (mq.addEventListener ? mq.addEventListener("change", () => { enable(); tab(); }) : mq.addListener(enable));
   enable(); tab();
+  }
 })();
