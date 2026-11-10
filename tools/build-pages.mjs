@@ -40,13 +40,18 @@ function expandSlots(html) {
 }
 function expandImages(html) {
   html = expandSlots(html);
-  return html.replace(/\{\{img:([\w\/-]+)((?:\s+[\w-]+="[^"]*")*)\}\}/g, (_, name, attrs) => {
+  html = html.replace(/\{\{img:([\w\/-]+)((?:\s+[\w-]+="[^"]*")*)\}\}/g, (_, name, attrs) => {
     const file = join(OUT, "assets", `${name}.webp`);
     if (!existsSync(file)) throw new Error(`missing image: assets/${name}.webp (run tools/optimize-images.mjs)`);
     const [w, h] = webpSize(file);
     const hasAlt = /(^|\s)alt="/.test(attrs);
     const eager = /fetchpriority="high"/.test(attrs) || /(^|\s)loading="/.test(attrs); // the hero image is preloaded and never lazy; an explicit loading attribute wins
     return `<img src="assets/${name}.webp?v=${imgVer(file)}"${hasAlt ? "" : ' alt=""'}${attrs} width="${w}" height="${h}"${eager ? "" : ' loading="lazy"'} decoding="async">`;
+  });
+  // <image href="assets/x.webp"> inside the animated SVGs: same content-hash version as <img>, so the browser never loads (or caches) an unversioned copy next to the versioned one
+  return html.replace(/(<image[^>]*?\shref="assets\/[\w\/-]+\.webp)"/g, (m, head) => {
+    const file = join(OUT, head.slice(head.indexOf('assets/')));
+    return existsSync(file) ? `${head}?v=${imgVer(file)}"` : m;
   });
 }
 
