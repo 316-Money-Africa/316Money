@@ -6,9 +6,7 @@
   const bands = [...document.querySelectorAll(".pl-visual__box, [data-parallax-x]")];
   if (!bands.length || !window.matchMedia("(prefers-reduced-motion: no-preference)").matches) return;
   const live = new Set();
-  let raf = 0;
   const update = () => {
-    raf = 0;
     const half = window.innerHeight / 2;
     live.forEach((el) => {
       const r = el.getBoundingClientRect();
@@ -16,7 +14,8 @@
       el.style.setProperty("--px", Math.max(-1, Math.min(1, p)).toFixed(3));
     });
   };
-  const request = () => { if (!raf) raf = requestAnimationFrame(update); };
+  // a handful of bands: updating straight from the scroll event is cheap and does not depend on animation frames (which a background tab pauses)
+  const request = update;
   if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => (e.isIntersecting ? live.add(e.target) : live.delete(e.target)));
