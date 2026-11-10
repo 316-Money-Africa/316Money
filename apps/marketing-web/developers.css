@@ -814,6 +814,8 @@
 /* @generated:dv-flow (scratch generator: do not hand-edit) */
 .pl-cust--dk { aspect-ratio: 4292 / 1754; } .pl-cust--di { aspect-ratio: 2715 / 1301; } .pl-cust--dt { aspect-ratio: 2168 / 1448; }
 .dv-tc { transform-box: fill-box; transform-origin: center; }
+.pl-visual__box--center > .pl-cust { position: absolute; top: 0; left: 50%; height: 100%; max-width: 100%; transform: translateX(-50%); }   /* every step picture sits centred in its panel */
+@media (max-width: 63.99rem) { .pl-flow .pl-visual__box--center > .pl-cust { position: relative; left: auto; height: auto; width: 100%; transform: none; } .pl-flow .pl-visual__box--center { aspect-ratio: auto; } .pl-flow .pl-cust > img.pl-slot { height: auto; } }
 .pl-cust--dk .pl-cust__fx, .pl-cust--di .pl-cust__fx { display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: visible; }
 .pl-flow.is-pin .pl-cust--dk .pl-cust__fx, .pl-flow.is-pin .pl-cust--di .pl-cust__fx { display: block; }
 .pl-cust > img.pl-slot { display: block; width: 100%; height: 100%; border-radius: 0; }
@@ -999,3 +1001,33 @@
 }
 .pl-flow__layer.is-cur .kc4 { animation: kc4 9s linear 1 both; }
 /* @end dv-flow */
+
+/* "Built for developers": pressing Run sends the sample request and the response appears in the Response panel on the right (devrun.js) */
+.dv-code { position: relative; container-type: inline-size; }
+.dv-run__btn { position: absolute; left: 44.1%; top: 35.3%; width: 5.8%; height: 5.4%; border: 0; border-radius: 0.8cqw; background: transparent; cursor: pointer; }
+.dv-run__btn:hover { background: rgba(255, 255, 255, .07); }
+.dv-run__btn:focus-visible { outline: 0.2cqw solid #fff; outline-offset: 0.2cqw; }
+.dv-run__btn::after { content: ""; position: absolute; inset: -0.35cqw; border-radius: 1cqw; border: 0.2cqw solid rgba(190, 170, 255, .75); opacity: 0; pointer-events: none; }
+.dv-code:not(.is-ran) .dv-run__btn::after { animation: dv-hint 2s ease-out infinite; }
+@keyframes dv-hint { 0% { opacity: 0.9; transform: scale(0.92); } 100% { opacity: 0; transform: scale(1.18); } }
+.dv-run__out { position: absolute; left: 54.55%; top: 32%; width: 38.1%; height: 50.2%; padding: 2.6cqw 2.8cqw; overflow: hidden; background: #181829; border-radius: 0 0 1.6cqw 1.6cqw; color: #E8E5FF; font: 500 1.34cqw/1.8 var(--font); opacity: 0; visibility: hidden; }
+.dv-run__wait { display: flex; align-items: center; gap: 0.9cqw; margin: 0; color: #9A9AB8; }
+.dv-run__spin { display: inline-block; width: 1.5cqw; height: 1.5cqw; border: 0.22cqw solid rgba(255, 255, 255, .25); border-top-color: #C9B6FF; border-radius: 50%; }
+.dv-run__json { margin: 0; font: inherit; white-space: pre; }
+.dv-l { display: block; opacity: 0; }
+.dv-l b { font-weight: 500; color: #E8E5FF; }
+.dv-l em { font-style: normal; }
+.dv-l em.s { color: #7FD6A0; } .dv-l em.n { color: #E9C77B; }
+.dv-run__status { position: absolute; left: 82.2%; top: 24.8%; padding: 0.35cqw 1.1cqw; border-radius: 62.4375rem; background: rgba(23, 160, 95, .2); color: #7FD6A0; font: 700 1.1cqw/1.4 var(--font); opacity: 0; visibility: hidden; }
+.dv-code.is-run .dv-run__out { opacity: 1; visibility: visible; }
+.dv-code.is-run .dv-run__status { visibility: visible; animation: dv-in .3s ease 1s both; }
+.dv-code.is-run .dv-run__wait { animation: dv-gone 0.1s linear .8s both; }
+.dv-code.is-run .dv-run__spin { animation: dv-spin .8s linear infinite; }
+.dv-code.is-run .dv-run__json .dv-l { animation: dv-in .32s ease both; }
+.dv-run__json .dv-l:nth-child(1) { animation-delay: .9s; } .dv-run__json .dv-l:nth-child(2) { animation-delay: 1.05s; } .dv-run__json .dv-l:nth-child(3) { animation-delay: 1.2s; }
+.dv-run__json .dv-l:nth-child(4) { animation-delay: 1.35s; } .dv-run__json .dv-l:nth-child(5) { animation-delay: 1.5s; } .dv-run__json .dv-l:nth-child(6) { animation-delay: 1.65s; } .dv-run__json .dv-l:nth-child(7) { animation-delay: 1.8s; }
+.dv-run__json { position: absolute; left: 2.8cqw; top: 2.6cqw; }
+@keyframes dv-in { from { opacity: 0; transform: translateY(0.5cqw); } to { opacity: 1; transform: none; } }
+@keyframes dv-gone { to { opacity: 0; visibility: hidden; height: 0; } }
+@keyframes dv-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .dv-code.is-run .dv-run__json .dv-l, .dv-code.is-run .dv-run__status { animation: none; opacity: 1; } .dv-code.is-run .dv-run__wait { display: none; } .dv-code:not(.is-ran) .dv-run__btn::after { animation: none; } }
