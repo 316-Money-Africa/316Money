@@ -160,9 +160,6 @@ img.oc-art--photo { border-radius: 0.75rem; }
 .oc-band__eyebrow { margin: 0 0 clamp(1rem, 1.6vw, 1.5rem); font-size: clamp(0.75rem, 0.68rem + 0.3vw, 0.9375rem); font-weight: 500; letter-spacing: 0.015em; text-transform: uppercase; color: #CDB6F5; }
 .oc-band__title { margin: 0; font-size: clamp(1.625rem, 1rem + 1.7vw, 2.25rem); line-height: 1.2; font-weight: 600; text-wrap: balance; }
 .oc-band__desc { margin: clamp(1rem, 1.8vw, 1.5rem) auto 0; max-width: 40rem; font-size: clamp(0.9375rem, 0.8rem + 0.4vw, 1.125rem); line-height: 1.45; color: rgba(255, 255, 255, .92); }
-.oc-band__arrow { position: absolute; z-index: 1; width: 0.9rem; height: 0.9rem; fill: none; stroke: rgba(255, 255, 255, .45); stroke-width: 1; stroke-linecap: round; stroke-linejoin: round; }
-.oc-band__arrow--a { left: 59%; top: 68%; }
-.oc-band__arrow--b { left: 79%; top: 68%; }
 
 /* ---------- Footer: flat #4A1E7E with the circle arc (this page only) ---------- */
 .theme-oc .footer { position: relative; overflow: hidden; background: #4A1E7E; container-type: inline-size; }
@@ -179,7 +176,6 @@ img.oc-art--photo { border-radius: 0.75rem; }
   .oc-acc__card { grid-template-columns: 1fr; padding: 1.25rem; }
   .oc-acc__list { max-width: none; }
   .oc-acc__panel { max-width: 28rem; margin-inline: auto; }
-  .oc-band__arrow { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { .theme-pay .nav { animation: none; } }
 
@@ -2298,7 +2294,7 @@ svg.oc-cta2__img { background: #fff; }
 .oc-feat__d { margin: 0.55rem 0 0; font-size: clamp(0.875rem, 0.8rem + 0.25vw, 1rem); line-height: 1.65; font-weight: 500; color: #1a1a1a; }
 .oc-local__media { display: flex; flex-direction: column; align-items: stretch; gap: clamp(1rem, 1.8vw, 1.5rem); min-width: 0; }
 .oc-lt__r { position: absolute; width: 0.0625rem; height: 0.0625rem; opacity: 0; pointer-events: none; }
-.oc-lt { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0.5rem clamp(0.5rem, 1.6vw, 1rem); }
+.oc-lt { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem clamp(0.5rem, 1.6vw, 1rem); }
 .oc-lt label { display: inline-flex; align-items: center; justify-content: center; min-height: 2.75rem; padding: 0 clamp(1.1rem, 2vw, 1.6rem); border-radius: 62.4375rem; font-size: clamp(0.9375rem, 0.85rem + 0.3vw, 1.0625rem); font-weight: 600; color: #14123A; cursor: pointer; white-space: nowrap; transition: background-color .2s, color .2s; }
 .oc-lt label:hover { background: #F1ECFE; }
 #oc-lt-ng:checked ~ .oc-lt label[for="oc-lt-ng"], #oc-lt-cm:checked ~ .oc-lt label[for="oc-lt-cm"], #oc-lt-ke:checked ~ .oc-lt label[for="oc-lt-ke"] { background: #7455F0; color: #fff; }
@@ -2334,7 +2330,7 @@ svg.oc-cta2__img { background: #fff; }
 .oc-lg__mtn { font-size: 7.4px; fill: #111; } .oc-lg__om { font-size: 6.4px; fill: #fff; } .oc-lg__mpesa { font-size: 8px; fill: #fff; } .oc-lg__316 { font-size: 4.4px; fill: #fff; } .oc-lg__316b { font-size: 5.6px; fill: #fff; }
 @media (max-width: 64rem) {
   .oc-local__grid { grid-template-columns: 1fr; align-items: stretch; }
-  .oc-lt { justify-content: flex-start; }
+  .oc-lt { justify-content: center; }
   .oc-lcard { width: 88%; }
   .oc-lpanel { padding: 9% 0; }
 }
@@ -2485,6 +2481,206 @@ svg.oc-cta2__img { background: #fff; }
   100.000% { opacity: 0.000; transform: translate(600.00px, 435.00px); }
 }
 .pi4 { animation: pi4 24s linear infinite; }
+@keyframes pi5 {
+  0.000% { opacity: 0.000; }
+  2.292% { opacity: 0.000; }
+  3.250% { opacity: 1.000; }
+  7.083% { opacity: 1.000; }
+  10.833% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.pi5 { animation: pi5 24s linear infinite; }
+@keyframes pi6 {
+  0.000% { opacity: 0.000; transform: scale(0.200); }
+  2.500% { opacity: 0.000; transform: scale(0.200); }
+  2.583% { opacity: 0.750; transform: scale(0.200); animation-timing-function: ease-out; }
+  7.083% { opacity: 0.000; transform: scale(1.800); }
+  100.000% { opacity: 0.000; transform: scale(0.200); }
+}
+.pi6 { animation: pi6 24s linear infinite; }
+@keyframes pi7 {
+  0.000% { opacity: 0.000; }
+  12.500% { opacity: 0.000; }
+  13.458% { opacity: 1.000; }
+  18.125% { opacity: 1.000; }
+  21.875% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.pi7 { animation: pi7 24s linear infinite; }
+@keyframes pi8 {
+  0.000% { opacity: 0.000; transform: scale(0.200); }
+  12.708% { opacity: 0.000; transform: scale(0.200); }
+  12.792% { opacity: 0.750; transform: scale(0.200); animation-timing-function: ease-out; }
+  17.292% { opacity: 0.000; transform: scale(1.800); }
+  100.000% { opacity: 0.000; transform: scale(0.200); }
+}
+.pi8 { animation: pi8 24s linear infinite; }
+@keyframes pi9 {
+  0.000% { opacity: 0.000; }
+  24.167% { opacity: 0.000; }
+  25.125% { opacity: 1.000; }
+  32.292% { opacity: 1.000; }
+  36.042% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.pi9 { animation: pi9 24s linear infinite; }
+@keyframes pi10 {
+  0.000% { opacity: 0.000; transform: scale(0.200); }
+  24.375% { opacity: 0.000; transform: scale(0.200); }
+  24.458% { opacity: 0.750; transform: scale(0.200); animation-timing-function: ease-out; }
+  28.958% { opacity: 0.000; transform: scale(1.800); }
+  100.000% { opacity: 0.000; transform: scale(0.200); }
+}
+.pi10 { animation: pi10 24s linear infinite; }
+@keyframes pi11 {
+  0.000% { opacity: 0.000; }
+  27.292% { opacity: 0.000; }
+  28.250% { opacity: 1.000; }
+  32.083% { opacity: 1.000; }
+  35.833% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.pi11 { animation: pi11 24s linear infinite; }
+@keyframes pi12 {
+  0.000% { opacity: 0.000; transform: scale(0.200); }
+  27.500% { opacity: 0.000; transform: scale(0.200); }
+  27.583% { opacity: 0.750; transform: scale(0.200); animation-timing-function: ease-out; }
+  32.083% { opacity: 0.000; transform: scale(1.800); }
+  100.000% { opacity: 0.000; transform: scale(0.200); }
+}
+.pi12 { animation: pi12 24s linear infinite; }
+@keyframes pi13 {
+  0.000% { opacity: 0.000; }
+  37.500% { opacity: 0.000; }
+  38.458% { opacity: 1.000; }
+  43.125% { opacity: 1.000; }
+  46.875% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.pi13 { animation: pi13 24s linear infinite; }
+@keyframes pi14 {
+  0.000% { opacity: 0.000; transform: scale(0.200); }
+  37.708% { opacity: 0.000; transform: scale(0.200); }
+  37.792% { opacity: 0.750; transform: scale(0.200); animation-timing-function: ease-out; }
+  42.292% { opacity: 0.000; transform: scale(1.800); }
+  100.000% { opacity: 0.000; transform: scale(0.200); }
+}
+.pi14 { animation: pi14 24s linear infinite; }
+@keyframes pi15 {
+  0.000% { opacity: 0.000; }
+  49.167% { opacity: 0.000; }
+  50.125% { opacity: 1.000; }
+  57.292% { opacity: 1.000; }
+  61.042% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.pi15 { animation: pi15 24s linear infinite; }
+@keyframes pi16 {
+  0.000% { opacity: 0.000; transform: scale(0.200); }
+  49.375% { opacity: 0.000; transform: scale(0.200); }
+  49.458% { opacity: 0.750; transform: scale(0.200); animation-timing-function: ease-out; }
+  53.958% { opacity: 0.000; transform: scale(1.800); }
+  100.000% { opacity: 0.000; transform: scale(0.200); }
+}
+.pi16 { animation: pi16 24s linear infinite; }
+@keyframes pi17 {
+  0.000% { opacity: 0.000; }
+  52.292% { opacity: 0.000; }
+  53.250% { opacity: 1.000; }
+  57.083% { opacity: 1.000; }
+  60.833% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.pi17 { animation: pi17 24s linear infinite; }
+@keyframes pi18 {
+  0.000% { opacity: 0.000; transform: scale(0.200); }
+  52.500% { opacity: 0.000; transform: scale(0.200); }
+  52.583% { opacity: 0.750; transform: scale(0.200); animation-timing-function: ease-out; }
+  57.083% { opacity: 0.000; transform: scale(1.800); }
+  100.000% { opacity: 0.000; transform: scale(0.200); }
+}
+.pi18 { animation: pi18 24s linear infinite; }
+@keyframes pi19 {
+  0.000% { opacity: 0.000; }
+  62.500% { opacity: 0.000; }
+  63.458% { opacity: 1.000; }
+  68.125% { opacity: 1.000; }
+  71.875% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.pi19 { animation: pi19 24s linear infinite; }
+@keyframes pi20 {
+  0.000% { opacity: 0.000; transform: scale(0.200); }
+  62.708% { opacity: 0.000; transform: scale(0.200); }
+  62.792% { opacity: 0.750; transform: scale(0.200); animation-timing-function: ease-out; }
+  67.292% { opacity: 0.000; transform: scale(1.800); }
+  100.000% { opacity: 0.000; transform: scale(0.200); }
+}
+.pi20 { animation: pi20 24s linear infinite; }
+@keyframes pi21 {
+  0.000% { opacity: 0.000; }
+  74.167% { opacity: 0.000; }
+  75.125% { opacity: 1.000; }
+  82.292% { opacity: 1.000; }
+  86.042% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.pi21 { animation: pi21 24s linear infinite; }
+@keyframes pi22 {
+  0.000% { opacity: 0.000; transform: scale(0.200); }
+  74.375% { opacity: 0.000; transform: scale(0.200); }
+  74.458% { opacity: 0.750; transform: scale(0.200); animation-timing-function: ease-out; }
+  78.958% { opacity: 0.000; transform: scale(1.800); }
+  100.000% { opacity: 0.000; transform: scale(0.200); }
+}
+.pi22 { animation: pi22 24s linear infinite; }
+@keyframes pi23 {
+  0.000% { opacity: 0.000; }
+  77.292% { opacity: 0.000; }
+  78.250% { opacity: 1.000; }
+  82.083% { opacity: 1.000; }
+  85.833% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.pi23 { animation: pi23 24s linear infinite; }
+@keyframes pi24 {
+  0.000% { opacity: 0.000; transform: scale(0.200); }
+  77.500% { opacity: 0.000; transform: scale(0.200); }
+  77.583% { opacity: 0.750; transform: scale(0.200); animation-timing-function: ease-out; }
+  82.083% { opacity: 0.000; transform: scale(1.800); }
+  100.000% { opacity: 0.000; transform: scale(0.200); }
+}
+.pi24 { animation: pi24 24s linear infinite; }
+@keyframes pi25 {
+  0.000% { opacity: 0.000; }
+  87.500% { opacity: 0.000; }
+  88.458% { opacity: 1.000; }
+  93.125% { opacity: 1.000; }
+  96.875% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.pi25 { animation: pi25 24s linear infinite; }
+@keyframes pi26 {
+  0.000% { opacity: 0.000; transform: scale(0.200); }
+  87.708% { opacity: 0.000; transform: scale(0.200); }
+  87.792% { opacity: 0.750; transform: scale(0.200); animation-timing-function: ease-out; }
+  92.292% { opacity: 0.000; transform: scale(1.800); }
+  100.000% { opacity: 0.000; transform: scale(0.200); }
+}
+.pi26 { animation: pi26 24s linear infinite; }
+@keyframes pi27 {
+  0.000% { opacity: 0.000; }
+  99.167% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.pi27 { animation: pi27 24s linear infinite; }
+@keyframes pi28 {
+  0.000% { opacity: 0.000; transform: scale(0.200); }
+  99.375% { opacity: 0.000; transform: scale(0.200); }
+  99.458% { opacity: 0.750; transform: scale(0.200); }
+  100.000% { opacity: 0.000; transform: scale(0.200); }
+}
+.pi28 { animation: pi28 24s linear infinite; }
 .oc-int { display: block; width: 100%; height: auto; border-radius: 0.75rem; }
 .oc-int text { font-family: var(--font); }
 @media (prefers-reduced-motion: reduce) { .oc-int [class^="pi"], .oc-int [class*=" pi"] { animation: none !important; opacity: 0; } .oc-pulse { display: none; } }
