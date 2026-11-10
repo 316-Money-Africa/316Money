@@ -1,4 +1,4 @@
-<!--page preload="assets/PaySmall/hero.webp" js="parallax-x.js" title="Pay Small Small · 316 Pay" description="Let customers split big purchases into smaller instalments with Pay Small Small, while you get paid and keep every plan in one clear workspace." css="pay-pages.css paysmall.css" bodyclass="theme-pay theme-oc" wordmark="PAY"-->
+<!--page preload="assets/PaySmall/hero.webp" js="parallax-x.js linkflow.js" title="Pay Small Small · 316 Pay" description="Let customers split big purchases into smaller instalments with Pay Small Small, while you get paid and keep every plan in one clear workspace." css="pay-pages.css paysmall.css linkflow.css" bodyclass="theme-pay theme-oc" wordmark="PAY"-->
     <!-- 1 · Hero (gradient #FBF8FF → #E8D7FF → #AF7BFA) -->
     <section class="oc-hero" aria-labelledby="pl-hero-title">
       <svg class="oc-hero__lines" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true" focusable="false">
@@ -23,20 +23,35 @@
     </section>
 
     <!-- 2 · A better way to pay for everyone (white) -->
-    <section class="oc-sec oc-sec--white pl-sec" id="better" aria-labelledby="ps-better-title">
-      <div class="oc-wrap bz-split oc-split">
-        <div class="bz-split__copy oc-split__copy">
-          <p class="oc-eyebrow bz-eyebrow">Built for better buying</p>
+    <section class="oc-sec oc-sec--white pl-sec pl-flow pl-flow--side" id="better" aria-labelledby="ps-better-title">
+      <div class="oc-wrap">
+        <header class="pl-head">
+          <p class="oc-eyebrow">Built for better buying</p>
           <h2 id="ps-better-title" class="oc-h2 oc-h2--sm"><span class="ln">A better way to pay for</span> <span class="ln">everyone</span></h2>
-          <p class="oc-body"><span class="ln">Flexible options remove friction for customers and help businesses</span> <span class="ln">complete more sales.</span></p>
-          <ul class="ps-feats">
-            <li class="ps-feat"><span class="ps-feat__ic"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="7" width="15" height="11" rx="2"/><path d="M6 4h15v11M3 11h15"/></svg></span><h3 class="ps-feat__t">Easier affordability</h3><p class="ps-feat__d">Help customers manage larger purchases without the pressure of one upfront payment.</p></li>
-            <li class="ps-feat"><span class="ps-feat__ic"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></span><h3 class="ps-feat__t">More completed purchases</h3><p class="ps-feat__d">Reduce checkout hesitation by offering payment options that fit real budgets.</p></li>
-            <li class="ps-feat"><span class="ps-feat__ic"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 4h2.5l2 11h10l2-8H7"/><circle cx="9" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/><path d="M11 5l3 3 3-3"/></svg></span><h3 class="ps-feat__t">Flexible payments</h3><p class="ps-feat__d">Give every customer more control over how and when they complete a purchase.</p></li>
-          </ul>
-          <a class="btn btn--primary oc-btn" href="#start">Explore</a>
+          <p class="oc-body">Flexible options remove friction for customers and help businesses complete more sales.</p>
+        </header>
+        <div class="pl-flow__pin">
+          <div class="ps-side__list">
+            <ol class="pl-steps ps-list">
+            <li class="pl-step"><h3 class="pl-step__t">Easier affordability</h3><p class="pl-step__d">Help customers manage larger purchases without the pressure of one upfront payment.</p><span class="pl-step__bar" aria-hidden="true"></span></li>
+            <li class="pl-step"><h3 class="pl-step__t">More completed purchases</h3><p class="pl-step__d">Reduce checkout hesitation by offering payment options that fit real budgets.</p><span class="pl-step__bar" aria-hidden="true"></span></li>
+            <li class="pl-step"><h3 class="pl-step__t">Greater customer reach</h3><p class="pl-step__d">Expand your potential customer base by making your products and services accessible to more buyers through flexible payment arrangements.</p><span class="pl-step__bar" aria-hidden="true"></span></li>
+            </ol>
+            <a class="btn btn--primary oc-btn" href="#start">Explore</a>
+          </div>
+          <div class="pl-flow__stage">
+            <div class="pl-flow__layer pl-flow__layer--1 is-cur">
+              <div class="pl-visual__box pl-visual__box--center"><div class="pl-cust pl-cust--pbt">{{slot:PaySmall/better ratio="2335/2235" class="oc-art pl-slot" alt="A PS5 listed at KSH 35,000 with a Pay small small option beside it"}}<!--ps-a:start--><svg class="pl-cust__fx" viewBox="0 0 800 765.7" aria-hidden="true" focusable="false"><g class="pa1"><rect x="485" y="155" width="82" height="35" rx="9" fill="rgba(116,85,240,.10)" stroke="#17A05F" stroke-width="3"/></g><g class="pa2"><g transform="scale(0.9)"><path d="M0 0 L0 38 L9.5 29.5 L16 44 L24 40.5 L17.5 27 L30 27 Z" fill="#111" stroke="#fff" stroke-width="3.2" stroke-linejoin="round"/></g></g><g class="pa3 ps-tc"><circle cx="646" cy="358" r="22" fill="none" stroke="#7455F0" stroke-width="4"/></g><g class="pa4"><rect x="504" y="314" width="263" height="87" rx="18" fill="rgba(116,85,240,.10)" stroke="#7455F0" stroke-width="3"/></g></svg><!--ps-a:end--></div></div>
+            </div>
+            <div class="pl-flow__layer pl-flow__layer--2">
+              <div class="pl-visual__box pl-visual__box--center"><div class="pl-cust pl-cust--ppl">{{slot:PaySmall/better-plan ratio="1799/1116" class="oc-art pl-slot" alt="Product details for a black tshirt beside a phone checkout with a payment plan: today, after 30 days and after 60 days"}}<!--ps-b:start--><svg class="pl-cust__fx" viewBox="0 0 800 496.3" aria-hidden="true" focusable="false"><g class="pb1"><rect x="36" y="73" width="450" height="150" rx="10" fill="rgba(116,85,240,.10)" stroke="#7455F0" stroke-width="3"/></g><g class="pb2"><rect x="503" y="341" width="272" height="34" rx="10" fill="rgba(116,85,240,.10)" stroke="#7455F0" stroke-width="3"/></g><g class="pb3"><rect x="503" y="371" width="272" height="34" rx="10" fill="rgba(116,85,240,.10)" stroke="#7455F0" stroke-width="3"/></g><g class="pb4"><rect x="503" y="401" width="272" height="34" rx="10" fill="rgba(116,85,240,.10)" stroke="#7455F0" stroke-width="3"/></g><g class="pb5"><g transform="scale(0.9)"><path d="M0 0 L0 38 L9.5 29.5 L16 44 L24 40.5 L17.5 27 L30 27 Z" fill="#111" stroke="#fff" stroke-width="3.2" stroke-linejoin="round"/></g></g><g class="pb6 ps-tc"><circle cx="640" cy="484" r="22" fill="none" stroke="#7455F0" stroke-width="4"/></g><g class="pb7"><rect x="503" y="468" width="272" height="34" rx="10" fill="rgba(116,85,240,.10)" stroke="#17A05F" stroke-width="3"/></g></svg><!--ps-b:end--></div></div>
+            </div>
+            <div class="pl-flow__layer pl-flow__layer--3">
+              <div class="pl-visual__box pl-visual__box--center"><div class="pl-cust pl-cust--pch">{{slot:PaySmall/better-chart ratio="1137/826" class="oc-art pl-slot" alt="Paid instalments this week: NGN 3,860,000, up 12.6 percent, as a four week bar chart"}}<!--ps-c:start--><svg class="pl-cust__fx" viewBox="0 0 800 581.2" aria-hidden="true" focusable="false"><g class="pc1"><rect x="41" y="143" width="426" height="72" rx="14" fill="rgba(116,85,240,.10)" stroke="#7455F0" stroke-width="3"/></g><g class="pc2"><rect x="479" y="151" width="92" height="40" rx="16" fill="rgba(116,85,240,.10)" stroke="#17A05F" stroke-width="3"/></g><g class="pc3"><rect x="607" y="313" width="132" height="186" rx="10" fill="rgba(116,85,240,.10)" stroke="#7455F0" stroke-width="3"/></g><g class="pc4 ps-tc"><circle cx="673" cy="405" r="60" fill="none" stroke="#7455F0" stroke-width="4"/></g></svg><!--ps-c:end--></div></div>
+            </div>
+          </div>
         </div>
-        <div class="bz-split__media oc-split__media pl-api__art">{{slot:PaySmall/better ratio="2335/2235" class="oc-art pl-slot" alt="A PS5 listed at KSH 35,000 with a Pay small small option beside it"}}</div>
+        <div class="pl-flow__runway" aria-hidden="true"></div>
       </div>
     </section>
 
