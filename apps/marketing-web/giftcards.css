@@ -1,0 +1,6 @@
+/* Store gift cards page */
+.gc-brandbox { margin-top: clamp(2rem, 4vw, 3rem); }
+.pl-cust--g1, .pl-cust--g2, .pl-cust--g3 { aspect-ratio: 1.6 / 1; }
+.pl-visual__box--center > .pl-cust { position: absolute; top: 0; left: 50%; height: 100%; max-width: 100%; transform: translateX(-50%); }
+.pl-cust > img.pl-slot, .pl-cust > svg.pl-slot { display: block; width: 100%; height: 100%; border-radius: 0; }
+@media (max-width: 63.99rem) { .gc-flow .pl-visual__box--center > .pl-cust { position: relative; left: auto; height: auto; width: 100%; transform: none; } .gc-flow .pl-visual__box--center { aspect-ratio: auto; } .gc-flow .pl-cust > img.pl-slot, .gc-flow .pl-cust > svg.pl-slot { height: auto; } }
