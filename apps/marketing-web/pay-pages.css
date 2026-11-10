@@ -224,3 +224,15 @@ img.pl-slot { border-radius: 0.75rem; }
   .dv-card { min-height: 14rem; }
 }
 @media (prefers-reduced-motion: reduce) { .dv-pane { animation: none !important; } }
+
+/* ---------- sideways parallax on the wide bands (parallax-x.js sets --px: +1 entering from below, 0 centred, -1 leaving at the top) ----------
+   the band's own gradient drifts slowly, the artwork drifts faster in the opposite sense, so the picture slides sideways as the page scrolls.
+   Full-width artwork is scaled up a little (no layout change) so its edges never show; centred artwork has the whole band to move in. */
+@media (prefers-reduced-motion: no-preference) {
+  .pl-visual__box { --px: 0; background-size: 135% 100%; background-position: calc(50% + var(--px) * 20%) 0; }
+  .pl-visual__box > img.pl-slot, .pl-visual__box > .dv-band { scale: 1.08; translate: calc(var(--px) * -3.5%) 0; will-change: translate; }
+  .pl-visual__box--center > .pl-cust { translate: calc(var(--px) * -3.5rem) 0; will-change: translate; }
+}
+@media (prefers-reduced-motion: no-preference) and (max-width: 48rem) {
+  .pl-visual__box--center > .pl-cust { translate: none; }
+}
