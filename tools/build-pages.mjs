@@ -78,8 +78,8 @@ for (const f of readdirSync(PAGES).filter((n) => n.endsWith(".page.html"))) {
     .map((c) => `  <link rel="stylesheet" href="${c}?v=${ver(c)}">`).join("\n");
   const scripts = (meta.js ? meta.js.split(/\s+/).filter(Boolean) : []).map((j) => `
   <script src="${j}?v=${ver(j)}" defer></script>`).join("");
-  const preload = meta.preload
-    ? `  <link rel="preload" as="image" href="${meta.preload}?v=${imgVer(join(OUT, meta.preload))}" type="image/webp" fetchpriority="high">\n` : "";
+  const preload = (meta.preload ? meta.preload.split(/\s+/).filter(Boolean) : []) // one or more images the first screen needs (space separated)
+    .map((h) => `  <link rel="preload" as="image" href="${h}?v=${imgVer(join(OUT, h))}" type="image/webp" fetchpriority="high">\n`).join("");
 
   const html = `<!doctype html>
 <html lang="en">

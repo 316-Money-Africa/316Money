@@ -170,7 +170,7 @@
 
 /* ---------- 6 · Gift cards and vouchers ---------- */
 .bz-visual { position: relative; width: 100%; }
-.bz-visual__screen { position: absolute; left: 9.075%; top: 43.68%; width: 14.84%; height: 54.2%; display: block; max-width: none; }
+.bz-visual__screen { position: absolute; left: 9.075%; top: 41.788%; width: 14.84%; height: 51.853%; display: block; max-width: none; }
 .bz-visual__screen text { font-family: var(--font); }
 
 /* ---------- 7 · Built around your business: CSS-only tabs ---------- */
