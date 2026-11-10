@@ -1,0 +1,8 @@
+/* Online checkout page: accordion artwork, brand band wedge (loaded after checkout.css and pay-pages.css) */
+.oc-acc__panel { position: relative; }
+.oc-pa { display: none; border-radius: 0.9rem; overflow: hidden; background: linear-gradient(160deg, #B497F0 0%, #CDB8F8 100%); }
+#oc-acc-1:checked ~ .oc-acc__card .oc-pa--1, #oc-acc-2:checked ~ .oc-acc__card .oc-pa--2, #oc-acc-3:checked ~ .oc-acc__card .oc-pa--3 { display: block; }
+.oc-pa > img, .oc-pa > svg { display: block; width: 100%; height: auto; border-radius: 0; }
+.oc-ck-brand { position: relative; overflow: hidden; }
+.oc-ck-brand::after { content: ""; position: absolute; right: 0; bottom: 0; width: 30%; height: 38%; background: linear-gradient(135deg, #E6DAFC 0%, #C8AEF8 100%); clip-path: polygon(100% 0, 100% 100%, 0 100%); pointer-events: none; opacity: .85; }
+.oc-ck-brand > .oc-wrap { position: relative; z-index: 1; }

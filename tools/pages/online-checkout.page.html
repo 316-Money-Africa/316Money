@@ -1,0 +1,140 @@
+<!--page title="Online checkout · 316 Pay" description="A checkout experience customers can trust: a clear, simple way to complete purchases, customised to your brand and connected to the tools you already use." css="checkout.css pay-pages.css onlinecheckout.css" js="checkout.js" bodyclass="theme-pay theme-oc" wordmark="PAY"-->
+    <!-- 1 · Hero (gradient #FBF8FF → #E8D7FF → #AF7BFA) -->
+    <section class="oc-hero" aria-labelledby="pl-hero-title">
+      <svg class="oc-hero__lines" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <g class="oc-hero__strokes">
+          <path d="M-20 780 C 160 740 330 690 520 650 S 760 610 900 640"/>
+          <path d="M-20 820 C 170 780 340 740 530 705 S 780 665 900 690"/>
+          <path d="M-20 860 C 180 820 350 790 540 760 S 790 725 900 745"/>
+        </g>
+      </svg>
+      <div class="oc-wrap oc-hero__inner">
+        <div class="oc-hero__copy">
+          <p class="oc-eyebrow">Online checkout</p>
+          <h1 id="pl-hero-title" class="oc-h1"><span class="ln oc-accent">A checkout experience</span> <span class="ln">customers can trust</span></h1>
+          <p class="oc-lead"><span class="ln">Give customers a straightforward way to complete</span> <span class="ln">their purchases. Bring your payment process</span> <span class="ln">together in a convenient online checkout experience.</span></p>
+          <div class="oc-cta">
+            <a class="btn btn--primary oc-btn" href="#start">Get started</a>
+            <a class="btn oc-btn oc-btn--white" href="#start">Contact sales</a>
+          </div>
+        </div>
+        <div class="oc-hero__media">{{slot:OnlineCheckout/hero ratio="1.26/1" class="oc-art pl-slot" fetchpriority="high" alt="An online storefront for accessories with a cart open on the right: two briefcases and a Checkout button"}}</div>
+      </div>
+    </section>
+
+    <!-- 2 · Make the final step feel effortless (scroll accordion) -->
+    <section class="oc-sec oc-sec--white oc-scroll" id="simple" aria-labelledby="oc-simple-title">
+      <div class="oc-wrap">
+        <header class="pl-head pl-head--center">
+          <p class="oc-eyebrow">Payments, simplified</p>
+          <h2 id="oc-simple-title" class="oc-h2 oc-h2--sm"><span class="ln">Make the final step</span> <span class="ln">feel effortless</span></h2>
+          <p class="oc-body">Give customers a straightforward way to complete their purchases with a checkout experience designed to make paying easier.</p>
+        </header>
+        <div class="oc-acc">
+          <input class="oc-acc__r" type="radio" name="oc-acc" id="oc-acc-1" checked>
+          <input class="oc-acc__r" type="radio" name="oc-acc" id="oc-acc-2">
+          <input class="oc-acc__r" type="radio" name="oc-acc" id="oc-acc-3">
+          <div class="oc-acc__card">
+            <ul class="oc-acc__list">
+              <li class="oc-acc__item oc-acc__item--1">
+                <label for="oc-acc-1"><span class="oc-acc__tag">Simplicity first</span><span class="oc-acc__t">Simple checkout</span></label>
+                <p class="oc-acc__d"><span class="ln">Make purchasing straightforward with a clear checkout</span> <span class="ln">process that helps customers review their orders, enter</span> <span class="ln">their payment details and complete transactions without</span> <span class="ln">unnecessary steps or complications.</span></p>
+              </li>
+              <li class="oc-acc__item oc-acc__item--2">
+                <label for="oc-acc-2"><span class="oc-acc__tag">Pay their way</span><span class="oc-acc__t">Flexible payments</span></label>
+                <p class="oc-acc__d"><span class="ln">Let customers choose how they pay, with cards, mobile</span> <span class="ln">money and bank options presented clearly, so they can</span> <span class="ln">finish a purchase the way that suits them.</span></p>
+              </li>
+              <li class="oc-acc__item oc-acc__item--3">
+                <label for="oc-acc-3"><span class="oc-acc__tag">Works on every screen</span><span class="oc-acc__t">Responsive experiences</span></label>
+                <p class="oc-acc__d"><span class="ln">Give customers a checkout that adapts to their phone,</span> <span class="ln">tablet or computer, so paying feels just as easy on</span> <span class="ln">every device they use.</span></p>
+              </li>
+            </ul>
+            <div class="oc-acc__panel"><div class="oc-pa oc-pa--1">{{slot:OnlineCheckout/simple ratio="1.1/1" class="oc-art pl-slot" alt="A checkout card for a payment method with email, card number, expiry and CVV fields, beside a Black bluetooth speaker chip"}}</div><div class="oc-pa oc-pa--2">{{slot:OnlineCheckout/flexible ratio="1.1/1" class="oc-art pl-slot" alt="A checkout where the customer chooses between card, mobile money and bank payment"}}</div><div class="oc-pa oc-pa--3">{{slot:OnlineCheckout/responsive ratio="1.1/1" class="oc-art pl-slot" alt="The same checkout shown on a phone and on a laptop"}}</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 · Less friction (white) -->
+    <section class="oc-sec oc-sec--white pl-sec" id="friction" aria-labelledby="oc-fr-title">
+      <div class="oc-wrap bz-split oc-split">
+        <div class="bz-split__copy oc-split__copy">
+          <p class="oc-eyebrow bz-eyebrow">Designed around your customers</p>
+          <h2 id="oc-fr-title" class="oc-h2 oc-h2--sm"><span class="ln">Less friction.</span> <span class="ln">A smoother way to pay</span></h2>
+          <p class="oc-body"><span class="ln">Make the payment process straightforward with clear</span> <span class="ln">payment information, intuitive forms and a checkout</span> <span class="ln">experience that helps customers complete their</span> <span class="ln">purchases.</span></p>
+          <a class="btn btn--primary oc-btn" href="#start">Explore</a>
+        </div>
+        <div class="bz-split__media oc-split__media pl-api__art">{{slot:OnlineCheckout/friction ratio="1.38/1" class="oc-art pl-slot" alt="A checkout form with email, shipping address and card information fields and a Continue button"}}</div>
+      </div>
+    </section>
+
+    <!-- 4 · Your checkout. Your brand (light lilac) -->
+    <section class="oc-sec pl-sec pl-sec--paper oc-ck-brand" id="brand" aria-labelledby="oc-brand-title">
+      <div class="oc-wrap bz-split oc-split">
+        <div class="bz-split__copy oc-split__copy">
+          <p class="oc-eyebrow bz-eyebrow">Your checkout. Your brand</p>
+          <h2 id="oc-brand-title" class="oc-h2 oc-h2--sm"><span class="ln">Create a checkout experience</span> <span class="ln">that feels like your business</span></h2>
+          <p class="oc-body"><span class="ln">Bring your brand into every payment interaction.</span> <span class="ln">Customise your checkout&rsquo;s appearance to create a</span> <span class="ln">consistent experience your customers recognise.</span></p>
+          <a class="btn btn--primary oc-btn" href="#start">Explore</a>
+        </div>
+        <div class="bz-split__media oc-split__media">{{slot:OnlineCheckout/brand ratio="1.18/1" class="oc-art pl-slot" alt="A branded checkout for Jenny&rsquo;s Kitchen in purple, beside the Customize your checkout settings card"}}</div>
+      </div>
+    </section>
+
+    <!-- 5 · Merchant control (light grey) -->
+    <section class="oc-sec pl-sec pl-sec--grey" id="workflow" aria-labelledby="oc-wf-title">
+      <div class="oc-wrap bz-split oc-split">
+        <div class="bz-split__copy oc-split__copy">
+          <p class="oc-eyebrow bz-eyebrow">Merchant control</p>
+          <h2 id="oc-wf-title" class="oc-h2 oc-h2--sm"><span class="ln">Make checkout part</span> <span class="ln">of your existing workflow</span></h2>
+          <p class="oc-body"><span class="ln">Bring your checkout experience closer to the</span> <span class="ln">platforms and tools that power your business,</span> <span class="ln">creating a more connected way to manage</span> <span class="ln">online sales.</span></p>
+          <a class="btn btn--primary oc-btn" href="third-party-integrations.html">Explore</a>
+        </div>
+        <div class="bz-split__media oc-split__media">{{slot:OnlineCheckout/workflow ratio="1.1/1" class="oc-art pl-slot" alt="Logos of platforms around Shopify: Kopo Kopo, Jumia, Soko, Payporte, Konga and others"}}</div>
+      </div>
+    </section>
+
+    <!-- FAQ (white) -->
+    <section class="sec sec--white oc-faq" id="faq" aria-labelledby="faq-title">
+      <div class="wrap faq">
+        <div class="faq__intro">
+          <h2 id="faq-title" class="faq__title"><span class="accent">Questions</span> <span class="ln">you might want to ask</span></h2>
+          <div class="faq__users">
+            {{img:Home/avatars alt=""}}
+            <p><strong>more than 10K+</strong><br>users worldwide</p>
+          </div>
+        </div>
+        <div class="faq__list">
+          <details><summary>What payment methods are supported?</summary><p>Checkout supports the payment methods available in your market, such as cards, mobile money and bank options, so customers can pay the way they prefer.</p></details>
+          <details><summary>Is the checkout secure?</summary><p>Yes. Card details are entered on a secure checkout and payments are processed securely, so your customers can pay with confidence.</p></details>
+          <details><summary>Can I customise the checkout page?</summary><p>Yes. You can add your logo and brand name and choose the colours so the checkout matches your business.</p></details>
+          <details><summary>Does checkout work on mobile devices?</summary><p>Yes. The checkout adapts to phones, tablets and computers, so paying is just as easy on every screen.</p></details>
+          <details><summary>How do I integrate checkout into my website?</summary><p>You can connect checkout through supported platforms and plug-ins, or use our APIs and documentation to build it into your own site.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing band (deep purple waves) -->
+    <section class="oc-band" id="start" aria-labelledby="oc-band-title">
+      <svg class="oc-band__arrow oc-band__arrow--a" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M3 9 9 3M4.500 3H9v4.500"/></svg>
+      <svg class="oc-band__arrow oc-band__arrow--b" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M3 9 9 3M4.500 3H9v4.500"/></svg>
+      <div class="oc-wrap oc-band__inner">
+        <p class="oc-band__eyebrow">Let's get you started</p>
+        <h2 id="oc-band-title" class="oc-band__title">Give your customers a better way to pay</h2>
+        <p class="oc-band__desc"><span class="ln">Set up your online checkout experience and make it easier for</span> <span class="ln">customers to complete their purchases.</span></p>
+        <div class="oc-cta oc-cta--center">
+          <a class="btn btn--primary oc-btn" href="#">Start now</a>
+          <a class="btn oc-btn oc-btn--ghost" href="#">Contact sales</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Money, made simpler (lilac band with the dashboard peeking from the bottom) -->
+    <section class="oc-cta2 oc-cta2--plain" id="contact" aria-labelledby="oc-money-title">
+      <div class="oc-wrap oc-cta2__inner">
+        <p class="oc-cta2__eyebrow">Money, made simpler</p>
+        <h2 id="oc-money-title" class="oc-h2 oc-h2--sm"><span class="ln">Your financial life deserves</span> <span class="ln">an upgrade</span></h2>
+        <p class="oc-body oc-cta2__desc"><span class="ln">One app for everyday payments, effortless transfers</span> <span class="ln">and smarter money management.</span></p>
+        <div class="oc-cta2__shot">{{slot:Checkout/dashboard ratio="1.75/1" class="oc-art oc-cta2__img" alt="The 316 dashboard: collections, successful payments, pending settlements, account activity and invoices"}}</div>
+      </div>
+    </section>
