@@ -1,5 +1,6 @@
 /* Accept donations page */
-.pl-cust--d1, .pl-cust--d2, .pl-cust--d3 { aspect-ratio: 4292 / 2097; }
+.pl-cust--d1, .pl-cust--d2, .pl-cust--d3 { aspect-ratio: 2400 / 1173; }
 .pl-visual__box--center > .pl-cust { position: absolute; top: 0; left: 50%; height: 100%; max-width: 100%; transform: translateX(-50%); }
 .pl-cust > img.pl-slot, .pl-cust > svg.pl-slot { display: block; width: 100%; height: 100%; border-radius: 0; }
+@media (min-width: 64rem) and (prefers-reduced-motion: no-preference) { .pl-flow.dn-flow:not(.pl-flow--side).is-pin .pl-flow__layer .pl-visual__box--center > .pl-cust { top: 0; left: 0; width: 100%; height: 100%; transform: none; aspect-ratio: auto; } .dn-flow.is-pin .pl-cust > img.pl-slot { object-fit: cover; } }
 @media (max-width: 63.99rem) { .dn-flow .pl-visual__box--center > .pl-cust { position: relative; left: auto; height: auto; width: 100%; transform: none; } .dn-flow .pl-visual__box--center { aspect-ratio: auto; } .dn-flow .pl-cust > img.pl-slot, .dn-flow .pl-cust > svg.pl-slot { height: auto; } }
