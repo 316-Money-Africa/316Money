@@ -1,4 +1,5 @@
 /* Sell digital cards page */
+.dc-orbit { display: block; width: 100%; height: auto; overflow: visible; }
 .dc-managebox { margin-top: clamp(2rem, 4vw, 3rem); }
 .pl-cust--s1, .pl-cust--s2, .pl-cust--s3 { aspect-ratio: 2800 / 1167; }
 .pl-visual__box--center > .pl-cust { position: absolute; top: 0; left: 50%; height: 100%; max-width: 100%; transform: translateX(-50%); }
