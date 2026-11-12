@@ -1034,6 +1034,7 @@
 
 /* @generated:wh (scratch generator: do not hand-edit) */
 .wh-svg { display: block; width: 100%; height: auto; }
+.wh-svg text { font-family: var(--font); }
 .wh-tc { transform-box: fill-box; transform-origin: center; }
 @keyframes wh1 {
   0.000% { opacity: 1.000; clip-path: inset(0 46.00% 0 0); }
@@ -1073,5 +1074,16 @@
   100.000% { opacity: 0.000; transform: translate(0.00px, 14.00px); }
 }
 .wh4 { animation: wh4 8s linear infinite; }
+@keyframes wh5 {
+  0.000% { opacity: 0.000; transform: scale(0.000); }
+  41.875% { opacity: 0.000; transform: scale(0.000); }
+  42.000% { opacity: 1.000; transform: scale(0.400); animation-timing-function: cubic-bezier(.3,1.4,.5,1); }
+  46.000% { opacity: 1.000; transform: scale(1.120); }
+  48.750% { opacity: 1.000; transform: scale(1.000); }
+  90.000% { opacity: 1.000; transform: scale(1.000); }
+  90.125% { opacity: 0.000; transform: scale(0.000); }
+  100.000% { opacity: 0.000; transform: scale(0.000); }
+}
+.wh5 { animation: wh5 8s linear infinite; }
 @media (prefers-reduced-motion: reduce) { .wh-svg * { animation: none !important; } }
 /* @end wh */
