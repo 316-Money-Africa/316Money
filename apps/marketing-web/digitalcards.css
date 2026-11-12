@@ -1,0 +1,6 @@
+/* Sell digital cards page */
+.dc-managebox { margin-top: clamp(2rem, 4vw, 3rem); }
+.pl-cust--s1, .pl-cust--s2, .pl-cust--s3 { aspect-ratio: 4292 / 2097; }
+.pl-visual__box--center > .pl-cust { position: absolute; top: 0; left: 50%; height: 100%; max-width: 100%; transform: translateX(-50%); }
+.pl-cust > img.pl-slot, .pl-cust > svg.pl-slot { display: block; width: 100%; height: 100%; border-radius: 0; }
+@media (max-width: 63.99rem) { .dc-flow .pl-visual__box--center > .pl-cust { position: relative; left: auto; height: auto; width: 100%; transform: none; } .dc-flow .pl-visual__box--center { aspect-ratio: auto; } .dc-flow .pl-cust > img.pl-slot, .dc-flow .pl-cust > svg.pl-slot { height: auto; } }
