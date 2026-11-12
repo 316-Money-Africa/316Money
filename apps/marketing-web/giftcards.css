@@ -10,9 +10,10 @@
 /* @generated:gc-anim (scratch generator: do not hand-edit) */
 .gcx { display: block; width: 100%; height: auto; }
 .gcx text { font-family: var(--font); }
+.gcx text.gcx-sans { font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
 .gcx text.gcx-serif { font-family: Georgia, 'Times New Roman', serif; }
 .gcx-tc { transform-box: fill-box; transform-origin: center; }
-@media (prefers-reduced-motion: reduce) { .gcx > g { display: none; } .gcx * { animation: none !important; } }
+@media (prefers-reduced-motion: reduce) { .gcx--a > g, .gcx--c > g { display: none; } .gcx * { animation: none !important; } }
 @keyframes gca1 {
   0.000% { opacity: 0.000; }
   12.667% { opacity: 0.000; }
@@ -215,466 +216,842 @@
 }
 .gca19 { animation: gca19 15s linear infinite; }
 @keyframes gcb1 {
+  0.000% { opacity: 1.000; }
+  17.500% { opacity: 1.000; }
+  18.500% { opacity: 0.000; }
+  98.500% { opacity: 0.000; }
+  99.950% { opacity: 1.000; }
+  100.000% { opacity: 1.000; }
+}
+.gcb1 { animation: gcb1 20s linear infinite; }
+@keyframes gcb2 {
+  0.000% { opacity: 0.000; clip-path: inset(0 100.00% 0 0); }
+  18.495% { opacity: 0.000; clip-path: inset(0 100.00% 0 0); }
+  18.500% { opacity: 1.000; clip-path: inset(0 100.00% 0 0); animation-timing-function: steps(18,end); }
+  27.500% { opacity: 1.000; clip-path: inset(0 0.00% 0 0); }
+  97.500% { opacity: 1.000; clip-path: inset(0 0.00% 0 0); }
+  97.550% { opacity: 0.000; clip-path: inset(0 100.00% 0 0); }
+  99.950% { opacity: 0.000; clip-path: inset(0 100.00% 0 0); }
+  100.000% { opacity: 0.000; clip-path: inset(0 100.00% 0 0); }
+}
+.gcb2 { animation: gcb2 20s linear infinite; }
+@keyframes gcb3 {
   0.000% { opacity: 1.000; transform: translate(0.00px, 0.00px); }
-  20.444% { opacity: 1.000; transform: translate(0.00px, 0.00px); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
-  22.222% { opacity: 1.000; transform: translate(174.00px, 0.00px); }
-  32.111% { opacity: 1.000; transform: translate(174.00px, 0.00px); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
-  33.889% { opacity: 1.000; transform: translate(346.00px, 0.00px); }
-  43.778% { opacity: 1.000; transform: translate(346.00px, 0.00px); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
-  45.556% { opacity: 1.000; transform: translate(517.00px, 0.00px); }
-  77.667% { opacity: 1.000; transform: translate(517.00px, 0.00px); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
-  79.444% { opacity: 1.000; transform: translate(0.00px, 0.00px); }
-  99.944% { opacity: 1.000; transform: translate(0.00px, 0.00px); }
+  33.900% { opacity: 1.000; transform: translate(0.00px, 0.00px); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
+  35.500% { opacity: 1.000; transform: translate(186.00px, 0.00px); }
+  43.400% { opacity: 1.000; transform: translate(186.00px, 0.00px); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
+  45.000% { opacity: 1.000; transform: translate(372.00px, 0.00px); }
+  52.900% { opacity: 1.000; transform: translate(372.00px, 0.00px); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
+  54.500% { opacity: 1.000; transform: translate(558.00px, 0.00px); }
+  62.400% { opacity: 1.000; transform: translate(558.00px, 0.00px); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
+  64.000% { opacity: 1.000; transform: translate(0.00px, 0.00px); }
+  99.950% { opacity: 1.000; transform: translate(0.00px, 0.00px); }
   100.000% { opacity: 1.000; transform: translate(0.00px, 0.00px); }
 }
-.gcb1 { animation: gcb1 18s linear infinite; }
-@keyframes gcb2 {
+.gcb3 { animation: gcb3 20s linear infinite; }
+@keyframes gcb4 {
   0.000% { opacity: 1.000; }
-  20.556% { opacity: 1.000; }
-  23.889% { opacity: 0.000; }
-  77.778% { opacity: 0.000; }
-  81.111% { opacity: 1.000; }
-  99.944% { opacity: 1.000; }
+  70.500% { opacity: 1.000; }
+  71.500% { opacity: 0.000; }
+  98.500% { opacity: 0.000; }
+  99.950% { opacity: 1.000; }
   100.000% { opacity: 1.000; }
 }
-.gcb2 { animation: gcb2 18s linear infinite; }
-@keyframes gcb3 {
-  0.000% { opacity: 0.000; }
-  20.556% { opacity: 0.000; }
-  23.889% { opacity: 1.000; }
-  32.222% { opacity: 1.000; }
-  35.556% { opacity: 0.000; }
-  99.944% { opacity: 0.000; }
-  100.000% { opacity: 0.000; }
-}
-.gcb3 { animation: gcb3 18s linear infinite; }
-@keyframes gcb4 {
-  0.000% { opacity: 0.000; }
-  32.222% { opacity: 0.000; }
-  35.556% { opacity: 1.000; }
-  43.889% { opacity: 1.000; }
-  47.222% { opacity: 0.000; }
-  99.944% { opacity: 0.000; }
-  100.000% { opacity: 0.000; }
-}
-.gcb4 { animation: gcb4 18s linear infinite; }
+.gcb4 { animation: gcb4 20s linear infinite; }
 @keyframes gcb5 {
-  0.000% { opacity: 0.000; }
-  43.889% { opacity: 0.000; }
-  47.222% { opacity: 1.000; }
-  77.778% { opacity: 1.000; }
-  81.111% { opacity: 0.000; }
-  99.944% { opacity: 0.000; }
-  100.000% { opacity: 0.000; }
+  0.000% { opacity: 0.000; clip-path: inset(0 100.00% 0 0); }
+  72.495% { opacity: 0.000; clip-path: inset(0 100.00% 0 0); }
+  72.500% { opacity: 1.000; clip-path: inset(0 100.00% 0 0); animation-timing-function: steps(7,end); }
+  77.400% { opacity: 1.000; clip-path: inset(0 0.00% 0 0); }
+  97.500% { opacity: 1.000; clip-path: inset(0 0.00% 0 0); }
+  97.550% { opacity: 0.000; clip-path: inset(0 100.00% 0 0); }
+  99.950% { opacity: 0.000; clip-path: inset(0 100.00% 0 0); }
+  100.000% { opacity: 0.000; clip-path: inset(0 100.00% 0 0); }
 }
-.gcb5 { animation: gcb5 18s linear infinite; }
+.gcb5 { animation: gcb5 20s linear infinite; }
 @keyframes gcb6 {
   0.000% { opacity: 1.000; }
-  10.556% { opacity: 1.000; }
-  12.222% { opacity: 0.000; }
-  90.000% { opacity: 0.000; }
-  91.667% { opacity: 1.000; }
-  99.944% { opacity: 1.000; }
+  34.000% { opacity: 1.000; }
+  36.500% { opacity: 0.000; }
+  62.500% { opacity: 0.000; }
+  65.000% { opacity: 1.000; }
+  99.950% { opacity: 1.000; }
   100.000% { opacity: 1.000; }
 }
-.gcb6 { animation: gcb6 18s linear infinite; }
+.gcb6 { animation: gcb6 20s linear infinite; }
 @keyframes gcb7 {
   0.000% { opacity: 0.000; }
-  12.222% { opacity: 0.000; }
-  15.000% { opacity: 1.000; }
-  90.000% { opacity: 1.000; }
-  91.667% { opacity: 0.000; }
-  99.944% { opacity: 0.000; }
+  34.000% { opacity: 0.000; }
+  36.500% { opacity: 1.000; }
+  43.500% { opacity: 1.000; }
+  46.000% { opacity: 0.000; }
+  99.950% { opacity: 0.000; }
   100.000% { opacity: 0.000; }
 }
-.gcb7 { animation: gcb7 18s linear infinite; }
+.gcb7 { animation: gcb7 20s linear infinite; }
 @keyframes gcb8 {
-  0.000% { opacity: 0.000; transform: rotate(0.0deg); }
-  10.000% { opacity: 0.000; transform: rotate(0.0deg); }
-  10.056% { opacity: 1.000; transform: rotate(0.0deg); }
-  13.889% { opacity: 1.000; transform: rotate(720.0deg); }
-  13.944% { opacity: 0.000; transform: rotate(0.0deg); }
-  99.944% { opacity: 0.000; transform: rotate(0.0deg); }
-  100.000% { opacity: 0.000; transform: rotate(0.0deg); }
+  0.000% { opacity: 0.000; }
+  43.500% { opacity: 0.000; }
+  46.000% { opacity: 1.000; }
+  53.000% { opacity: 1.000; }
+  55.500% { opacity: 0.000; }
+  99.950% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
 }
-.gcb8 { animation: gcb8 18s linear infinite; }
+.gcb8 { animation: gcb8 20s linear infinite; }
 @keyframes gcb9 {
+  0.000% { opacity: 0.000; }
+  53.000% { opacity: 0.000; }
+  55.500% { opacity: 1.000; }
+  62.500% { opacity: 1.000; }
+  65.000% { opacity: 0.000; }
+  99.950% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcb9 { animation: gcb9 20s linear infinite; }
+@keyframes gcb10 {
   0.000% { opacity: 1.000; }
-  56.667% { opacity: 1.000; }
-  58.889% { opacity: 0.000; }
-  84.444% { opacity: 0.000; }
-  86.667% { opacity: 1.000; }
-  99.944% { opacity: 1.000; }
+  9.000% { opacity: 1.000; }
+  10.500% { opacity: 0.000; }
+  98.500% { opacity: 0.000; }
+  99.950% { opacity: 1.000; }
   100.000% { opacity: 1.000; }
 }
-.gcb9 { animation: gcb9 18s linear infinite; }
-@keyframes gcb10 {
-  0.000% { opacity: 0.000; }
-  57.778% { opacity: 0.000; }
-  58.889% { opacity: 1.000; }
-  67.778% { opacity: 1.000; }
-  68.889% { opacity: 0.000; }
-  99.944% { opacity: 0.000; }
-  100.000% { opacity: 0.000; }
-}
-.gcb10 { animation: gcb10 18s linear infinite; }
+.gcb10 { animation: gcb10 20s linear infinite; }
 @keyframes gcb11 {
-  0.000% { opacity: 0.000; }
-  67.778% { opacity: 0.000; }
-  68.889% { opacity: 1.000; }
-  85.556% { opacity: 1.000; }
-  86.667% { opacity: 0.000; }
-  99.944% { opacity: 0.000; }
-  100.000% { opacity: 0.000; }
-}
-.gcb11 { animation: gcb11 18s linear infinite; }
-@keyframes gcb12 {
-  0.000% { opacity: 0.000; }
-  8.889% { opacity: 0.000; }
-  9.722% { opacity: 1.000; }
-  15.000% { opacity: 1.000; }
-  17.222% { opacity: 0.000; }
-  99.944% { opacity: 0.000; }
-  100.000% { opacity: 0.000; }
-}
-.gcb12 { animation: gcb12 18s linear infinite; }
-@keyframes gcb13 {
-  0.000% { opacity: 0.000; }
-  57.778% { opacity: 0.000; }
-  58.611% { opacity: 1.000; }
-  67.778% { opacity: 1.000; }
-  68.611% { opacity: 0.000; }
-  99.944% { opacity: 0.000; }
-  100.000% { opacity: 0.000; }
-}
-.gcb13 { animation: gcb13 18s linear infinite; }
-@keyframes gcb14 {
-  0.000% { opacity: 0.000; }
-  67.778% { opacity: 0.000; }
-  68.611% { opacity: 1.000; }
-  85.556% { opacity: 1.000; }
-  86.389% { opacity: 0.000; }
-  99.944% { opacity: 0.000; }
-  100.000% { opacity: 0.000; }
-}
-.gcb14 { animation: gcb14 18s linear infinite; }
-@keyframes gcb15 {
-  0.000% { opacity: 0.000; }
-  85.556% { opacity: 0.000; }
-  86.389% { opacity: 1.000; }
-  94.444% { opacity: 1.000; }
-  96.667% { opacity: 0.000; }
-  99.944% { opacity: 0.000; }
-  100.000% { opacity: 0.000; }
-}
-.gcb15 { animation: gcb15 18s linear infinite; }
-@keyframes gcb16 {
-  0.000% { opacity: 0.000; transform: scale(0.200); }
-  8.889% { opacity: 0.000; transform: scale(0.200); }
-  9.000% { opacity: 0.750; transform: scale(0.200); animation-timing-function: ease-out; }
-  12.778% { opacity: 0.000; transform: scale(1.800); }
-  100.000% { opacity: 0.000; transform: scale(0.200); }
-}
-.gcb16 { animation: gcb16 18s linear infinite; }
-@keyframes gcb17 {
-  0.000% { opacity: 0.000; transform: scale(0.200); }
-  20.556% { opacity: 0.000; transform: scale(0.200); }
-  20.667% { opacity: 0.750; transform: scale(0.200); animation-timing-function: ease-out; }
-  24.444% { opacity: 0.000; transform: scale(1.800); }
-  100.000% { opacity: 0.000; transform: scale(0.200); }
-}
-.gcb17 { animation: gcb17 18s linear infinite; }
-@keyframes gcb18 {
-  0.000% { opacity: 0.000; transform: scale(0.200); }
-  32.222% { opacity: 0.000; transform: scale(0.200); }
-  32.333% { opacity: 0.750; transform: scale(0.200); animation-timing-function: ease-out; }
-  36.111% { opacity: 0.000; transform: scale(1.800); }
-  100.000% { opacity: 0.000; transform: scale(0.200); }
-}
-.gcb18 { animation: gcb18 18s linear infinite; }
-@keyframes gcb19 {
-  0.000% { opacity: 0.000; transform: scale(0.200); }
-  43.889% { opacity: 0.000; transform: scale(0.200); }
-  44.000% { opacity: 0.750; transform: scale(0.200); animation-timing-function: ease-out; }
-  47.778% { opacity: 0.000; transform: scale(1.800); }
-  100.000% { opacity: 0.000; transform: scale(0.200); }
-}
-.gcb19 { animation: gcb19 18s linear infinite; }
-@keyframes gcb20 {
-  0.000% { opacity: 0.000; transform: scale(0.200); }
-  57.778% { opacity: 0.000; transform: scale(0.200); }
-  57.889% { opacity: 0.750; transform: scale(0.200); animation-timing-function: ease-out; }
-  61.667% { opacity: 0.000; transform: scale(1.800); }
-  100.000% { opacity: 0.000; transform: scale(0.200); }
-}
-.gcb20 { animation: gcb20 18s linear infinite; }
-@keyframes gcb21 {
-  0.000% { opacity: 0.000; transform: scale(0.200); }
-  67.778% { opacity: 0.000; transform: scale(0.200); }
-  67.889% { opacity: 0.750; transform: scale(0.200); animation-timing-function: ease-out; }
-  71.667% { opacity: 0.000; transform: scale(1.800); }
-  100.000% { opacity: 0.000; transform: scale(0.200); }
-}
-.gcb21 { animation: gcb21 18s linear infinite; }
-@keyframes gcb22 {
-  0.000% { opacity: 0.000; transform: scale(0.200); }
-  77.778% { opacity: 0.000; transform: scale(0.200); }
-  77.889% { opacity: 0.750; transform: scale(0.200); animation-timing-function: ease-out; }
-  81.667% { opacity: 0.000; transform: scale(1.800); }
-  100.000% { opacity: 0.000; transform: scale(0.200); }
-}
-.gcb22 { animation: gcb22 18s linear infinite; }
-@keyframes gcb23 {
-  0.000% { opacity: 0.000; transform: scale(0.200); }
-  85.556% { opacity: 0.000; transform: scale(0.200); }
-  85.667% { opacity: 0.750; transform: scale(0.200); animation-timing-function: ease-out; }
-  89.444% { opacity: 0.000; transform: scale(1.800); }
-  100.000% { opacity: 0.000; transform: scale(0.200); }
-}
-.gcb23 { animation: gcb23 18s linear infinite; }
-@keyframes gcb24 {
-  0.000% { opacity: 0.000; transform: translate(3100.00px, 1950.00px) scale(1.000); }
-  3.889% { opacity: 0.000; transform: translate(3100.00px, 1950.00px) scale(1.000); }
-  5.000% { opacity: 1.000; transform: translate(3100.00px, 1950.00px) scale(1.000); animation-timing-function: cubic-bezier(.45,0,.2,1); }
-  6.667% { opacity: 1.000; transform: translate(540.00px, 905.00px) scale(1.000); }
-  8.889% { opacity: 1.000; transform: translate(540.00px, 905.00px) scale(1.000); }
-  9.444% { opacity: 1.000; transform: translate(540.00px, 905.00px) scale(0.820); }
-  10.333% { opacity: 1.000; transform: translate(540.00px, 905.00px) scale(1.000); animation-timing-function: cubic-bezier(.45,0,.2,1); }
-  18.333% { opacity: 1.000; transform: translate(600.00px, 1262.00px) scale(1.000); }
-  20.556% { opacity: 1.000; transform: translate(600.00px, 1262.00px) scale(1.000); }
-  21.111% { opacity: 1.000; transform: translate(600.00px, 1262.00px) scale(0.820); }
-  22.000% { opacity: 1.000; transform: translate(600.00px, 1262.00px) scale(1.000); animation-timing-function: cubic-bezier(.45,0,.2,1); }
-  30.000% { opacity: 1.000; transform: translate(772.00px, 1262.00px) scale(1.000); }
-  32.222% { opacity: 1.000; transform: translate(772.00px, 1262.00px) scale(1.000); }
-  32.778% { opacity: 1.000; transform: translate(772.00px, 1262.00px) scale(0.820); }
-  33.667% { opacity: 1.000; transform: translate(772.00px, 1262.00px) scale(1.000); animation-timing-function: cubic-bezier(.45,0,.2,1); }
-  41.667% { opacity: 1.000; transform: translate(943.00px, 1262.00px) scale(1.000); }
-  43.889% { opacity: 1.000; transform: translate(943.00px, 1262.00px) scale(1.000); }
-  44.444% { opacity: 1.000; transform: translate(943.00px, 1262.00px) scale(0.820); }
-  45.333% { opacity: 1.000; transform: translate(943.00px, 1262.00px) scale(1.000); animation-timing-function: cubic-bezier(.45,0,.2,1); }
-  55.556% { opacity: 1.000; transform: translate(510.00px, 1616.00px) scale(1.000); }
-  57.778% { opacity: 1.000; transform: translate(510.00px, 1616.00px) scale(1.000); }
-  58.333% { opacity: 1.000; transform: translate(510.00px, 1616.00px) scale(0.820); }
-  59.222% { opacity: 1.000; transform: translate(510.00px, 1616.00px) scale(1.000); animation-timing-function: cubic-bezier(.45,0,.2,1); }
-  65.556% { opacity: 1.000; transform: translate(838.00px, 1616.00px) scale(1.000); }
-  67.778% { opacity: 1.000; transform: translate(838.00px, 1616.00px) scale(1.000); }
-  68.333% { opacity: 1.000; transform: translate(838.00px, 1616.00px) scale(0.820); }
-  69.222% { opacity: 1.000; transform: translate(838.00px, 1616.00px) scale(1.000); animation-timing-function: cubic-bezier(.45,0,.2,1); }
-  75.556% { opacity: 1.000; transform: translate(426.00px, 1262.00px) scale(1.000); }
-  77.778% { opacity: 1.000; transform: translate(426.00px, 1262.00px) scale(1.000); }
-  78.333% { opacity: 1.000; transform: translate(426.00px, 1262.00px) scale(0.820); }
-  79.222% { opacity: 1.000; transform: translate(426.00px, 1262.00px) scale(1.000); animation-timing-function: cubic-bezier(.45,0,.2,1); }
-  83.333% { opacity: 1.000; transform: translate(1172.00px, 1616.00px) scale(1.000); }
-  85.556% { opacity: 1.000; transform: translate(1172.00px, 1616.00px) scale(1.000); }
-  86.111% { opacity: 1.000; transform: translate(1172.00px, 1616.00px) scale(0.820); }
-  87.000% { opacity: 1.000; transform: translate(1172.00px, 1616.00px) scale(1.000); }
-  89.444% { opacity: 1.000; transform: translate(1172.00px, 1616.00px) scale(1.000); }
-  91.667% { opacity: 0.000; transform: translate(1172.00px, 1616.00px) scale(1.000); }
-  99.944% { opacity: 0.000; transform: translate(3100.00px, 1950.00px) scale(1.000); }
-  100.000% { opacity: 0.000; transform: translate(3100.00px, 1950.00px) scale(1.000); }
-}
-.gcb24 { animation: gcb24 18s linear infinite; }
-@keyframes gcc1 {
-  0.000% { opacity: 0.000; transform: scale(0.200); }
-  15.714% { opacity: 0.000; transform: scale(0.200); }
-  15.857% { opacity: 0.750; transform: scale(0.200); animation-timing-function: ease-out; }
-  20.714% { opacity: 0.000; transform: scale(1.800); }
-  100.000% { opacity: 0.000; transform: scale(0.200); }
-}
-.gcc1 { animation: gcc1 14s linear infinite; }
-@keyframes gcc2 {
-  0.000% { opacity: 0.000; }
-  15.714% { opacity: 0.000; }
-  16.286% { opacity: 1.000; }
-  19.286% { opacity: 1.000; }
-  21.429% { opacity: 0.000; }
-  99.929% { opacity: 0.000; }
-  100.000% { opacity: 0.000; }
-}
-.gcc2 { animation: gcc2 14s linear infinite; }
-@keyframes gcc3 {
-  0.000% { opacity: 0.000; }
-  22.143% { opacity: 0.000; }
-  25.714% { opacity: 1.000; }
-  86.429% { opacity: 1.000; }
-  90.000% { opacity: 0.000; }
-  99.929% { opacity: 0.000; }
-  100.000% { opacity: 0.000; }
-}
-.gcc3 { animation: gcc3 14s linear infinite; }
-@keyframes gcc4 {
   0.000% { opacity: 0.000; transform: scale(0.000); }
-  24.286% { opacity: 0.000; transform: scale(0.000); }
-  24.357% { opacity: 1.000; transform: scale(0.400); animation-timing-function: cubic-bezier(.3,1.4,.5,1); }
-  26.857% { opacity: 1.000; transform: scale(1.120); }
-  28.571% { opacity: 1.000; transform: scale(1.000); }
-  90.000% { opacity: 1.000; transform: scale(1.000); }
-  90.071% { opacity: 0.000; transform: scale(0.000); }
+  9.500% { opacity: 0.000; transform: scale(0.000); }
+  9.550% { opacity: 1.000; transform: scale(0.400); animation-timing-function: cubic-bezier(.3,1.4,.5,1); }
+  11.000% { opacity: 1.000; transform: scale(1.120); }
+  12.000% { opacity: 1.000; transform: scale(1.000); }
   100.000% { opacity: 0.000; transform: scale(0.000); }
 }
-.gcc4 { animation: gcc4 14s linear infinite; }
-@keyframes gcc5 {
-  0.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  26.429% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  26.786% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(0.600) rotate(0.0deg); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
-  32.857% { opacity: 1.000; transform: translate(-190.00px, -150.00px) scale(1.000) rotate(40.0deg); }
-  45.000% { opacity: 0.000; transform: translate(-205.20px, -10.00px) scale(1.000) rotate(80.0deg); }
-  99.929% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  100.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+.gcb11 { animation: gcb11 20s linear infinite; }
+@keyframes gcb12 {
+  0.000% { opacity: 1.000; }
+  77.500% { opacity: 1.000; }
+  79.500% { opacity: 0.000; }
+  97.000% { opacity: 0.000; }
+  99.000% { opacity: 1.000; }
+  100.000% { opacity: 1.000; }
 }
-.gcc5 { animation: gcc5 14s linear infinite; }
-@keyframes gcc6 {
-  0.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  26.929% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  27.286% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(0.600) rotate(0.0deg); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
-  33.357% { opacity: 1.000; transform: translate(-120.00px, -240.00px) scale(1.000) rotate(-30.0deg); }
-  45.500% { opacity: 0.000; transform: translate(-129.60px, -100.00px) scale(1.000) rotate(-60.0deg); }
-  99.929% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  100.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-}
-.gcc6 { animation: gcc6 14s linear infinite; }
-@keyframes gcc7 {
-  0.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  27.429% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  27.786% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(0.600) rotate(0.0deg); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
-  33.857% { opacity: 1.000; transform: translate(-40.00px, -280.00px) scale(1.000) rotate(15.0deg); }
-  46.000% { opacity: 0.000; transform: translate(-43.20px, -140.00px) scale(1.000) rotate(30.0deg); }
-  99.929% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  100.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-}
-.gcc7 { animation: gcc7 14s linear infinite; }
-@keyframes gcc8 {
-  0.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  27.929% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  28.286% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(0.600) rotate(0.0deg); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
-  34.357% { opacity: 1.000; transform: translate(60.00px, -270.00px) scale(1.000) rotate(-20.0deg); }
-  46.500% { opacity: 0.000; transform: translate(64.80px, -130.00px) scale(1.000) rotate(-40.0deg); }
-  99.929% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  100.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-}
-.gcc8 { animation: gcc8 14s linear infinite; }
-@keyframes gcc9 {
-  0.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  28.429% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  28.786% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(0.600) rotate(0.0deg); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
-  34.857% { opacity: 1.000; transform: translate(150.00px, -230.00px) scale(1.000) rotate(55.0deg); }
-  47.000% { opacity: 0.000; transform: translate(162.00px, -90.00px) scale(1.000) rotate(110.0deg); }
-  99.929% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  100.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-}
-.gcc9 { animation: gcc9 14s linear infinite; }
-@keyframes gcc10 {
-  0.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  26.429% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  26.786% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(0.600) rotate(0.0deg); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
-  32.857% { opacity: 1.000; transform: translate(220.00px, -140.00px) scale(1.000) rotate(-45.0deg); }
-  45.000% { opacity: 0.000; transform: translate(237.60px, 0.00px) scale(1.000) rotate(-90.0deg); }
-  99.929% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  100.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-}
-.gcc10 { animation: gcc10 14s linear infinite; }
-@keyframes gcc11 {
-  0.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  26.929% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  27.286% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(0.600) rotate(0.0deg); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
-  33.357% { opacity: 1.000; transform: translate(-250.00px, -60.00px) scale(1.000) rotate(-60.0deg); }
-  45.500% { opacity: 0.000; transform: translate(-270.00px, 80.00px) scale(1.000) rotate(-120.0deg); }
-  99.929% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  100.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-}
-.gcc11 { animation: gcc11 14s linear infinite; }
-@keyframes gcc12 {
-  0.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  27.429% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  27.786% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(0.600) rotate(0.0deg); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
-  33.857% { opacity: 1.000; transform: translate(260.00px, -40.00px) scale(1.000) rotate(70.0deg); }
-  46.000% { opacity: 0.000; transform: translate(280.80px, 100.00px) scale(1.000) rotate(140.0deg); }
-  99.929% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  100.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-}
-.gcc12 { animation: gcc12 14s linear infinite; }
-@keyframes gcc13 {
-  0.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  27.929% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  28.286% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(0.600) rotate(0.0deg); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
-  34.357% { opacity: 1.000; transform: translate(-160.00px, -190.00px) scale(1.000) rotate(0.0deg); }
-  46.500% { opacity: 0.000; transform: translate(-172.80px, -50.00px) scale(1.000) rotate(0.0deg); }
-  99.929% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  100.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-}
-.gcc13 { animation: gcc13 14s linear infinite; }
-@keyframes gcc14 {
-  0.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  28.429% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  28.786% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(0.600) rotate(0.0deg); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
-  34.857% { opacity: 1.000; transform: translate(170.00px, -180.00px) scale(1.000) rotate(0.0deg); }
-  47.000% { opacity: 0.000; transform: translate(183.60px, -40.00px) scale(1.000) rotate(0.0deg); }
-  99.929% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  100.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-}
-.gcc14 { animation: gcc14 14s linear infinite; }
-@keyframes gcc15 {
-  0.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  26.429% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  26.786% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(0.600) rotate(0.0deg); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
-  32.857% { opacity: 1.000; transform: translate(-70.00px, -200.00px) scale(1.000) rotate(0.0deg); }
-  45.000% { opacity: 0.000; transform: translate(-75.60px, -60.00px) scale(1.000) rotate(0.0deg); }
-  99.929% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  100.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-}
-.gcc15 { animation: gcc15 14s linear infinite; }
-@keyframes gcc16 {
-  0.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  26.929% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  27.286% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(0.600) rotate(0.0deg); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
-  33.357% { opacity: 1.000; transform: translate(100.00px, -300.00px) scale(1.000) rotate(0.0deg); }
-  45.500% { opacity: 0.000; transform: translate(108.00px, -160.00px) scale(1.000) rotate(0.0deg); }
-  99.929% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  100.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-}
-.gcc16 { animation: gcc16 14s linear infinite; }
-@keyframes gcc17 {
-  0.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  27.429% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  27.786% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(0.600) rotate(0.0deg); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
-  33.857% { opacity: 1.000; transform: translate(-210.00px, -250.00px) scale(1.000) rotate(80.0deg); }
-  46.000% { opacity: 0.000; transform: translate(-226.80px, -110.00px) scale(1.000) rotate(160.0deg); }
-  99.929% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  100.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-}
-.gcc17 { animation: gcc17 14s linear infinite; }
-@keyframes gcc18 {
-  0.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  27.929% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  28.286% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(0.600) rotate(0.0deg); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
-  34.357% { opacity: 1.000; transform: translate(210.00px, -250.00px) scale(1.000) rotate(-80.0deg); }
-  46.500% { opacity: 0.000; transform: translate(226.80px, -110.00px) scale(1.000) rotate(-160.0deg); }
-  99.929% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-  100.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
-}
-.gcc18 { animation: gcc18 14s linear infinite; }
-@keyframes gcc19 {
+.gcb12 { animation: gcb12 20s linear infinite; }
+@keyframes gcb13 {
   0.000% { opacity: 0.000; }
-  18.571% { opacity: 0.000; }
-  22.143% { opacity: 1.000; }
-  85.714% { opacity: 1.000; }
-  89.286% { opacity: 0.000; }
-  99.929% { opacity: 0.000; }
+  77.500% { opacity: 0.000; }
+  79.500% { opacity: 1.000; }
+  97.000% { opacity: 1.000; }
+  99.000% { opacity: 0.000; }
+  99.950% { opacity: 0.000; }
   100.000% { opacity: 0.000; }
 }
-.gcc19 { animation: gcc19 14s linear infinite; }
+.gcb13 { animation: gcb13 20s linear infinite; }
+@keyframes gcb14 {
+  0.000% { opacity: 0.000; }
+  7.000% { opacity: 0.000; }
+  7.750% { opacity: 1.000; }
+  12.000% { opacity: 1.000; }
+  14.000% { opacity: 0.000; }
+  99.950% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcb14 { animation: gcb14 20s linear infinite; }
+@keyframes gcb15 {
+  0.000% { opacity: 0.000; }
+  16.500% { opacity: 0.000; }
+  17.250% { opacity: 1.000; }
+  29.000% { opacity: 1.000; }
+  31.500% { opacity: 0.000; }
+  99.950% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcb15 { animation: gcb15 20s linear infinite; }
+@keyframes gcb16 {
+  0.000% { opacity: 0.000; }
+  70.000% { opacity: 0.000; }
+  70.750% { opacity: 1.000; }
+  80.000% { opacity: 1.000; }
+  82.500% { opacity: 0.000; }
+  99.950% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcb16 { animation: gcb16 20s linear infinite; }
+@keyframes gcb17 {
+  0.000% { opacity: 0.000; transform: scale(0.200); }
+  7.000% { opacity: 0.000; transform: scale(0.200); }
+  7.100% { opacity: 0.750; transform: scale(0.200); animation-timing-function: ease-out; }
+  10.500% { opacity: 0.000; transform: scale(1.800); }
+  100.000% { opacity: 0.000; transform: scale(0.200); }
+}
+.gcb17 { animation: gcb17 20s linear infinite; }
+@keyframes gcb18 {
+  0.000% { opacity: 0.000; transform: scale(0.200); }
+  16.500% { opacity: 0.000; transform: scale(0.200); }
+  16.600% { opacity: 0.750; transform: scale(0.200); animation-timing-function: ease-out; }
+  20.000% { opacity: 0.000; transform: scale(1.800); }
+  100.000% { opacity: 0.000; transform: scale(0.200); }
+}
+.gcb18 { animation: gcb18 20s linear infinite; }
+@keyframes gcb19 {
+  0.000% { opacity: 0.000; transform: scale(0.200); }
+  34.000% { opacity: 0.000; transform: scale(0.200); }
+  34.100% { opacity: 0.750; transform: scale(0.200); animation-timing-function: ease-out; }
+  37.500% { opacity: 0.000; transform: scale(1.800); }
+  100.000% { opacity: 0.000; transform: scale(0.200); }
+}
+.gcb19 { animation: gcb19 20s linear infinite; }
+@keyframes gcb20 {
+  0.000% { opacity: 0.000; transform: scale(0.200); }
+  43.500% { opacity: 0.000; transform: scale(0.200); }
+  43.600% { opacity: 0.750; transform: scale(0.200); animation-timing-function: ease-out; }
+  47.000% { opacity: 0.000; transform: scale(1.800); }
+  100.000% { opacity: 0.000; transform: scale(0.200); }
+}
+.gcb20 { animation: gcb20 20s linear infinite; }
+@keyframes gcb21 {
+  0.000% { opacity: 0.000; transform: scale(0.200); }
+  53.000% { opacity: 0.000; transform: scale(0.200); }
+  53.100% { opacity: 0.750; transform: scale(0.200); animation-timing-function: ease-out; }
+  56.500% { opacity: 0.000; transform: scale(1.800); }
+  100.000% { opacity: 0.000; transform: scale(0.200); }
+}
+.gcb21 { animation: gcb21 20s linear infinite; }
+@keyframes gcb22 {
+  0.000% { opacity: 0.000; transform: scale(0.200); }
+  62.500% { opacity: 0.000; transform: scale(0.200); }
+  62.600% { opacity: 0.750; transform: scale(0.200); animation-timing-function: ease-out; }
+  66.000% { opacity: 0.000; transform: scale(1.800); }
+  100.000% { opacity: 0.000; transform: scale(0.200); }
+}
+.gcb22 { animation: gcb22 20s linear infinite; }
+@keyframes gcb23 {
+  0.000% { opacity: 0.000; transform: scale(0.200); }
+  70.000% { opacity: 0.000; transform: scale(0.200); }
+  70.100% { opacity: 0.750; transform: scale(0.200); animation-timing-function: ease-out; }
+  73.500% { opacity: 0.000; transform: scale(1.800); }
+  100.000% { opacity: 0.000; transform: scale(0.200); }
+}
+.gcb23 { animation: gcb23 20s linear infinite; }
+@keyframes gcb24 {
+  0.000% { opacity: 0.000; transform: translate(3200.00px, 1500.00px) scale(1.000); }
+  2.500% { opacity: 0.000; transform: translate(3200.00px, 1500.00px) scale(1.000); }
+  3.500% { opacity: 1.000; transform: translate(3200.00px, 1500.00px) scale(1.000); animation-timing-function: cubic-bezier(.45,0,.2,1); }
+  5.000% { opacity: 1.000; transform: translate(400.00px, 500.00px) scale(1.000); }
+  7.000% { opacity: 1.000; transform: translate(400.00px, 500.00px) scale(1.000); }
+  7.500% { opacity: 1.000; transform: translate(400.00px, 500.00px) scale(0.820); }
+  8.300% { opacity: 1.000; transform: translate(400.00px, 500.00px) scale(1.000); animation-timing-function: cubic-bezier(.45,0,.2,1); }
+  14.500% { opacity: 1.000; transform: translate(560.00px, 830.00px) scale(1.000); }
+  16.500% { opacity: 1.000; transform: translate(560.00px, 830.00px) scale(1.000); }
+  17.000% { opacity: 1.000; transform: translate(560.00px, 830.00px) scale(0.820); }
+  17.800% { opacity: 1.000; transform: translate(560.00px, 830.00px) scale(1.000); animation-timing-function: cubic-bezier(.45,0,.2,1); }
+  32.000% { opacity: 1.000; transform: translate(452.00px, 1160.00px) scale(1.000); }
+  34.000% { opacity: 1.000; transform: translate(452.00px, 1160.00px) scale(1.000); }
+  34.500% { opacity: 1.000; transform: translate(452.00px, 1160.00px) scale(0.820); }
+  35.300% { opacity: 1.000; transform: translate(452.00px, 1160.00px) scale(1.000); animation-timing-function: cubic-bezier(.45,0,.2,1); }
+  41.500% { opacity: 1.000; transform: translate(638.00px, 1160.00px) scale(1.000); }
+  43.500% { opacity: 1.000; transform: translate(638.00px, 1160.00px) scale(1.000); }
+  44.000% { opacity: 1.000; transform: translate(638.00px, 1160.00px) scale(0.820); }
+  44.800% { opacity: 1.000; transform: translate(638.00px, 1160.00px) scale(1.000); animation-timing-function: cubic-bezier(.45,0,.2,1); }
+  51.000% { opacity: 1.000; transform: translate(824.00px, 1160.00px) scale(1.000); }
+  53.000% { opacity: 1.000; transform: translate(824.00px, 1160.00px) scale(1.000); }
+  53.500% { opacity: 1.000; transform: translate(824.00px, 1160.00px) scale(0.820); }
+  54.300% { opacity: 1.000; transform: translate(824.00px, 1160.00px) scale(1.000); animation-timing-function: cubic-bezier(.45,0,.2,1); }
+  60.500% { opacity: 1.000; transform: translate(266.00px, 1160.00px) scale(1.000); }
+  62.500% { opacity: 1.000; transform: translate(266.00px, 1160.00px) scale(1.000); }
+  63.000% { opacity: 1.000; transform: translate(266.00px, 1160.00px) scale(0.820); }
+  63.800% { opacity: 1.000; transform: translate(266.00px, 1160.00px) scale(1.000); animation-timing-function: cubic-bezier(.45,0,.2,1); }
+  68.000% { opacity: 1.000; transform: translate(560.00px, 1478.00px) scale(1.000); }
+  70.000% { opacity: 1.000; transform: translate(560.00px, 1478.00px) scale(1.000); }
+  70.500% { opacity: 1.000; transform: translate(560.00px, 1478.00px) scale(0.820); }
+  71.300% { opacity: 1.000; transform: translate(560.00px, 1478.00px) scale(1.000); }
+  73.500% { opacity: 1.000; transform: translate(560.00px, 1478.00px) scale(1.000); }
+  75.500% { opacity: 0.000; transform: translate(560.00px, 1478.00px) scale(1.000); }
+  99.950% { opacity: 0.000; transform: translate(3200.00px, 1500.00px) scale(1.000); }
+  100.000% { opacity: 0.000; transform: translate(3200.00px, 1500.00px) scale(1.000); }
+}
+.gcb24 { animation: gcb24 20s linear infinite; }
+@keyframes gcc1 {
+  0.000% { opacity: 0.000; transform: scale(0.200); }
+  38.824% { opacity: 0.000; transform: scale(0.200); }
+  38.941% { opacity: 0.750; transform: scale(0.200); animation-timing-function: ease-out; }
+  42.941% { opacity: 0.000; transform: scale(1.800); }
+  100.000% { opacity: 0.000; transform: scale(0.200); }
+}
+.gcc1 { animation: gcc1 17s linear infinite; }
+@keyframes gcc2 {
+  0.000% { opacity: 0.000; }
+  38.824% { opacity: 0.000; }
+  39.294% { opacity: 1.000; }
+  41.765% { opacity: 1.000; }
+  43.529% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc2 { animation: gcc2 17s linear infinite; }
+@keyframes gcc3 {
+  0.000% { opacity: 0.000; clip-path: inset(0 100.00% 0 0); }
+  5.876% { opacity: 0.000; clip-path: inset(0 100.00% 0 0); }
+  5.882% { opacity: 1.000; clip-path: inset(0 100.00% 0 0); animation-timing-function: steps(38,end); }
+  34.941% { opacity: 1.000; clip-path: inset(0 0.00% 0 0); }
+  97.059% { opacity: 1.000; clip-path: inset(0 0.00% 0 0); }
+  97.118% { opacity: 0.000; clip-path: inset(0 100.00% 0 0); }
+  99.941% { opacity: 0.000; clip-path: inset(0 100.00% 0 0); }
+  100.000% { opacity: 0.000; clip-path: inset(0 100.00% 0 0); }
+}
+.gcc3 { animation: gcc3 17s linear infinite; }
+@keyframes gcc4 {
+  0.000% { opacity: 0.000; }
+  5.876% { opacity: 0.000; }
+  5.882% { opacity: 1.000; }
+  6.471% { opacity: 1.000; }
+  6.588% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc4 { animation: gcc4 17s linear infinite; }
+@keyframes gcc5 {
+  0.000% { opacity: 0.000; }
+  6.641% { opacity: 0.000; }
+  6.647% { opacity: 1.000; }
+  7.235% { opacity: 1.000; }
+  7.353% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc5 { animation: gcc5 17s linear infinite; }
+@keyframes gcc6 {
+  0.000% { opacity: 0.000; }
+  7.406% { opacity: 0.000; }
+  7.412% { opacity: 1.000; }
+  8.000% { opacity: 1.000; }
+  8.118% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc6 { animation: gcc6 17s linear infinite; }
+@keyframes gcc7 {
+  0.000% { opacity: 0.000; }
+  8.171% { opacity: 0.000; }
+  8.176% { opacity: 1.000; }
+  8.765% { opacity: 1.000; }
+  8.882% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc7 { animation: gcc7 17s linear infinite; }
+@keyframes gcc8 {
+  0.000% { opacity: 0.000; }
+  9.700% { opacity: 0.000; }
+  9.706% { opacity: 1.000; }
+  10.294% { opacity: 1.000; }
+  10.412% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc8 { animation: gcc8 17s linear infinite; }
+@keyframes gcc9 {
+  0.000% { opacity: 0.000; }
+  10.465% { opacity: 0.000; }
+  10.471% { opacity: 1.000; }
+  11.059% { opacity: 1.000; }
+  11.176% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc9 { animation: gcc9 17s linear infinite; }
+@keyframes gcc10 {
+  0.000% { opacity: 0.000; }
+  11.229% { opacity: 0.000; }
+  11.235% { opacity: 1.000; }
+  11.824% { opacity: 1.000; }
+  11.941% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc10 { animation: gcc10 17s linear infinite; }
+@keyframes gcc11 {
+  0.000% { opacity: 0.000; }
+  11.994% { opacity: 0.000; }
+  12.000% { opacity: 1.000; }
+  12.588% { opacity: 1.000; }
+  12.706% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc11 { animation: gcc11 17s linear infinite; }
+@keyframes gcc12 {
+  0.000% { opacity: 0.000; }
+  12.759% { opacity: 0.000; }
+  12.765% { opacity: 1.000; }
+  13.353% { opacity: 1.000; }
+  13.471% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc12 { animation: gcc12 17s linear infinite; }
+@keyframes gcc13 {
+  0.000% { opacity: 0.000; }
+  13.524% { opacity: 0.000; }
+  13.529% { opacity: 1.000; }
+  14.118% { opacity: 1.000; }
+  14.235% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc13 { animation: gcc13 17s linear infinite; }
+@keyframes gcc14 {
+  0.000% { opacity: 0.000; }
+  14.288% { opacity: 0.000; }
+  14.294% { opacity: 1.000; }
+  14.882% { opacity: 1.000; }
+  15.000% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc14 { animation: gcc14 17s linear infinite; }
+@keyframes gcc15 {
+  0.000% { opacity: 0.000; }
+  15.053% { opacity: 0.000; }
+  15.059% { opacity: 1.000; }
+  15.647% { opacity: 1.000; }
+  15.765% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc15 { animation: gcc15 17s linear infinite; }
+@keyframes gcc16 {
+  0.000% { opacity: 0.000; }
+  15.818% { opacity: 0.000; }
+  15.824% { opacity: 1.000; }
+  16.412% { opacity: 1.000; }
+  16.529% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc16 { animation: gcc16 17s linear infinite; }
+@keyframes gcc17 {
+  0.000% { opacity: 0.000; }
+  16.582% { opacity: 0.000; }
+  16.588% { opacity: 1.000; }
+  17.176% { opacity: 1.000; }
+  17.294% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc17 { animation: gcc17 17s linear infinite; }
+@keyframes gcc18 {
+  0.000% { opacity: 0.000; }
+  17.347% { opacity: 0.000; }
+  17.353% { opacity: 1.000; }
+  17.941% { opacity: 1.000; }
+  18.059% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc18 { animation: gcc18 17s linear infinite; }
+@keyframes gcc19 {
+  0.000% { opacity: 0.000; }
+  18.112% { opacity: 0.000; }
+  18.118% { opacity: 1.000; }
+  18.706% { opacity: 1.000; }
+  18.824% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc19 { animation: gcc19 17s linear infinite; }
 @keyframes gcc20 {
+  0.000% { opacity: 0.000; }
+  18.876% { opacity: 0.000; }
+  18.882% { opacity: 1.000; }
+  19.471% { opacity: 1.000; }
+  19.588% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc20 { animation: gcc20 17s linear infinite; }
+@keyframes gcc21 {
+  0.000% { opacity: 0.000; }
+  19.641% { opacity: 0.000; }
+  19.647% { opacity: 1.000; }
+  20.235% { opacity: 1.000; }
+  20.353% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc21 { animation: gcc21 17s linear infinite; }
+@keyframes gcc22 {
+  0.000% { opacity: 0.000; }
+  20.406% { opacity: 0.000; }
+  20.412% { opacity: 1.000; }
+  21.000% { opacity: 1.000; }
+  21.118% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc22 { animation: gcc22 17s linear infinite; }
+@keyframes gcc23 {
+  0.000% { opacity: 0.000; }
+  21.171% { opacity: 0.000; }
+  21.176% { opacity: 1.000; }
+  21.765% { opacity: 1.000; }
+  21.882% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc23 { animation: gcc23 17s linear infinite; }
+@keyframes gcc24 {
+  0.000% { opacity: 0.000; }
+  21.935% { opacity: 0.000; }
+  21.941% { opacity: 1.000; }
+  22.529% { opacity: 1.000; }
+  22.647% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc24 { animation: gcc24 17s linear infinite; }
+@keyframes gcc25 {
+  0.000% { opacity: 0.000; }
+  22.700% { opacity: 0.000; }
+  22.706% { opacity: 1.000; }
+  23.294% { opacity: 1.000; }
+  23.412% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc25 { animation: gcc25 17s linear infinite; }
+@keyframes gcc26 {
+  0.000% { opacity: 0.000; }
+  23.465% { opacity: 0.000; }
+  23.471% { opacity: 1.000; }
+  24.059% { opacity: 1.000; }
+  24.176% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc26 { animation: gcc26 17s linear infinite; }
+@keyframes gcc27 {
+  0.000% { opacity: 0.000; }
+  24.229% { opacity: 0.000; }
+  24.235% { opacity: 1.000; }
+  24.824% { opacity: 1.000; }
+  24.941% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc27 { animation: gcc27 17s linear infinite; }
+@keyframes gcc28 {
+  0.000% { opacity: 0.000; }
+  24.994% { opacity: 0.000; }
+  25.000% { opacity: 1.000; }
+  25.588% { opacity: 1.000; }
+  25.706% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc28 { animation: gcc28 17s linear infinite; }
+@keyframes gcc29 {
+  0.000% { opacity: 0.000; }
+  25.759% { opacity: 0.000; }
+  25.765% { opacity: 1.000; }
+  26.353% { opacity: 1.000; }
+  26.471% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc29 { animation: gcc29 17s linear infinite; }
+@keyframes gcc30 {
+  0.000% { opacity: 0.000; }
+  26.524% { opacity: 0.000; }
+  26.529% { opacity: 1.000; }
+  27.118% { opacity: 1.000; }
+  27.235% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc30 { animation: gcc30 17s linear infinite; }
+@keyframes gcc31 {
+  0.000% { opacity: 0.000; }
+  27.288% { opacity: 0.000; }
+  27.294% { opacity: 1.000; }
+  27.882% { opacity: 1.000; }
+  28.000% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc31 { animation: gcc31 17s linear infinite; }
+@keyframes gcc32 {
+  0.000% { opacity: 0.000; }
+  28.053% { opacity: 0.000; }
+  28.059% { opacity: 1.000; }
+  28.647% { opacity: 1.000; }
+  28.765% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc32 { animation: gcc32 17s linear infinite; }
+@keyframes gcc33 {
+  0.000% { opacity: 0.000; }
+  28.818% { opacity: 0.000; }
+  28.824% { opacity: 1.000; }
+  29.412% { opacity: 1.000; }
+  29.529% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc33 { animation: gcc33 17s linear infinite; }
+@keyframes gcc34 {
+  0.000% { opacity: 0.000; }
+  29.582% { opacity: 0.000; }
+  29.588% { opacity: 1.000; }
+  30.176% { opacity: 1.000; }
+  30.294% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc34 { animation: gcc34 17s linear infinite; }
+@keyframes gcc35 {
+  0.000% { opacity: 0.000; }
+  30.347% { opacity: 0.000; }
+  30.353% { opacity: 1.000; }
+  30.941% { opacity: 1.000; }
+  31.059% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc35 { animation: gcc35 17s linear infinite; }
+@keyframes gcc36 {
+  0.000% { opacity: 0.000; }
+  31.112% { opacity: 0.000; }
+  31.118% { opacity: 1.000; }
+  31.706% { opacity: 1.000; }
+  31.824% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc36 { animation: gcc36 17s linear infinite; }
+@keyframes gcc37 {
+  0.000% { opacity: 0.000; }
+  31.876% { opacity: 0.000; }
+  31.882% { opacity: 1.000; }
+  32.471% { opacity: 1.000; }
+  32.588% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc37 { animation: gcc37 17s linear infinite; }
+@keyframes gcc38 {
+  0.000% { opacity: 0.000; }
+  32.641% { opacity: 0.000; }
+  32.647% { opacity: 1.000; }
+  33.235% { opacity: 1.000; }
+  33.353% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc38 { animation: gcc38 17s linear infinite; }
+@keyframes gcc39 {
+  0.000% { opacity: 0.000; }
+  33.406% { opacity: 0.000; }
+  33.412% { opacity: 1.000; }
+  34.000% { opacity: 1.000; }
+  34.118% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc39 { animation: gcc39 17s linear infinite; }
+@keyframes gcc40 {
+  0.000% { opacity: 0.000; }
+  34.171% { opacity: 0.000; }
+  34.176% { opacity: 1.000; }
+  34.765% { opacity: 1.000; }
+  34.882% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc40 { animation: gcc40 17s linear infinite; }
+@keyframes gcc41 {
+  0.000% { opacity: 0.000; }
+  44.118% { opacity: 0.000; }
+  47.059% { opacity: 1.000; }
+  91.176% { opacity: 1.000; }
+  94.118% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc41 { animation: gcc41 17s linear infinite; }
+@keyframes gcc42 {
+  0.000% { opacity: 0.000; transform: scale(0.000); }
+  45.882% { opacity: 0.000; transform: scale(0.000); }
+  45.941% { opacity: 1.000; transform: scale(0.400); animation-timing-function: cubic-bezier(.3,1.4,.5,1); }
+  48.000% { opacity: 1.000; transform: scale(1.120); }
+  49.412% { opacity: 1.000; transform: scale(1.000); }
+  94.118% { opacity: 1.000; transform: scale(1.000); }
+  94.176% { opacity: 0.000; transform: scale(0.000); }
+  100.000% { opacity: 0.000; transform: scale(0.000); }
+}
+.gcc42 { animation: gcc42 17s linear infinite; }
+@keyframes gcc43 {
+  0.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  47.647% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  47.941% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(0.600) rotate(0.0deg); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
+  52.941% { opacity: 1.000; transform: translate(-190.00px, -150.00px) scale(1.000) rotate(40.0deg); }
+  62.941% { opacity: 0.000; transform: translate(-205.20px, -10.00px) scale(1.000) rotate(80.0deg); }
+  99.941% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  100.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+}
+.gcc43 { animation: gcc43 17s linear infinite; }
+@keyframes gcc44 {
+  0.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  48.059% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  48.353% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(0.600) rotate(0.0deg); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
+  53.353% { opacity: 1.000; transform: translate(-120.00px, -240.00px) scale(1.000) rotate(-30.0deg); }
+  63.353% { opacity: 0.000; transform: translate(-129.60px, -100.00px) scale(1.000) rotate(-60.0deg); }
+  99.941% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  100.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+}
+.gcc44 { animation: gcc44 17s linear infinite; }
+@keyframes gcc45 {
+  0.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  48.471% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  48.765% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(0.600) rotate(0.0deg); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
+  53.765% { opacity: 1.000; transform: translate(-40.00px, -280.00px) scale(1.000) rotate(15.0deg); }
+  63.765% { opacity: 0.000; transform: translate(-43.20px, -140.00px) scale(1.000) rotate(30.0deg); }
+  99.941% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  100.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+}
+.gcc45 { animation: gcc45 17s linear infinite; }
+@keyframes gcc46 {
+  0.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  48.882% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  49.176% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(0.600) rotate(0.0deg); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
+  54.176% { opacity: 1.000; transform: translate(60.00px, -270.00px) scale(1.000) rotate(-20.0deg); }
+  64.176% { opacity: 0.000; transform: translate(64.80px, -130.00px) scale(1.000) rotate(-40.0deg); }
+  99.941% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  100.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+}
+.gcc46 { animation: gcc46 17s linear infinite; }
+@keyframes gcc47 {
+  0.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  49.294% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  49.588% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(0.600) rotate(0.0deg); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
+  54.588% { opacity: 1.000; transform: translate(150.00px, -230.00px) scale(1.000) rotate(55.0deg); }
+  64.588% { opacity: 0.000; transform: translate(162.00px, -90.00px) scale(1.000) rotate(110.0deg); }
+  99.941% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  100.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+}
+.gcc47 { animation: gcc47 17s linear infinite; }
+@keyframes gcc48 {
+  0.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  47.647% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  47.941% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(0.600) rotate(0.0deg); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
+  52.941% { opacity: 1.000; transform: translate(220.00px, -140.00px) scale(1.000) rotate(-45.0deg); }
+  62.941% { opacity: 0.000; transform: translate(237.60px, 0.00px) scale(1.000) rotate(-90.0deg); }
+  99.941% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  100.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+}
+.gcc48 { animation: gcc48 17s linear infinite; }
+@keyframes gcc49 {
+  0.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  48.059% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  48.353% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(0.600) rotate(0.0deg); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
+  53.353% { opacity: 1.000; transform: translate(-250.00px, -60.00px) scale(1.000) rotate(-60.0deg); }
+  63.353% { opacity: 0.000; transform: translate(-270.00px, 80.00px) scale(1.000) rotate(-120.0deg); }
+  99.941% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  100.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+}
+.gcc49 { animation: gcc49 17s linear infinite; }
+@keyframes gcc50 {
+  0.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  48.471% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  48.765% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(0.600) rotate(0.0deg); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
+  53.765% { opacity: 1.000; transform: translate(260.00px, -40.00px) scale(1.000) rotate(70.0deg); }
+  63.765% { opacity: 0.000; transform: translate(280.80px, 100.00px) scale(1.000) rotate(140.0deg); }
+  99.941% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  100.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+}
+.gcc50 { animation: gcc50 17s linear infinite; }
+@keyframes gcc51 {
+  0.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  48.882% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  49.176% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(0.600) rotate(0.0deg); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
+  54.176% { opacity: 1.000; transform: translate(-160.00px, -190.00px) scale(1.000) rotate(0.0deg); }
+  64.176% { opacity: 0.000; transform: translate(-172.80px, -50.00px) scale(1.000) rotate(0.0deg); }
+  99.941% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  100.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+}
+.gcc51 { animation: gcc51 17s linear infinite; }
+@keyframes gcc52 {
+  0.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  49.294% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  49.588% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(0.600) rotate(0.0deg); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
+  54.588% { opacity: 1.000; transform: translate(170.00px, -180.00px) scale(1.000) rotate(0.0deg); }
+  64.588% { opacity: 0.000; transform: translate(183.60px, -40.00px) scale(1.000) rotate(0.0deg); }
+  99.941% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  100.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+}
+.gcc52 { animation: gcc52 17s linear infinite; }
+@keyframes gcc53 {
+  0.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  47.647% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  47.941% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(0.600) rotate(0.0deg); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
+  52.941% { opacity: 1.000; transform: translate(-70.00px, -200.00px) scale(1.000) rotate(0.0deg); }
+  62.941% { opacity: 0.000; transform: translate(-75.60px, -60.00px) scale(1.000) rotate(0.0deg); }
+  99.941% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  100.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+}
+.gcc53 { animation: gcc53 17s linear infinite; }
+@keyframes gcc54 {
+  0.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  48.059% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  48.353% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(0.600) rotate(0.0deg); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
+  53.353% { opacity: 1.000; transform: translate(100.00px, -300.00px) scale(1.000) rotate(0.0deg); }
+  63.353% { opacity: 0.000; transform: translate(108.00px, -160.00px) scale(1.000) rotate(0.0deg); }
+  99.941% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  100.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+}
+.gcc54 { animation: gcc54 17s linear infinite; }
+@keyframes gcc55 {
+  0.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  48.471% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  48.765% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(0.600) rotate(0.0deg); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
+  53.765% { opacity: 1.000; transform: translate(-210.00px, -250.00px) scale(1.000) rotate(80.0deg); }
+  63.765% { opacity: 0.000; transform: translate(-226.80px, -110.00px) scale(1.000) rotate(160.0deg); }
+  99.941% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  100.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+}
+.gcc55 { animation: gcc55 17s linear infinite; }
+@keyframes gcc56 {
+  0.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  48.882% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  49.176% { opacity: 1.000; transform: translate(0.00px, 0.00px) scale(0.600) rotate(0.0deg); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
+  54.176% { opacity: 1.000; transform: translate(210.00px, -250.00px) scale(1.000) rotate(-80.0deg); }
+  64.176% { opacity: 0.000; transform: translate(226.80px, -110.00px) scale(1.000) rotate(-160.0deg); }
+  99.941% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+  100.000% { opacity: 0.000; transform: translate(0.00px, 0.00px) scale(0.300) rotate(0.0deg); }
+}
+.gcc56 { animation: gcc56 17s linear infinite; }
+@keyframes gcc57 {
+  0.000% { opacity: 0.000; }
+  41.176% { opacity: 0.000; }
+  44.118% { opacity: 1.000; }
+  90.588% { opacity: 1.000; }
+  93.529% { opacity: 0.000; }
+  99.941% { opacity: 0.000; }
+  100.000% { opacity: 0.000; }
+}
+.gcc57 { animation: gcc57 17s linear infinite; }
+@keyframes gcc58 {
   0.000% { opacity: 0.000; transform: translate(1500.00px, 1380.00px) scale(1.000); }
-  9.286% { opacity: 0.000; transform: translate(1500.00px, 1380.00px) scale(1.000); }
-  10.714% { opacity: 1.000; transform: translate(1500.00px, 1380.00px) scale(1.000); animation-timing-function: cubic-bezier(.45,0,.2,1); }
-  12.857% { opacity: 1.000; transform: translate(1262.00px, 1076.00px) scale(1.000); }
-  15.714% { opacity: 1.000; transform: translate(1262.00px, 1076.00px) scale(1.000); }
-  16.429% { opacity: 1.000; transform: translate(1262.00px, 1076.00px) scale(0.820); }
-  17.571% { opacity: 1.000; transform: translate(1262.00px, 1076.00px) scale(1.000); }
-  20.714% { opacity: 1.000; transform: translate(1262.00px, 1076.00px) scale(1.000); }
-  23.571% { opacity: 0.000; transform: translate(1262.00px, 1076.00px) scale(1.000); }
-  99.929% { opacity: 0.000; transform: translate(1500.00px, 1380.00px) scale(1.000); }
+  33.529% { opacity: 0.000; transform: translate(1500.00px, 1380.00px) scale(1.000); }
+  34.706% { opacity: 1.000; transform: translate(1500.00px, 1380.00px) scale(1.000); animation-timing-function: cubic-bezier(.45,0,.2,1); }
+  36.471% { opacity: 1.000; transform: translate(1262.00px, 1076.00px) scale(1.000); }
+  38.824% { opacity: 1.000; transform: translate(1262.00px, 1076.00px) scale(1.000); }
+  39.412% { opacity: 1.000; transform: translate(1262.00px, 1076.00px) scale(0.820); }
+  40.353% { opacity: 1.000; transform: translate(1262.00px, 1076.00px) scale(1.000); }
+  42.941% { opacity: 1.000; transform: translate(1262.00px, 1076.00px) scale(1.000); }
+  45.294% { opacity: 0.000; transform: translate(1262.00px, 1076.00px) scale(1.000); }
+  99.941% { opacity: 0.000; transform: translate(1500.00px, 1380.00px) scale(1.000); }
   100.000% { opacity: 0.000; transform: translate(1500.00px, 1380.00px) scale(1.000); }
 }
-.gcc20 { animation: gcc20 14s linear infinite; }
+.gcc58 { animation: gcc58 17s linear infinite; }
 /* @end gc-anim */
