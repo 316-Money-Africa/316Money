@@ -1,0 +1,5 @@
+/* Accept donations page */
+.pl-cust--d1, .pl-cust--d2, .pl-cust--d3 { aspect-ratio: 4292 / 2097; }
+.pl-visual__box--center > .pl-cust { position: absolute; top: 0; left: 50%; height: 100%; max-width: 100%; transform: translateX(-50%); }
+.pl-cust > img.pl-slot, .pl-cust > svg.pl-slot { display: block; width: 100%; height: 100%; border-radius: 0; }
+@media (max-width: 63.99rem) { .dn-flow .pl-visual__box--center > .pl-cust { position: relative; left: auto; height: auto; width: 100%; transform: none; } .dn-flow .pl-visual__box--center { aspect-ratio: auto; } .dn-flow .pl-cust > img.pl-slot, .dn-flow .pl-cust > svg.pl-slot { height: auto; } }
