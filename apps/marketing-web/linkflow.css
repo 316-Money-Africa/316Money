@@ -214,3 +214,18 @@
 .pl-flow:not(.gc-flow) .pl-visual__box { background: #E8E0F9; }
 .pl-flow--side .pl-visual__box { background: #C3AAF1; }
 .pl-flow--side .pl-cust > img.pl-slot, .pl-cust--dk > img.pl-slot { filter: drop-shadow(0 0.7rem 1.4rem rgba(60, 30, 120, .2)); }
+
+/* Phones and tablets (below 64rem): every pinned-steps section reads step text, then its own picture, then the next step.
+   Wrappers dissolve (display: contents) so the steps and the pictures become siblings of one column and are interleaved with `order`. */
+@media (max-width: 63.99rem) {
+  .pl-flow .pl-flow__pin { display: flex; flex-direction: column; align-items: stretch; gap: 1.25rem; }
+  .pl-flow .pl-flow__pin > .pl-steps, .pl-flow .pl-flow__pin > .pl-flow__stage, .pl-flow .ps-side__list, .pl-flow .ps-side__list > .pl-steps { display: contents; }
+  .pl-flow .pl-step { margin: 0; }
+  .pl-flow .pl-step:nth-child(1) { order: 1; } .pl-flow .pl-flow__layer--1 { order: 2; }
+  .pl-flow .pl-step:nth-child(2) { order: 3; } .pl-flow .pl-flow__layer--2 { order: 4; }
+  .pl-flow .pl-step:nth-child(3) { order: 5; } .pl-flow .pl-flow__layer--3 { order: 6; }
+  .pl-flow .pl-step:nth-child(4) { order: 7; } .pl-flow .pl-flow__layer--4 { order: 8; }
+  .pl-flow .pl-step:nth-child(n+2) { margin-top: 1.25rem; }
+  .pl-flow .ps-side__list > .btn { order: 20; align-self: flex-start; margin-top: 1.5rem; }
+  .pl-flow .pl-flow__layer { width: 100%; }
+}
