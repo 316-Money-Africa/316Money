@@ -23,7 +23,7 @@
     root.classList.toggle("is-pin", mq.matches);                 // measure the steps in their pinned (compact) layout
     const side = root.classList.contains("pl-flow--side");     // list and picture side by side: the card padding is all that sits around the picture
     const stepsH = side ? 5 * rem() : pin.offsetHeight - stage.offsetHeight;
-    const h = Math.min(40 * rem(), window.innerHeight - top - stepsH - 0.5 * rem());
+    const h = Math.min(46 * rem(), Math.max(window.innerHeight - top - stepsH - 0.5 * rem(), 0.68 * window.innerHeight));   // roomy stage: never smaller than about two thirds of the screen
     on = mq.matches && h >= 17 * rem();
     root.classList.toggle("is-pin", on);
     if (on) {
