@@ -2,7 +2,7 @@
    and the Choose card list can be searched; choosing a card shows it on the right. Sample data only. */
 (function () {
   if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    document.querySelectorAll(".dc-orbit").forEach(function (s) { if (s.pauseAnimations) s.pauseAnimations(); });
+    document.querySelectorAll(".dc-orbit").forEach(function (s) { if (s.pauseAnimations) { s.pauseAnimations(); s.setCurrentTime(12); } });
   }
   var root = document.querySelector("[data-dc-pick]");
   if (!root) return;
