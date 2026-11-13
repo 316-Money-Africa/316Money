@@ -1,15 +1,5 @@
-/* Extras pages (Offer rewards, Offer store gift cards, Accept donations, Sell digital cards): balanced hero and split sections on laptops and desktops.
-   The hero text is centred against the picture and the room above and below the pair is even; no picture is taller than about two thirds of the screen.
-   Phones and small tablets keep the stacked order set in mobile.css. */
+/* Extras pages (Offer rewards, Offer store gift cards, Accept donations, Sell digital cards): the hero keeps its original size and picture;
+   only the words are lifted a little upwards on laptops and desktops. Phones and small tablets keep the stacked order set in mobile.css. */
 @media (min-width: 64rem) {
-  .oc-hero { padding-top: calc(var(--nav-h) + clamp(2rem, 3.4vw, 3.5rem)); padding-bottom: clamp(2.5rem, 4vw, 4rem); }
-  .oc-hero__inner { align-items: center; }
-  .oc-hero__copy { align-self: center; }
-  .oc-hero__media { display: flex; align-items: center; justify-content: center; }
-  .oc-hero__media > img { width: 100%; height: auto; max-height: min(66vh, 34rem); object-fit: contain; }
-  .oc-hero__media > svg { width: 100%; height: min(66vh, 34rem); }
-  .oc-split, .bz-split { align-items: center; }
-  .oc-split__media { display: flex; align-items: center; justify-content: center; }
-  .oc-split__media > img { width: 100%; height: auto; max-height: min(70vh, 34rem); object-fit: contain; }
-  .oc-split__media > svg { width: 100%; height: min(70vh, 34rem); }
+  .oc-hero__copy { position: relative; top: clamp(-3.5rem, -3.2vw, -2rem); }
 }
