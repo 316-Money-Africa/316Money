@@ -94,8 +94,9 @@
 /* 9 · band */
 .hs-band { position: relative; isolation: isolate; overflow: hidden; padding-block: clamp(4.5rem, 8vw, 7.5rem); background: repeating-linear-gradient(90deg, rgba(255, 255, 255, .07) 0, rgba(255, 255, 255, .07) 0.0625rem, transparent 0.0625rem, transparent 1.35rem), linear-gradient(180deg, #4F1860 0%, #5A1B6B 100%); color: #fff; text-align: center; }
 /* the wave pattern of the design closes the page in the footer */
-.theme-hs .footer { background: #3C0F57 url("assets/Hotspots/band-bg.webp") center / cover no-repeat; }
-.theme-hs .footer::before, .theme-hs .footer::after { display: none; }
+.theme-hs .footer { background: #7E1C6F; }
+.theme-hs .footer::before { content: ""; position: absolute; z-index: 0; inset: 0; left: 0; top: 0; width: auto; aspect-ratio: auto; border-radius: 0; background: url("assets/Hotspots/band-bg.webp") center / cover no-repeat; opacity: .42; pointer-events: none; }
+.theme-hs .footer::after { display: none; }
 .hs-band__eyebrow { margin: 0 0 clamp(1rem, 1.6vw, 1.5rem); font-size: clamp(0.8125rem, 0.72rem + 0.35vw, 1rem); font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: #F193EA; }
 .hs-band__title { margin: 0; font-size: clamp(1.75rem, 1rem + 2.2vw, 2.75rem); line-height: 1.18; font-weight: 500; text-wrap: balance; }
 .hs-band__title .ln { display: inline; }
