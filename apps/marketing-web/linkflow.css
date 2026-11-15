@@ -16,6 +16,7 @@
   .pl-flow.is-pin .pl-flow__layer--1 { translate: 0 0; }
   .pl-flow.is-pin .pl-flow__layer--2 { z-index: 2; translate: 101% 0; }
   .pl-flow.is-pin .pl-flow__layer--3 { z-index: 3; translate: 101% 0; }
+  .pl-flow.is-pin .pl-flow__layer--4 { z-index: 4; translate: 101% 0; }
   .pl-flow.is-pin .pl-flow__layer.is-off { visibility: hidden; }
   .pl-flow.is-pin .pl-flow__layer > .pl-visual__box { position: absolute; inset: 0; width: auto; height: auto; aspect-ratio: auto; border-radius: 0; }
   .pl-flow.is-pin .pl-cust--share .pl-cust__fx, .pl-flow.is-pin .pl-cust--paid .pl-cust__fx { display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: visible; }

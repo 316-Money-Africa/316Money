@@ -1,4 +1,4 @@
-<!--page title="Collection Agent · 316 Hotspots" description="Become a 316 Hotspot and help individuals and businesses access cash, fund their accounts and receive local or international payouts through a trusted neighbourhood agent network." preload="assets/Hotspots/hero-dash.webp" css="pay-pages.css hotspots.css" js="hotspots.js" bodyclass="theme-pay theme-oc theme-hs" wordmark="PAY"-->
+<!--page title="Collection Agent · 316 Hotspots" description="Become a 316 Hotspot and help individuals and businesses access cash, fund their accounts and receive local or international payouts through a trusted neighbourhood agent network." preload="assets/Hotspots/hero-dash.webp" css="pay-pages.css linkflow.css hotspots.css" js="linkflow.js hotspots.js" bodyclass="theme-pay theme-oc theme-hs" wordmark="PAY"-->
 
     <!-- 1 · Hero (pink wash, stepped bars either side, the Hotspots dashboard rising from the bottom) -->
     <section class="hs-hero" aria-labelledby="hs-hero-title">
@@ -58,31 +58,40 @@
       </div>
     </section>
 
-    <!-- 5 · From local kiosks to banking partners (blush) -->
-    <section class="hs-sec hs-sec--blush" id="partners" aria-labelledby="hs-kio-title">
+    <!-- 5 · From local kiosks to banking partners (blush; the list and the picture are pinned and the pictures come in as the page scrolls) -->
+    <section class="hs-sec hs-sec--blush pl-flow pl-flow--side hs-flow" id="partners" aria-labelledby="hs-kio-title">
       <div class="oc-wrap">
         <header class="hs-head">
           <p class="hs-eyebrow">Built for different transaction needs</p>
           <h2 id="hs-kio-title" class="hs-h2"><span class="ln">From local kiosks</span> <span class="ln">to banking partners.</span></h2>
           <p class="hs-p">Explore how Hotspots bridge digital money and physical access. Select a journey to see how it works.</p>
         </header>
-        <div class="hs-kio" data-hs-kio>
-          <div class="hs-kio__list">
-            <ul class="hs-kio__ul" role="list">
-            <li class="hs-kio__item is-on" data-kio="kiosks"><button type="button" class="hs-kio__btn" aria-expanded="true" aria-controls="hs-kio-kiosks"><span class="hs-kio__t">Roadside kiosks</span></button><p class="hs-kio__d" id="hs-kio-kiosks">Accessible neighbourhood locations where people already go for everyday cash services.</p></li>
-            <li class="hs-kio__item" data-kio="retail"><button type="button" class="hs-kio__btn" aria-expanded="false" aria-controls="hs-kio-retail"><span class="hs-kio__t">Retail shops</span></button><p class="hs-kio__d" id="hs-kio-retail">Established shops that can add cash and payment services to everyday customer visits.</p></li>
-            <li class="hs-kio__item" data-kio="agency"><button type="button" class="hs-kio__btn" aria-expanded="false" aria-controls="hs-kio-agency"><span class="hs-kio__t">Agency partners</span></button><p class="hs-kio__d" id="hs-kio-agency">Existing agent networks that can extend 316 services to even more locations.</p></li>
-            <li class="hs-kio__item" data-kio="banks"><button type="button" class="hs-kio__btn" aria-expanded="false" aria-controls="hs-kio-banks"><span class="hs-kio__t">Banking partners</span></button><p class="hs-kio__d" id="hs-kio-banks">Banks and financial institutions that serve local communities with trusted cash access.</p></li>
-            </ul>
+        <div class="pl-flow__pin">
+          <div class="ps-side__list">
+            <ol class="pl-steps ps-list">
+            <li class="pl-step"><h3 class="pl-step__t">Roadside kiosks</h3><p class="pl-step__d">Accessible neighbourhood locations where people already go for everyday cash services.</p><span class="pl-step__bar" aria-hidden="true"></span></li>
+            <li class="pl-step"><h3 class="pl-step__t">Retail shops</h3><p class="pl-step__d">Established shops that can add cash and payment services to everyday customer visits.</p><span class="pl-step__bar" aria-hidden="true"></span></li>
+            <li class="pl-step"><h3 class="pl-step__t">Agency partners</h3><p class="pl-step__d">Existing agent networks that can extend 316 services to even more locations.</p><span class="pl-step__bar" aria-hidden="true"></span></li>
+            <li class="pl-step"><h3 class="pl-step__t">Banking partners</h3><p class="pl-step__d">Banks and financial institutions that serve local communities with trusted cash access.</p><span class="pl-step__bar" aria-hidden="true"></span></li>
+            </ol>
             <a class="btn btn--primary oc-btn" href="#start">Explore</a>
           </div>
-          <div class="hs-kio__view">
-          <figure class="hs-kio__fig is-on" data-view="kiosks">{{slot:Hotspots/kiosk ratio="1419/1485" class="hs-pic hs-pic--kio" alt="A customer paying at a roadside kiosk and a Payment received confirmation"}}</figure>
-          <figure class="hs-kio__fig" data-view="retail" hidden>{{slot:Hotspots/retail ratio="1170/1430" class="hs-pic hs-pic--kio" alt="A shop owner serving a customer in a retail shop" loading="lazy"}}</figure>
-          <figure class="hs-kio__fig" data-view="agency" hidden>{{slot:Hotspots/agency ratio="1170/1430" class="hs-pic hs-pic--kio" alt="An agent serving a customer with a payment terminal" loading="lazy"}}</figure>
-          <figure class="hs-kio__fig" data-view="banks" hidden>{{slot:Hotspots/bank ratio="1120/1447" class="hs-pic hs-pic--kio" alt="A bank counter where an officer helps a customer" loading="lazy"}}</figure>
+          <div class="pl-flow__stage">
+            <div class="pl-flow__layer pl-flow__layer--1 is-cur">
+              <div class="pl-visual__box pl-visual__box--center"><div class="pl-cust pl-cust--k1">{{img:Hotspots/kiosk class="hs-pic hs-pic--kio" alt="A customer paying at a roadside kiosk and a Payment received confirmation"}}</div></div>
+            </div>
+            <div class="pl-flow__layer pl-flow__layer--2">
+              <div class="pl-visual__box pl-visual__box--center"><div class="pl-cust pl-cust--k2">{{img:Hotspots/retail class="hs-pic hs-pic--kio" alt="A shop owner serving a customer in a retail shop" loading="lazy"}}</div></div>
+            </div>
+            <div class="pl-flow__layer pl-flow__layer--3">
+              <div class="pl-visual__box pl-visual__box--center"><div class="pl-cust pl-cust--k3">{{img:Hotspots/agency class="hs-pic hs-pic--kio" alt="An agent serving a customer with a payment terminal" loading="lazy"}}</div></div>
+            </div>
+            <div class="pl-flow__layer pl-flow__layer--4">
+              <div class="pl-visual__box pl-visual__box--center"><div class="pl-cust pl-cust--k4">{{img:Hotspots/bank class="hs-pic hs-pic--kio" alt="A bank counter where an officer helps a customer" loading="lazy"}}</div></div>
+            </div>
           </div>
         </div>
+        <div class="pl-flow__runway" aria-hidden="true"></div>
       </div>
     </section>
 

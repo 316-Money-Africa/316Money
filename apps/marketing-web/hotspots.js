@@ -1,4 +1,4 @@
-/* 316 Hotspots page: the journey tabs (Cash-out / Cash-in / Remittance payout) and the kiosks-to-banking list switch the picture shown. Sample marketing content only. */
+/* 316 Hotspots page: the journey tabs (Cash-out / Cash-in / Remittance payout) switch the picture shown; the kiosks-to-banking section is a pinned parallax flow handled by linkflow.js. Sample marketing content only. */
 (function () {
   var tabs = document.querySelector("[data-hs-tabs]");
   if (tabs) {
@@ -26,27 +26,6 @@
         var n = btns.indexOf(b);
         if (e.key === "ArrowRight") { show(btns[(n + 1) % btns.length].getAttribute("data-tab"), true); e.preventDefault(); }
         if (e.key === "ArrowLeft") { show(btns[(n + btns.length - 1) % btns.length].getAttribute("data-tab"), true); e.preventDefault(); }
-      });
-    });
-  }
-  var kio = document.querySelector("[data-hs-kio]");
-  if (kio) {
-    var items = Array.prototype.slice.call(kio.querySelectorAll(".hs-kio__item"));
-    var figs = Array.prototype.slice.call(kio.querySelectorAll(".hs-kio__fig"));
-    items.forEach(function (li) {
-      li.querySelector(".hs-kio__btn").addEventListener("click", function () {
-        var key = li.getAttribute("data-kio");
-        items.forEach(function (x) {
-          var on = x === li;
-          x.classList.toggle("is-on", on);
-          x.querySelector(".hs-kio__btn").setAttribute("aria-expanded", on ? "true" : "false");
-        });
-        figs.forEach(function (f) {
-          var on = f.getAttribute("data-view") === key;
-          f.hidden = !on;
-          f.classList.toggle("is-on", on);
-          if (on) { var im = f.querySelector("img"); if (im) im.loading = "eager"; }
-        });
       });
     });
   }
