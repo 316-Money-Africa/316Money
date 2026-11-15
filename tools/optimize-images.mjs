@@ -46,16 +46,19 @@ const WIDTHS = {
 };
 // crystal pass (user-mandated for the Extras and Business pages): larger exports for the artwork that is shown big or animated, with higher quality and full chroma
 Object.assign(WIDTHS, {
+  "Hotspots/hero-dash.png": 2000, "Hotspots/bars-left.png": 800, "Hotspots/bars-right.png": 800, "Hotspots/cards.png": 1800, "Hotspots/opportunity.png": 1104, "Hotspots/tab-cashout.png": 2400, "Hotspots/tab-cashin.png": 2400, "Hotspots/tab-remit.png": 2400, "Hotspots/map.png": 2400,
+  "Hotspots/kiosk.png": 1419, "Hotspots/retail.png": 1170, "Hotspots/bank.png": 1120, "Hotspots/rates.png": 1385, "Hotspots/ribbon-a.png": 1600, "Hotspots/ribbon-b.png": 1200, "Hotspots/phone.png": 838, "Hotspots/web.png": 1778, "Hotspots/band-bg.jpg": 2000,
   "Donations/hero.png": 1700, "Donations/cause.png": 1700, "Donations/share.png": 2000, "Donations/manage.png": 2000, "Donations/flexible.png": 2000,
   "DigitalCards/sell.png": 1700, "DigitalCards/sales.png": 1800, "DigitalCards/tile-amazon.png": 580, "DigitalCards/tile-binance.png": 580, "DigitalCards/tile-apple.png": 580, "DigitalCards/tile-shein.png": 580, "DigitalCards/tile-ea.png": 580, "DigitalCards/tile-mastercard.png": 580, "DigitalCards/tile-netflix.png": 580, "DigitalCards/pick-crypto.png": 1196, "DigitalCards/card-binance.png": 893, "DigitalCards/card-netflix.png": 893, "DigitalCards/steps-grow.png": 1765,
   "Rewards/possibilities.png": 1700, "Rewards/loyalty.png": 1700, "Rewards/relationships.png": 1700, "Rewards/repeat.png": 1700, "Rewards/repeat-chat.png": 1829, "Rewards/repeat-stars.png": 899, "Rewards/hero.png": 1700,
   "GiftCards/hero.png": 1900, "GiftCards/value.png": 1700, "GiftCards/occasion.png": 1700, "GiftCards/manage.png": 1800, "GiftCards/share.png": 2000, "GiftCards/redeem.png": 2100,
 });
 const QUALITY = 86;
-const FOLDER_QUALITY = { Cards: 92, Airtime: 92, Bills: 92, Pay: 92, Business: 94, Checkout: 94, Links: 94, Developers: 94, Integrations: 94, Invoicing: 94, PaySmall: 94, OnlineCheckout: 94, Donations: 95, DigitalCards: 95, Rewards: 95, GiftCards: 95 }; // card artwork carries small UI text, so it keeps more detail // high enough that small UI text baked into the artwork stays crisp
+const FOLDER_QUALITY = { Cards: 92, Airtime: 92, Bills: 92, Pay: 92, Business: 94, Checkout: 94, Links: 94, Developers: 94, Integrations: 94, Invoicing: 94, PaySmall: 94, OnlineCheckout: 94, Donations: 95, DigitalCards: 95, Rewards: 95, GiftCards: 95, Hotspots: 95 }; // card artwork carries small UI text, so it keeps more detail // high enough that small UI text baked into the artwork stays crisp
 
 // small product photos and logos baked into the hero screens are shown large: encode them near-lossless so edges and text stay crisp
 const FILE_QUALITY = { "Business/hero-chair.png": 98, "Business/hero-dress.png": 98, "Business/hero-shoe.png": 98, "Business/hero-logo.png": 100, "Business/hero-lmstrip.png": 96, "Business/hero-win.png": 94, "PaySmall/hero.png": 80, "PaySmall/steps-3.png": 80, "PaySmall/steps-2.png": 84, "Business/hero-bs.png": 95 };
+Object.assign(FILE_QUALITY, { "Hotspots/tab-cashout.png": 84, "Hotspots/tab-cashin.png": 84, "Hotspots/tab-remit.png": 84, "Hotspots/band-bg.jpg": 70, "Hotspots/rates.png": 92, "Hotspots/map.png": 90 });
 let before = 0, after = 0;
 // every folder in assets-src/ (one per page) maps to the same folder in the served assets
 for (const dir of readdirSync(SRC_ROOT).filter((n) => (!process.env.ONLY || n === process.env.ONLY) && !n.startsWith("_") && statSync(join(SRC_ROOT, n)).isDirectory())) { // folders starting with "_" hold supplied-but-unused originals and are skipped
