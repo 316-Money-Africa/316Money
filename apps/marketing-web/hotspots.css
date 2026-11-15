@@ -92,7 +92,7 @@
 .hs-pic--web { border-radius: 0; }
 
 /* 9 · band */
-.hs-band { position: relative; isolation: isolate; overflow: hidden; padding-block: clamp(4.5rem, 8vw, 7.5rem); background: repeating-linear-gradient(90deg, rgba(255, 255, 255, .07) 0, rgba(255, 255, 255, .07) 0.0625rem, transparent 0.0625rem, transparent 1.35rem), linear-gradient(180deg, #4F1860 0%, #5A1B6B 100%); color: #fff; text-align: center; }
+.hs-band { position: relative; isolation: isolate; overflow: hidden; padding-block: clamp(4.5rem, 8vw, 7.5rem); background: repeating-linear-gradient(90deg, rgba(255, 255, 255, .07) 0, rgba(255, 255, 255, .07) 0.0625rem, transparent 0.0625rem, transparent 1.35rem), linear-gradient(180deg, rgba(0, 0, 0, 0.15) 11.91%, rgba(0, 0, 0, 0.15) 51.37%, rgba(102, 102, 102, 0.15) 80.67%), linear-gradient(0deg, #7A257D, #7A257D); color: #fff; text-align: center; }   /* the design's fill: #7A257D with the soft dark gradient above it, and the fine vertical lines */
 /* the wave pattern of the design closes the page in the footer */
 .theme-hs .footer { background: #7E1C6F; }
 .theme-hs .footer::before { content: ""; position: absolute; z-index: 0; inset: 0; left: 0; top: 0; width: auto; aspect-ratio: auto; border-radius: 0; background: url("assets/Hotspots/band-bg.webp") center / cover no-repeat; opacity: .42; pointer-events: none; }
