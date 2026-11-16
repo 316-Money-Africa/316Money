@@ -321,8 +321,8 @@
   12.604% { opacity: 0.000; clip-path: inset(0 100.00% 0 0); }
   12.609% { opacity: 1.000; clip-path: inset(0 100.00% 0 0); animation-timing-function: steps(10,end); }
   16.957% { opacity: 1.000; clip-path: inset(0 0.00% 0 0); }
-  91.304% { opacity: 1.000; clip-path: inset(0 0.00% 0 0); }
-  91.348% { opacity: 0.000; clip-path: inset(0 100.00% 0 0); }
+  21.087% { opacity: 1.000; clip-path: inset(0 0.00% 0 0); }
+  21.130% { opacity: 0.000; clip-path: inset(0 100.00% 0 0); }
   100.000% { opacity: 0.000; clip-path: inset(0 100.00% 0 0); }
 }
 .ph1 { animation: ph1 23s linear infinite; }
@@ -371,21 +371,40 @@
 }
 .ph6 { animation: ph6 23s linear infinite; }
 @keyframes ph7 {
+  0.000% { opacity: 0.000; transform: translate(0.00px, 22.00px); }
+  21.957% { opacity: 0.000; transform: translate(0.00px, 22.00px); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
+  23.913% { opacity: 1.000; transform: translate(0.00px, 0.00px); }
+  30.217% { opacity: 1.000; transform: translate(0.00px, 0.00px); }
+  31.304% { opacity: 0.000; transform: translate(0.00px, -18.00px); }
+  99.957% { opacity: 0.000; transform: translate(0.00px, 22.00px); }
+  100.000% { opacity: 0.000; transform: translate(0.00px, 22.00px); }
+}
+.ph7 { animation: ph7 23s linear infinite; }
+@keyframes ph8 {
+  0.000% { opacity: 0.000; transform: translate(0.00px, 22.00px); }
+  31.087% { opacity: 0.000; transform: translate(0.00px, 22.00px); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
+  33.043% { opacity: 1.000; transform: translate(0.00px, 0.00px); }
+  91.304% { opacity: 1.000; transform: translate(0.00px, 0.00px); }
+  91.348% { opacity: 0.000; transform: translate(0.00px, 22.00px); }
+  100.000% { opacity: 0.000; transform: translate(0.00px, 22.00px); }
+}
+.ph8 { animation: ph8 23s linear infinite; }
+@keyframes ph9 {
   0.000% { opacity: 0.000; }
   41.739% { opacity: 0.000; }
   42.087% { opacity: 0.300; }
   43.261% { opacity: 0.000; }
   100.000% { opacity: 0.000; }
 }
-.ph7 { animation: ph7 23s linear infinite; }
-@keyframes ph8 {
+.ph9 { animation: ph9 23s linear infinite; }
+@keyframes ph10 {
   0.000% { opacity: 1.000; transform: rotate(0.0deg); }
   42.609% { opacity: 1.000; transform: rotate(0.0deg); }
   47.826% { opacity: 1.000; transform: rotate(720.0deg); }
   100.000% { opacity: 1.000; transform: rotate(0.0deg); }
 }
-.ph8 { animation: ph8 23s linear infinite; }
-@keyframes ph9 {
+.ph10 { animation: ph10 23s linear infinite; }
+@keyframes ph11 {
   0.000% { opacity: 0.000; }
   42.174% { opacity: 0.000; }
   42.609% { opacity: 1.000; }
@@ -394,8 +413,8 @@
   99.957% { opacity: 0.000; }
   100.000% { opacity: 0.000; }
 }
-.ph9 { animation: ph9 23s linear infinite; }
-@keyframes ph10 {
+.ph11 { animation: ph11 23s linear infinite; }
+@keyframes ph12 {
   0.000% { opacity: 0.000; }
   17.391% { opacity: 0.000; }
   19.130% { opacity: 1.000; }
@@ -403,8 +422,8 @@
   91.348% { opacity: 0.000; }
   100.000% { opacity: 0.000; }
 }
-.ph10 { animation: ph10 23s linear infinite; }
-@keyframes ph11 {
+.ph12 { animation: ph12 23s linear infinite; }
+@keyframes ph13 {
   0.000% { opacity: 0.000; transform: translate(0.00px, 30.00px); }
   1.304% { opacity: 0.000; transform: translate(0.00px, 30.00px); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
   4.348% { opacity: 1.000; transform: translate(0.00px, 0.00px); }
@@ -412,8 +431,8 @@
   91.348% { opacity: 0.000; transform: translate(0.00px, 30.00px); }
   100.000% { opacity: 0.000; transform: translate(0.00px, 30.00px); }
 }
-.ph11 { animation: ph11 23s linear infinite; }
-@keyframes ph12 {
+.ph13 { animation: ph13 23s linear infinite; }
+@keyframes ph14 {
   0.000% { opacity: 0.000; transform: translate(-46.00px, 0.00px); }
   4.783% { opacity: 0.000; transform: translate(-46.00px, 0.00px); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
   7.826% { opacity: 1.000; transform: translate(0.00px, 0.00px); }
@@ -421,8 +440,8 @@
   91.348% { opacity: 0.000; transform: translate(-46.00px, 0.00px); }
   100.000% { opacity: 0.000; transform: translate(-46.00px, 0.00px); }
 }
-.ph12 { animation: ph12 23s linear infinite; }
-@keyframes ph13 {
+.ph14 { animation: ph14 23s linear infinite; }
+@keyframes ph15 {
   0.000% { opacity: 0.000; stroke-dashoffset: 1.000; }
   8.696% { opacity: 0.000; stroke-dashoffset: 1.000; }
   8.739% { opacity: 1.000; stroke-dashoffset: 1.000; animation-timing-function: ease-out; }
@@ -431,8 +450,8 @@
   91.348% { opacity: 0.000; stroke-dashoffset: 1.000; }
   100.000% { opacity: 0.000; stroke-dashoffset: 1.000; }
 }
-.ph13 { animation: ph13 23s linear infinite; }
-@keyframes ph14 {
+.ph15 { animation: ph15 23s linear infinite; }
+@keyframes ph16 {
   0.000% { opacity: 0.000; transform: translate(0.00px, 8.00px); }
   51.739% { opacity: 0.000; transform: translate(0.00px, 8.00px); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
   53.478% { opacity: 1.000; transform: translate(0.00px, 0.00px); }
@@ -440,8 +459,8 @@
   91.348% { opacity: 0.000; transform: translate(0.00px, 0.00px); }
   100.000% { opacity: 0.000; transform: translate(0.00px, 8.00px); }
 }
-.ph14 { animation: ph14 23s linear infinite; }
-@keyframes ph15 {
+.ph16 { animation: ph16 23s linear infinite; }
+@keyframes ph17 {
   0.000% { opacity: 0.000; transform: translate(0.00px, 8.00px); }
   53.913% { opacity: 0.000; transform: translate(0.00px, 8.00px); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
   55.870% { opacity: 1.000; transform: translate(0.00px, 0.00px); }
@@ -449,8 +468,8 @@
   91.348% { opacity: 0.000; transform: translate(0.00px, 8.00px); }
   100.000% { opacity: 0.000; transform: translate(0.00px, 8.00px); }
 }
-.ph15 { animation: ph15 23s linear infinite; }
-@keyframes ph16 {
+.ph17 { animation: ph17 23s linear infinite; }
+@keyframes ph18 {
   0.000% { opacity: 0.000; transform: translate(0.00px, 8.00px); }
   56.087% { opacity: 0.000; transform: translate(0.00px, 8.00px); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
   58.043% { opacity: 1.000; transform: translate(0.00px, 0.00px); }
@@ -458,8 +477,8 @@
   91.348% { opacity: 0.000; transform: translate(0.00px, 8.00px); }
   100.000% { opacity: 0.000; transform: translate(0.00px, 8.00px); }
 }
-.ph16 { animation: ph16 23s linear infinite; }
-@keyframes ph17 {
+.ph18 { animation: ph18 23s linear infinite; }
+@keyframes ph19 {
   0.000% { opacity: 0.000; transform: translate(0.00px, 8.00px); }
   58.261% { opacity: 0.000; transform: translate(0.00px, 8.00px); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
   60.217% { opacity: 1.000; transform: translate(0.00px, 0.00px); }
@@ -467,8 +486,8 @@
   91.348% { opacity: 0.000; transform: translate(0.00px, 8.00px); }
   100.000% { opacity: 0.000; transform: translate(0.00px, 8.00px); }
 }
-.ph17 { animation: ph17 23s linear infinite; }
-@keyframes ph18 {
+.ph19 { animation: ph19 23s linear infinite; }
+@keyframes ph20 {
   0.000% { opacity: 0.000; transform: translate(0.00px, 8.00px); }
   60.435% { opacity: 0.000; transform: translate(0.00px, 8.00px); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
   62.391% { opacity: 1.000; transform: translate(0.00px, 0.00px); }
@@ -476,8 +495,8 @@
   91.348% { opacity: 0.000; transform: translate(0.00px, 8.00px); }
   100.000% { opacity: 0.000; transform: translate(0.00px, 8.00px); }
 }
-.ph18 { animation: ph18 23s linear infinite; }
-@keyframes ph19 {
+.ph20 { animation: ph20 23s linear infinite; }
+@keyframes ph21 {
   0.000% { opacity: 0.000; transform: translate(0.00px, 8.00px); }
   62.609% { opacity: 0.000; transform: translate(0.00px, 8.00px); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
   64.565% { opacity: 1.000; transform: translate(0.00px, 0.00px); }
@@ -485,8 +504,8 @@
   91.348% { opacity: 0.000; transform: translate(0.00px, 8.00px); }
   100.000% { opacity: 0.000; transform: translate(0.00px, 8.00px); }
 }
-.ph19 { animation: ph19 23s linear infinite; }
-@keyframes ph20 {
+.ph21 { animation: ph21 23s linear infinite; }
+@keyframes ph22 {
   0.000% { opacity: 0.000; transform: translate(0.00px, 8.00px); }
   64.783% { opacity: 0.000; transform: translate(0.00px, 8.00px); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
   66.739% { opacity: 1.000; transform: translate(0.00px, 0.00px); }
@@ -494,8 +513,8 @@
   91.348% { opacity: 0.000; transform: translate(0.00px, 8.00px); }
   100.000% { opacity: 0.000; transform: translate(0.00px, 8.00px); }
 }
-.ph20 { animation: ph20 23s linear infinite; }
-@keyframes ph21 {
+.ph22 { animation: ph22 23s linear infinite; }
+@keyframes ph23 {
   0.000% { opacity: 0.000; transform: translate(0.00px, 70.00px); }
   48.696% { opacity: 0.000; transform: translate(0.00px, 70.00px); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
   52.174% { opacity: 1.000; transform: translate(0.00px, 0.00px); }
@@ -503,8 +522,8 @@
   91.348% { opacity: 0.000; transform: translate(0.00px, 70.00px); }
   100.000% { opacity: 0.000; transform: translate(0.00px, 70.00px); }
 }
-.ph21 { animation: ph21 23s linear infinite; }
-@keyframes ph22 {
+.ph23 { animation: ph23 23s linear infinite; }
+@keyframes ph24 {
   0.000% { opacity: 0.000; transform: translate(700.00px, 760.00px) scale(1.000); }
   18.261% { opacity: 0.000; transform: translate(700.00px, 760.00px) scale(1.000); animation-timing-function: cubic-bezier(.45,0,.2,1); }
   19.130% { opacity: 1.000; transform: translate(240.00px, 483.00px) scale(1.000); }
@@ -525,39 +544,39 @@
   99.957% { opacity: 0.000; transform: translate(700.00px, 760.00px) scale(1.000); }
   100.000% { opacity: 0.000; transform: translate(700.00px, 760.00px) scale(1.000); }
 }
-.ph22 { animation: ph22 23s linear infinite; }
-@keyframes ph23 {
+.ph24 { animation: ph24 23s linear infinite; }
+@keyframes ph25 {
   0.000% { opacity: 0.000; transform: scale(0.200); }
   21.304% { opacity: 0.000; transform: scale(0.200); }
   21.391% { opacity: 0.750; transform: scale(0.200); animation-timing-function: ease-out; }
   24.348% { opacity: 0.000; transform: scale(1.800); }
   100.000% { opacity: 0.000; transform: scale(0.200); }
 }
-.ph23 { animation: ph23 23s linear infinite; }
-@keyframes ph24 {
+.ph25 { animation: ph25 23s linear infinite; }
+@keyframes ph26 {
   0.000% { opacity: 0.000; transform: scale(0.200); }
   30.435% { opacity: 0.000; transform: scale(0.200); }
   30.522% { opacity: 0.750; transform: scale(0.200); animation-timing-function: ease-out; }
   33.478% { opacity: 0.000; transform: scale(1.800); }
   100.000% { opacity: 0.000; transform: scale(0.200); }
 }
-.ph24 { animation: ph24 23s linear infinite; }
-@keyframes ph25 {
+.ph26 { animation: ph26 23s linear infinite; }
+@keyframes ph27 {
   0.000% { opacity: 0.000; transform: scale(0.200); }
   41.739% { opacity: 0.000; transform: scale(0.200); }
   41.826% { opacity: 0.750; transform: scale(0.200); animation-timing-function: ease-out; }
   44.783% { opacity: 0.000; transform: scale(1.800); }
   100.000% { opacity: 0.000; transform: scale(0.200); }
 }
-.ph25 { animation: ph25 23s linear infinite; }
-@keyframes ph26 {
+.ph27 { animation: ph27 23s linear infinite; }
+@keyframes ph28 {
   0.000% { opacity: 1.000; }
   88.696% { opacity: 1.000; }
   90.870% { opacity: 0.000; }
   99.957% { opacity: 0.000; }
   100.000% { opacity: 1.000; }
 }
-.ph26 { animation: ph26 23s linear infinite; }
+.ph28 { animation: ph28 23s linear infinite; }
 .ph-tc { transform-origin: center; transform-box: fill-box; }
 @media (prefers-reduced-motion: no-preference) { .ps-hero > img { visibility: hidden; } }
 @media (prefers-reduced-motion: reduce) { .ps-hero__fx { display: none; } }
