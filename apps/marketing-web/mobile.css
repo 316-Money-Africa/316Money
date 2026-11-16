@@ -270,3 +270,8 @@
   body.pg-oc :is(#friction, #brand, #workflow) :is(.bz-split__media, .oc-split__media) { order: 8 !important; margin-top: 1.75rem; }
   body.pg-oc :is(#friction, #brand, #workflow) .oc-btn { order: 7; }
 }
+
+/* Business invoicing, phones: the hero picture was small inside its box (the cards fill about half of it), so the whole picture is enlarged to read clearly */
+@media (max-width: 40rem) {
+  body .oc-hero__media.iv-hero { transform: translateX(9%) scale(1.32); transform-origin: 50% 50%; margin: 3.25rem 0 3rem; }
+}
