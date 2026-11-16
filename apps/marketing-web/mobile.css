@@ -237,3 +237,30 @@
   #built .oc-bt__bar::-webkit-scrollbar { display: none; }
   #built .oc-bt__bar label { flex: none; white-space: nowrap; min-height: 2.75rem; padding: 0 1.125rem; }
 }
+
+/* ---------- Every other Business and Extras page, phones only (user-mandated, modelled on Business invoicing) ----------
+   Pages already specified one by one (Accept online payments, Online checkout, Payment links) carry .pg-keep and keep their own layout.
+   Hero: title, text, small buttons on the left, then the picture. Sections with text and a picture: title, text, small Explore button on the left, then the picture;
+   sections with a checklist: title, text, picture, checklist, small Explore button on the left. */
+@media (max-width: 40rem) {
+  body:not(.pg-keep) .oc-hero__copy > .oc-cta { order: 4; margin-top: 1.5rem; }
+  body:not(.pg-keep) .oc-hero__media { order: 5; margin: 2rem 0 0; }
+  body:not(.pg-keep) .oc-hero .oc-btn--white { background: #EDE8FB; color: #6B45E0; }
+  body:not(.pg-keep) .oc-hero .oc-btn { min-height: 2.75rem; padding: 0 1.25rem; font-size: 0.875rem; }
+
+  body:not(.pg-keep) .oc-sec .oc-btn, body:not(.pg-keep) .pl-sec .oc-btn, body:not(.pg-keep) .pl-flow .btn, body:not(.pg-keep) .hs-sec .btn { width: auto; min-height: 2.75rem; padding: 0 1.25rem; font-size: 0.875rem; align-self: flex-start; }
+  body:not(.pg-keep) .bz-split:not(:has(.pl-checks)) > .bz-split__media, body:not(.pg-keep) .oc-split:not(:has(.pl-checks)) > .oc-split__media { order: 8 !important; margin-top: 1.75rem; }
+  body:not(.pg-keep) .bz-split:has(.pl-checks) > .bz-split__media, body:not(.pg-keep) .oc-split:has(.pl-checks) > .oc-split__media { order: 5 !important; }
+}
+
+/* Accept online payments, phones: the hero buttons sit between the text and the picture */
+@media (max-width: 40rem) {
+  body.pg-aop .oc-hero__copy > .oc-cta { order: 4; margin-top: 1.5rem; }
+  body.pg-aop .oc-hero__media { order: 5; margin: 2rem 0 0; }
+}
+
+/* Accept online payments, phones: "Get started with online check-out" sits right under the paragraph, before the three features */
+@media (max-width: 40rem) {
+  body.pg-aop .oc-local__copy > .oc-local__cta { order: 5; margin: 1.25rem 0 0; }
+  body.pg-aop .oc-local__copy > .oc-feats { order: 6; margin-top: 2rem; }
+}
