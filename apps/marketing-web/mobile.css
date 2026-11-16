@@ -201,6 +201,10 @@
   .oc-hero .oc-cta { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 0.625rem; }
   .oc-hero .oc-btn, #platforms .oc-btn, #control .oc-btn, #integration .oc-btn, #friction .oc-btn, #brand .oc-btn, #workflow .oc-btn, .oc-local__cta { width: auto; min-height: 2.75rem; padding: 0 1.25rem; font-size: 0.875rem; }
   #platforms .oc-btn, #integration .oc-btn, #friction .oc-btn, #brand .oc-btn, #workflow .oc-btn { align-self: flex-start; }
+  /* Payment links, phones: Configure your link reads title, text, Explore, then the picture; Automate payment links reads title, text, picture, checklist, Explore */
+  #personalise .oc-btn, #api .oc-btn { width: auto; min-height: 2.75rem; padding: 0 1.25rem; font-size: 0.875rem; align-self: flex-start; }
+  #personalise .bz-split__media { order: 8 !important; margin-top: 1.75rem; }
+  #api .bz-split__media { order: 5 !important; }
   #control .oc-btn { align-self: flex-start; }
   .oc-local__cta { align-self: flex-start; padding: 0 1rem; font-size: 0.8125rem; gap: 0.4rem; }
   .oc-local__cta .oc-local__arr { width: 0.9em; height: 0.9em; }
