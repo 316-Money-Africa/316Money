@@ -199,9 +199,9 @@
    3) "Different businesses. Different ways to get paid": two-line title and one scrolling row of tabs. */
 @media (max-width: 40rem) {
   .oc-hero .oc-cta { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 0.625rem; }
-  .oc-hero .oc-btn, #platforms .oc-btn, #control .oc-btn, #integration .oc-btn, .oc-local__cta { width: auto; min-height: 2.75rem; padding: 0 1.25rem; font-size: 0.875rem; }
-  #platforms .oc-btn, #integration .oc-btn { align-self: flex-start; }
-  #control .oc-btn { align-self: flex-end; }
+  .oc-hero .oc-btn, #platforms .oc-btn, #control .oc-btn, #integration .oc-btn, #friction .oc-btn, #brand .oc-btn, #workflow .oc-btn, .oc-local__cta { width: auto; min-height: 2.75rem; padding: 0 1.25rem; font-size: 0.875rem; }
+  #platforms .oc-btn, #integration .oc-btn, #friction .oc-btn, #brand .oc-btn, #workflow .oc-btn { align-self: flex-start; }
+  #control .oc-btn { align-self: flex-start; }
   .oc-local__cta { align-self: flex-start; padding: 0 1rem; font-size: 0.8125rem; gap: 0.4rem; }
   .oc-local__cta .oc-local__arr { width: 0.9em; height: 0.9em; }
 
@@ -214,7 +214,9 @@
   .oc-scroll .oc-acc__item--4 { order: 7; } .oc-scroll .oc-pf--host { order: 8; }
   .oc-scroll .oc-acc__item--5 { order: 9; } .oc-scroll .oc-ps--vis { order: 10; }
   .oc-scroll .oc-acc__item--6 { order: 11; } .oc-scroll .oc-ps--dev { order: 12; }
-  .oc-scroll .oc-pf, .oc-scroll .oc-ps { display: block !important; width: 100%; max-width: 28rem; margin: 1.25rem auto 0; }
+  /* Online checkout: three steps, each followed by its own picture */
+  .oc-scroll .oc-pa--1 { order: 2; } .oc-scroll .oc-pa--2 { order: 4; } .oc-scroll .oc-pa--3 { order: 6; }
+  .oc-scroll .oc-pf, .oc-scroll .oc-ps, .oc-scroll .oc-pa { display: block !important; width: 100%; max-width: 28rem; margin: 1.25rem auto 0; }
   .oc-scroll .oc-acc__item:not(:first-child) { margin-top: 2.25rem; }
   .oc-scroll .oc-acc__item label { padding-block: 0; cursor: default; }
   .oc-scroll .oc-acc__tag { display: block !important; }
