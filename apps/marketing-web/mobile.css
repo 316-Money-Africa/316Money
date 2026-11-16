@@ -192,3 +192,42 @@
 /* Type weight, uniform on every page (user-mandated): section and hero titles are bold, the subtitles under them medium, so none reads faint */
 .hero__title, .sec__title, .split__title, .faq__title, .vc__copy h2, .bz-hero__title, .bz-h2, .bz-ready__title, .oc-h1, .oc-h2, .oc-band__title { font-weight: 700; }
 .hero__lead, .sec__sub, .bz-sub, .bz-lead, .bz-body, .bz-ready__desc, .oc-lead, .oc-sub, .oc-body, .oc-band__desc { font-weight: 500; }
+
+/* ---------- Accept online payments, phones only (user-mandated) ----------
+   1) the buttons are compact (44px tall touch targets, only as wide as their words) and sit left, except the Payment visibility one which sits right;
+   2) the six payment-method steps read text, then its own picture, then the next step (the pictures are seen as the page scrolls);
+   3) "Different businesses. Different ways to get paid": two-line title and one scrolling row of tabs. */
+@media (max-width: 40rem) {
+  .oc-hero .oc-cta { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 0.625rem; }
+  .oc-hero .oc-btn, #platforms .oc-btn, #control .oc-btn, #integration .oc-btn, .oc-local__cta { width: auto; min-height: 2.75rem; padding: 0 1.25rem; font-size: 0.875rem; }
+  #platforms .oc-btn, #integration .oc-btn { align-self: flex-start; }
+  #control .oc-btn { align-self: flex-end; }
+  .oc-local__cta { align-self: flex-start; padding: 0 1rem; font-size: 0.8125rem; gap: 0.4rem; }
+  .oc-local__cta .oc-local__arr { width: 0.9em; height: 0.9em; }
+
+  .oc-scroll .oc-acc__card { display: flex; flex-direction: column; gap: 0; padding: 1.25rem; }
+  .oc-scroll .oc-acc__list, .oc-scroll .oc-acc__panel { display: contents; }
+  .oc-scroll .oc-acc__item { border-bottom: 0; }
+  .oc-scroll .oc-acc__item--1 { order: 1; } .oc-scroll .oc-pf--flow { order: 2; }
+  .oc-scroll .oc-acc__item--2 { order: 3; } .oc-scroll .oc-pf--cur { order: 4; }
+  .oc-scroll .oc-acc__item--3 { order: 5; } .oc-scroll .oc-pf--chat { order: 6; }
+  .oc-scroll .oc-acc__item--4 { order: 7; } .oc-scroll .oc-pf--host { order: 8; }
+  .oc-scroll .oc-acc__item--5 { order: 9; } .oc-scroll .oc-ps--vis { order: 10; }
+  .oc-scroll .oc-acc__item--6 { order: 11; } .oc-scroll .oc-ps--dev { order: 12; }
+  .oc-scroll .oc-pf, .oc-scroll .oc-ps { display: block !important; width: 100%; max-width: 28rem; margin: 1.25rem auto 0; }
+  .oc-scroll .oc-acc__item:not(:first-child) { margin-top: 2.25rem; }
+  .oc-scroll .oc-acc__item label { padding-block: 0; cursor: default; }
+  .oc-scroll .oc-acc__tag { display: block !important; }
+  .oc-scroll .oc-acc__t { color: var(--oc-plum) !important; font-size: clamp(1.15rem, 5vw, 1.4rem) !important; }
+  .oc-scroll .oc-acc__d { display: block !important; margin: 0.9rem 0 0; }
+  .oc-scroll .oc-t-closed { display: none !important; }
+  .oc-scroll .oc-t-open { display: inline !important; }
+  .oc-acc__panel > .is-wait, .oc-acc__panel > .is-wait * { animation-play-state: paused !important; }
+
+  #built .oc-h2 { font-size: clamp(0.9rem, 4.3vw, 1.15rem); line-height: 1.25; }
+  #built .oc-h2 .ln { display: block; }
+  #built .oc-sub { font-size: 0.8125rem; line-height: 1.5; }
+  #built .oc-bt__bar { flex-wrap: nowrap; justify-content: flex-start; gap: 0.625rem; overflow-x: auto; margin-inline: calc(-1 * var(--oc-gut)); padding-inline: var(--oc-gut); padding-bottom: 0.25rem; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  #built .oc-bt__bar::-webkit-scrollbar { display: none; }
+  #built .oc-bt__bar label { flex: none; white-space: nowrap; min-height: 2.75rem; padding: 0 1.125rem; }
+}

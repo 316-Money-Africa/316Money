@@ -59,6 +59,21 @@
   const panel = document.querySelector(".oc-scroll .oc-acc__panel");
   const root = panel && panel.closest(".oc-acc");
   if (!root || !("IntersectionObserver" in window)) return;
+  if (window.matchMedia("(max-width: 40rem)").matches) {
+    // phones: every picture of the list is on the page, so each one waits on its own first frame and starts when it scrolls into view
+    [...panel.children].forEach((kid) => {
+      kid.classList.add("is-wait");
+      const io = new IntersectionObserver((entries) => {
+        if (entries[entries.length - 1].intersectionRatio >= 0.3) {
+          kid.getAnimations({ subtree: true }).forEach((a) => { try { a.currentTime = 0; } catch (e) { /* not seekable */ } });
+          kid.classList.remove("is-wait");
+          io.disconnect();
+        }
+      }, { threshold: [0, 0.3, 0.6] });
+      io.observe(kid);
+    });
+    return;
+  }
   const restart = () => panel.getAnimations({ subtree: true }).forEach((a) => { try { a.currentTime = 0; } catch (e) { /* not seekable */ } });
   root.classList.add("oc-acc--wait");
   let live = false;
