@@ -264,3 +264,9 @@
   body.pg-aop .oc-local__copy > .oc-local__cta { order: 5; margin: 1.25rem 0 0; }
   body.pg-aop .oc-local__copy > .oc-feats { order: 6; margin-top: 2rem; }
 }
+
+/* Online checkout, phones: title, text, small Explore button, then the picture */
+@media (max-width: 40rem) {
+  body.pg-oc :is(#friction, #brand, #workflow) :is(.bz-split__media, .oc-split__media) { order: 8 !important; margin-top: 1.75rem; }
+  body.pg-oc :is(#friction, #brand, #workflow) .oc-btn { order: 7; }
+}
