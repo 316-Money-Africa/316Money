@@ -1,5 +1,6 @@
 /* Sign-up modal: every a[href="#sign-up"] opens it. Steps: 1 details -> 2 phone code -> 3 account ready.
-   Marketing UI only: nothing is sent anywhere and no account is created (the real sign-up lives in the 316 app). */
+   A walk-through of the screens only: "Create account" always moves to the next step (no checks, nothing blocks the flow), nothing is sent
+   anywhere and no account is created (the real sign-up lives in the 316 app). */
 (function () {
   var dlg = document.getElementById("sign-up");
   if (!dlg || typeof dlg.showModal !== "function") return;
@@ -8,7 +9,6 @@
   var form = document.getElementById("su-form");
   var codeForm = document.getElementById("su-code-form");
   var digits = Array.prototype.slice.call(dlg.querySelectorAll(".su__digit"));
-  var codeErr = document.getElementById("su-code-err");
   var resend = document.getElementById("su-resend");
   var note = document.getElementById("su-note");
   var sent = document.getElementById("su-sent");
@@ -24,19 +24,9 @@
     if (first) first.focus();
   }
 
-  function setErr(id, msg, input) {
-    var el = document.getElementById(id);
-    if (el) { el.textContent = msg || ""; el.hidden = !msg; }
-    if (input) { if (msg) input.setAttribute("aria-invalid", "true"); else input.removeAttribute("aria-invalid"); }
-  }
-
   function reset() {
     form.reset();
-    ["name", "phone", "email", "pass", "agree"].forEach(function (k) {
-      setErr("su-" + k + "-err", "", document.getElementById("su-" + k));
-    });
-    digits.forEach(function (d) { d.value = ""; d.removeAttribute("aria-invalid"); });
-    setErr("su-code-err", "");
+    digits.forEach(function (d) { d.value = ""; });
     note.hidden = true;
     stopCooldown();
     show(1, false);
@@ -69,31 +59,15 @@
   var phoneInput = document.getElementById("su-phone");
   phoneInput.addEventListener("input", function () { phoneInput.value = phoneInput.value.replace(/[^\d\s]/g, ""); });
 
-  function validate() {
-    var f = { name: document.getElementById("su-name"), phone: phoneInput, email: document.getElementById("su-email"), pass: document.getElementById("su-pass"), agree: document.getElementById("su-agree") };
-    var digitsOnly = f.phone.value.replace(/\D/g, "").replace(/^0/, "");
-    var bad = null;
-    function check(key, msg) { setErr("su-" + key + "-err", msg, f[key]); if (msg && !bad) bad = f[key]; }
-    check("name", f.name.value.trim().split(/\s+/).filter(Boolean).length >= 2 ? "" : "Enter your first and last name.");
-    check("phone", digitsOnly.length === 10 ? "" : "Enter a valid 10-digit phone number.");
-    check("email", /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(f.email.value.trim()) ? "" : "Enter a valid email address.");
-    check("pass", f.pass.value.length >= 8 ? "" : "Use at least 8 characters.");
-    check("agree", f.agree.checked ? "" : "Please accept the terms to continue.");
-    if (bad) bad.focus();
-    return bad ? null : digitsOnly;
-  }
-
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-    var phone = validate();
-    if (!phone) return;
-    sent.textContent = "+234 " + phone.slice(0, 2) + "X XXX XXXX"; // the number is never shown in full
-    digits.forEach(function (d) { d.value = ""; d.removeAttribute("aria-invalid"); });
-    setErr("su-code-err", "");
+    var typed = phoneInput.value.replace(/\D/g, "").replace(/^0/, "");
+    // the number is never shown in full; with nothing typed the example shape is shown
+    sent.textContent = "+234 " + (typed.length >= 2 ? typed.slice(0, 2) : "80") + "X XXX XXXX";
+    digits.forEach(function (d) { d.value = ""; });
     show(2);
     startCooldown();
   });
-  form.addEventListener("input", function (e) { if (e.target.getAttribute("aria-invalid")) { var k = e.target.id.replace("su-", ""); setErr("su-" + k + "-err", "", e.target); } });
 
   /* ---------- step 2 ---------- */
   digits.forEach(function (d, i) {
@@ -101,8 +75,6 @@
       var v = d.value.replace(/\D/g, "");
       if (v.length > 1) { fill(v, i); return; }
       d.value = v;
-      d.removeAttribute("aria-invalid");
-      setErr("su-code-err", "");
       if (v && digits[i + 1]) digits[i + 1].focus();
     });
     d.addEventListener("keydown", function (e) {
@@ -119,18 +91,10 @@
   function fill(text, from) {
     for (var k = 0; k < text.length && from + k < digits.length; k++) digits[from + k].value = text.charAt(k);
     digits[Math.min(from + text.length, digits.length - 1)].focus();
-    setErr("su-code-err", "");
   }
 
   codeForm.addEventListener("submit", function (e) {
     e.preventDefault();
-    var code = digits.map(function (d) { return d.value; }).join("");
-    if (code.length < digits.length) {
-      digits.forEach(function (d) { if (!d.value) d.setAttribute("aria-invalid", "true"); });
-      setErr("su-code-err", "Enter the 5-digit code.");
-      (digits.filter(function (d) { return !d.value; })[0] || digits[0]).focus();
-      return;
-    }
     stopCooldown();
     show(3);
   });
@@ -151,7 +115,6 @@
   function stopCooldown() { stopTimer(); resend.disabled = false; resend.textContent = "Resend"; }
   resend.addEventListener("click", function () {
     digits.forEach(function (d) { d.value = ""; });
-    setErr("su-code-err", "");
     note.textContent = "A new code is on its way.";
     note.hidden = false;
     digits[0].focus();
