@@ -53,6 +53,7 @@ Object.assign(WIDTHS, {
   "Rewards/possibilities.png": 1700, "Rewards/loyalty.png": 1700, "Rewards/relationships.png": 1700, "Rewards/repeat.png": 1700, "Rewards/repeat-chat.png": 1829, "Rewards/repeat-stars.png": 899, "Rewards/hero.png": 1700,
   "GiftCards/hero.png": 1900, "GiftCards/value.png": 1700, "GiftCards/occasion.png": 1700, "GiftCards/manage.png": 1800, "GiftCards/share.png": 2000, "GiftCards/redeem.png": 2100,
 });
+WIDTHS["Signup/photo.png"] = 900; // sign-up modal photo: shown about 26rem wide, so 2x for retina
 const QUALITY = 86;
 const FOLDER_QUALITY = { Cards: 92, Airtime: 92, Bills: 92, Pay: 92, Business: 94, Checkout: 94, Links: 94, Developers: 94, Integrations: 94, Invoicing: 94, PaySmall: 94, OnlineCheckout: 94, Donations: 95, DigitalCards: 95, Rewards: 95, GiftCards: 95, Hotspots: 95 }; // card artwork carries small UI text, so it keeps more detail // high enough that small UI text baked into the artwork stays crisp
 

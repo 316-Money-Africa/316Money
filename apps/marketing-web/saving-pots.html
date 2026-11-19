@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="styles.css?v=77986a3b">
   <link rel="stylesheet" href="sections.css?v=373b85c0">
   <link rel="stylesheet" href="features.css?v=1637e6e0">
+  <link rel="stylesheet" href="signup.css?v=aba3427a">
   <link rel="stylesheet" href="mobile.css?v=6b276582">
 </head>
 <body>
@@ -198,6 +199,98 @@
       </nav>
     </div>
   </header>
+  <!-- Sign-up modal: opened by every a[href="#sign-up"] (signup.js). Three steps: details -> phone code -> account ready. Marketing UI only: nothing is sent anywhere. -->
+<dialog class="su" id="sign-up" aria-labelledby="su-title-1" aria-modal="true">
+  <div class="su__card">
+    <div class="su__photo">
+      <img src="assets/Signup/photo.webp" alt="" width="900" height="1305" decoding="async">
+      <p class="su__tagline">Find more ways to earn with Hotspots</p>
+    </div>
+
+    <div class="su__pane">
+      <button class="su__close" type="button" aria-label="Close sign up" data-su-close>
+        <svg class="su__x" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+
+      <!-- Step 1 · details -->
+      <section class="su__step" data-su-step="1">
+        <div class="su__brand"><img src="assets/logo.png" alt="" width="131" height="131"><span class="su__brandname">PAY</span></div>
+        <h2 class="su__title" id="su-title-1" tabindex="-1">Create your account <span class="su__wave" aria-hidden="true">👋</span></h2>
+        <p class="su__sub">Enter your details to get started</p>
+
+        <form class="su__form" id="su-form" novalidate>
+          <div class="su__field">
+            <label class="su__label" for="su-name">Full name</label>
+            <input class="su__input" id="su-name" name="name" type="text" autocomplete="name" aria-describedby="su-name-err">
+            <p class="su__err" id="su-name-err" hidden></p>
+          </div>
+
+          <div class="su__field">
+            <label class="su__label" for="su-phone">Phone number</label>
+            <div class="su__phone">
+              <span class="su__cc" aria-label="Nigeria, +234">
+                <svg class="su__flag" viewBox="0 0 3 2" aria-hidden="true"><rect class="su__flag-g" width="1" height="2"/><rect class="su__flag-w" x="1" width="1" height="2"/><rect class="su__flag-g" x="2" width="1" height="2"/></svg>
+                <span class="su__ccnum">+234</span>
+                <svg class="su__chev" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5l3 3 3-3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <input class="su__input su__input--phone" id="su-phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="_ _ _ _ _ _ _ _ _ _" maxlength="14" aria-describedby="su-phone-err">
+            </div>
+            <p class="su__err" id="su-phone-err" hidden></p>
+          </div>
+
+          <div class="su__field">
+            <label class="su__label" for="su-email">Email address</label>
+            <input class="su__input" id="su-email" name="email" type="email" autocomplete="email" aria-describedby="su-email-err">
+            <p class="su__err" id="su-email-err" hidden></p>
+          </div>
+
+          <div class="su__field">
+            <label class="su__label" for="su-pass">Password</label>
+            <input class="su__input" id="su-pass" name="password" type="password" autocomplete="new-password" aria-describedby="su-pass-err">
+            <p class="su__err" id="su-pass-err" hidden></p>
+          </div>
+
+          <div class="su__field">
+            <label class="su__agree"><input class="su__check" id="su-agree" type="checkbox" name="agree" aria-describedby="su-agree-err"><span>I agree to the Terms of Service and Privacy Policy.</span></label>
+            <p class="su__err" id="su-agree-err" hidden></p>
+          </div>
+
+          <button class="su__btn" type="submit">Create account</button>
+          <p class="su__foot">Already registered ? <a href="#sign-in">Sign in?</a></p>
+        </form>
+      </section>
+
+      <!-- Step 2 · verify phone -->
+      <section class="su__step su__step--center" data-su-step="2" hidden>
+        <div class="su__brand su__brand--center"><img src="assets/logo.png" alt="" width="131" height="131"><span class="su__brandname">PAY</span></div>
+        <h2 class="su__title su__title--center" id="su-title-2" tabindex="-1">Verify your phone number</h2>
+        <p class="su__sub su__sub--center">Enter the code sent to <b class="su__sent" id="su-sent">+234 80X XXX XXXX</b></p>
+
+        <form class="su__form su__form--code" id="su-code-form" novalidate>
+          <div class="su__code" role="group" aria-label="5-digit verification code">
+            <input class="su__digit" type="text" inputmode="numeric" maxlength="1" autocomplete="one-time-code" aria-label="Digit 1">
+            <input class="su__digit" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 2">
+            <input class="su__digit" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 3">
+            <input class="su__digit" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 4">
+            <input class="su__digit" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 5">
+          </div>
+          <p class="su__err su__err--center" id="su-code-err" role="alert" hidden></p>
+          <button class="su__btn" type="submit">Create account</button>
+          <p class="su__foot su__foot--left">Didn't receive any code? <button class="su__resend" type="button" id="su-resend">Resend</button></p>
+          <p class="su__note" id="su-note" role="status" hidden></p>
+        </form>
+      </section>
+
+      <!-- Step 3 · ready -->
+      <section class="su__step su__step--center su__step--done" data-su-step="3" hidden>
+        <span class="su__tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6 12.5l4 4 8-9" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h2 class="su__title su__title--center su__title--done" id="su-title-3" tabindex="-1">Your account is ready</h2>
+        <p class="su__sub su__sub--center su__sub--done">Your Hotspots account is now active and ready for use, click the button to get started.</p>
+        <button class="su__btn su__btn--done" type="button" data-su-close>Continue</button>
+      </section>
+    </div>
+  </div>
+</dialog>
 
   <main>
     <!-- 1 · Hero (gradient white -> lavender) -->
@@ -332,5 +425,6 @@
     <div class="wrap footer__legal"><p>© 2026 316 Money. All rights reserved.</p></div>
   </footer>
   <script src="nav.js?v=b940ea32" defer></script>
+  <script src="signup.js?v=139200c0" defer></script>
 </body>
 </html>

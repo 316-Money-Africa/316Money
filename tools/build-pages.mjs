@@ -12,7 +12,7 @@ const PAGES = join(ROOT, "tools", "pages");
 const OUT = join(ROOT, "apps", "marketing-web");
 const read = (p) => readFileSync(p, "utf8").split("\r\n").join("\n");
 const part = (n) => read(join(PAGES, "partials", n + ".html")).trim();
-const partials = { sprite: part("sprite"), header: part("header"), footer: part("footer"), faq_home: part("faq-home"), download: part("download") };
+const partials = { sprite: part("sprite"), header: part("header"), footer: part("footer"), faq_home: part("faq-home"), download: part("download"), signup: part("signup") };
 partials.faq_download = [partials.faq_home, partials.download].join("\n\n");
 
 
@@ -74,7 +74,7 @@ for (const f of readdirSync(PAGES).filter((n) => n.endsWith(".page.html"))) {
   body = expandImages(body);
   if (/\{\{\w+\}\}/.test(body)) throw new Error(`${f}: unresolved placeholder ${body.match(/\{\{\w+\}\}/)[0]}`);
 
-  const css = ["styles.css", "sections.css", ...(meta.css ? meta.css.split(/\s+/).filter(Boolean) : []), "mobile.css"]
+  const css = ["styles.css", "sections.css", ...(meta.css ? meta.css.split(/\s+/).filter(Boolean) : []), "signup.css", "mobile.css"]
     .map((c) => `  <link rel="stylesheet" href="${c}?v=${ver(c)}">`).join("\n");
   const scripts = (meta.js ? meta.js.split(/\s+/).filter(Boolean) : []).map((j) => `
   <script src="${j}?v=${ver(j)}" defer></script>`).join("");
@@ -98,13 +98,15 @@ ${preload}${css}
 <body${meta.bodyclass ? ` class="${meta.bodyclass}"` : ""}>
   ${partials.sprite}
   ${meta.wordmark ? partials.header.replace('<span class="nav__wordmark">MONEY</span>', `<span class="nav__wordmark">${meta.wordmark}</span>`) : partials.header}
+  ${partials.signup}
 
   <main>
 ${body}
   </main>
 
   ${partials.footer}
-  <script src="nav.js?v=${ver("nav.js")}" defer></script>${scripts}
+  <script src="nav.js?v=${ver("nav.js")}" defer></script>
+  <script src="signup.js?v=${ver("signup.js")}" defer></script>${scripts}
 </body>
 </html>
 `;
