@@ -53,6 +53,7 @@ Object.assign(WIDTHS, {
   "Rewards/possibilities.png": 1700, "Rewards/loyalty.png": 1700, "Rewards/relationships.png": 1700, "Rewards/repeat.png": 1700, "Rewards/repeat-chat.png": 1829, "Rewards/repeat-stars.png": 899, "Rewards/hero.png": 1700,
   "GiftCards/hero.png": 1900, "GiftCards/value.png": 1700, "GiftCards/occasion.png": 1700, "GiftCards/manage.png": 1800, "GiftCards/share.png": 2000, "GiftCards/redeem.png": 2100,
 });
+WIDTHS["Signup/signin-art.png"] = 850;
 WIDTHS["Signup/photo.png"] = 900; // sign-up modal photo: shown about 26rem wide, so 2x for retina
 // Hotspots dashboard screen: the welcome strip carries baked text and a button, so it keeps more detail
 Object.assign(WIDTHS, { "Dashboard/welcome-banner.png": 1800, "Dashboard/more-opportunities.png": 1408, "Dashboard/gains.png": 800 });
