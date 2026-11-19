@@ -1,5 +1,5 @@
 /* Sign-up / sign-in modal: every a[href="#sign-up"] opens the "Create your account" choice, every a[href="#sign-in"] opens "Welcome back".
-   Sign up: 0 choose (316 Pay or Email) -> 1 details -> 2 phone code -> 3 account ready -> Continue opens the Hotspots dashboard. Sign in: Login opens the dashboard.
+   Sign up: 0 choose (316 Pay or Email) -> 1 details -> 2 phone code -> 3 account ready -> Continue opens the Hotspots dashboard. Sign in: Login moves on to the "Create your account" choice screen.
    A walk-through of the screens only: "Create account" always moves to the next step (no checks, nothing blocks the flow), nothing is sent
    anywhere and no account is created (the real sign-up lives in the 316 app). */
 (function () {
@@ -66,10 +66,10 @@
   if (location.hash === "#sign-up") open(0);
   if (location.hash === "#sign-in") open("login");
 
-  // Login: straight to the dashboard (no checks, nothing is sent)
+  // Login: no checks, nothing is sent; the next page is the "Create your account" choice screen
   loginForm.addEventListener("submit", function (e) {
     e.preventDefault();
-    location.href = "hotspots-dashboard.html";
+    show(0);
   });
 
   /* ---------- step 1 ---------- */
