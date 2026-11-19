@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="styles.css?v=77986a3b">
   <link rel="stylesheet" href="sections.css?v=373b85c0">
   <link rel="stylesheet" href="features.css?v=1637e6e0">
-  <link rel="stylesheet" href="signup.css?v=aba3427a">
+  <link rel="stylesheet" href="signup.css?v=afd06d0c">
   <link rel="stylesheet" href="mobile.css?v=6b276582">
 </head>
 <body>
@@ -200,20 +200,55 @@
     </div>
   </header>
   <!-- Sign-up modal: opened by every a[href="#sign-up"] (signup.js). Three steps: details -> phone code -> account ready. Marketing UI only: nothing is sent anywhere. -->
-<dialog class="su" id="sign-up" aria-labelledby="su-title-1" aria-modal="true">
-  <div class="su__card">
+<dialog class="su" id="sign-up" aria-labelledby="su-title-0" aria-modal="true">
+  <div class="su__card" id="su-card" data-view="signup">
     <div class="su__photo">
       <img src="assets/Signup/photo.webp" alt="" width="900" height="1305" decoding="async">
       <p class="su__tagline">Find more ways to earn with Hotspots</p>
     </div>
+    <div class="su__art" aria-hidden="true">
+      <p class="su__tagline">Bring financial services closer to your community</p>
+    </div>
 
     <div class="su__pane">
-      <button class="su__close" type="button" aria-label="Close sign up" data-su-close>
+      <button class="su__close" type="button" aria-label="Close" data-su-close>
         <svg class="su__x" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
       </button>
 
+      <!-- Step 0 · choose how to sign up -->
+      <section class="su__step su__step--center" data-su-step="0">
+        <div class="su__brand su__brand--center"><img src="assets/logo.png" alt="" width="131" height="131"><span class="su__brandname su__brandname--hs">Hotspots</span></div>
+        <h2 class="su__title su__title--center" id="su-title-0" tabindex="-1">Create your account <span class="su__wave" aria-hidden="true">👋</span></h2>
+        <p class="su__sub su__sub--center">Select an option below to get started</p>
+        <div class="su__choices">
+          <button class="su__btn su__btn--dark" type="button" data-su-go="3"><img class="su__ico" src="assets/logo.png" alt="" width="131" height="131">Sign up with 316 Pay</button>
+          <button class="su__btn su__btn--dark" type="button" data-su-go="1"><svg class="su__ico" viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="2.5" y="4.5" width="15" height="11" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M3 6l7 5 7-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Sign up with Email</button>
+        </div>
+        <p class="su__foot">Already registered ? <a href="#sign-in" data-su-go="login">Sign in?</a></p>
+      </section>
+
+      <!-- Sign in -->
+      <section class="su__step" data-su-step="login" hidden>
+        <div class="su__brand"><img src="assets/logo.png" alt="" width="131" height="131"><span class="su__brandname su__brandname--hs">Hotspots</span></div>
+        <h2 class="su__title" id="su-title-login" tabindex="-1">Welcome back <span class="su__wave" aria-hidden="true">👋</span></h2>
+        <p class="su__sub">Enter your details to get started</p>
+        <form class="su__form" id="su-login-form" novalidate>
+          <div class="su__field">
+            <label class="su__label" for="su-login-id">Phone number/ Email address</label>
+            <input class="su__input" id="su-login-id" name="id" type="text" autocomplete="username">
+          </div>
+          <div class="su__field">
+            <label class="su__label" for="su-login-pass">Password</label>
+            <input class="su__input" id="su-login-pass" name="password" type="password" autocomplete="current-password">
+          </div>
+          <label class="su__agree"><input class="su__check" type="checkbox" name="agree"><span>I agree to the Terms of Service and Privacy Policy.</span></label>
+          <button class="su__btn" type="submit">Login</button>
+          <p class="su__foot">Already registered ? <a href="#sign-up" data-su-go="0">Sign up?</a></p>
+        </form>
+      </section>
+
       <!-- Step 1 · details -->
-      <section class="su__step" data-su-step="1">
+      <section class="su__step" data-su-step="1" hidden>
         <div class="su__brand"><img src="assets/logo.png" alt="" width="131" height="131"><span class="su__brandname">PAY</span></div>
         <h2 class="su__title" id="su-title-1" tabindex="-1">Create your account <span class="su__wave" aria-hidden="true">👋</span></h2>
         <p class="su__sub">Enter your details to get started</p>
@@ -256,7 +291,7 @@
           </div>
 
           <button class="su__btn" type="submit">Create account</button>
-          <p class="su__foot">Already registered ? <a href="#sign-in">Sign in?</a></p>
+          <p class="su__foot">Already registered ? <a href="#sign-in" data-su-go="login">Sign in?</a></p>
         </form>
       </section>
 
@@ -286,7 +321,7 @@
         <span class="su__tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6 12.5l4 4 8-9" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         <h2 class="su__title su__title--center su__title--done" id="su-title-3" tabindex="-1">Your account is ready</h2>
         <p class="su__sub su__sub--center su__sub--done">Your Hotspots account is now active and ready for use, click the button to get started.</p>
-        <button class="su__btn su__btn--done" type="button" data-su-close>Continue</button>
+        <a class="su__btn su__btn--done" href="hotspots-dashboard.html">Continue</a>
       </section>
     </div>
   </div>
@@ -425,6 +460,6 @@
     <div class="wrap footer__legal"><p>© 2026 316 Money. All rights reserved.</p></div>
   </footer>
   <script src="nav.js?v=b940ea32" defer></script>
-  <script src="signup.js?v=9f00c6e0" defer></script>
+  <script src="signup.js?v=4e415b91" defer></script>
 </body>
 </html>

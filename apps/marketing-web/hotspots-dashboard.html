@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>316 Hotspots · Dashboard</title>
+  <meta name="description" content="Continue your 316 Hotspots onboarding: choose your agent role, add business details, verify your business and submit your application.">
+  <link rel="icon" type="image/png" sizes="131x131" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="styles.css?v=77986a3b">
+  <link rel="stylesheet" href="sections.css?v=373b85c0">
+  <link rel="stylesheet" href="dashboard.css?v=9c532985">
+  <link rel="stylesheet" href="mobile.css?v=6b276582">
+</head>
+<body>
+<svg class="hd__sprite" width="0" height="0" aria-hidden="true" focusable="false">
+  <symbol id="hd-user" viewBox="0 0 20 20"><circle cx="10" cy="7" r="3.2" fill="currentColor"/><path d="M3.8 16.5c.6-3 3.1-4.7 6.2-4.7s5.6 1.7 6.2 4.7z" fill="currentColor"/></symbol>
+  <symbol id="hd-store" viewBox="0 0 20 20"><path d="M3.5 7.5l1.2-3.8h10.6l1.2 3.8M4 8v8h12V8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 16v-4h4v4M3.5 7.5c0 1.2.9 2 2 2s2-.8 2-2c0 1.2.9 2 2.5 2s2.5-.8 2.5-2c0 1.2.9 2 2 2s2-.8 2-2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+  <symbol id="hd-doc" viewBox="0 0 20 20"><path d="M5 2.8h6.5L15 6.3v10.9H5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M11 3v4h4M7.5 10.5h5M7.5 13.5h5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="hd-bank" viewBox="0 0 20 20"><path d="M2.8 8L10 3.5 17.2 8z" fill="currentColor"/><path d="M4.5 9.5h11M5.5 10.5v4.5M8.5 10.5v4.5M11.5 10.5v4.5M14.5 10.5v4.5M3.5 16.5h13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+  <symbol id="hd-check" viewBox="0 0 20 20"><circle cx="10" cy="10" r="7.2" fill="currentColor"/><path d="M6.6 10.2l2.4 2.4 4.4-4.9" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="hd-search" viewBox="0 0 20 20"><circle cx="9" cy="9" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M13 13l3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+  <symbol id="hd-eyeoff" viewBox="0 0 20 20"><path d="M2.5 10s2.7-5 7.5-5 7.5 5 7.5 5-2.7 5-7.5 5-7.5-5-7.5-5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="10" cy="10" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M4 16L16 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+  <symbol id="hd-bell" viewBox="0 0 20 20"><path d="M5.5 14V9a4.5 4.5 0 019 0v5l1.2 1.5H4.3zM8.3 17.2h3.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="hd-chev" viewBox="0 0 12 12"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="hd-bars" viewBox="0 0 20 20"><path d="M4.5 16V10M10 16V5M15.5 16V8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  <symbol id="hd-pin" viewBox="0 0 20 20"><path d="M10 17s5-4.4 5-8.3A5 5 0 005 8.7C5 12.6 10 17 10 17z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="10" cy="8.7" r="1.7" fill="currentColor"/></symbol>
+  <symbol id="hd-star" viewBox="0 0 20 20"><path d="M10 3l2.1 4.4 4.8.6-3.5 3.3.9 4.8L10 13.7l-4.3 2.4.9-4.8-3.5-3.3 4.8-.6z" fill="currentColor"/></symbol>
+  <symbol id="hd-gear" viewBox="0 0 20 20"><circle cx="7.5" cy="6.5" r="2.2" fill="currentColor"/><circle cx="13.5" cy="13.5" r="2.2" fill="currentColor"/><path d="M10.5 6.5h5M4.5 13.5h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+</svg>
+
+<div class="hd">
+  <aside class="hd__side" aria-label="Your application">
+    <a class="hd__logo" href="./" aria-label="316 Hotspots home"><img src="assets/logo.png" alt="" width="131" height="131"><span>Hotspots</span></a>
+    <nav class="hd__nav" aria-label="Onboarding steps">
+      <a class="hd__link is-on" href="#onboarding" aria-current="step"><svg class="hd__ic" aria-hidden="true"><use href="#hd-user"/></svg><span>Select Agent Role</span><svg class="hd__chev" aria-hidden="true"><use href="#hd-chev"/></svg></a>
+      <a class="hd__link" href="#onboarding"><svg class="hd__ic" aria-hidden="true"><use href="#hd-store"/></svg><span>Business Details</span><svg class="hd__chev" aria-hidden="true"><use href="#hd-chev"/></svg></a>
+      <a class="hd__link" href="#onboarding"><svg class="hd__ic" aria-hidden="true"><use href="#hd-doc"/></svg><span>KYB Verification</span><svg class="hd__chev" aria-hidden="true"><use href="#hd-chev"/></svg></a>
+      <a class="hd__link" href="#onboarding"><svg class="hd__ic" aria-hidden="true"><use href="#hd-bank"/></svg><span>Settlement &amp; Operations</span></a>
+      <a class="hd__link" href="#onboarding"><svg class="hd__ic" aria-hidden="true"><use href="#hd-doc"/></svg><span>Review and Submit</span></a>
+    </nav>
+    <div class="hd__app">
+      <p class="hd__app-title">Your Application</p>
+      <p class="hd__app-step">step 1 of 5</p>
+      <div class="hd__bar" role="progressbar" aria-label="Application progress" aria-valuemin="0" aria-valuemax="5" aria-valuenow="1"><span class="hd__bar-fill hd__bar-fill--app"></span></div>
+    </div>
+  </aside>
+
+  <div class="hd__body">
+    <header class="hd__top">
+      <a class="hd__toplogo" href="./" aria-label="316 Hotspots home"><img src="assets/logo.png" alt="" width="131" height="131"><span>Hotspots</span></a>
+      <div class="hd__tools">
+        <span class="hd__search"><svg class="hd__ic" aria-hidden="true"><use href="#hd-search"/></svg><span>Search</span></span>
+        <button class="hd__round" type="button" aria-label="Hide balances"><svg class="hd__ic" aria-hidden="true"><use href="#hd-eyeoff"/></svg></button>
+        <button class="hd__bell" type="button" aria-label="Notifications"><svg class="hd__ic" aria-hidden="true"><use href="#hd-bell"/></svg></button>
+        <span class="hd__avatar" aria-label="Amaka">A</span>
+      </div>
+    </header>
+
+    <main class="hd__main">
+      <h1 class="hd__hello">Welcome, Amaka</h1>
+      <p class="hd__lead">Continue building a new service channel for your business.</p>
+
+      <div class="hd__hero">
+        <img src="assets/Dashboard/welcome-banner.webp?v=cb9ad5b5" class="hd__hero-img" alt="Welcome to 316 Hotspots. Join a network that connects your business with people looking for nearby financial services." fetchpriority="high" width="1800" height="252" decoding="async">
+        <a class="hd__hero-link" href="#onboarding" aria-label="Continue onboarding"></a>
+      </div>
+
+      <h2 class="hd__h2" id="onboarding">Complete your onboarding and join start earning</h2>
+      <ol class="hd__cards">
+        <li class="hd__card hd__card--on">
+          <span class="hd__cardic"><svg class="hd__ic" aria-hidden="true"><use href="#hd-user"/></svg></span>
+          <p class="hd__steps">1 Step</p>
+          <h3>Choose Agent Role</h3>
+          <p class="hd__desc">Select from the agent roles available to you.</p>
+          <p class="hd__pct">45% Complete</p>
+          <div class="hd__track"><span class="hd__track-fill"></span></div>
+          <button class="hd__go" type="button">Continue</button>
+        </li>
+        <li class="hd__card">
+          <span class="hd__cardic"><svg class="hd__ic" aria-hidden="true"><use href="#hd-store"/></svg></span>
+          <p class="hd__steps">3 Steps</p>
+          <h3>Business Details</h3>
+          <p class="hd__desc">Tell us about your business and where customers can find you.</p>
+          <p class="hd__pct">Not started</p>
+          <div class="hd__track"></div>
+        </li>
+        <li class="hd__card">
+          <span class="hd__cardic"><svg class="hd__ic" aria-hidden="true"><use href="#hd-user"/></svg></span>
+          <p class="hd__steps">3 Steps</p>
+          <h3>KYB Verification</h3>
+          <p class="hd__desc">Verify your business, owners and documents so we can approve you.</p>
+          <p class="hd__pct">Not started</p>
+          <div class="hd__track"></div>
+        </li>
+        <li class="hd__card">
+          <span class="hd__cardic"><svg class="hd__ic" aria-hidden="true"><use href="#hd-bank"/></svg></span>
+          <p class="hd__steps">1 step</p>
+          <h3>Settlement &amp; Operations</h3>
+          <p class="hd__desc">Choose where your earnings are paid and set how your outlet runs.</p>
+          <p class="hd__pct">Not started</p>
+          <div class="hd__track"></div>
+        </li>
+        <li class="hd__card">
+          <span class="hd__cardic"><svg class="hd__ic" aria-hidden="true"><use href="#hd-check"/></svg></span>
+          <p class="hd__steps">Final step</p>
+          <h3>Review and Submit</h3>
+          <p class="hd__desc">Check your details one last time, then send your application for review.</p>
+          <p class="hd__pct">Not started</p>
+          <div class="hd__track"></div>
+        </li>
+      </ol>
+
+      <section class="hd__band" aria-labelledby="hd-band-title">
+        <img src="assets/Dashboard/more-opportunities.webp?v=d5ba3fd3" class="hd__band-img" alt="" loading="lazy" width="1408" height="704" decoding="async">
+        <div class="hd__band-copy">
+          <h2 id="hd-band-title">More opportunities.<br>More value for your business.</h2>
+          <p>From neighbourhood kiosks to established retail stores and financial-service locations, 316 Hotspots helps you expand your services, serve more customers and unlock new revenue opportunities.</p>
+        </div>
+      </section>
+
+      <section class="hd__gains" aria-labelledby="hd-gains-title">
+        <img src="assets/Dashboard/gains.webp?v=9b42079b" class="hd__gains-img" alt="A shop owner takes a card payment from a customer at her counter" width="800" height="607" loading="lazy" decoding="async">
+        <div class="hd__gains-copy">
+          <h2 id="hd-gains-title">Everything your business gains as a Hotspot</h2>
+          <p class="hd__gains-sub">Serve more customers, earn on every transaction and grow a trusted local presence.</p>
+          <ul class="hd__list">
+            <li><span class="hd__listic"><svg class="hd__ic" aria-hidden="true"><use href="#hd-bars"/></svg></span><div><h3>Earn on every transaction</h3><p>Make money from eligible cash-in and cash-out services, on rates you set.</p></div></li>
+            <li><span class="hd__listic"><svg class="hd__ic" aria-hidden="true"><use href="#hd-pin"/></svg></span><div><h3>Be found by nearby customers</h3><p>Appear in local search so people can find you when they need cash.</p></div></li>
+            <li><span class="hd__listic"><svg class="hd__ic" aria-hidden="true"><use href="#hd-star"/></svg></span><div><h3>Build a trusted reputation</h3><p>Ratings and reviews show customers they can rely on you.</p></div></li>
+            <li><span class="hd__listic"><svg class="hd__ic" aria-hidden="true"><use href="#hd-gear"/></svg></span><div><h3>Run it your way</h3><p>Choose your services, hours and rates from one dashboard.</p></div></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+</body>
+</html>

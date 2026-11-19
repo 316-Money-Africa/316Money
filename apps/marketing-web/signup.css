@@ -116,3 +116,26 @@ dialog.su::backdrop { background: rgba(20, 24, 31, .55); backdrop-filter: blur(0
   .su__close { top: -0.75rem; right: -0.5rem; }
   .su__brand { margin-top: 0.25rem; }
 }
+
+/* ---------- choice screen and sign-in screen ---------- */
+.su__brandname--hs { font-weight: 700; font-size: 1rem; letter-spacing: 0; }
+.su__choices { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.25rem; }
+.su__btn--dark { gap: 0.625rem; margin-top: 0; background: #000; font-size: 0.8125rem; }
+.su__btn--dark:hover { background: #1f1f24; }
+.su__ico { width: 1.125rem; height: 1.125rem; flex: none; border-radius: 0.3125rem; }
+.su__step[data-su-step="0"] { max-width: 24rem; }
+
+/* the sign-in screen swaps the photo for a purple panel (the card carries data-view="login") */
+.su__art { display: none; position: relative; min-height: 32rem; border-radius: 1.25rem; overflow: hidden; background:
+  radial-gradient(circle at 70% 58%, rgba(32, 20, 120, .55) 0, rgba(32, 20, 120, 0) 38%),
+  radial-gradient(circle at 20% 90%, rgba(255, 255, 255, .14) 0, rgba(255, 255, 255, 0) 34%),
+  linear-gradient(180deg, #2a1fa6 0%, #5a45df 46%, #7b62f5 100%); }
+.su__art::after { content: ""; position: absolute; inset: auto -20% -12% -20%; height: 46%; border-radius: 50% 50% 0 0; background: rgba(255, 255, 255, .1); }
+.su__card[data-view="login"] .su__photo { display: none; }
+.su__card[data-view="login"] .su__art { display: block; }
+.su__card[data-view="login"] .su__tagline { max-width: 20rem; }
+
+@media (max-width: 51.99rem) {
+  .su__art { display: none !important; }
+  .su__step[data-su-step="0"] { max-width: none; }
+}

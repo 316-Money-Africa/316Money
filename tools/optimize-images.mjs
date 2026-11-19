@@ -54,8 +54,10 @@ Object.assign(WIDTHS, {
   "GiftCards/hero.png": 1900, "GiftCards/value.png": 1700, "GiftCards/occasion.png": 1700, "GiftCards/manage.png": 1800, "GiftCards/share.png": 2000, "GiftCards/redeem.png": 2100,
 });
 WIDTHS["Signup/photo.png"] = 900; // sign-up modal photo: shown about 26rem wide, so 2x for retina
+// Hotspots dashboard screen: the welcome strip carries baked text and a button, so it keeps more detail
+Object.assign(WIDTHS, { "Dashboard/welcome-banner.png": 1800, "Dashboard/more-opportunities.png": 1408, "Dashboard/gains.png": 800 });
 const QUALITY = 86;
-const FOLDER_QUALITY = { Cards: 92, Airtime: 92, Bills: 92, Pay: 92, Business: 94, Checkout: 94, Links: 94, Developers: 94, Integrations: 94, Invoicing: 94, PaySmall: 94, OnlineCheckout: 94, Donations: 95, DigitalCards: 95, Rewards: 95, GiftCards: 95, Hotspots: 95 }; // card artwork carries small UI text, so it keeps more detail // high enough that small UI text baked into the artwork stays crisp
+const FOLDER_QUALITY = { Cards: 92, Airtime: 92, Bills: 92, Pay: 92, Business: 94, Checkout: 94, Links: 94, Developers: 94, Integrations: 94, Invoicing: 94, PaySmall: 94, OnlineCheckout: 94, Donations: 95, DigitalCards: 95, Rewards: 95, GiftCards: 95, Hotspots: 95, Dashboard: 92 }; // card artwork carries small UI text, so it keeps more detail // high enough that small UI text baked into the artwork stays crisp
 
 // small product photos and logos baked into the hero screens are shown large: encode them near-lossless so edges and text stay crisp
 const FILE_QUALITY = { "Business/hero-chair.png": 98, "Business/hero-dress.png": 98, "Business/hero-shoe.png": 98, "Business/hero-logo.png": 100, "Business/hero-lmstrip.png": 96, "Business/hero-win.png": 94, "PaySmall/hero.png": 80, "PaySmall/steps-3.png": 80, "PaySmall/steps-2.png": 84, "Business/hero-bs.png": 95 };

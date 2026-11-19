@@ -74,7 +74,8 @@ for (const f of readdirSync(PAGES).filter((n) => n.endsWith(".page.html"))) {
   body = expandImages(body);
   if (/\{\{\w+\}\}/.test(body)) throw new Error(`${f}: unresolved placeholder ${body.match(/\{\{\w+\}\}/)[0]}`);
 
-  const css = ["styles.css", "sections.css", ...(meta.css ? meta.css.split(/\s+/).filter(Boolean) : []), "signup.css", "mobile.css"]
+  const bare = meta.bare === "1";
+  const css = ["styles.css", "sections.css", ...(meta.css ? meta.css.split(/\s+/).filter(Boolean) : []), ...(bare ? [] : ["signup.css"]), "mobile.css"]
     .map((c) => `  <link rel="stylesheet" href="${c}?v=${ver(c)}">`).join("\n");
   const scripts = (meta.js ? meta.js.split(/\s+/).filter(Boolean) : []).map((j) => `
   <script src="${j}?v=${ver(j)}" defer></script>`).join("");
@@ -96,7 +97,7 @@ for (const f of readdirSync(PAGES).filter((n) => n.endsWith(".page.html"))) {
 ${preload}${css}
 </head>
 <body${meta.bodyclass ? ` class="${meta.bodyclass}"` : ""}>
-  ${partials.sprite}
+${bare ? body : `  ${partials.sprite}
   ${meta.wordmark ? partials.header.replace('<span class="nav__wordmark">MONEY</span>', `<span class="nav__wordmark">${meta.wordmark}</span>`) : partials.header}
   ${partials.signup}
 
@@ -106,7 +107,7 @@ ${body}
 
   ${partials.footer}
   <script src="nav.js?v=${ver("nav.js")}" defer></script>
-  <script src="signup.js?v=${ver("signup.js")}" defer></script>${scripts}
+  <script src="signup.js?v=${ver("signup.js")}" defer></script>`}${scripts}
 </body>
 </html>
 `;

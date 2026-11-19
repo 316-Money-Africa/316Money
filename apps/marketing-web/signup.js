@@ -1,4 +1,5 @@
-/* Sign-up modal: every a[href="#sign-up"] opens it. Steps: 1 details -> 2 phone code -> 3 account ready.
+/* Sign-up / sign-in modal: every a[href="#sign-up"] opens the "Create your account" choice, every a[href="#sign-in"] opens "Welcome back".
+   Sign up: 0 choose (316 Pay or Email) -> 1 details -> 2 phone code -> 3 account ready -> Continue opens the Hotspots dashboard. Sign in: Login opens the dashboard.
    A walk-through of the screens only: "Create account" always moves to the next step (no checks, nothing blocks the flow), nothing is sent
    anywhere and no account is created (the real sign-up lives in the 316 app). */
 (function () {
@@ -6,7 +7,9 @@
   if (!dlg || typeof dlg.showModal !== "function") return;
 
   var steps = Array.prototype.slice.call(dlg.querySelectorAll("[data-su-step]"));
+  var card = document.getElementById("su-card");
   var form = document.getElementById("su-form");
+  var loginForm = document.getElementById("su-login-form");
   var codeForm = document.getElementById("su-code-form");
   var digits = Array.prototype.slice.call(dlg.querySelectorAll(".su__digit"));
   var resend = document.getElementById("su-resend");
@@ -16,44 +19,58 @@
   var timer = null;
 
   function show(n, focus) {
+    card.setAttribute("data-view", String(n) === "login" ? "login" : "signup"); // the sign-in screen has its own purple picture panel
     steps.forEach(function (s) { s.hidden = s.getAttribute("data-su-step") !== String(n); });
     if (focus === false) return;
     var title = document.getElementById("su-title-" + n);
     dlg.setAttribute("aria-labelledby", "su-title-" + n);
-    var first = n === 1 ? document.getElementById("su-name") : n === 2 ? digits[0] : title;
+    var first = String(n) === "1" ? document.getElementById("su-name") : String(n) === "2" ? digits[0] : String(n) === "login" ? document.getElementById("su-login-id") : title;
     if (first) first.focus();
   }
 
   function reset() {
     form.reset();
+    loginForm.reset();
     digits.forEach(function (d) { d.value = ""; });
     note.hidden = true;
     stopCooldown();
-    show(1, false);
+    show(0, false);
   }
 
-  function open() {
+  function open(start) {
     if (!dlg.open) { reset(); dlg.showModal(); root.classList.add("su-lock"); }
-    show(1);
+    show(start);
   }
   function close() { if (dlg.open) dlg.close(); }
 
-  dlg.addEventListener("close", function () { root.classList.remove("su-lock"); stopCooldown(); if (location.hash === "#sign-up") history.replaceState(null, "", location.pathname + location.search); });
+  dlg.addEventListener("close", function () { root.classList.remove("su-lock"); stopCooldown(); if (location.hash === "#sign-up" || location.hash === "#sign-in") history.replaceState(null, "", location.pathname + location.search); });
   // a click on the dimmed area (the dialog element itself, outside the card) closes it
   dlg.addEventListener("mousedown", function (e) { if (e.target === dlg) close(); });
   Array.prototype.forEach.call(dlg.querySelectorAll("[data-su-close]"), function (b) { b.addEventListener("click", close); });
 
   document.addEventListener("click", function (e) {
-    var a = e.target.closest && e.target.closest('a[href="#sign-up"]');
-    if (!a) return;
+    var a = e.target.closest && e.target.closest('a[href="#sign-up"], a[href="#sign-in"]');
+    if (!a || dlg.contains(a)) return;
     e.preventDefault();
     var toggle = document.getElementById("nav-toggle"); // close the phone menu first
     if (toggle) toggle.checked = false;
-    open();
+    open(a.getAttribute("href") === "#sign-in" ? "login" : 0);
   });
-  // "Sign in?" inside the modal goes to the sign-in link, so the modal gets out of the way
-  dlg.addEventListener("click", function (e) { var a = e.target.closest && e.target.closest('a[href="#sign-in"]'); if (a) close(); });
-  if (location.hash === "#sign-up") open();
+  // links and buttons inside the modal that move between its screens (data-su-go="0|1|3|login")
+  dlg.addEventListener("click", function (e) {
+    var go = e.target.closest && e.target.closest("[data-su-go]");
+    if (!go) return;
+    e.preventDefault();
+    show(go.getAttribute("data-su-go"));
+  });
+  if (location.hash === "#sign-up") open(0);
+  if (location.hash === "#sign-in") open("login");
+
+  // Login: straight to the dashboard (no checks, nothing is sent)
+  loginForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    location.href = "hotspots-dashboard.html";
+  });
 
   /* ---------- step 1 ---------- */
   var phoneInput = document.getElementById("su-phone");
