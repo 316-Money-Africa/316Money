@@ -1,7 +1,6 @@
 /* 316 Hotspots page: the journey tabs (Cash-out / Cash-in / Remittance payout) switch the picture shown; the kiosks-to-banking section is a pinned parallax flow handled by linkflow.js. Sample marketing content only. */
 (function () {
-  var tabs = document.querySelector("[data-hs-tabs]");
-  if (tabs) {
+  Array.prototype.slice.call(document.querySelectorAll("[data-hs-tabs]")).forEach(function (tabs) {
     var btns = Array.prototype.slice.call(tabs.querySelectorAll(".hs-tab"));
     var panes = Array.prototype.slice.call(tabs.querySelectorAll(".hs-pane"));
     var show = function (key, focus) {
@@ -28,5 +27,5 @@
         if (e.key === "ArrowLeft") { show(btns[(n + btns.length - 1) % btns.length].getAttribute("data-tab"), true); e.preventDefault(); }
       });
     });
-  }
+  });
 })();

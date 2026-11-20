@@ -1,0 +1,120 @@
+/* 316 Hotspots: Payment Agent / Overview. Built from the supplied design; the pictures are reserved slots (svg.slot) until the artwork is added under
+   assets-src/PaymentAgent/ (see tools/optimize-images.mjs), so adding them later changes nothing in the layout. All sizes in rem/em/%; no inline styles (CSP).
+   Phone reading order (below 64rem): eyebrow, title, picture, description, list, buttons. A picture is never below the buttons. */
+.pa-slot { display: block; width: 100%; height: auto; background: linear-gradient(160deg, #A456A3 0%, #92428F 100%); }
+img.pa-slot { background: none; }
+.pa-slot--panel { border-radius: 0.5rem; }
+.pa-slot--card { border-radius: 0.75rem; background: #fff; border: 0.0625rem solid #EBDDF5; box-shadow: 0 1.25rem 2.5rem rgba(110, 50, 140, .1); }
+.pa-slot--photo { border-radius: 0.6rem; background: linear-gradient(160deg, #E9C6B7 0%, #C99B8A 100%); }
+.pa-slot--wide { border-radius: 0.5rem; }
+.pa-sec { padding-block: clamp(4.5rem, 8vw, 7.5rem); }
+.pa-sec--lilac { background: #FBF3FF; }
+
+/* 1 · hero */
+.pa-hero { position: relative; overflow: hidden; margin-top: calc(-1 * var(--nav-h)); padding: calc(var(--nav-h) + clamp(3rem, 7vw, 6.25rem)) 0 0; text-align: center; background: linear-gradient(180deg, #FFFFFF 0%, #FCF7FF 55%, #F4E9FB 100%); }
+.pa-hero__art { position: relative; width: min(100% - 2.5rem, 62rem); margin: clamp(2.5rem, 5vw, 4.5rem) auto 0; }
+.pa-slot--hero { border-radius: 1rem 1rem 0 0; background: #fff; border: 0.0625rem solid #EBDDF5; border-bottom: 0; box-shadow: 0 -0.5rem 3rem rgba(110, 50, 140, .12); }
+img.pa-slot--hero { border-radius: 1rem 1rem 0 0; box-shadow: 0 -0.5rem 3rem rgba(110, 50, 140, .12); }
+
+/* shared list: bold title, grey line, hairline between rows */
+.pa-list { list-style: none; margin: 0; padding: 0; }
+.pa-list li { padding: clamp(1rem, 1.8vw, 1.4rem) 0; border-bottom: 0.0625rem solid #ECE6F4; }
+.pa-list li:first-child { padding-top: 0; }
+.pa-list h3 { margin: 0 0 0.625rem; font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem); font-weight: 500; color: #14102A; }
+.pa-list p { margin: 0; font-size: clamp(0.875rem, 0.82rem + 0.2vw, 0.9375rem); line-height: 1.55; color: #5A5473; }
+.pa-list--plain li { padding-block: 0 clamp(1.25rem, 2vw, 1.75rem); border-bottom: 0; }
+.pa-list--plain { margin-top: clamp(1.75rem, 3vw, 2.5rem); }
+
+/* 2 · what is a Payment Agent */
+.pa-what { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+.pa-what__left .hs-p { max-width: 34rem; }
+.pa-what__pic { margin-top: clamp(2rem, 4vw, 3.25rem); max-width: 36rem; }
+.pa-what__right { padding-top: clamp(0rem, 11vw, 11.5rem); }
+.pa-what__right .btn { margin-top: clamp(1.5rem, 2.6vw, 2.25rem); }
+
+/* 3 · six picture tiles */
+.pa-tiles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(0.75rem, 1.4vw, 1.25rem); }
+.pa-tile { position: relative; overflow: hidden; border-radius: 0.25rem; background: #92428F; isolation: isolate; }
+.pa-tile::after { content: ""; position: absolute; inset: 40% 0 0; z-index: 1; background: linear-gradient(180deg, rgba(34, 8, 42, 0) 0%, rgba(34, 8, 42, .86) 100%); pointer-events: none; }
+.pa-tile__img { border-radius: 0; object-fit: cover; }
+.pa-tile__txt { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: clamp(1rem, 1.8vw, 1.5rem); color: #fff; }
+.pa-tile__txt h3 { margin: 0 0 0.5rem; font-size: clamp(1.0625rem, 0.95rem + 0.4vw, 1.25rem); font-weight: 600; line-height: 1.2; color: #fff; text-wrap: balance; }
+.pa-tile__txt p { margin: 0; font-size: clamp(0.75rem, 0.7rem + 0.2vw, 0.875rem); line-height: 1.45; color: rgba(255, 255, 255, .86); }
+
+/* 4 · interactive payment journey */
+.pa-journey { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+.pa-journey__copy .hs-p { max-width: 34rem; }
+.pa-journey__copy .btn { margin-top: clamp(0.25rem, 1vw, 0.75rem); }
+.pa-journey__view { margin-top: 0; }
+.pa-tabs { justify-content: flex-start; gap: 0.625rem; margin-bottom: clamp(1rem, 2vw, 1.5rem); }
+.pa-tabs .hs-tab { padding: 0 1.25rem; font-size: 0.875rem; }
+
+/* 5 · the customer experience */
+.pa-exp { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1rem, 2.4vw, 2rem); align-items: stretch; padding: clamp(1rem, 2.4vw, 2rem); border-radius: 0.5rem; background: linear-gradient(120deg, #EAD2EA 0%, #DDB8DC 50%, #C68CC5 100%); }
+.pa-steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: clamp(0.625rem, 1vw, 0.875rem); }
+.pa-steps li { position: relative; padding: clamp(1rem, 1.6vw, 1.375rem) clamp(1.125rem, 1.8vw, 1.5rem); border-radius: 0.375rem; background: #fff; box-shadow: 0 0.125rem 0.5rem rgba(90, 30, 110, .08); }
+.pa-steps__k { display: block; margin-bottom: 0.5rem; font-size: 0.6875rem; font-weight: 500; letter-spacing: .05em; text-transform: uppercase; color: #8E1F7B; }
+.pa-steps h3 { margin: 0 0 0.5rem; padding-right: 2rem; font-size: clamp(1.0625rem, 0.98rem + 0.35vw, 1.25rem); font-weight: 500; color: #14102A; }
+.pa-steps p { margin: 0; font-size: 0.875rem; line-height: 1.5; color: #5A5473; }
+.pa-steps__chev { position: absolute; right: 1.25rem; top: 1.375rem; width: 0.5rem; height: 0.5rem; border: solid #2A2145; border-width: 0 0.125rem 0.125rem 0; transform: rotate(45deg); }
+.pa-exp__pic { display: flex; }
+.pa-exp__pic .pa-slot { align-self: stretch; }
+
+/* 6 · discovery and rates (picture right, copy left) */
+.pa-split__media { justify-self: end; width: 100%; max-width: 36rem; }
+.pa-split .hs-split__copy .hs-p { max-width: 32rem; }
+
+/* 7 · web and mobile access */
+.pa-access { margin-top: 0; }
+.pa-access .hs-tabs__bar { justify-content: center; }
+.pa-access__pane { position: relative; max-width: 56rem; margin-inline: auto; border-radius: 0.5rem; overflow: hidden; isolation: isolate; }
+.pa-access__pane[hidden] { display: none; }
+.pa-access__pane .pa-slot { aspect-ratio: auto; }
+.pa-access__pane::after { content: ""; position: absolute; inset: 55% 0 0; z-index: 1; background: linear-gradient(180deg, rgba(10, 0, 20, 0) 0%, rgba(10, 0, 20, .9) 100%); pointer-events: none; }
+.pa-access__txt { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: clamp(1.25rem, 3vw, 2.5rem); color: #fff; }
+.pa-access__txt h3 { margin: 0 0 0.625rem; font-size: clamp(1.125rem, 1rem + 0.6vw, 1.5rem); font-weight: 500; color: #fff; }
+.pa-access__txt p { margin: 0; max-width: 34rem; font-size: clamp(0.8125rem, 0.75rem + 0.25vw, 0.9375rem); line-height: 1.5; color: rgba(255, 255, 255, .88); }
+.pa-access__more { margin: clamp(1.75rem, 3vw, 2.5rem) 0 0; text-align: center; }
+.pa-access__more a { display: inline-flex; align-items: center; min-height: 2.75rem; font-size: 1rem; font-weight: 500; color: #5B2F91; text-decoration: underline; text-decoration-thickness: 0.0625rem; text-underline-offset: 0.3rem; }
+
+/* 8 · different business sizes */
+.pa-head2 { align-items: start; margin-bottom: clamp(2rem, 4vw, 3.5rem); }
+.pa-head2 .hs-h2 { font-size: clamp(2rem, 1.2rem + 2.8vw, 3.5rem); }
+.pa-head2 .hs-p { margin: 0.75rem 0 0; max-width: 26rem; font-size: clamp(0.8125rem, 0.78rem + 0.15vw, 0.9375rem); }
+.pa-sizes { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; }
+.pa-checks { list-style: none; margin: 0; padding: 0; display: grid; gap: clamp(1.25rem, 2.2vw, 1.75rem); }
+.pa-checks li { display: flex; align-items: flex-start; gap: 1rem; }
+.pa-checks i { flex: none; position: relative; width: 1.5rem; height: 1.5rem; margin-top: 0.125rem; border: 0.125rem solid #5B2F91; border-radius: 0.3rem; background: #fff; }
+.pa-checks i::after { content: ""; position: absolute; left: 0.42rem; top: 0.12rem; width: 0.35rem; height: 0.7rem; border: solid #5B2F91; border-width: 0 0.125rem 0.125rem 0; transform: rotate(45deg); }
+.pa-checks h3 { margin: 0 0 0.375rem; font-size: 1rem; font-weight: 600; color: #2A1B4D; }
+.pa-checks p { margin: 0; max-width: 28rem; font-size: 0.875rem; line-height: 1.5; color: #5A5473; }
+.pa-sizes__pic { justify-self: end; width: 100%; max-width: 30rem; }
+
+/* tablets and phones */
+@media (max-width: 63.99rem) {
+  .pa-what, .pa-journey, .pa-exp, .pa-sizes { grid-template-columns: minmax(0, 1fr); }
+  .pa-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pa-split__media, .pa-sizes__pic { justify-self: center; max-width: 30rem; }
+  .pa-exp__pic .pa-slot { align-self: auto; }
+
+  /* reading order: eyebrow, title, picture, description, list, button */
+  .pa-what, .pa-journey, .pa-split, .pa-sizes { display: flex; flex-direction: column; align-items: stretch; }
+  .pa-what__left, .pa-what__right, .pa-journey__copy, .pa-split .hs-split__copy { display: contents; }
+  .pa-what .hs-eyebrow, .pa-journey .hs-eyebrow, .pa-split .hs-eyebrow { order: 1; }
+  .pa-what .hs-h2, .pa-journey .hs-h2, .pa-split .hs-h2 { order: 2; }
+  .pa-what__pic, .pa-journey__view, .pa-split__media { order: 3; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+  .pa-what .hs-p, .pa-journey .hs-p, .pa-split .hs-p { order: 4; }
+  .pa-what__right .pa-list, .pa-journey .pa-list { order: 6; margin-top: 1.75rem; }
+  .pa-what__right .btn, .pa-journey__copy .btn, .pa-split .hs-split__copy .btn { order: 7; align-self: flex-start; margin-top: 1.5rem; }
+  .pa-sizes__pic { order: -1; margin-bottom: 2rem; }
+  .pa-head2 { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 40rem) {
+  .pa-tiles { grid-template-columns: minmax(0, 1fr); }
+  .pa-tile__img { aspect-ratio: 4 / 5; }
+  .pa-tabs { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .pa-tabs::-webkit-scrollbar { display: none; }
+  .pa-access__pane .pa-slot { aspect-ratio: 4 / 5; }
+  .pa-hero__art { width: calc(100% - 1.25rem); }
+}
+.pa-nw { white-space: nowrap; }
