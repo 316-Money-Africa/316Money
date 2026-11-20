@@ -29,3 +29,23 @@
     });
   });
 })();
+
+/* Payment Agent page: "The customer experience" steps are buttons; choosing a step shows its picture (arrow keys move between steps). */
+(function () {
+  var root = document.querySelector("[data-pa-exp]");
+  if (!root) return;
+  var steps = Array.prototype.slice.call(root.querySelectorAll(".pa-step"));
+  var panes = Array.prototype.slice.call(root.querySelectorAll(".pa-exp__pane"));
+  var pick = function (i, focus) {
+    steps.forEach(function (s, n) { var on = n === i; s.classList.toggle("is-on", on); s.setAttribute("aria-pressed", on ? "true" : "false"); if (on && focus) s.focus(); });
+    panes.forEach(function (p, n) { var on = n === i; p.hidden = !on; });
+  };
+  steps.forEach(function (s, i) {
+    s.addEventListener("click", function () { pick(i, false); });
+    s.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pick(i, false); }
+      else if (e.key === "ArrowDown") { e.preventDefault(); pick((i + 1) % steps.length, true); }
+      else if (e.key === "ArrowUp") { e.preventDefault(); pick((i + steps.length - 1) % steps.length, true); }
+    });
+  });
+})();

@@ -17,7 +17,7 @@
           <p class="hs-eyebrow">What is payment agents?</p>
           <h2 id="pa-what-title" class="hs-h2"><span class="ln">Make cash deposits easier.</span> <span class="ln">Grow your business</span></h2>
           <p class="hs-p">Payment Agents form the pay-in side of the 316 Hotspots network. They facilitate eligible customer deposits and account funding transactions, helping money move from local payment points into supported digital accounts.</p>
-          <div class="pa-what__pic">{{slot:PaymentAgent/what-is ratio="4/3" class="pa-slot pa-slot--panel" alt="Three Payment Agent services: 316 Money wallet funding, funding a business account and supported international funding"}}</div>
+          <div class="pa-what__pic">{{img:PaymentAgent/what-is class="pa-pic pa-pic--panel" alt="Three Payment Agent services: 316 Money wallet funding, funding a business account and supported international funding" loading="lazy"}}</div>
         </div>
         <div class="pa-what__right">
           <ul class="pa-list" role="list">
@@ -38,14 +38,7 @@
           <h2 id="pa-why-title" class="hs-h2"><span class="ln">More customers. More</span> <span class="ln">transactions. More ways to earn</span></h2>
           <p class="hs-p">Make your location more valuable to the people around you. Whether you operate a kiosk, retail outlet, agency business or financial institution, 316 Hotspots can help you broaden your services and build a new transaction-based revenue stream.</p>
         </header>
-        <ul class="pa-tiles" role="list">
-          <li class="pa-tile">{{slot:PaymentAgent/why-earn ratio="11/15" class="pa-slot pa-tile__img" alt="A payment confirmed notice on a phone"}}<div class="pa-tile__txt"><h3>Earn from eligible payments</h3><p>Introduce an additional earning opportunity through payment-agent services, with applicable fees or commissions linked to completed transactions.</p></div></li>
-          <li class="pa-tile">{{slot:PaymentAgent/why-nearby ratio="11/15" class="pa-slot pa-tile__img" alt="A shop owner card with a map pin"}}<div class="pa-tile__txt"><h3>Be discovered nearby</h3><p>Appear in eligible 316 Money customer searches as a nearby Payment Agent, with nearby locations presented by proximity.</p></div></li>
-          <li class="pa-tile">{{slot:PaymentAgent/why-clarity ratio="11/15" class="pa-slot pa-tile__img" alt="The latest payment requests table"}}<div class="pa-tile__txt"><h3>Manage performance with clarity</h3><p>Review your transactions, active locations, reporting activity and earnings from a single, easy-to-follow workspace.</p></div></li>
-          <li class="pa-tile">{{slot:PaymentAgent/why-rates ratio="11/15" class="pa-slot pa-tile__img" alt="The Payment agent rate form"}}<div class="pa-tile__txt"><h3>Set your payment rates</h3><p>Configure applicable pay-in rates for eligible local and international payment transactions within the permissions and rules of your services.</p></div></li>
-          <li class="pa-tile">{{slot:PaymentAgent/why-trust ratio="11/15" class="pa-slot pa-tile__img" alt="A five star customer rating beside a Hotspot owner"}}<div class="pa-tile__txt"><h3>Build a trusted local reputation</h3><p>Show customers the services you offer and let good service build ratings and reviews over time.</p></div></li>
-          <li class="pa-tile">{{slot:PaymentAgent/why-doors ratio="11/15" class="pa-slot pa-tile__img" alt="Customers shopping at a local business"}}<div class="pa-tile__txt"><h3>Bring more people through your doors</h3><p>Turn funding requests into additional footfall for your shop, kiosk or service point and open the door to other purchases.</p></div></li>
-        </ul>
+        <div class="pa-grid">{{img:PaymentAgent/why-grid class="pa-pic pa-pic--grid" alt="Six ways a Payment Agent grows: earn from eligible payments, be discovered nearby, manage performance with clarity, set your payment rates, build a trusted local reputation and bring more people through your doors" loading="lazy"}}</div>
       </div>
     </section>
 
@@ -65,9 +58,9 @@
         </div>
         <div class="pa-journey__view hs-tabs" data-hs-tabs>
           <div class="hs-tabs__bar pa-tabs" role="tablist" aria-label="Payment journeys"><button class="hs-tab is-on" type="button" role="tab" id="hs-tab-wallet" aria-selected="true" aria-controls="hs-pane-wallet" data-tab="wallet">Wallet funding</button><button class="hs-tab" type="button" role="tab" id="hs-tab-business" aria-selected="false" aria-controls="hs-pane-business" data-tab="business">Business payment</button><button class="hs-tab" type="button" role="tab" id="hs-tab-intl" aria-selected="false" aria-controls="hs-pane-intl" data-tab="intl">International funding</button></div>
-          <div class="hs-pane pa-pane is-on" role="tabpanel" id="hs-pane-wallet" aria-labelledby="hs-tab-wallet">{{slot:PaymentAgent/journey-wallet ratio="4/5" class="pa-slot pa-slot--panel" alt="Wallet funding: a customer chooses the City Centre Hotspot and requests to fund a 316 Money wallet"}}</div>
-          <div class="hs-pane pa-pane" role="tabpanel" id="hs-pane-business" aria-labelledby="hs-tab-business" hidden>{{slot:PaymentAgent/journey-business ratio="4/5" class="pa-slot pa-slot--panel" alt="Business payment: an eligible business funds its supported account through an approved Payment Agent"}}</div>
-          <div class="hs-pane pa-pane" role="tabpanel" id="hs-pane-intl" aria-labelledby="hs-tab-intl" hidden>{{slot:PaymentAgent/journey-intl ratio="4/5" class="pa-slot pa-slot--panel" alt="International funding: a customer starts an eligible funding request through an approved agent"}}</div>
+          <div class="hs-pane pa-pane is-on" role="tabpanel" id="hs-pane-wallet" aria-labelledby="hs-tab-wallet">{{img:PaymentAgent/journey-wallet class="pa-pic pa-pic--panel" alt="Wallet funding: a customer chooses the City Centre Hotspot and requests to fund a 316 Money wallet" loading="lazy"}}</div>
+          <div class="hs-pane pa-pane" role="tabpanel" id="hs-pane-business" aria-labelledby="hs-tab-business" hidden><div class="pa-stage pa-stage--sq">{{img:PaymentAgent/journey-payout class="pa-stage__card" alt="Business payment: payout details show the amount to fund and the service charge before the recipient is asked to authorise" loading="lazy"}}</div></div>
+          <div class="hs-pane pa-pane" role="tabpanel" id="hs-pane-intl" aria-labelledby="hs-tab-intl" hidden><div class="pa-stage pa-stage--sq"><svg class="pa-arcs" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><circle cx="0" cy="200" r="96"/><circle cx="0" cy="200" r="140"/><circle cx="0" cy="200" r="184"/></svg>{{img:PaymentAgent/journey-pin-a class="pa-pin pa-pin--a" alt="Angelo Ola received N100,000" loading="lazy"}}{{img:PaymentAgent/journey-pin-b class="pa-pin pa-pin--b" alt="Paul Ike received 500,000 pounds" loading="lazy"}}</div></div>
         </div>
       </div>
     </section>
@@ -80,14 +73,19 @@
           <h2 id="pa-exp-title" class="hs-h2"><span class="ln">Simple for customers. Valuable</span> <span class="ln">for your business</span></h2>
           <p class="hs-p">A straightforward experience helps customers find your location, understand your available services and complete eligible payments with clear confirmation.</p>
         </header>
-        <div class="pa-exp">
+        <div class="pa-exp" data-pa-exp>
           <ol class="pa-steps" role="list">
-            <li><span class="pa-steps__k">Step 1</span><h3>Find a nearby agent</h3><p>Customers browse participating Payment Agents in the 316 Money app, starting with locations closest to them.</p><i class="pa-steps__chev" aria-hidden="true"></i></li>
-            <li><span class="pa-steps__k">Step 2</span><h3>Review agent details</h3><p>They compare available services, displayed rates, location details and customer reviews.</p><i class="pa-steps__chev" aria-hidden="true"></i></li>
-            <li><span class="pa-steps__k">Step 3</span><h3>Complete verification</h3><p>The agent follows the applicable checks and processes the eligible payment or funding request.</p><i class="pa-steps__chev" aria-hidden="true"></i></li>
-            <li><span class="pa-steps__k">Step 4</span><h3>Get confirmation</h3><p>The transaction is recorded and confirmation is provided through the supported workflow.</p><i class="pa-steps__chev" aria-hidden="true"></i></li>
+            <li class="pa-step is-on" role="button" tabindex="0" aria-pressed="true" data-i="0"><span class="pa-steps__k">Step 1</span><h3>Find a nearby agent</h3><p>Customers browse participating Payment Agents in the 316 Money app, starting with locations closest to them.</p><i class="pa-steps__chev" aria-hidden="true"></i></li>
+            <li class="pa-step" role="button" tabindex="0" aria-pressed="false" data-i="1"><span class="pa-steps__k">Step 2</span><h3>Review agent details</h3><p>They compare available services, displayed rates, location details and customer reviews.</p><i class="pa-steps__chev" aria-hidden="true"></i></li>
+            <li class="pa-step" role="button" tabindex="0" aria-pressed="false" data-i="2"><span class="pa-steps__k">Step 3</span><h3>Complete verification</h3><p>The agent follows the applicable checks and processes the eligible payment or funding request.</p><i class="pa-steps__chev" aria-hidden="true"></i></li>
+            <li class="pa-step" role="button" tabindex="0" aria-pressed="false" data-i="3"><span class="pa-steps__k">Step 4</span><h3>Get confirmation</h3><p>The transaction is recorded and confirmation is provided through the supported workflow.</p><i class="pa-steps__chev" aria-hidden="true"></i></li>
           </ol>
-          <div class="pa-exp__pic">{{slot:PaymentAgent/experience ratio="4/5" class="pa-slot pa-slot--panel" alt="The 316 Money app showing Hotspots near you: agents on a map"}}</div>
+          <div class="pa-exp__stage">
+            <div class="pa-exp__pane is-on" data-pane="0">{{img:PaymentAgent/exp-phone class="pa-pic pa-pic--tall" alt="The 316 Money app showing Hotspots near you: nearby agents on a map" loading="lazy"}}</div>
+            <div class="pa-exp__pane" data-pane="1" hidden><div class="pa-stage pa-stage--tall">{{img:PaymentAgent/exp-list class="pa-stage__card" alt="Nearby agents City Centre Hotspot, Magic Hub and Musa Kiosk with their ratings and distance" loading="lazy"}}{{img:PaymentAgent/exp-avatar class="pa-stage__avatar" alt="" loading="lazy"}}</div></div>
+            <div class="pa-exp__pane" data-pane="2" hidden><div class="pa-stage pa-stage--tall">{{img:PaymentAgent/exp-verify class="pa-stage__card" alt="The agent finds an eligible 316 Money account and checks the verified destination" loading="lazy"}}</div></div>
+            <div class="pa-exp__pane" data-pane="3" hidden><div class="pa-stage pa-stage--tall">{{img:PaymentAgent/exp-success class="pa-stage__card" alt="Payment successful: the transaction details are recorded" loading="lazy"}}</div></div>
+          </div>
         </div>
       </div>
     </section>
@@ -101,7 +99,7 @@
           <p class="hs-p">316 Money customers can discover nearby Payment Agents based on their location. Your profile can help them find your outlet, review your services, check applicable rates and see feedback from other customers before visiting.</p>
           <a class="btn btn--primary oc-btn" href="#start">Explore</a>
         </div>
-        <div class="hs-split__media--end pa-split__media">{{slot:PaymentAgent/discover ratio="4/3" class="pa-slot pa-slot--card" alt="A map with a Hotspot pin and the profile card of Sam’s business hub rated 4.9"}}</div>
+        <div class="hs-split__media--end pa-split__media">{{img:PaymentAgent/discover class="pa-pic pa-pic--card" alt="A map with a Hotspot pin and the profile card of Sam’s business hub rated 4.9" loading="lazy"}}</div>
       </div>
     </section>
 
@@ -114,7 +112,7 @@
           <p class="hs-p">Payment Agents can configure their applicable pay-in rates for eligible local and international transactions, subject to the agent’s approved tier, transaction limits and programme rules.</p>
           <a class="btn btn--primary oc-btn" href="#start">Explore</a>
         </div>
-        <div class="hs-split__media--end pa-split__media">{{slot:PaymentAgent/rates ratio="3/2" class="pa-slot pa-slot--panel" alt="The Payment agent rate form with a Submit these rates for approval dialog"}}</div>
+        <div class="hs-split__media--end pa-split__media">{{img:PaymentAgent/rates class="pa-pic pa-pic--panel" alt="The Payment agent rate form with a Submit these rates for approval dialog" loading="lazy"}}</div>
       </div>
     </section>
 
@@ -158,7 +156,7 @@
             <li><i aria-hidden="true"></i><div><h3>Agency operators</h3><p>Experienced payment or <span class="pa-nw">agency-service</span> businesses with suitable capacity for broader transaction volumes.</p></div></li>
             <li><i aria-hidden="true"></i><div><h3>Banking partners</h3><p>Approved financial institutions supporting higher-value services where permitted by programme and regulatory rules.</p></div></li>
           </ul>
-          <div class="pa-sizes__pic">{{slot:PaymentAgent/sizes ratio="15/16" class="pa-slot pa-slot--photo" alt="A customer at a green kiosk with a pink awning"}}</div>
+          <div class="pa-sizes__pic">{{img:PaymentAgent/sizes class="pa-pic pa-pic--photo" alt="A customer at a green kiosk with a pink awning" loading="lazy"}}</div>
         </div>
       </div>
     </section>
