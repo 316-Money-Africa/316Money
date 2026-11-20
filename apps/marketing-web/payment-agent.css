@@ -25,12 +25,14 @@ img.pa-slot--hero { border-radius: 1rem 1rem 0 0; box-shadow: 0 -0.5rem 3rem rgb
 .pa-list--plain li { padding-block: 0 clamp(1.25rem, 2vw, 1.75rem); border-bottom: 0; }
 .pa-list--plain { margin-top: clamp(1.75rem, 3vw, 2.5rem); }
 
-/* 2 · what is a Payment Agent */
-.pa-what { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
-.pa-what__left .hs-p { max-width: 34rem; }
-.pa-what__pic { margin-top: clamp(2rem, 4vw, 3.25rem); max-width: 36rem; }
-.pa-what__right { padding-top: clamp(0rem, 11vw, 11.5rem); }
+/* 2 · what is a Payment Agent: the heading row on top, then the picture (left) and the three services (right) side by side at the same height */
+.pa-what { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr); column-gap: clamp(2rem, 5vw, 5rem); row-gap: clamp(2rem, 4vw, 3.25rem); align-items: center; }
+.pa-what__head { grid-column: 1; }
+.pa-what__head .hs-p { max-width: 34rem; }
+.pa-what__pic { grid-column: 1; grid-row: 2; max-width: 36rem; }
+.pa-what__right { grid-column: 2; grid-row: 2; }
 .pa-what__right .btn { margin-top: clamp(1.5rem, 2.6vw, 2.25rem); }
+.pa-what__right .pa-list li:first-child { padding-top: 0; }
 
 /* 3 · the six benefits (one supplied picture, titles and lines are part of the artwork) */
 .pa-grid { max-width: 80rem; margin-inline: auto; }
@@ -116,7 +118,7 @@ img.pa-slot--hero { border-radius: 1rem 1rem 0 0; box-shadow: 0 -0.5rem 3rem rgb
 
   /* reading order: eyebrow, title, picture, description, list, button */
   .pa-what, .pa-journey, .pa-split, .pa-sizes { display: flex; flex-direction: column; align-items: stretch; }
-  .pa-what__left, .pa-what__right, .pa-journey__copy, .pa-split .hs-split__copy { display: contents; }
+  .pa-what__head, .pa-what__right, .pa-journey__copy, .pa-split .hs-split__copy { display: contents; }
   .pa-what .hs-eyebrow, .pa-journey .hs-eyebrow, .pa-split .hs-eyebrow { order: 1; }
   .pa-what .hs-h2, .pa-journey .hs-h2, .pa-split .hs-h2 { order: 2; }
   .pa-what__pic, .pa-journey__view, .pa-split__media { order: 3; margin-top: 1.5rem; margin-bottom: 0.5rem; }
