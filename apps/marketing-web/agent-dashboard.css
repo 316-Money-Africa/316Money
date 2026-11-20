@@ -2,7 +2,7 @@
    Sidebar + top bar + overview (stat cards, collection chart, services, locations, earnings, feedback, latest payment requests).
    rem/em/% only, no inline styles (site CSP). Below 64rem the sidebar becomes a slide-out drawer; the rows stack; the table scrolls inside its card. */
 .ad__sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
-.ad { --ad-purple: #6b3ff0; --ad-violet: #6a1ff0; --ad-deep: #4a2bc8; --ad-ink: #14162b; --ad-text: #3b3e55; --ad-grey: #7d8096; --ad-line: #ececf2; --ad-bg: #f7f7fb; display: grid; grid-template-columns: clamp(14.5rem, 17vw, 17.5rem) minmax(0, 1fr); min-height: 100vh; min-height: 100svh; background: var(--ad-bg); color: var(--ad-ink); font-family: var(--font); }
+.ad { --ad-font: "Space Grotesk", var(--font); --ad-purple: #6b3ff0; --ad-violet: #6a1ff0; --ad-deep: #4a2bc8; --ad-ink: #14162b; --ad-text: #3b3e55; --ad-grey: #7d8096; --ad-line: #ececf2; --ad-bg: #f7f7fb; display: grid; grid-template-columns: clamp(14.5rem, 17vw, 17.5rem) minmax(0, 1fr); min-height: 100vh; min-height: 100svh; background: var(--ad-bg); color: var(--ad-ink); font-family: var(--ad-font); }
 .ad a:focus-visible, .ad button:focus-visible, .ad input:focus-visible, .ad__scroll:focus-visible { outline: 0.125rem solid var(--ad-purple); outline-offset: 0.1875rem; }
 .ad__ic { width: 1.25rem; height: 1.25rem; flex: none; }
 .ad a { text-decoration: none; }
@@ -31,7 +31,7 @@
 .ad__top { display: flex; align-items: center; gap: 1rem; padding: 1.25rem clamp(1rem, 2.4vw, 2.25rem) 0; max-width: 90rem; margin-inline: auto; }
 .ad__burger { display: none; place-items: center; width: var(--touch); height: var(--touch); flex: none; padding: 0; border: 0.0625rem solid var(--ad-line); border-radius: 0.625rem; background: #fff; color: var(--ad-text); cursor: pointer; }
 .ad__search { display: flex; align-items: center; gap: 0.625rem; flex: 1; min-width: 0; max-width: 46rem; min-height: 3rem; padding: 0 1.125rem; border: 0.0625rem solid var(--ad-line); border-radius: 0.75rem; background: #fff; color: #9a9db0; }
-.ad__search input { flex: 1; min-width: 0; padding: 0; border: 0; background: transparent; font: 400 0.875rem/1.2 var(--font); color: var(--ad-ink); }
+.ad__search input { flex: 1; min-width: 0; padding: 0; border: 0; background: transparent; font: 400 0.875rem/1.2 var(--ad-font); color: var(--ad-ink); }
 .ad__search input::placeholder { color: #9a9db0; }
 .ad__search input:focus-visible { outline: none; }
 .ad__search:focus-within { border-color: var(--ad-purple); }
@@ -75,21 +75,21 @@
 .ad__card--chart .ad__cardhead { margin-bottom: 1.25rem; }
 .ad__tabs { display: flex; gap: 1.5rem; margin-bottom: 1.25rem; border-bottom: 0.0625rem solid var(--ad-line); overflow-x: auto; scrollbar-width: none; }
 .ad__tabs::-webkit-scrollbar { display: none; }
-.ad__tabs button { position: relative; min-height: 2.5rem; padding: 0 0.125rem; border: 0; background: none; font: 500 0.8125rem/1 var(--font); white-space: nowrap; color: var(--ad-grey); cursor: pointer; }
+.ad__tabs button { position: relative; min-height: 2.5rem; padding: 0 0.125rem; border: 0; background: none; font: 500 0.8125rem/1 var(--ad-font); white-space: nowrap; color: var(--ad-grey); cursor: pointer; }
 .ad__tabs button.is-on { color: var(--ad-purple); }
 .ad__tabs button.is-on::after { content: ""; position: absolute; left: 0; right: 0; bottom: -0.0625rem; height: 0.125rem; background: var(--ad-purple); }
 .ad__chartbox { padding-top: 0.5rem; }
 .ad__chart { display: block; width: 100%; height: auto; }
 .ad__grid { stroke: #ebebf2; stroke-width: 1; fill: none; }
-.ad__ylab, .ad__xlab { font: 400 0.6875rem var(--font); fill: #9a9db0; }
+.ad__ylab, .ad__xlab { font: 400 0.6875rem var(--ad-font); fill: #9a9db0; }
 .ad__line { fill: none; stroke-linecap: round; stroke-linejoin: round; }
 .ad__line--a { stroke: #7355f2; stroke-width: 2.4; }
 .ad__line--b { stroke: #cfc8f5; stroke-width: 1.8; }
 .ad__cursor { stroke: #4a4a5a; stroke-width: 1.2; fill: none; }
 .ad__dot { fill: #fff; stroke: #7355f2; stroke-width: 2.2; }
 .ad__tip rect { fill: #fff; stroke: #e4e4ee; stroke-width: 1; filter: drop-shadow(0 0.125rem 0.375rem rgba(30, 20, 80, .12)); }
-.ad__tipt { font: 600 0.625rem var(--font); fill: var(--ad-ink); }
-.ad__tipr { font: 400 0.5625rem var(--font); fill: #55576c; }
+.ad__tipt { font: 600 0.625rem var(--ad-font); fill: var(--ad-ink); }
+.ad__tipr { font: 400 0.5625rem var(--ad-font); fill: #55576c; }
 
 .ad__card--services { display: flex; flex-direction: column; }
 .ad__svcs { display: flex; flex-direction: column; gap: 0.75rem; margin: 1.5rem 0 1.5rem; }
@@ -120,8 +120,8 @@
 .ad__seg--a { stroke: #f5b83d; }
 .ad__seg--r { stroke: #ef5b5b; }
 .ad__dn, .ad__ds { transform: rotate(90deg); transform-origin: 40px 40px; }
-.ad__dn { font: 700 1rem var(--font); fill: var(--ad-ink); }
-.ad__ds { font: 400 0.4375rem var(--font); fill: var(--ad-grey); }
+.ad__dn { font: 700 1rem var(--ad-font); fill: var(--ad-ink); }
+.ad__ds { font: 400 0.4375rem var(--ad-font); fill: var(--ad-grey); }
 .ad__score strong { display: block; margin-bottom: 0.25rem; font-size: 0.875rem; font-weight: 600; color: var(--ad-ink); }
 .ad__score span { display: block; font-size: 0.75rem; color: var(--ad-grey); }
 .ad__score .ad__chg { margin-top: 0.375rem; font-weight: 600; color: #17a05d; }

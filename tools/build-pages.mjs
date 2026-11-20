@@ -94,7 +94,8 @@ for (const f of readdirSync(PAGES).filter((n) => n.endsWith(".page.html"))) {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap">
-${preload}${css}
+${meta.fonts ? `  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=${meta.fonts}&display=swap">
+` : ""}${preload}${css}
 </head>
 <body${meta.bodyclass ? ` class="${meta.bodyclass}"` : ""}>
 ${bare ? body : `  ${partials.sprite}
