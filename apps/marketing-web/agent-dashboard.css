@@ -42,6 +42,8 @@
 .ad__main { width: 100%; max-width: 90rem; margin-inline: auto; padding: 1.75rem clamp(1rem, 2.4vw, 2.25rem) 5rem; }
 .ad__hello { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.75rem; }
 .ad__hello h1 { font-size: clamp(1.375rem, 1.15rem + 0.9vw, 1.875rem); font-weight: 700; line-height: 1.2; text-wrap: balance; color: var(--ad-ink); }
+.ad__wave { display: inline-block; width: 1.1em; height: 1.1em; margin-left: 0.15em; vertical-align: -0.12em; }
+.ad__ic--info { width: 0.75rem; height: 0.75rem; color: var(--ad-grey); }
 .ad__cta { display: inline-flex; align-items: center; justify-content: center; min-height: 3rem; padding: 0 1.75rem; border-radius: 0.625rem; background: var(--ad-violet); font-size: 0.9375rem; font-weight: 600; white-space: nowrap; color: #fff; transition: background .15s; }
 .ad__cta:hover { background: #5a12d6; }
 .ad__cta--wide { width: 100%; margin-top: auto; min-height: 3.25rem; }
@@ -51,11 +53,11 @@
 .ad__stat { display: flex; flex-direction: column; min-width: 0; padding: 1.25rem 1.25rem 1.125rem; border: 0.0625rem solid var(--ad-line); border-radius: 0.75rem; background: #fff; }
 .ad__lbl { margin-bottom: 0.875rem; font-size: 0.8125rem; color: var(--ad-text); }
 .ad__num { margin-bottom: 1.125rem; font-size: clamp(1.375rem, 1.1rem + 0.7vw, 1.75rem); font-weight: 700; line-height: 1.1; color: var(--ad-ink); }
-.ad__foot { display: flex; align-items: center; flex-wrap: wrap; gap: 0.375rem 0.5rem; margin-top: auto; font-size: 0.75rem; }
+.ad__foot { display: flex; align-items: center; flex-wrap: wrap; gap: 0.375rem 0.5rem; margin-top: auto; font-size: 0.6875rem; }
 .ad__up { display: inline-flex; align-items: center; gap: 0.125rem; font-weight: 600; color: #17a05d; }
 .ad__up .ad__ic { width: 0.75rem; height: 0.75rem; }
 .ad__muted { color: var(--ad-grey); }
-.ad__pill { display: inline-flex; align-items: center; gap: 0.25rem; padding: 0.1875rem 0.625rem; border-radius: 999rem; background: #ece8ff; font-size: 0.6875rem; font-weight: 500; white-space: nowrap; color: var(--ad-purple); }
+.ad__pill { display: inline-flex; align-items: center; gap: 0.25rem; padding: 0.125rem 0.5rem; border-radius: 999rem; background: #ece8ff; font-size: 0.625rem; font-weight: 500; white-space: nowrap; color: var(--ad-purple); }
 .ad__pill--line { border: 0.0625rem solid #dcdce6; background: #fff; color: var(--ad-text); }
 .ad__pill--line .ad__ic { width: 0.625rem; height: 0.625rem; }
 .ad__pill--lg { padding: 0.375rem 0.875rem; font-size: 0.75rem; }

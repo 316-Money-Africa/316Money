@@ -19,10 +19,11 @@
 .ob__screen:not(:has(.ob__stepno)) .ob__banner { margin-top: 2.25rem; }
 
 /* purple banner */
-.ob__banner { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; min-height: 7.5rem; padding: 1.25rem clamp(1.25rem, 3vw, 2.5rem); border-radius: 0.375rem; background: linear-gradient(100deg, #351550 0%, #3f1d58 55%, #482762 100%); color: #fff; overflow: hidden; }
-.ob__banner::before, .ob__banner::after { content: ""; position: absolute; top: 0; bottom: 0; background: rgba(255, 255, 255, .055); pointer-events: none; }
-.ob__banner::before { right: 4%; width: 22%; clip-path: polygon(48% 0, 100% 0, 100% 100%, 0 100%); }
-.ob__banner::after { right: 0; width: 13%; background: rgba(255, 255, 255, .045); clip-path: polygon(60% 0, 100% 0, 100% 100%, 0 100%); }
+.ob__banner { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; min-height: 7.5rem; padding: 1.25rem clamp(1.25rem, 3vw, 2.5rem); border-radius: 0.375rem; background: #381b50; color: #fff; overflow: hidden; }
+/* two angular slabs on the right (as designed): both sit in one box anchored to the right edge and scale with the banner height */
+.ob__banner::before, .ob__banner::after { content: ""; position: absolute; top: 0; right: 0; height: 100%; aspect-ratio: 243 / 79; background: rgba(255, 255, 255, .1); pointer-events: none; }
+.ob__banner::before { clip-path: polygon(30% 62%, 89% 0, 100% 0, 100% 100%, 44.5% 100%); }
+.ob__banner::after { clip-path: polygon(74% 65.5%, 96.2% 36.7%, 100% 46%, 100% 100%, 73.5% 100%); }
 .ob__bcopy, .ob__next { position: relative; z-index: 1; }
 .ob__bcopy h1 { margin: 0 0 0.5rem; font-size: clamp(1.375rem, 1.1rem + 0.9vw, 1.875rem); font-weight: 700; line-height: 1.15; text-wrap: balance; color: #fff; }
 .ob__bcopy p { margin: 0; font-size: clamp(0.8125rem, 0.75rem + 0.2vw, 0.9375rem); line-height: 1.4; color: #b9a7cf; }

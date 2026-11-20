@@ -54,6 +54,7 @@ Object.assign(WIDTHS, {
   "GiftCards/hero.png": 1900, "GiftCards/value.png": 1700, "GiftCards/occasion.png": 1700, "GiftCards/manage.png": 1800, "GiftCards/share.png": 2000, "GiftCards/redeem.png": 2100,
 });
 WIDTHS["Signup/signin-art.png"] = 850;
+WIDTHS["Signup/HandWaving.png"] = 128; // greeting icon, shown about 2rem wide
 WIDTHS["Signup/photo.png"] = 900; // sign-up modal photo: shown about 26rem wide, so 2x for retina
 // Hotspots dashboard screen: the welcome strip carries baked text and a button, so it keeps more detail
 Object.assign(WIDTHS, { "Dashboard/welcome-banner.png": 1800, "Dashboard/more-opportunities.png": 1408, "Dashboard/gains.png": 800 });
@@ -62,7 +63,7 @@ const FOLDER_QUALITY = { Cards: 92, Airtime: 92, Bills: 92, Pay: 92, Business: 9
 
 // small product photos and logos baked into the hero screens are shown large: encode them near-lossless so edges and text stay crisp
 const FILE_QUALITY = { "Business/hero-chair.png": 98, "Business/hero-dress.png": 98, "Business/hero-shoe.png": 98, "Business/hero-logo.png": 100, "Business/hero-lmstrip.png": 96, "Business/hero-win.png": 94, "PaySmall/hero.png": 80, "PaySmall/steps-3.png": 80, "PaySmall/steps-2.png": 84, "Business/hero-bs.png": 95 };
-Object.assign(FILE_QUALITY, { "Hotspots/tab-cashout.png": 84, "Hotspots/tab-cashin.png": 84, "Hotspots/tab-remit.png": 84, "Hotspots/band-bg.jpg": 70, "Hotspots/rates.png": 92, "Hotspots/map.png": 90 });
+Object.assign(FILE_QUALITY, { "Hotspots/tab-cashout.png": 84, "Hotspots/tab-cashin.png": 84, "Hotspots/tab-remit.png": 84, "Hotspots/band-bg.jpg": 70, "Hotspots/rates.png": 92, "Hotspots/map.png": 90, "Signup/HandWaving.png": 100 });
 let before = 0, after = 0;
 // every folder in assets-src/ (one per page) maps to the same folder in the served assets
 for (const dir of readdirSync(SRC_ROOT).filter((n) => (!process.env.ONLY || n === process.env.ONLY) && !n.startsWith("_") && statSync(join(SRC_ROOT, n)).isDirectory())) { // folders starting with "_" hold supplied-but-unused originals and are skipped
