@@ -3,6 +3,16 @@
    A walk-through of the screens only: "Create account" always moves to the next step (no checks, nothing blocks the flow), nothing is sent
    anywhere and no account is created (the real sign-up lives in the 316 app). */
 (function () {
+  // Only the Hotspots pages (body.theme-hs) lead into the onboarding flow and the dashboards; on every other page the Sign in / Sign up links are inert for now.
+  if (!document.body.classList.contains("theme-hs")) {
+    Array.prototype.forEach.call(document.querySelectorAll('a[href="#sign-up"], a[href="#sign-in"]'), function (a) {
+      a.classList.add("is-inert");
+      a.setAttribute("aria-disabled", "true");
+      a.setAttribute("tabindex", "-1");
+      a.addEventListener("click", function (e) { e.preventDefault(); e.stopImmediatePropagation(); });
+    });
+    return;
+  }
   var dlg = document.getElementById("sign-up");
   if (!dlg || typeof dlg.showModal !== "function") return;
 

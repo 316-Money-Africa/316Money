@@ -136,3 +136,6 @@ dialog.su::backdrop { background: rgba(20, 24, 31, .55); backdrop-filter: blur(0
   .su__art { display: none !important; }
   .su__step[data-su-step="0"] { max-width: none; }
 }
+
+/* Sign in / Sign up are only live on the Hotspots pages (signup.js); elsewhere they stay visible but cannot be clicked */
+a.is-inert { pointer-events: none; cursor: default; }
