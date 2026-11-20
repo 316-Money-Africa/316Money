@@ -10,7 +10,6 @@
 .ob .hd__nav { gap: 0.25rem; }
 .ob .hd__link { min-height: 2.75rem; }
 .ob .hd__link.is-on { background: #ebe7fe; color: var(--hd-deep); font-weight: 600; }
-.ob__app { margin-top: 1.75rem; padding-top: 1.5rem; }
 .ob__top { min-height: 4.25rem; border-bottom-color: #ededf2; }
 
 /* page column */

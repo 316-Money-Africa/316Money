@@ -16,7 +16,7 @@
 .hd__link:hover { background: #f5f3fe; }
 .hd__link.is-on { background: #e9e5fd; color: var(--hd-deep); font-weight: 600; }
 .hd__chev { width: 0.75rem; height: 0.75rem; flex: none; opacity: .7; }
-.hd__app { margin-top: auto; padding: 1.5rem 0.25rem 0.25rem; border-top: 0.0625rem solid var(--hd-line); }
+.hd__app { margin-top: 2.75rem; padding: 0 0.25rem 0.25rem; }
 .hd__app-title { margin: 0 0 0.75rem; font-size: 0.6875rem; color: var(--hd-grey); }
 .hd__app-step { margin: 0 0 0.5rem; font-size: 0.75rem; font-weight: 700; }
 .hd__bar { height: 0.25rem; border-radius: 999rem; background: #e6e2f7; overflow: hidden; }
