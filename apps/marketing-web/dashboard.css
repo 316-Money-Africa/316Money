@@ -60,7 +60,7 @@
 .hd__track-fill { display: block; width: 45%; height: 100%; background: var(--hd-purple); }
 /* the cards without a button keep the same empty space under their status row, so every card's "Not started" / progress line sits on one horizontal line */
 .hd__card:not(.hd__card--on)::after { content: ""; display: block; height: calc(var(--hd-go) + 1rem); }
-.hd__go { width: 100%; min-height: var(--hd-go); margin-top: 1rem; border: 0; border-radius: 0.375rem; background: var(--hd-purple); color: #fff; font: 600 0.6875rem/1 var(--font); cursor: pointer; transition: background .15s; }
+.hd__go { display: grid; place-items: center; text-align: center; width: 100%; min-height: var(--hd-go); margin-top: 1rem; border: 0; border-radius: 0.375rem; background: var(--hd-purple); color: #fff; font: 600 0.6875rem/1 var(--font); cursor: pointer; transition: background .15s; }
 .hd__go:hover { background: var(--hd-deep); }
 
 /* "More opportunities" band */
