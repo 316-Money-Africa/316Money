@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>316 Hotspots · Overview</title>
+  <meta name="description" content="Your approved 316 Hotspots agent dashboard: collections, earnings, payment services, locations, customer feedback and your latest payment requests.">
+  <link rel="icon" type="image/png" sizes="131x131" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="styles.css?v=77986a3b">
+  <link rel="stylesheet" href="sections.css?v=373b85c0">
+  <link rel="stylesheet" href="agent-dashboard.css?v=e55217f7">
+  <link rel="stylesheet" href="mobile.css?v=6b276582">
+</head>
+<body>
+<svg class="ad__sprite" width="0" height="0" aria-hidden="true" focusable="false">
+  <symbol id="ad-home" viewBox="0 0 20 20"><path d="M3 9.2L10 3.5l7 5.7V16a1 1 0 01-1 1h-3.5v-5h-5v5H4a1 1 0 01-1-1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+  <symbol id="ad-swap" viewBox="0 0 20 20"><path d="M4 7h11l-3-3M16 13H5l3 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ad-card" viewBox="0 0 20 20"><rect x="2.5" y="4.5" width="15" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M2.5 8.5h15M5.5 12.5h3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+  <symbol id="ad-wallet" viewBox="0 0 20 20"><path d="M3 6.5A2 2 0 015 4.5h9.5V7M3 6.5V14a2 2 0 002 2h11V7H5a2 2 0 01-2-.5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="13" cy="11.5" r="1.1" fill="currentColor"/></symbol>
+  <symbol id="ad-pct" viewBox="0 0 20 20"><path d="M15.5 4.5l-11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="6" cy="6" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="14" cy="14" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+  <symbol id="ad-pin" viewBox="0 0 20 20"><path d="M10 17s5-4.4 5-8.3A5 5 0 005 8.7C5 12.6 10 17 10 17z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="10" cy="8.7" r="1.7" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
+  <symbol id="ad-people" viewBox="0 0 20 20"><circle cx="8" cy="7" r="2.8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M2.8 16c.4-2.8 2.4-4.3 5.2-4.3s4.8 1.5 5.2 4.3M13.5 4.4a2.6 2.6 0 010 5M14.5 11.9c1.5.4 2.4 1.7 2.7 4.1" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+  <symbol id="ad-report" viewBox="0 0 20 20"><path d="M5 2.8h6.5L15 6.3v10.9H5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M11 3v4h4M7.5 14v-2.5M10 14v-4.5M12.5 14v-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ad-shield" viewBox="0 0 20 20"><path d="M10 2.8l6 2.2v4.6c0 3.6-2.5 6-6 7.6-3.5-1.6-6-4-6-7.6V5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M7.4 9.9l2 2 3.4-3.9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ad-gear" viewBox="0 0 20 20"><circle cx="10" cy="10" r="2.6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 2.8v2M10 15.2v2M2.8 10h2M15.2 10h2M4.9 4.9l1.4 1.4M13.7 13.7l1.4 1.4M15.1 4.9l-1.4 1.4M6.3 13.7l-1.4 1.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+  <symbol id="ad-search" viewBox="0 0 20 20"><circle cx="9" cy="9" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M13 13l3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+  <symbol id="ad-bell" viewBox="0 0 20 20"><path d="M5.5 14V9a4.5 4.5 0 019 0v5l1.2 1.5H4.3zM8.3 17.2h3.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ad-down" viewBox="0 0 12 12"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ad-right" viewBox="0 0 12 12"><path d="M4.5 3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ad-up" viewBox="0 0 12 12"><path d="M6 10V2.5M3 5.2l3-3 3 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ad-globe" viewBox="0 0 20 20"><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3 10h14M10 3c2.2 2 3.2 4.4 3.2 7s-1 5-3.2 7c-2.2-2-3.2-4.4-3.2-7s1-5 3.2-7z" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
+  <symbol id="ad-bank" viewBox="0 0 20 20"><path d="M2.8 8L10 3.5 17.2 8z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M4.5 9.5h11M5.5 10.5v4.5M8.5 10.5v4.5M11.5 10.5v4.5M14.5 10.5v4.5M3.5 16.5h13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+  <symbol id="ad-chat" viewBox="0 0 20 20"><path d="M3.5 5.5a2 2 0 012-2h9a2 2 0 012 2v6a2 2 0 01-2 2H9l-3.5 3v-3a2 2 0 01-2-2z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M7 7.5h6M7 10h3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+  <symbol id="ad-menu" viewBox="0 0 20 20"><path d="M3.5 5.5h13M3.5 10h13M3.5 14.5h13" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="ad-close" viewBox="0 0 20 20"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+</svg>
+
+<div class="ad">
+  <div class="ad__scrim" data-ad-scrim></div>
+  <aside class="ad__side" id="ad-side" aria-label="Agent navigation">
+    <div class="ad__sidehead">
+      <a class="ad__logo" href="./" aria-label="316 Pay home"><img src="assets/logo.png" alt="" width="131" height="131"><span>PAY</span></a>
+      <button class="ad__x" type="button" aria-label="Close menu" data-ad-close><svg class="ad__ic" aria-hidden="true"><use href="#ad-close"/></svg></button>
+    </div>
+    <nav class="ad__nav" aria-label="Dashboard"><a class="ad__link is-on" href="#" aria-current="page"><svg class="ad__ic" aria-hidden="true"><use href="#ad-home"/></svg><span>Overview</span></a><a class="ad__link" href="#"><svg class="ad__ic" aria-hidden="true"><use href="#ad-swap"/></svg><span>Transactions</span></a><a class="ad__link" href="#"><svg class="ad__ic" aria-hidden="true"><use href="#ad-card"/></svg><span>Payment Services</span></a><a class="ad__link" href="#"><svg class="ad__ic" aria-hidden="true"><use href="#ad-wallet"/></svg><span>Collection Service</span></a><a class="ad__link" href="#"><svg class="ad__ic" aria-hidden="true"><use href="#ad-pct"/></svg><span>Rates &amp; earnings</span></a><a class="ad__link" href="#"><svg class="ad__ic" aria-hidden="true"><use href="#ad-pin"/></svg><span>Location</span></a><a class="ad__link" href="#"><svg class="ad__ic" aria-hidden="true"><use href="#ad-people"/></svg><span>Customers</span></a><a class="ad__link" href="#"><svg class="ad__ic" aria-hidden="true"><use href="#ad-report"/></svg><span>Report</span></a><a class="ad__link" href="#"><svg class="ad__ic" aria-hidden="true"><use href="#ad-shield"/></svg><span>Compliance</span></a><a class="ad__link" href="#"><svg class="ad__ic" aria-hidden="true"><use href="#ad-gear"/></svg><span>Settings</span></a></nav>
+    <div class="ad__me"><div><strong>Lawal Rahman</strong><span>Payment Agent</span></div><span class="ad__ok">Approved</span></div>
+  </aside>
+
+  <div class="ad__body">
+    <header class="ad__top">
+      <button class="ad__burger" type="button" aria-label="Open menu" aria-controls="ad-side" aria-expanded="false" data-ad-open><svg class="ad__ic" aria-hidden="true"><use href="#ad-menu"/></svg></button>
+      <label class="ad__search"><svg class="ad__ic" aria-hidden="true"><use href="#ad-search"/></svg><input type="search" placeholder="Search transactions, customers, payments..." aria-label="Search transactions, customers, payments"></label>
+      <button class="ad__bell" type="button" aria-label="Notifications, 1 new"><svg class="ad__ic" aria-hidden="true"><use href="#ad-bell"/></svg><span class="ad__badge">1</span></button>
+    </header>
+
+    <main class="ad__main">
+      <div class="ad__hello"><h1>Good morning, James &#9200;</h1><a class="ad__cta" href="#">New Payment</a></div>
+
+      <ul class="ad__stats"><li class="ad__stat"><p class="ad__lbl">Collections (Today)</p><p class="ad__num">36</p><p class="ad__foot"><span class="ad__up"><svg class="ad__ic" aria-hidden="true"><use href="#ad-up"/></svg>+14%</span><span class="ad__muted">vs yesterday</span><span class="ad__pill ad__pill--line">Today<svg class="ad__ic" aria-hidden="true"><use href="#ad-down"/></svg></span></p></li><li class="ad__stat"><p class="ad__lbl">Collection Volume</p><p class="ad__num">&#8358; 219,600</p><p class="ad__foot"><span class="ad__up"><svg class="ad__ic" aria-hidden="true"><use href="#ad-up"/></svg>+14%</span><span class="ad__muted">vs yesterday</span><span class="ad__pill">Today</span></p></li><li class="ad__stat"><p class="ad__lbl">Your Earnings</p><p class="ad__num">&#8358; 29,600</p><p class="ad__foot"><span class="ad__up"><svg class="ad__ic" aria-hidden="true"><use href="#ad-up"/></svg>+14%</span><span class="ad__muted">vs yesterday</span><span class="ad__pill">Today</span></p></li><li class="ad__stat"><p class="ad__lbl">Commission Rate</p><p class="ad__num">&#8358; 29,600</p><p class="ad__foot"><span class="ad__muted">On confirmed collections only</span></p></li></ul>
+
+      <div class="ad__row ad__row--chart">
+        <section class="ad__card ad__card--chart" aria-labelledby="ad-act">
+          <div class="ad__cardhead"><h2 id="ad-act">Collection activity</h2><span class="ad__pill ad__pill--line ad__pill--lg">last 30 days<svg class="ad__ic" aria-hidden="true"><use href="#ad-down"/></svg></span></div>
+          <div class="ad__tabs" role="tablist" aria-label="Collection activity views">
+            <button class="is-on" type="button" role="tab" aria-selected="true">Overview</button><button type="button" role="tab" aria-selected="false">By Service</button><button type="button" role="tab" aria-selected="false">By location</button><button type="button" role="tab" aria-selected="false">By Customer</button>
+          </div>
+          <div class="ad__chartbox">
+            <svg class="ad__chart" viewBox="0 0 640 262" role="img" aria-label="Collections and revenue over the last 30 days, rising from January to November">
+              <defs><linearGradient id="ad-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7355f2" stop-opacity=".22"/><stop offset="1" stop-color="#7355f2" stop-opacity="0"/></linearGradient></defs>
+              <path class="ad__grid" d="M54 32 H594"/><text class="ad__ylab" x="46" y="36" text-anchor="end">100K</text><path class="ad__grid" d="M54 82 H594"/><text class="ad__ylab" x="46" y="86" text-anchor="end">75K</text><path class="ad__grid" d="M54 132 H594"/><text class="ad__ylab" x="46" y="136" text-anchor="end">50K</text><path class="ad__grid" d="M54 182 H594"/><text class="ad__ylab" x="46" y="186" text-anchor="end">25K</text><path class="ad__grid" d="M54 232 H594"/><text class="ad__ylab" x="46" y="236" text-anchor="end">0</text><text class="ad__xlab" x="64" y="254" text-anchor="middle">Jan</text><text class="ad__xlab" x="116" y="254" text-anchor="middle">Feb</text><text class="ad__xlab" x="168" y="254" text-anchor="middle">Mar</text><text class="ad__xlab" x="220" y="254" text-anchor="middle">Apr</text><text class="ad__xlab" x="272" y="254" text-anchor="middle">May</text><text class="ad__xlab" x="324" y="254" text-anchor="middle">Jun</text><text class="ad__xlab" x="376" y="254" text-anchor="middle">Jul</text><text class="ad__xlab" x="428" y="254" text-anchor="middle">Aug</text><text class="ad__xlab" x="480" y="254" text-anchor="middle">Sep</text><text class="ad__xlab" x="532" y="254" text-anchor="middle">Oct</text><text class="ad__xlab" x="584" y="254" text-anchor="middle">Nov</text>
+              <path d="M64.0 176.0 C72.7 173.3 98.7 161.0 116.0 160.0 C133.3 159.0 150.7 172.7 168.0 170.0 C185.3 167.3 202.7 145.3 220.0 144.0 C237.3 142.7 254.7 157.3 272.0 162.0 C289.3 166.7 306.7 173.0 324.0 172.0 C341.3 171.0 358.7 157.3 376.0 156.0 C393.3 154.7 410.7 165.3 428.0 164.0 C445.3 162.7 462.7 156.7 480.0 148.0 C497.3 139.3 514.7 119.3 532.0 112.0 C549.3 104.7 575.3 105.3 584.0 104.0 L584.0 232 L64.0 232 Z" fill="url(#ad-fill)"/>
+              <path class="ad__line ad__line--b" d="M64.0 196.0 C72.7 195.3 98.7 197.0 116.0 192.0 C133.3 187.0 150.7 168.7 168.0 166.0 C185.3 163.3 202.7 173.3 220.0 176.0 C237.3 178.7 254.7 184.0 272.0 182.0 C289.3 180.0 306.7 165.7 324.0 164.0 C341.3 162.3 358.7 169.3 376.0 172.0 C393.3 174.7 410.7 183.3 428.0 180.0 C445.3 176.7 462.7 156.0 480.0 152.0 C497.3 148.0 514.7 157.7 532.0 156.0 C549.3 154.3 575.3 144.3 584.0 142.0"/>
+              <path class="ad__line ad__line--a" d="M64.0 176.0 C72.7 173.3 98.7 161.0 116.0 160.0 C133.3 159.0 150.7 172.7 168.0 170.0 C185.3 167.3 202.7 145.3 220.0 144.0 C237.3 142.7 254.7 157.3 272.0 162.0 C289.3 166.7 306.7 173.0 324.0 172.0 C341.3 171.0 358.7 157.3 376.0 156.0 C393.3 154.7 410.7 165.3 428.0 164.0 C445.3 162.7 462.7 156.7 480.0 148.0 C497.3 139.3 514.7 119.3 532.0 112.0 C549.3 104.7 575.3 105.3 584.0 104.0"/>
+              <path class="ad__cursor" d="M272 26 V232"/>
+              <circle class="ad__dot" cx="272" cy="162.0" r="4"/>
+              <g class="ad__tip"><rect x="280" y="124" width="84" height="52" rx="5"/><text class="ad__tipt" x="288" y="140">May</text><circle cx="291" cy="154" r="3" fill="#7355f2"/><text class="ad__tipr" x="299" y="157">Collections 35K</text><circle cx="291" cy="168" r="3" fill="#c9c0f5"/><text class="ad__tipr" x="299" y="171">Revenue 25K</text></g>
+            </svg>
+          </div>
+        </section>
+        <section class="ad__card ad__card--services" aria-labelledby="ad-svc">
+          <h2 id="ad-svc">Your payment services</h2>
+          <ul class="ad__svcs"><li class="ad__svc is-on"><span class="ad__svcic"><svg class="ad__ic" aria-hidden="true"><use href="#ad-wallet"/></svg></span><div><strong>316 Money account funding</strong><span>Available at 3 locations</span></div></li><li class="ad__svc"><span class="ad__svcic"><svg class="ad__ic" aria-hidden="true"><use href="#ad-bank"/></svg></span><div><strong>Business account funding</strong><span>Available for eligible accounts</span></div></li><li class="ad__svc"><span class="ad__svcic"><svg class="ad__ic" aria-hidden="true"><use href="#ad-globe"/></svg></span><div><strong>International funding</strong><span>Requires market approval</span></div></li></ul>
+          <a class="ad__cta ad__cta--wide" href="#">Add new service</a>
+        </section>
+      </div>
+
+      <div class="ad__row ad__row--three">
+        <section class="ad__card" aria-labelledby="ad-loc">
+          <h2 class="ad__ctitle" id="ad-loc"><svg class="ad__ic" aria-hidden="true"><use href="#ad-pin"/></svg>My Locations</h2>
+          <p class="ad__big"><strong>3</strong> Active Locations</p>
+          <ul class="ad__list ad__list--loc"><li><svg class="ad__ic ad__ic--pin" aria-hidden="true"><use href="#ad-pin"/></svg><span class="ad__lname">Ikeja Hub</span><strong>&#8358; 19,600</strong><svg class="ad__chev" aria-hidden="true"><use href="#ad-right"/></svg></li><li><svg class="ad__ic ad__ic--pin" aria-hidden="true"><use href="#ad-pin"/></svg><span class="ad__lname">Yaba Spot</span><strong>&#8358; 319,400</strong><svg class="ad__chev" aria-hidden="true"><use href="#ad-right"/></svg></li><li><svg class="ad__ic ad__ic--pin" aria-hidden="true"><use href="#ad-pin"/></svg><span class="ad__lname">Surulere Spot</span><strong>&#8358; 443,300</strong><svg class="ad__chev" aria-hidden="true"><use href="#ad-right"/></svg></li></ul>
+        </section>
+        <section class="ad__card" aria-labelledby="ad-earn">
+          <div class="ad__cardhead"><h2 class="ad__ctitle" id="ad-earn"><svg class="ad__ic" aria-hidden="true"><use href="#ad-wallet"/></svg>Earnings Summary</h2><span class="ad__pill ad__pill--line">Today<svg class="ad__ic" aria-hidden="true"><use href="#ad-down"/></svg></span></div>
+          <p class="ad__big ad__big--amt"><strong>&#8358; 219,600</strong></p>
+          <ul class="ad__list"><li><span>This week</span><strong>&#8358; 19,600</strong><svg class="ad__chev" aria-hidden="true"><use href="#ad-right"/></svg></li><li><span>This month</span><strong>&#8358; 319,400</strong><svg class="ad__chev" aria-hidden="true"><use href="#ad-right"/></svg></li><li><span>Total (All time)</span><strong>&#8358; 443,300</strong><svg class="ad__chev" aria-hidden="true"><use href="#ad-right"/></svg></li></ul>
+        </section>
+        <section class="ad__card" aria-labelledby="ad-fb">
+          <h2 class="ad__ctitle" id="ad-fb"><svg class="ad__ic" aria-hidden="true"><use href="#ad-chat"/></svg>Customer Feedback</h2>
+          <div class="ad__score"><svg class="ad__donut" viewBox="0 0 80 80" role="img" aria-label="Customer score 4.6 out of 5"><circle class="ad__seg ad__seg--bg" cx="40" cy="40" r="30" pathLength="100"/><circle class="ad__seg ad__seg--p" cx="40" cy="40" r="30" pathLength="100" stroke-dasharray="88 12" stroke-dashoffset="0"/><circle class="ad__seg ad__seg--a" cx="40" cy="40" r="30" pathLength="100" stroke-dasharray="5 95" stroke-dashoffset="-89"/><circle class="ad__seg ad__seg--r" cx="40" cy="40" r="30" pathLength="100" stroke-dasharray="3 97" stroke-dashoffset="-95"/><text x="40" y="38" text-anchor="middle" class="ad__dn">4.6</text><text x="40" y="49" text-anchor="middle" class="ad__ds">out of 5</text></svg><div><strong>Customer score</strong><span>Based on 896 reviews</span><span class="ad__chg">+13% vs last 30 days</span></div></div>
+          <ul class="ad__list ad__list--fb"><li><span class="ad__dotk ad__dotk--g"></span><span>Positive (4-5&#9733;)</span><strong>90%</strong></li><li><span class="ad__dotk ad__dotk--a"></span><span>Neutral (3&#9733;)</span><strong>5%</strong></li><li><span class="ad__dotk ad__dotk--r"></span><span>Negative (1-2&#9733;)</span><strong>3%</strong></li></ul>
+        </section>
+      </div>
+
+      <section class="ad__card ad__card--table" aria-labelledby="ad-lat">
+        <div class="ad__cardhead"><h2 id="ad-lat">Latest Payment Request</h2><span class="ad__pill ad__pill--line">All<svg class="ad__ic" aria-hidden="true"><use href="#ad-down"/></svg></span></div>
+        <div class="ad__scroll" tabindex="0" role="region" aria-label="Latest payment requests">
+          <table class="ad__table"><thead><tr><th scope="col">Reference</th><th scope="col">Customer</th><th scope="col">Date</th><th scope="col">Service</th><th scope="col">Amount</th><th scope="col">Location</th><th scope="col">Status</th></tr></thead><tbody><tr><td>Pay-2408</td><td>Customer A</td><td>10 Nov 2026</td><td>Account Funding</td><td>&#8358;500,000</td><td>Ikeja Hub</td><td><span class="ad__tag ad__tag--ok">Confirmed</span></td></tr><tr><td>Pay-5639</td><td>Customer B</td><td>10 Nov 2026</td><td>Account Funding</td><td>&#8358;500,000</td><td>Yaba Spot</td><td><span class="ad__tag ad__tag--bad">Failed</span></td></tr><tr><td>Pay-2480</td><td>Customer C</td><td>10 Nov 2026</td><td>Account Funding</td><td>&#8358;500,000</td><td>Surulere Spot</td><td><span class="ad__tag ad__tag--wait">Pending</span></td></tr></tbody></table>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+  <script src="agent-dashboard.js?v=9e32dceb" defer></script>
+</body>
+</html>
