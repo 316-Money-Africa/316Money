@@ -120,3 +120,5 @@
 .hd__sub--guide .hd__opt.is-on { background: #ebe7fe; color: var(--hd-deep); font-weight: 600; }
 .hd__opt--soon { display: flex; align-items: center; min-height: 2.5rem; padding: 0.375rem 0.625rem; font-size: 0.75rem; color: #9a9db0; }
 .hd__sub--guide { gap: 0.125rem; }
+.hd__sub--guide .hd__opt { display: flex; align-items: center; min-height: 2.5rem; padding: 0.375rem 0.625rem; border-radius: 0.375rem; font-size: 0.8125rem; color: #3f4357; }
+.hd__sub--guide a.hd__opt:hover { background: #f5f3fe; color: var(--hd-deep); }
