@@ -28,7 +28,8 @@
 
 /* top bar */
 .ad__body { min-width: 0; }
-.ad__top { display: flex; align-items: center; gap: 1rem; padding: 1.25rem clamp(1rem, 2.4vw, 2.25rem) 0; max-width: 90rem; margin-inline: auto; }
+.ad__top { background: #fff; border-bottom: 0.0625rem solid var(--ad-line); }   /* full-width white bar, like the side panel */
+.ad__topin { display: flex; align-items: center; gap: 1rem; min-height: 4.5rem; padding: 0.75rem clamp(1rem, 2.4vw, 2.25rem); max-width: 90rem; margin-inline: auto; }
 .ad__burger { display: none; place-items: center; width: var(--touch); height: var(--touch); flex: none; padding: 0; border: 0.0625rem solid var(--ad-line); border-radius: 0.625rem; background: #fff; color: var(--ad-text); cursor: pointer; }
 .ad__search { display: flex; align-items: center; gap: 0.625rem; flex: 1; min-width: 0; max-width: 46rem; min-height: 3rem; padding: 0 1.125rem; border: 0.0625rem solid var(--ad-line); border-radius: 0.75rem; background: #fff; color: #9a9db0; }
 .ad__search input { flex: 1; min-width: 0; padding: 0; border: 0; background: transparent; font: 400 0.875rem/1.2 var(--ad-font); color: var(--ad-ink); }
