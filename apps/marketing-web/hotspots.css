@@ -39,7 +39,6 @@
 .hs-split__copy .hs-p { max-width: 34rem; }
 .hs-split__media--end { justify-self: end; width: 100%; max-width: 33rem; }
 .hs-pic--opp { border-radius: 0; }   /* the supplied picture carries its own rounded corners and the caption card */
-@media (min-width: 64rem) { #opportunity::before { content: ""; position: absolute; z-index: 0; left: 50%; top: 0; bottom: 0; border-left: 0.0625rem dotted #A692BC; pointer-events: none; } }
 
 /* 4 · tabs */
 .hs-tabs { margin-top: clamp(1.5rem, 3vw, 2.5rem); }
