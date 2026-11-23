@@ -33,11 +33,11 @@
     gs.addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); go(); } });
   }
 
-  // the picker: General is the Hotspots dashboard (the first flow), Payment agent is this guide, the Collection guide is not written yet
+  // the picker: General is the Hotspots dashboard (the first flow), Payment agent and Collection agent are the two guides
   const role = document.querySelector("[data-role]");
   if (role) role.addEventListener("change", () => {
-    if (role.value === "general") { location.href = "hotspots-dashboard.html"; return; }
-    role.value = "payment";
+    const dest = { general: "hotspots-dashboard.html", payment: "agent-guide.html#getting-started", collection: "collection-guide.html#getting-started" };
+    if (dest[role.value]) location.href = dest[role.value];
   });
 
   // policies: category chips + search + reveal
