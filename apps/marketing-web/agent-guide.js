@@ -33,10 +33,10 @@
     gs.addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); go(); } });
   }
 
-  // the picker: General is the general Hotspots page, Payment agent is this guide, the Collection guide is not written yet
+  // the picker: General is the Hotspots dashboard (the first flow), Payment agent is this guide, the Collection guide is not written yet
   const role = document.querySelector("[data-role]");
   if (role) role.addEventListener("change", () => {
-    if (role.value === "general") { location.href = "collection-agent.html"; return; }
+    if (role.value === "general") { location.href = "hotspots-dashboard.html"; return; }
     role.value = "payment";
   });
 
