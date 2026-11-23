@@ -16,6 +16,7 @@
       const hit = a.dataset.nav.split(" ").includes(on);
       a.classList.toggle("is-on", hit);
       if (hit) a.setAttribute("aria-current", "step"); else a.removeAttribute("aria-current");
+      if (hit && window.hdGroup && a.closest(".hd__grp")) window.hdGroup.set(a.closest(".hd__grp"), true);
     });
     const cur = screens[keys.indexOf(on)];
     if (stepEl) stepEl.textContent = cur.dataset.step;
