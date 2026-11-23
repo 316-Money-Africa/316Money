@@ -8,8 +8,6 @@
         <p class="hs-lead">Become a 316 Hotspot and help individuals and businesses access cash, fund their accounts and receive local or international payouts all through a trusted neighbourhood agent network.</p>
       </div>
       <div class="hs-hero__art">
-        {{img:Hotspots/bars-left class="hs-hero__bars hs-hero__bars--l" alt="" fetchpriority="high" loading="eager"}}
-        {{img:Hotspots/bars-right class="hs-hero__bars hs-hero__bars--r" alt="" loading="eager"}}
         {{img:Hotspots/hero-dash class="hs-hero__dash" alt="The 316 Hotspots dashboard: Welcome to 316 Hotspots with agent onboarding steps" fetchpriority="high" loading="eager"}}
       </div>
     </section>
@@ -24,7 +22,7 @@
           </div>
           <p class="hs-p">Become a 316 Hotspot and help individuals and businesses access cash, fund their accounts and receive local or international payouts all through a trusted neighbourhood agent network.</p>
         </div>
-        <div class="hs-cards">{{img:Hotspots/cards class="hs-cards__img" alt="Collection Agent, Payment Agent and Collection plus Payment Agent: three ways to serve customers as a 316 Hotspot"}}</div>
+        <div class="hs-cards">{{img:Hotspots/serve class="hs-cards__img" alt="Collection Agent: cash-out and pay-out services; Payment Agent: cash-in and pay-in services; Collection plus payment agents: both services from one Hotspot account" loading="lazy"}}</div>
       </div>
     </section>
 
@@ -50,8 +48,8 @@
           <p class="hs-p">Explore how Hotspots bridge digital money and physical access. Select a journey to see how it works.</p>
         </header>
         <div class="hs-tabs" data-hs-tabs>
-          <div class="hs-tabs__bar" role="tablist" aria-label="Hotspot journeys"><button class="hs-tab is-on" type="button" role="tab" id="hs-tab-cashout" aria-selected="true" aria-controls="hs-pane-cashout" data-tab="cashout">Cash-out</button><button class="hs-tab" type="button" role="tab" id="hs-tab-cashin" aria-selected="false" aria-controls="hs-pane-cashin" data-tab="cashin">Cash-in</button><button class="hs-tab" type="button" role="tab" id="hs-tab-remit" aria-selected="false" aria-controls="hs-pane-remit" data-tab="remit">Remittance payout</button></div>
-          <div class="hs-pane is-on" role="tabpanel" id="hs-pane-cashout" aria-labelledby="hs-tab-cashout">{{img:Hotspots/tab-cashout class="hs-pic hs-pic--tab" alt="Cash-out: the customer finds a nearby cash-out agent, the agent verifies an eligible withdrawal request, and the agent pays cash and the transaction is recorded"}}</div>
+          <div class="hs-tabs__bar" role="tablist" aria-label="Hotspot journeys"><button class="hs-tab is-on" type="button" role="tab" id="hs-tab-cashout" aria-selected="true" aria-controls="hs-pane-cashout" data-tab="cashout">Pay-outs</button><button class="hs-tab" type="button" role="tab" id="hs-tab-cashin" aria-selected="false" aria-controls="hs-pane-cashin" data-tab="cashin">Pay-ins</button><button class="hs-tab" type="button" role="tab" id="hs-tab-remit" aria-selected="false" aria-controls="hs-pane-remit" data-tab="remit">Remittance payout</button></div>
+          <div class="hs-pane hs-pane--po is-on" role="tabpanel" id="hs-pane-cashout" aria-labelledby="hs-tab-cashout"><div class="hs-po"><div class="hs-po__panel hs-po__panel--1">{{img:Hotspots/payout-1 class="hs-po__shot" alt="Pay-outs, collection agent: the customer finds a nearby cash-out agent in the Hotspots near you map" loading="lazy"}}</div><div class="hs-po__panel hs-po__panel--2"><svg class="hs-po__waves" viewBox="0 0 1000 535" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 300C250 330 400 420 640 535"/><path d="M0 478C300 452 560 402 1000 424"/></svg><div class="hs-po__txt"><p class="hs-po__k">Collection agent</p><h3>Pay-outs</h3><p>Agent verifies an eligible withdrawal request</p></div><svg class="hs-po__arrow" viewBox="0 0 40 12" aria-hidden="true" focusable="false"><path d="M0 6h38M33 1l5 5-5 5"/></svg>{{img:Hotspots/payout-2 class="hs-po__card hs-po__card--2" alt="Verify recipient: the agent enters the collection request reference and the recipient phone or account ID, and a match is found for Cynthia Paul with in-app confirmation required" loading="lazy"}}</div><div class="hs-po__panel hs-po__panel--3"><svg class="hs-po__waves" viewBox="0 0 1000 535" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 300C250 330 400 420 640 535"/><path d="M0 478C300 452 560 402 1000 424"/></svg><div class="hs-po__txt"><p class="hs-po__k">Collection agent</p><h3>Pay-outs</h3><p>Agent pays cash and the transaction is recorded</p></div><svg class="hs-po__arrow" viewBox="0 0 40 12" aria-hidden="true" focusable="false"><path d="M0 6h38M33 1l5 5-5 5"/></svg>{{img:Hotspots/payout-3 class="hs-po__card hs-po__card--3" alt="Payment successful, and a transaction receipt with the reference, recipient, payout amount and service fee" loading="lazy"}}</div></div></div>
           <div class="hs-pane" role="tabpanel" id="hs-pane-cashin" aria-labelledby="hs-tab-cashin" hidden>{{img:Hotspots/tab-cashin class="hs-pic hs-pic--tab" alt="Cash-in: the customer chooses an eligible pay-in agent, the agent receives cash and confirms the payment request, and the customer account is credited after processing" loading="lazy"}}</div>
           <div class="hs-pane" role="tabpanel" id="hs-pane-remit" aria-labelledby="hs-tab-remit" hidden>{{img:Hotspots/tab-remit class="hs-pic hs-pic--tab" alt="Remittance payout: the customer receives a local or international remittance, the customer finds a permitted payout Hotspot, and the agent verifies eligibility and releases cash" loading="lazy"}}</div>
         </div>
