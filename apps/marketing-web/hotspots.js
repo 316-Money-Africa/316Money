@@ -49,3 +49,13 @@
     });
   });
 })();
+
+/* Collection Agent page: the Pay-outs panel plays its three steps in a loop, only while it is on screen (and restarts when the tab is opened again). */
+(function () {
+  var po = document.querySelector("[data-hs-po]");
+  if (!po) return;
+  if (!("IntersectionObserver" in window)) { po.classList.add("is-live"); return; }
+  new IntersectionObserver(function (entries) {
+    po.classList.toggle("is-live", entries[entries.length - 1].isIntersecting);
+  }, { threshold: 0.35 }).observe(po);
+})();
