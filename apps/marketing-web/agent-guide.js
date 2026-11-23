@@ -33,19 +33,11 @@
     gs.addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); go(); } });
   }
 
-  // the Collection guide is not written yet: the list keeps showing Payment agent
+  // the picker: General is the general Hotspots page, Payment agent is this guide, the Collection guide is not written yet
   const role = document.querySelector("[data-role]");
-  const bh = document.querySelector("[data-banner-h]"), bp = document.querySelector("[data-banner-p]");
-  const banners = {
-    general: ["Exploring Hotspot agents", "Learn how Collection and Payment Agents serve customers and which role fits your business."],
-    payment: ["Exploring Payment Agent", "Help customers add funds. Suitable for businesses that want to offer convenient account funding and supported pay-in services."]
-  };
-  let current = "general";
   if (role) role.addEventListener("change", () => {
-    if (!banners[role.value]) { role.value = current; return; }   // the Collection guide is not written yet
-    current = role.value;
-    if (bh) bh.textContent = banners[current][0];
-    if (bp) bp.textContent = banners[current][1];
+    if (role.value === "general") { location.href = "collection-agent.html"; return; }
+    role.value = "payment";
   });
 
   // policies: category chips + search + reveal
