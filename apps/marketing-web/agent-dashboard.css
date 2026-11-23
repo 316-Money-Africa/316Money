@@ -53,7 +53,7 @@
 .ad__stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(0.75rem, 1.2vw, 1.125rem); }
 .ad__stat { display: flex; flex-direction: column; min-width: 0; padding: 1.25rem 1.25rem 1.125rem; border: 0.0625rem solid var(--ad-line); border-radius: 0.75rem; background: #fff; }
 .ad__lbl { margin-bottom: 0.875rem; font-size: 0.8125rem; color: var(--ad-text); }
-.ad__num { margin-bottom: 1.125rem; font-size: clamp(1.375rem, 1.1rem + 0.7vw, 1.75rem); font-weight: 700; line-height: 1.1; color: var(--ad-ink); }
+.ad__num { color: #525252; margin-bottom: 1.125rem; font-size: clamp(1.375rem, 1.1rem + 0.7vw, 1.75rem); font-weight: 700; line-height: 1.1; color: #525252; }
 .ad__foot { display: flex; align-items: center; flex-wrap: wrap; gap: 0.375rem 0.5rem; margin-top: auto; font-size: 0.6875rem; }
 .ad__up { display: inline-flex; align-items: center; gap: 0.125rem; font-weight: 600; color: #17a05d; }
 .ad__up .ad__ic { width: 0.75rem; height: 0.75rem; }
@@ -166,3 +166,7 @@
   .ad__main { padding-top: 1.5rem; padding-bottom: 4rem; }
 }
 @media (prefers-reduced-motion: reduce) { .ad__side, .ad__scrim { transition: none; } }
+
+/* prices and amounts use the softer #525252 */
+.ad__big--amt strong, .ad__list strong { color: #525252; }
+.ad__table td:nth-child(5) { color: #525252; }
