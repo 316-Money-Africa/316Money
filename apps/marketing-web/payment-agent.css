@@ -136,3 +136,14 @@ img.pa-slot--hero { border-radius: 1rem 1rem 0 0; box-shadow: 0 -0.5rem 3rem rgb
 }
 .pa-nw { white-space: nowrap; }
 @media (prefers-reduced-motion: reduce) { .pa-exp__pane { animation: none; } .pa-step, .pa-steps__chev { transition: none; } }
+
+/* six picture tiles with the title and line over the lower part (Collection overview) */
+.pa-tiles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(0.75rem, 1.4vw, 1.25rem); }
+.pa-tile { position: relative; overflow: hidden; border-radius: 0.25rem; background: #92428F; isolation: isolate; }
+.pa-tile::after { content: ""; position: absolute; inset: 40% 0 0; z-index: 1; background: linear-gradient(180deg, rgba(34, 8, 42, 0) 0%, rgba(34, 8, 42, .86) 100%); pointer-events: none; }
+.pa-tile__img { border-radius: 0; object-fit: cover; }
+.pa-tile__txt { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: clamp(1rem, 1.8vw, 1.5rem); color: #fff; }
+.pa-tile__txt h3 { margin: 0 0 0.5rem; font-size: clamp(1.0625rem, 0.95rem + 0.4vw, 1.25rem); font-weight: 600; line-height: 1.2; color: #fff; text-wrap: balance; }
+.pa-tile__txt p { margin: 0; font-size: clamp(0.75rem, 0.7rem + 0.2vw, 0.875rem); line-height: 1.45; color: rgba(255, 255, 255, .86); }
+@media (max-width: 63.99rem) { .pa-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 40rem) { .pa-tiles { grid-template-columns: minmax(0, 1fr); } .pa-tile__img { aspect-ratio: 4 / 5; } }
