@@ -247,3 +247,8 @@
   .pc, .pi-list, .pc-spin { animation: none !important; }
 }
 .hs-po.is-reset, .hs-po.is-reset * { animation: none !important; }   /* toggled for one frame by hotspots.js so a panel starts again from step 1 when it comes into view */
+
+/* the kicker and the title are one fixed layer above every step (they never fade or move); each step only brings its own line and "Step n" label, and its own copy of the title is kept hidden so the line sits in the same place */
+.hs-po__txt--head { z-index: 4; pointer-events: none; }
+.hs-sc .hs-po__k, .hs-sc .hs-po__txt h3 { visibility: hidden; }
+.hs-po__mask { position: absolute; left: 0; right: 0; top: 0; height: 27%; background: #A556A7; }   /* covers the text printed in the supplied step-1 picture; the live title and line replace it */
