@@ -1,0 +1,73 @@
+<!--page title="Contact us · 316 Money" description="Contact 316 Money: ask a question, get help with a payment, or explore a business or Hotspot opportunity. Tell us what you need and we will point you in the right direction." css="contact.css" js="contact.js" bodyclass="theme-pay" wordmark="PAY"-->
+
+    <!-- 1 · Hero: the introduction and the enquiry form (lilac wash). The photo slot keeps its place until the picture is added. -->
+    <section class="ct-hero" id="contact" aria-labelledby="ct-title">
+      <div class="wrap ct-hero__grid">
+        <p class="ct-eyebrow">Contact us</p>
+        <h1 id="ct-title" class="ct-title"><span class="ln">Let’s get you the</span> <span class="ln">help you need</span></h1>
+        <p class="ct-lead">Whether you have a question about 316 Money, need help with a payment or want to explore a business opportunity, we’re here to point you in the right direction.</p>
+        <div class="ct-media">
+          {{slot:Contact/hero ratio="4/3" class="ct-slot" alt="A 316 Money support agent wearing a headset and smiling"}}
+          <div class="ct-ready"><b>We’re ready to listen</b><span>Tell us what you need</span></div>
+        </div>
+
+        <form class="ct-form" data-ct-form novalidate aria-labelledby="ct-form-title">
+          <h2 id="ct-form-title" class="ct-sr">Send us a message</h2>
+          <div class="ct-row">
+            <div class="ct-field"><label for="ct-first">First name</label><input id="ct-first" name="first" type="text" autocomplete="given-name" placeholder="Enter first name" required></div>
+            <div class="ct-field"><label for="ct-last">Last name</label><input id="ct-last" name="last" type="text" autocomplete="family-name" placeholder="Enter last name" required></div>
+          </div>
+          <div class="ct-field"><label for="ct-email">Email</label><input id="ct-email" name="email" type="email" autocomplete="email" placeholder="Enter your email" required></div>
+          <div class="ct-field"><label for="ct-topic">What is your enquiry about</label>
+            <span class="ct-select"><select id="ct-topic" name="topic" required>
+              <option value="" selected disabled>Select an enquiry type</option>
+              <option>A question about 316 Money</option>
+              <option>Help with a payment</option>
+              <option>A failed transaction</option>
+              <option>316 Business</option>
+              <option>Becoming a Hotspot agent</option>
+              <option>Something else</option>
+            </select></span>
+          </div>
+          <div class="ct-field"><label for="ct-subject">Subject</label><input id="ct-subject" name="subject" type="text" placeholder="Enter a subject" required></div>
+          <div class="ct-field"><label for="ct-msg">Message</label><textarea id="ct-msg" name="message" rows="5" placeholder="Write your message here" required></textarea></div>
+          <label class="ct-agree"><input type="checkbox" name="agree" required><span>I agree to the <a href="#privacy">privacy policy</a></span></label>
+          <button class="btn btn--primary ct-send" type="submit">Send message</button>
+          <p class="ct-status" data-ct-status role="status" hidden></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- 2 · FAQ (white) -->
+    <section class="sec sec--white ct-faq" id="faq" aria-labelledby="faq-title">
+      <div class="wrap faq">
+        <div class="faq__intro">
+          <h2 id="faq-title" class="faq__title"><span class="accent">Questions</span> <span class="ln">you might want to ask</span></h2>
+          <div class="faq__users">
+            {{img:Home/avatars alt=""}}
+            <p><strong>more than 10K+</strong><br>users worldwide</p>
+          </div>
+        </div>
+        <div class="faq__list">
+          <details><summary>How do I get started with 316?</summary><p>Download the 316 Money app, create an account with your email and phone number, and complete the identity checks. Once you are verified you can add money, send payments and use the features available in your country.</p></details>
+          <details><summary>How can I get help with a payment?</summary><p>Use the form above and choose “Help with a payment”. Include the amount, the date and the reference shown in the app, and our team will look into it and get back to you.</p></details>
+          <details><summary>Which countries can use 316 Money?</summary><p>316 Money is switched on country by country as our partners and approvals allow. The countries and features available to you are shown when you create your account.</p></details>
+          <details><summary>How do I contact 316 Business?</summary><p>Choose “316 Business” in the enquiry list above and tell us about your business. Our team will reply with the next steps for accepting payments, invoicing and the other business tools.</p></details>
+          <details><summary>How can I become a Hotspot?</summary><p>Choose “Becoming a Hotspot agent” above, or start your application from the Hotspots pages. We assess each application, including verification and location checks, before services are enabled.</p></details>
+          <details><summary>How do I report a failed transaction?</summary><p>Choose “A failed transaction” in the enquiry list and share the reference, the amount and the date. We will check the status and tell you what happens next.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 · Explore band (soft lilac curves) -->
+    <section class="ct-explore" aria-labelledby="ct-explore-title">
+      <div class="wrap ct-explore__in">
+        <p class="ct-explore__k">Explore what’s possible</p>
+        <h2 id="ct-explore-title" class="ct-explore__t"><span class="ln">There’s more to explore</span> <span class="ln">with 316 money</span></h2>
+        <p class="ct-explore__p">Discover convenient ways to manage your money, accept payments and grow your business with 316.</p>
+        <div class="ct-explore__cta">
+          <a class="btn btn--primary" href="explore-features.html">Explore 316 business</a>
+          <a class="btn ct-btn--line" href="collection-agent.html">Explore 316 Hotspot</a>
+        </div>
+      </div>
+    </section>
