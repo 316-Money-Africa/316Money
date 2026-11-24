@@ -4,8 +4,8 @@
 /* hero: the "Choose a service" screen behind, the dashboard in front, both cut off by the bottom of the hero */
 .co-hero { position: relative; aspect-ratio: 1000 / 470; overflow: hidden; }
 .co-hero__back, .co-hero__front { position: absolute; display: block; height: auto; border-radius: 0.75rem 0.75rem 0 0; }
-.co-hero__back { right: 0; top: 0; width: 58%; box-shadow: 0 0.5rem 2rem rgba(80, 40, 120, .14); }
-.co-hero__front { left: 0; top: 12%; width: 62%; z-index: 1; box-shadow: 0 0.75rem 2.5rem rgba(80, 40, 120, .2); }
+.co-hero__back { right: 0; top: 0; width: 58%; }
+.co-hero__front { left: 0; top: 12%; width: 62%; z-index: 1; }
 .pa-hero__art:has(.co-hero) { margin-bottom: 0; }
 
 /* see-through cards on the purple stages (positions in % of the stage, so they scale with it) */
