@@ -24,7 +24,7 @@
 .hs-hero__bars { position: absolute; bottom: 0; width: clamp(14rem, 47vw, 52rem); height: auto; }
 .hs-hero__bars--l { left: 0; }
 .hs-hero__bars--r { right: 0; }
-.hs-hero__dash { position: relative; z-index: 1; width: min(100% - 2.5rem, 62rem); height: auto; }
+.hs-hero__dash { position: relative; z-index: 1; width: min(100% - 2.5rem, 71rem); height: auto; }
 
 /* 2 · two ways to serve */
 .hs-head2 { display: grid; grid-template-columns: minmax(0, 1.27fr) minmax(0, 1fr); align-items: end; gap: clamp(1.5rem, 4vw, 4rem); margin-bottom: clamp(2.5rem, 5vw, 4.5rem); }
@@ -159,3 +159,89 @@
   .hs-sc, .hs-sc *, .hs-po__prog i { animation: none !important; }
   .hs-sc--2, .hs-sc--3 { display: none; }
 }
+
+/* 4b · Pay-ins and Remittance payout journeys: the same three-step panel as Pay-outs, drawn in HTML so the UI text stays sharp. Sizes use container-query units of the stage (cqw) so the cards scale with the panel. */
+.hs-sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+.hs-po__stage { container-type: inline-size; }
+.hs-po__nav { position: absolute; right: clamp(1.25rem, 2.6vw, 2.25rem); top: clamp(1.5rem, 3vw, 2.75rem); display: flex; align-items: center; gap: 0.75rem; color: #fff; font-size: 0.75rem; font-weight: 500; }
+.hs-po__nav .hs-po__arrow { position: static; width: 2.5rem; }
+.pc { position: absolute; box-sizing: border-box; padding: 1.5cqw 1.7cqw; border-radius: 1cqw; background: #fff; box-shadow: 0 0.8cqw 2.6cqw rgba(60, 20, 90, .22); font-size: 1cqw; line-height: 1.4; text-align: left; color: #1e1b2e; animation: hs-card var(--po-t) cubic-bezier(.2, .7, .2, 1) infinite both; animation-delay: var(--d); }
+.pc--b { animation-name: hs-card-b; }
+.pc--c { animation-name: hs-card-c; }
+@keyframes hs-card-b { 0%, 11% { opacity: 0; translate: 0 2rem; } 17%, 100% { opacity: 1; translate: 0 0; } }
+@keyframes hs-card-c { 0%, 19% { opacity: 0; translate: 0 2rem; } 25%, 100% { opacity: 1; translate: 0 0; } }
+.pc h4 { margin: 0 0 0.7cqw; font-size: 1.35cqw; font-weight: 600; line-height: 1.25; color: #1e1b2e; }
+.pc-sub { margin: 0 0 0.9cqw; font-size: 0.9cqw; line-height: 1.4; color: #75718a; }
+.pc-sub--c { text-align: center; }
+.pc-ic { display: block; width: 1.8cqw; height: 1.8cqw; }
+.pc-sq { display: grid; flex: none; place-items: center; width: 3.4cqw; height: 3.4cqw; border-radius: 0.9cqw; background: #efe9ff; color: #6c3bf5; }
+.pc-row { display: flex; align-items: baseline; justify-content: space-between; gap: 1.2cqw; padding: 0.55cqw 0; border-top: 0.0625rem solid #eeecf5; }
+.pc-row span { color: #75718a; }
+.pc-row b { font-weight: 600; text-align: right; }
+.pc-row--col { display: block; }
+.pc-row--col b { display: block; margin-top: 0.2cqw; text-align: left; }
+.pc-btns { display: flex; justify-content: flex-end; gap: 0.9cqw; margin-top: 1.1cqw; }
+.pc-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 2.5cqw; padding: 0 1.5cqw; border: 0.1cqw solid #6c3bf5; border-radius: 0.55cqw; background: #6c3bf5; font-weight: 600; white-space: nowrap; color: #fff; }
+.pc-btn--o { border-color: #dcd8ec; background: #fff; color: #1e1b2e; }
+.pc-tick { display: grid; place-items: center; width: 3cqw; height: 3cqw; margin: 0 auto 0.8cqw; border-radius: 50%; background: #16a34a; color: #fff; }
+.pc-tick .pc-ic { width: 1.7cqw; height: 1.7cqw; }
+.pc-tick--s { width: 2.2cqw; height: 2.2cqw; margin-bottom: 0.6cqw; }
+.pc-tick--s .pc-ic { width: 1.3cqw; height: 1.3cqw; }
+.pc-spin { display: block; width: 2.6cqw; height: 2.6cqw; margin: 0 auto 0.8cqw; border: 0.3cqw solid #e5defc; border-top-color: #6c3bf5; border-radius: 50%; animation: pc-spin 1.1s linear infinite; }
+@keyframes pc-spin { to { rotate: 360deg; } }
+.hs-po:not(.is-live) .pc-spin { animation-play-state: paused; }
+/* Pay-ins */
+.pi-ava { position: absolute; left: 10.5%; top: 43%; display: grid; place-items: center; width: 8cqw; height: 8cqw; border: 0.4cqw solid #fff; border-radius: 50%; background: #d9c6e8; color: #fff; overflow: hidden; }
+.pi-ava .pc-ic { width: 6.4cqw; height: 6.4cqw; margin-top: 1.4cqw; }
+.pi-link { position: absolute; inset: 0; width: 100%; height: 100%; }
+.pi-link path { fill: none; stroke: rgba(255, 255, 255, .8); stroke-width: 1.3; stroke-dasharray: 4 4; vector-effect: non-scaling-stroke; }
+.pi-list { position: absolute; left: 30%; top: 46%; width: 54%; margin: 0; padding: 0; list-style: none; display: grid; gap: 1.6cqw; animation: hs-card var(--po-t) cubic-bezier(.2, .7, .2, 1) infinite both; animation-delay: var(--d); }
+.pi-ag { display: flex; align-items: center; gap: 2cqw; min-height: 9cqw; padding: 0 2.4cqw; border: 0.2cqw solid transparent; border-radius: 1.5cqw; background: #fff; box-shadow: 0 0.6cqw 1.8cqw rgba(60, 20, 90, .18); }
+.pi-ag.is-on { border-color: #6c3bf5; }
+.pi-ag .pc-sq { width: 4cqw; height: 4cqw; }
+.pi-ag .pc-ic { width: 2.2cqw; height: 2.2cqw; }
+.pi-ag b { display: block; font-size: 2.3cqw; font-weight: 600; color: #1e1b2e; }
+.pi-ag i { display: block; font-style: normal; font-size: 2cqw; color: #75718a; }
+.pi-rev { left: 14%; top: 37%; width: 34%; }
+.pi-proc { left: 54%; top: 16%; width: 23%; text-align: center; }
+.pi-ok { left: 62%; top: 40%; width: 28%; text-align: center; }
+.pi-conf { left: 29%; top: 15%; width: 31%; }
+.pi-conf h4 { text-align: center; }
+.pi-link--3 { z-index: 0; }
+.pi-cred { left: 71%; top: 17%; display: flex; align-items: center; gap: 1.2cqw; padding: 1.1cqw 1.4cqw 1.1cqw 1.8cqw; border-radius: 999rem; font-size: 1.15cqw; font-weight: 600; white-space: nowrap; }
+.pi-cred .pc-tick { margin: 0; }
+/* Remittance payout */
+.rm-pick { left: 13%; top: 34%; width: 47%; }
+.rm-opt { display: flex; align-items: center; gap: 1.4cqw; margin-top: 0.8cqw; padding: 0.9cqw 1.2cqw; border-radius: 0.7cqw; background: #f4f2fa; }
+.rm-opt b { display: block; font-size: 1.05cqw; font-weight: 600; }
+.rm-opt i { display: block; font-style: normal; font-size: 0.85cqw; color: #75718a; }
+.rm-req { left: 50%; top: 19%; width: 42%; }
+.rm-f { margin-bottom: 0.9cqw; }
+.rm-f span { display: block; margin-bottom: 0.35cqw; font-size: 0.85cqw; color: #75718a; }
+.rm-f b { display: block; padding: 0.8cqw 1cqw; border: 0.0625rem solid #dcd8ec; border-radius: 0.5cqw; font-weight: 500; }
+.rm-map { left: 13%; top: 24%; width: 38%; height: 52%; padding: 0; overflow: hidden; background: #ebe6fb; }
+.rm-road { position: absolute; background: #fff; }
+.rm-road--h { left: 0; right: 0; top: 56%; height: 9%; transform: skewY(-6deg); }
+.rm-road--v { top: 0; bottom: 0; left: 38%; width: 7%; }
+.rm-pin { position: absolute; color: #6c3bf5; }
+.rm-pin .pc-ic { width: 3.2cqw; height: 3.2cqw; }
+.rm-pin--a { left: 11%; top: 12%; }
+.rm-pin--b { right: 14%; top: 22%; }
+.rm-route { position: absolute; inset: 0; width: 100%; height: 100%; }
+.rm-route path { fill: none; stroke: #6c3bf5; stroke-width: 1.4; stroke-dasharray: 4 4; vector-effect: non-scaling-stroke; }
+.rm-you { position: absolute; left: 47%; bottom: 14%; width: 2cqw; height: 2cqw; border: 0.4cqw solid #fff; border-radius: 50%; background: #3b82f6; box-shadow: 0 0 0 0.9cqw rgba(59, 130, 246, .22); }
+.rm-youl { position: absolute; left: 48.5%; bottom: 5%; font-size: 1cqw; font-weight: 600; color: #3b2d7a; }
+.rm-hub { left: 54%; top: 15%; width: 30%; }
+.pc-rate { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5cqw; margin: 0 0 0.9cqw; padding: 0.6cqw 0.9cqw; border-radius: 0.5cqw; background: #f4f2fa; font-weight: 600; }
+.pc-rate em { font-style: normal; font-weight: 400; color: #75718a; }
+.pc-star { color: #f5b301; }
+.rm-auth { left: 14%; top: 31%; width: 50%; }
+.rm-await { margin: 0.4cqw 0 0; padding: 0.9cqw 1.1cqw; border-radius: 0.6cqw; background: #f6f4fb; }
+.rm-await span { display: block; font-size: 0.85cqw; color: #75718a; }
+.rm-await b { display: block; margin: 0.25cqw 0; font-weight: 600; }
+.rm-await em { font-style: normal; font-size: 0.85cqw; color: #6c3bf5; }
+.rm-done { left: 57%; top: 13%; width: 31%; text-align: center; }
+@media (prefers-reduced-motion: reduce) {
+  .pc, .pi-list, .pc-spin { animation: none !important; }
+}
+.hs-po.is-reset, .hs-po.is-reset * { animation: none !important; }   /* toggled for one frame by hotspots.js so a panel starts again from step 1 when it comes into view */

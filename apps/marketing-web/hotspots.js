@@ -50,12 +50,19 @@
   });
 })();
 
-/* Collection Agent page: the Pay-outs panel plays its three steps in a loop, only while it is on screen (and restarts when the tab is opened again). */
+/* Collection Agent page: each journey panel (Pay-outs, Pay-ins, Remittance payout) plays its three steps in a loop, only while it is on screen, and starts again from step 1 each time its tab is opened. */
 (function () {
-  var po = document.querySelector("[data-hs-po]");
-  if (!po) return;
-  if (!("IntersectionObserver" in window)) { po.classList.add("is-live"); return; }
-  new IntersectionObserver(function (entries) {
-    po.classList.toggle("is-live", entries[entries.length - 1].isIntersecting);
-  }, { threshold: 0.35 }).observe(po);
+  var pos = Array.prototype.slice.call(document.querySelectorAll("[data-hs-po]"));
+  if (!pos.length) return;
+  var restart = function (po) { po.classList.add("is-reset"); void po.offsetWidth; po.classList.remove("is-reset"); };
+  pos.forEach(function (po) {
+    if (!("IntersectionObserver" in window)) { po.classList.add("is-live"); return; }
+    var seen = false;
+    new IntersectionObserver(function (entries) {
+      var on = entries[entries.length - 1].isIntersecting;
+      if (on && !seen) restart(po);
+      seen = on;
+      po.classList.toggle("is-live", on);
+    }, { threshold: 0.35 }).observe(po);
+  });
 })();
