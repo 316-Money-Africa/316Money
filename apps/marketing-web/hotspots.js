@@ -75,24 +75,55 @@
   });
 })();
 
-/* "A simple experience" (Collection overview and Payment agent), driven by scrolling: the step descriptions appear one after another as the section scrolls into view (--rv on each step), and the panel on the right has a parallax (--py): its picture layers move by different amounts while the section passes through the screen. */
+/* "A simple experience" (Collection overview and Payment agent), driven by scrolling.
+   On desktop the panel is pinned while the page scrolls through four steps: the active step and its picture follow the scroll position, each description appears as its step is reached (--rv), and the picture layers move by different amounts (--py: parallax). Clicking a step or the picture scrolls to that step.
+   On phones and short windows nothing is pinned: the descriptions fade in as the section comes into view and the layers drift a little. */
 (function () {
   var root = document.querySelector("[data-pa-exp]");
+  var track = document.querySelector("[data-pa-track]");
   if (!root) return;
   if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   var steps = Array.prototype.slice.call(root.querySelectorAll(".pa-step"));
+  var stage = root.querySelector("[data-pa-stage]");
+  var pinQuery = window.matchMedia("(min-width: 64rem) and (min-height: 46rem)");
   var clamp = function (v) { return Math.max(0, Math.min(1, v)); };
-  var busy = false;
+  var busy = false, pinned = false;
+  var current = function () { for (var i = 0; i < steps.length; i++) if (steps[i].classList.contains("is-on")) return i; return 0; };
+  var trackTop = function () { return track.getBoundingClientRect().top + window.pageYOffset; };
+  var travel = function () { return Math.max(1, track.offsetHeight - root.offsetHeight); };
+  var stickyTop = function () { return parseFloat(getComputedStyle(root).top) || 0; };
+  var goTo = function (i) {                                            // scroll to the middle of step i
+    var y = trackTop() - stickyTop() + ((i + 0.5) / steps.length) * travel();
+    window.scrollTo({ top: y, behavior: "smooth" });
+  };
   var update = function () {
     busy = false;
-    var r = root.getBoundingClientRect(), vh = window.innerHeight || 1;
+    var vh = window.innerHeight || 1;
+    if (pinned) {
+      var prog = clamp((stickyTop() - track.getBoundingClientRect().top) / travel());
+      var s = prog * steps.length, act = Math.min(steps.length - 1, Math.floor(s));
+      if (act !== current()) steps[act].click();
+      root.style.setProperty("--py", (prog * 2 - 1).toFixed(3));
+      var rr = root.getBoundingClientRect(), enter = (vh - rr.top) / (vh + rr.height);
+      steps.forEach(function (st, i) { st.style.setProperty("--rv", (i === 0 ? clamp((enter - 0.14) / 0.1) : clamp((s - i + 0.15) / 0.3)).toFixed(3)); });
+      return;
+    }
+    var r = root.getBoundingClientRect();
     var through = (vh - r.top) / (vh + r.height);                      // 0 as the section's top edge enters the screen, 1 as its bottom edge leaves
     var mid = ((r.top + r.height / 2) - vh / 2) / (vh / 2 + r.height / 2);
     root.style.setProperty("--py", Math.max(-1, Math.min(1, -mid)).toFixed(3));
-    steps.forEach(function (s, i) { s.style.setProperty("--rv", clamp((through - (0.14 + i * 0.07)) / 0.1).toFixed(3)); });
+    steps.forEach(function (st, i) { st.style.setProperty("--rv", clamp((through - (0.14 + i * 0.07)) / 0.1).toFixed(3)); });
   };
   var queue = function () { if (!busy) { busy = true; window.requestAnimationFrame(update); } };
+  var setMode = function () {
+    pinned = !!track && pinQuery.matches;
+    if (track) track.classList.toggle("is-pin", pinned);
+    queue();
+  };
+  steps.forEach(function (st, i) { st.addEventListener("click", function (e) { if (pinned && e.isTrusted) goTo(i); }); });
+  if (stage) stage.addEventListener("click", function (e) { if (pinned && e.isTrusted) goTo((current() + 0) % steps.length); });
   window.addEventListener("scroll", queue, { passive: true });
-  window.addEventListener("resize", queue);
+  window.addEventListener("resize", setMode);
+  setMode();
   update();
 })();
