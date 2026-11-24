@@ -33,10 +33,10 @@
     gs.addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); go(); } });
   }
 
-  // the picker: General is the Hotspots dashboard (the first flow), Payment agent and Collection agent are the two guides
+  // the picker: General is the Hotspots dashboard (the first flow); Payment agent, Collection agent and Both roles are the three guides
   const role = document.querySelector("[data-role]");
   if (role) role.addEventListener("change", () => {
-    const dest = { general: "hotspots-dashboard.html", payment: "agent-guide.html#getting-started", collection: "collection-guide.html#getting-started" };
+    const dest = { general: "hotspots-dashboard.html", payment: "agent-guide.html#getting-started", collection: "collection-guide.html#getting-started", both: "both-roles-guide.html#getting-started" };
     if (dest[role.value]) location.href = dest[role.value];
   });
 
