@@ -10,12 +10,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap">
+  <link rel="preload" as="image" href="assets/Hotspots/hero-dash.webp?v=d331ea35" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="styles.css?v=77986a3b">
   <link rel="stylesheet" href="sections.css?v=373b85c0">
   <link rel="stylesheet" href="pay-pages.css?v=59429695">
   <link rel="stylesheet" href="linkflow.css?v=e63e1419">
   <link rel="stylesheet" href="hotspots.css?v=c01ed357">
-  <link rel="stylesheet" href="payment-agent.css?v=5f5d0571">
+  <link rel="stylesheet" href="payment-agent.css?v=2663bc88">
   <link rel="stylesheet" href="signup.css?v=d29a5e95">
   <link rel="stylesheet" href="mobile.css?v=6b276582">
 </head>
@@ -334,14 +335,16 @@
 
   <main>
 
-    <!-- 1 · Hero (light wash, the agent dashboard rising from the bottom: artwork added later) -->
-    <section class="pa-hero" aria-labelledby="pa-hero-title">
-      <div class="oc-wrap pa-hero__copy">
+    <!-- 1 · Hero (the same pink wash and agent dashboard as the Collection Agent page) -->
+    <section class="hs-hero" aria-labelledby="pa-hero-title">
+      <div class="oc-wrap hs-hero__copy">
         <p class="hs-eyebrow">Payment agents</p>
         <h1 id="pa-hero-title" class="hs-h1"><span class="ln">Turn everyday payments into</span> <span class="ln">new business opportunities</span></h1>
         <p class="hs-lead">Join the 316 Hotspots network, help customers fund their accounts at your location, set transaction rates, attract nearby customers and grow your business with powerful web and mobile tools.</p>
       </div>
-      <div class="pa-hero__art"><svg class="slot pa-slot pa-slot--hero" viewBox="0 0 1600 900" data-slot="PaymentAgent/hero-dash" aria-hidden="true" focusable="false"></svg></div>
+      <div class="hs-hero__art">
+        <img src="assets/Hotspots/hero-dash.webp?v=d331ea35" class="hs-hero__dash" alt="The 316 Hotspots agent dashboard: Good morning, James, with collections, volume and earnings" fetchpriority="high" loading="eager" width="2000" height="753" decoding="async">
+      </div>
     </section>
 
     <!-- 2 · What is a Payment Agent (white; picture left, the three services right) -->
@@ -394,7 +397,7 @@
           <div class="hs-tabs__bar pa-tabs" role="tablist" aria-label="Payment journeys"><button class="hs-tab is-on" type="button" role="tab" id="hs-tab-wallet" aria-selected="true" aria-controls="hs-pane-wallet" data-tab="wallet">Wallet funding</button><button class="hs-tab" type="button" role="tab" id="hs-tab-business" aria-selected="false" aria-controls="hs-pane-business" data-tab="business">Business payment</button><button class="hs-tab" type="button" role="tab" id="hs-tab-intl" aria-selected="false" aria-controls="hs-pane-intl" data-tab="intl">International funding</button></div>
           <div class="hs-pane pa-pane is-on" role="tabpanel" id="hs-pane-wallet" aria-labelledby="hs-tab-wallet"><img src="assets/PaymentAgent/journey-wallet.webp?v=2e9e0a40" class="pa-pic pa-pic--panel" alt="Wallet funding: a customer chooses the City Centre Hotspot and requests to fund a 316 Money wallet" loading="lazy" width="1152" height="1123" decoding="async"></div>
           <div class="hs-pane pa-pane" role="tabpanel" id="hs-pane-business" aria-labelledby="hs-tab-business" hidden><div class="pa-stage pa-stage--sq"><img src="assets/PaymentAgent/journey-payout.webp?v=59515b2e" class="pa-stage__card" alt="Business payment: payout details show the amount to fund and the service charge before the recipient is asked to authorise" loading="lazy" width="1040" height="706" decoding="async"></div></div>
-          <div class="hs-pane pa-pane" role="tabpanel" id="hs-pane-intl" aria-labelledby="hs-tab-intl" hidden><div class="pa-stage pa-stage--sq"><svg class="pa-arcs" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><circle cx="0" cy="200" r="96"/><circle cx="0" cy="200" r="140"/><circle cx="0" cy="200" r="184"/></svg><img src="assets/PaymentAgent/journey-pin-a.webp?v=e9221688" class="pa-pin pa-pin--a" alt="Angelo Ola received N100,000" loading="lazy" width="683" height="455" decoding="async"><img src="assets/PaymentAgent/journey-pin-b.webp?v=6382ea55" class="pa-pin pa-pin--b" alt="Paul Ike received 500,000 pounds" loading="lazy" width="604" height="440" decoding="async"></div></div>
+          <div class="hs-pane pa-pane" role="tabpanel" id="hs-pane-intl" aria-labelledby="hs-tab-intl" hidden><div class="pa-stage pa-stage--sq"><svg class="pa-arcs" viewBox="0 0 343 338" preserveAspectRatio="none" aria-hidden="true" focusable="false"><circle cx="112" cy="338" r="178"/><circle cx="30" cy="330" r="112"/><circle cx="65" cy="356" r="65"/></svg><img src="assets/PaymentAgent/journey-pin-a.webp?v=e9221688" class="pa-pin pa-pin--a" alt="Angelo Ola received N100,000" loading="lazy" width="683" height="455" decoding="async"><img src="assets/PaymentAgent/journey-pin-b.webp?v=6382ea55" class="pa-pin pa-pin--b" alt="Paul Ike received 500,000 pounds" loading="lazy" width="604" height="440" decoding="async"></div></div>
         </div>
       </div>
     </section>
@@ -408,17 +411,24 @@
           <p class="hs-p">A straightforward experience helps customers find your location, understand your available services and complete eligible payments with clear confirmation.</p>
         </header>
         <div class="pa-exp" data-pa-exp>
-          <ol class="pa-steps" role="list">
-            <li class="pa-step is-on" role="button" tabindex="0" aria-pressed="true" data-i="0"><span class="pa-steps__k">Step 1</span><h3>Find a nearby agent</h3><p>Customers browse participating Payment Agents in the 316 Money app, starting with locations closest to them.</p><i class="pa-steps__chev" aria-hidden="true"></i></li>
-            <li class="pa-step" role="button" tabindex="0" aria-pressed="false" data-i="1"><span class="pa-steps__k">Step 2</span><h3>Review agent details</h3><p>They compare available services, displayed rates, location details and customer reviews.</p><i class="pa-steps__chev" aria-hidden="true"></i></li>
-            <li class="pa-step" role="button" tabindex="0" aria-pressed="false" data-i="2"><span class="pa-steps__k">Step 3</span><h3>Complete verification</h3><p>The agent follows the applicable checks and processes the eligible payment or funding request.</p><i class="pa-steps__chev" aria-hidden="true"></i></li>
-            <li class="pa-step" role="button" tabindex="0" aria-pressed="false" data-i="3"><span class="pa-steps__k">Step 4</span><h3>Get confirmation</h3><p>The transaction is recorded and confirmation is provided through the supported workflow.</p><i class="pa-steps__chev" aria-hidden="true"></i></li>
-          </ol>
-          <div class="pa-exp__stage">
-            <div class="pa-exp__pane is-on" data-pane="0"><img src="assets/PaymentAgent/exp-phone.webp?v=7b7f3eef" class="pa-pic pa-pic--tall" alt="The 316 Money app showing Hotspots near you: nearby agents on a map" loading="lazy" width="900" height="1307" decoding="async"></div>
-            <div class="pa-exp__pane" data-pane="1" hidden><div class="pa-stage pa-stage--tall"><img src="assets/PaymentAgent/exp-list.webp?v=5df26d7f" class="pa-stage__card" alt="Nearby agents City Centre Hotspot, Magic Hub and Musa Kiosk with their ratings and distance" loading="lazy" width="800" height="736" decoding="async"><img src="assets/PaymentAgent/exp-avatar.webp?v=9055718a" class="pa-stage__avatar" alt="" loading="lazy" width="128" height="128" decoding="async"></div></div>
-            <div class="pa-exp__pane" data-pane="2" hidden><div class="pa-stage pa-stage--tall"><img src="assets/PaymentAgent/exp-verify.webp?v=e9d103da" class="pa-stage__card" alt="The agent finds an eligible 316 Money account and checks the verified destination" loading="lazy" width="900" height="698" decoding="async"></div></div>
-            <div class="pa-exp__pane" data-pane="3" hidden><div class="pa-stage pa-stage--tall"><img src="assets/PaymentAgent/exp-success.webp?v=88e1a146" class="pa-stage__card" alt="Payment successful: the transaction details are recorded" loading="lazy" width="800" height="906" decoding="async"></div></div>
+          <ol class="pa-steps" role="list"><li class="pa-step is-on" role="button" tabindex="0" aria-pressed="true" data-i="0"><span class="pa-steps__k">Step 1</span><h3>Find a nearby agent</h3><p>Customers browse participating Payment Agents in the 316 Money app, starting with locations closest to them.</p><i class="pa-steps__chev" aria-hidden="true"></i></li><li class="pa-step" role="button" tabindex="0" aria-pressed="false" data-i="1"><span class="pa-steps__k">Step 2</span><h3>Review agent details</h3><p>They compare available services, displayed rates, location details and customer reviews.</p><i class="pa-steps__chev" aria-hidden="true"></i></li><li class="pa-step" role="button" tabindex="0" aria-pressed="false" data-i="2"><span class="pa-steps__k">Step 3</span><h3>Complete verification</h3><p>The agent follows the applicable checks and processes the eligible payment or funding request.</p><i class="pa-steps__chev" aria-hidden="true"></i></li><li class="pa-step" role="button" tabindex="0" aria-pressed="false" data-i="3"><span class="pa-steps__k">Step 4</span><h3>Get confirmation</h3><p>The transaction is recorded and confirmation is provided through the supported workflow.</p><i class="pa-steps__chev" aria-hidden="true"></i></li></ol>
+          <div class="pa-exp__stage" data-pa-stage role="button" tabindex="0" aria-label="Show the next step">
+            <div class="pa-exp__pane is-on" data-pane="0"><div class="pa-stage pa-stage--tall">
+              <div class="co-flash co-scan" aria-hidden="true"><span class="co-radar"><i></i><i></i></span><b>Finding agents near you</b><small>Using the customer’s location</small></div>
+              <img src="assets/PaymentAgent/exp-phone.webp?v=7b7f3eef" class="pa-stage__full co-seq co-sd5" alt="The 316 Money app showing Hotspots near you: nearby agents on a map" loading="lazy" width="900" height="1307" decoding="async">
+            </div></div>
+            <div class="pa-exp__pane" data-pane="1" hidden><div class="pa-stage pa-stage--tall">
+              <img src="assets/PaymentAgent/exp-list.webp?v=5df26d7f" class="pa-stage__card co-seq co-sd1" alt="Nearby agents City Centre Hotspot, Magic Hub and Musa Kiosk with their ratings and distance" loading="lazy" width="800" height="736" decoding="async"><img src="assets/PaymentAgent/exp-avatar.webp?v=9055718a" class="pa-stage__avatar co-seq co-sd3" alt="" loading="lazy" width="128" height="128" decoding="async">
+              <div class="co-chip co-chip--done co-seq co-sd6" aria-hidden="true"><svg class="co-tk" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3.5 8.5l3 3 6-7"/></svg>Closest agents shown first</div>
+            </div></div>
+            <div class="pa-exp__pane" data-pane="2" hidden><div class="pa-stage pa-stage--tall">
+              <img src="assets/PaymentAgent/exp-verify.webp?v=e9d103da" class="pa-stage__card co-seq co-sd1" alt="The agent finds an eligible 316 Money account and checks the verified destination" loading="lazy" width="900" height="698" decoding="async">
+              <div class="co-chip co-chip--done co-seq co-sd6" aria-hidden="true"><svg class="co-tk" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3.5 8.5l3 3 6-7"/></svg>Account verified</div>
+            </div></div>
+            <div class="pa-exp__pane" data-pane="3" hidden><div class="pa-stage pa-stage--tall">
+              <img src="assets/PaymentAgent/exp-success.webp?v=88e1a146" class="pa-stage__card co-seq co-sd1" alt="Payment successful: the transaction details are recorded" loading="lazy" width="800" height="906" decoding="async">
+              <div class="co-chip co-chip--done co-seq co-sd3" aria-hidden="true"><svg class="co-tk" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3.5 8.5l3 3 6-7"/></svg>Funds credited and recorded</div>
+            </div></div>
           </div>
         </div>
       </div>
@@ -461,12 +471,26 @@
         <div class="hs-tabs pa-access" data-hs-tabs>
           <div class="hs-tabs__bar" role="tablist" aria-label="Web or mobile"><button class="hs-tab is-on" type="button" role="tab" id="hs-tab-web" aria-selected="true" aria-controls="hs-pane-web" data-tab="web">Web</button><button class="hs-tab" type="button" role="tab" id="hs-tab-mobile" aria-selected="false" aria-controls="hs-pane-mobile" data-tab="mobile">Mobile</button></div>
           <div class="hs-pane pa-pane pa-access__pane is-on" role="tabpanel" id="hs-pane-web" aria-labelledby="hs-tab-web">
-            <svg class="slot pa-slot pa-slot--wide" viewBox="0 0 17 16" data-slot="PaymentAgent/access-web" aria-hidden="true" focusable="false"></svg>
+            <div class="pa-web" role="img" aria-label="The 316 Hotspots web application sign-in: Welcome back, with the agent holding a payment device">
+              <div class="pa-web__card" aria-hidden="true">
+                <div class="pa-web__art"><img src="assets/Signup/signin-art.webp?v=13031fce" class="pa-web__artimg" alt="" loading="lazy" width="850" height="1260" decoding="async"><p>Bring financial services closer to your community</p></div>
+                <div class="pa-web__form">
+                  <span class="pa-web__brand"><img src="assets/logo.png" alt="" width="131" height="131"><b>Hotspots</b></span>
+                  <b class="pa-web__h">Welcome back 👋</b>
+                  <span class="pa-web__sub">Enter your details to get started</span>
+                  <span class="pa-web__lbl">Phone number/ Email address</span><span class="pa-web__in"></span>
+                  <span class="pa-web__lbl">Password</span><span class="pa-web__in"></span>
+                  <span class="pa-web__chk"><i></i>I agree to the Terms of Service and Privacy Policy.</span>
+                  <span class="pa-web__btn">Login</span>
+                  <span class="pa-web__foot">Already registered? <u>Sign up?</u></span>
+                </div>
+              </div>
+            </div>
             <div class="pa-access__txt"><h3>Know how your business is performing</h3><p>Use the web application to manage agent locations, configure permitted payment rates, monitor transactions, review reporting and understand customer feedback from one workspace.</p></div>
           </div>
           <div class="hs-pane pa-pane pa-access__pane" role="tabpanel" id="hs-pane-mobile" aria-labelledby="hs-tab-mobile" hidden>
-            <svg class="slot pa-slot pa-slot--wide" viewBox="0 0 17 16" data-slot="PaymentAgent/access-mobile" aria-hidden="true" focusable="false"></svg>
-            <div class="pa-access__txt"><h3>Serve customers wherever you are</h3><p>Use the mobile app to receive requests, serve customers, confirm payments and stay informed about your business while you are on the move.</p></div>
+            <div class="co-phone co-phone--pay"><img src="assets/CollectionOverview/access-phone.webp?v=183b484c" class="co-phone__img" alt="The 316 Hotspots mobile app sign-in: Bring financial services closer to your community" loading="lazy" width="579" height="1177" decoding="async"></div>
+            <div class="pa-access__txt"><h3>Keep your services moving wherever you work</h3><p>Use the mobile app to review eligible funding requests, complete approved workflows, access transaction confirmations and stay connected to your business throughout the day.</p></div>
           </div>
         </div>
         <p class="pa-access__more"><a href="#start">Explore</a></p>
@@ -547,6 +571,6 @@
   </footer>
   <script src="nav.js?v=b940ea32" defer></script>
   <script src="signup.js?v=b1822ef8" defer></script>
-  <script src="hotspots.js?v=92ddbaf7" defer></script>
+  <script src="hotspots.js?v=423d720a" defer></script>
 </body>
 </html>

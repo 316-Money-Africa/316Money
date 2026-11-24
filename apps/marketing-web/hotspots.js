@@ -30,20 +30,19 @@
   });
 })();
 
-/* "The customer experience" steps are buttons; choosing a step shows its picture (arrow keys move between steps).
-   With data-pa-auto (Collection Agent overview) the steps also play in order by themselves: the active step's progress bar runs and, when it ends, the next step opens. Hovering, focusing or scrolling the section out of view pauses it; reduced motion turns it off. */
+/* "The customer experience" steps are buttons; choosing a step shows its picture, which plays that step as a short process (arrow keys move between steps).
+   Clicking the picture itself (or pressing Enter / Space on it) moves on to the next step, and after the last step it starts again from step 1. */
 (function () {
   var root = document.querySelector("[data-pa-exp]");
   if (!root) return;
   var steps = Array.prototype.slice.call(root.querySelectorAll(".pa-step"));
   var panes = Array.prototype.slice.call(root.querySelectorAll(".pa-exp__pane"));
-  var rail = Array.prototype.slice.call(root.querySelectorAll(".co-rail li"));
+  var stage = root.querySelector("[data-pa-stage]");
   var cur = 0;
   var pick = function (i, focus) {
     cur = i;
     steps.forEach(function (s, n) { var on = n === i; s.classList.toggle("is-on", on); s.setAttribute("aria-pressed", on ? "true" : "false"); if (on && focus) s.focus(); });
     panes.forEach(function (p, n) { var on = n === i; p.hidden = !on; p.classList.toggle("is-on", on); });
-    rail.forEach(function (r, n) { r.classList.toggle("is-cur", n === i); r.classList.toggle("is-done", n < i); });
   };
   steps.forEach(function (s, i) {
     s.addEventListener("click", function () { pick(i, false); });
@@ -53,21 +52,9 @@
       else if (e.key === "ArrowUp") { e.preventDefault(); pick((i + steps.length - 1) % steps.length, true); }
     });
   });
-  if (root.hasAttribute("data-pa-auto") && !(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) {
-    var hold = { hover: false, focus: false, out: false };
-    var sync = function () { root.classList.toggle("is-paused", hold.hover || hold.focus || hold.out); };
-    root.addEventListener("mouseenter", function () { hold.hover = true; sync(); });
-    root.addEventListener("mouseleave", function () { hold.hover = false; sync(); });
-    root.addEventListener("focusin", function () { hold.focus = true; sync(); });
-    root.addEventListener("focusout", function () { hold.focus = false; sync(); });
-    if ("IntersectionObserver" in window) {
-      hold.out = true; sync();
-      new IntersectionObserver(function (entries) { hold.out = !entries[entries.length - 1].isIntersecting; sync(); }, { threshold: 0.4 }).observe(root);
-    }
-    steps.forEach(function (s) {
-      var bar = s.querySelector(".pa-steps__bar");
-      if (bar) bar.addEventListener("animationend", function () { if (s.classList.contains("is-on")) pick((cur + 1) % steps.length, false); });
-    });
+  if (stage) {
+    stage.addEventListener("click", function () { pick((cur + 1) % steps.length, false); });
+    stage.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pick((cur + 1) % steps.length, false); } });
   }
 })();
 

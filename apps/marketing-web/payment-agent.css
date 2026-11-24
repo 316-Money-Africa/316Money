@@ -75,10 +75,10 @@ img.pa-slot--hero { border-radius: 1rem 1rem 0 0; box-shadow: 0 -0.5rem 3rem rgb
 .pa-stage--sq .pa-stage__card { width: 76%; }
 .pa-stage__avatar { position: absolute; left: 5%; bottom: 19%; width: 15%; height: auto; border-radius: 999rem; }
 .pa-arcs { position: absolute; inset: 0; width: 100%; height: 100%; }
-.pa-arcs circle { fill: none; stroke: rgba(255, 255, 255, .55); stroke-width: 0.8; stroke-dasharray: 3 3; }
+.pa-arcs circle { fill: none; stroke: rgba(255, 255, 255, .6); stroke-width: 1.4; stroke-dasharray: 7 6; }
 .pa-pin { position: absolute; height: auto; }
-.pa-pin--a { left: 4%; top: 33%; width: 62%; }
-.pa-pin--b { left: 32%; top: 56%; width: 56%; }
+.pa-pin--a { left: 19.5%; top: 53%; width: 48.7%; }
+.pa-pin--b { left: -0.5%; top: 31.7%; width: 42%; }
 
 /* 6 · discovery and rates (picture right, copy left) */
 .pa-split__media { justify-self: end; width: 100%; max-width: 36rem; }
@@ -129,8 +129,7 @@ img.pa-slot--hero { border-radius: 1rem 1rem 0 0; box-shadow: 0 -0.5rem 3rem rgb
   .pa-head2 { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 40rem) {
-  .pa-tabs { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
-  .pa-tabs::-webkit-scrollbar { display: none; }
+  .pa-tabs { flex-wrap: wrap; justify-content: center; }
   .pa-access__pane .pa-slot { aspect-ratio: 4 / 5; }
   .pa-hero__art { width: calc(100% - 1.25rem); }
 }
@@ -147,3 +146,76 @@ img.pa-slot--hero { border-radius: 1rem 1rem 0 0; box-shadow: 0 -0.5rem 3rem rgb
 .pa-tile__txt p { margin: 0; font-size: clamp(0.75rem, 0.7rem + 0.2vw, 0.875rem); line-height: 1.45; color: rgba(255, 255, 255, .86); }
 @media (max-width: 63.99rem) { .pa-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 40rem) { .pa-tiles { grid-template-columns: minmax(0, 1fr); } .pa-tile__img { aspect-ratio: 4 / 5; } }
+
+/* "A simple experience": the steps play as a process. The right-hand panel builds each step in order (cards rise in, short status chips come and go). Clicking a step, or the picture itself, moves to the next step (hotspots.js). */
+.pa-exp__stage { position: relative; cursor: pointer; border-radius: 0.5rem; }
+.pa-exp__stage:focus-visible { outline: 0.1875rem solid #7455F0; outline-offset: 0.25rem; }
+.co-seq { opacity: 0; animation: co-rise .7s cubic-bezier(.2, .7, .2, 1) var(--sd, 0s) both; }
+.co-sd1 { --sd: .2s; } .co-sd3 { --sd: 1.3s; } .co-sd4 { --sd: 2s; } .co-sd5 { --sd: 1.5s; } .co-sd6 { --sd: 2.8s; }
+@keyframes co-rise { from { opacity: 0; translate: 0 1.5rem; scale: .97; } to { opacity: 1; translate: 0 0; scale: 1; } }
+.co-flash { position: absolute; opacity: 0; animation: co-flash 1.6s ease both; animation-delay: var(--sd, 0s); }
+@keyframes co-flash { 0% { opacity: 0; translate: 0 0.5rem; } 15%, 80% { opacity: 1; translate: 0 0; } 100% { opacity: 0; translate: 0 -0.25rem; } }
+.co-scan { left: 14%; right: 14%; top: 40%; z-index: 2; display: grid; justify-items: center; gap: 0.25rem; padding: 1.5rem 1rem; border-radius: 0.75rem; background: #fff; text-align: center; box-shadow: 0 0.75rem 2rem rgba(60, 20, 90, .25); animation-duration: 1.7s; }
+.co-scan b { font-size: 0.9375rem; font-weight: 600; color: #14102A; }
+.co-scan small { font-size: 0.75rem; color: #5A5473; }
+.co-radar { position: relative; display: block; width: 2.5rem; height: 2.5rem; margin-bottom: 0.5rem; border-radius: 50%; background: #7455F0; }
+.co-radar::after { content: ""; position: absolute; inset: 0.8125rem; border-radius: 50%; background: #fff; }
+.co-radar i { position: absolute; inset: 0; border: 0.125rem solid #7455F0; border-radius: 50%; animation: co-ping 1.2s ease-out infinite; }
+.co-radar i + i { animation-delay: .5s; }
+@keyframes co-ping { from { opacity: .7; scale: 1; } to { opacity: 0; scale: 2.2; } }
+.co-chip { position: absolute; z-index: 2; left: 50%; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0.875rem; border-radius: 999rem; background: #fff; font-size: 0.75rem; font-weight: 600; white-space: nowrap; color: #14102A; box-shadow: 0 0.5rem 1.5rem rgba(60, 20, 90, .25); translate: -50% 0; }
+.co-chip--lookup { top: 40%; --sd: .9s; animation-duration: 1.5s; animation-name: co-flash-c; }
+@keyframes co-flash-c { 0% { opacity: 0; translate: -50% 0.5rem; } 15%, 80% { opacity: 1; translate: -50% 0; } 100% { opacity: 0; translate: -50% -0.25rem; } }
+.co-chip--done { bottom: 7%; background: #E8F7EE; color: #11663A; }
+.co-chip--done.co-seq { animation-name: co-rise-c; }
+@keyframes co-rise-c { from { opacity: 0; translate: -50% 1rem; } to { opacity: 1; translate: -50% 0; } }
+.co-spin { width: 0.875rem; height: 0.875rem; border: 0.1875rem solid #E5DEFC; border-top-color: #7455F0; border-radius: 50%; animation: co-turn .9s linear infinite; }
+@keyframes co-turn { to { rotate: 360deg; } }
+.co-tk { width: 1rem; height: 1rem; fill: none; stroke: #16A34A; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+@media (prefers-reduced-motion: reduce) {
+  .co-seq { animation: none; opacity: 1; }
+  .co-flash, .co-radar i, .co-spin { display: none; }
+  .co-chip--done.co-seq { translate: -50% 0; }
+}
+
+.pa-stage__full { position: absolute; left: 0; top: 0; width: 100%; height: auto; }
+.co-phone { position: relative; aspect-ratio: 1778 / 1670; background: #9D579E; overflow: hidden; }
+.co-phone__img { position: absolute; left: 50%; top: 6%; height: 80%; width: auto; translate: -50% 0; }
+@media (max-width: 47.99rem) { .co-phone { aspect-ratio: 4 / 5; } }
+
+/* Web tab: the sign-in screen drawn from the supplied sign-in picture, in a window on the purple panel */
+.pa-web { position: relative; aspect-ratio: 1778 / 1670; background: #9D579E; overflow: hidden; container-type: inline-size; }
+.pa-web__card { position: absolute; left: 24%; right: 0; top: 5%; height: 62%; display: grid; grid-template-columns: 40% minmax(0, 1fr); overflow: hidden; border-radius: 1cqw 0 0 1cqw; background: #fff; box-shadow: 0 1cqw 3cqw rgba(40, 10, 60, .25); }
+.pa-web__art { position: relative; margin: 1.6cqw; border-radius: 1.2cqw; overflow: hidden; background: #8B7BFF; }
+.pa-web__artimg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 20% 100%; }
+.pa-web__art p { position: absolute; left: 1.6cqw; right: 1.6cqw; top: 1.8cqw; margin: 0; font-size: 1.7cqw; font-weight: 700; line-height: 1.25; color: #fff; }
+.pa-web__form { display: grid; align-content: start; gap: 0.5cqw; padding: 2.2cqw 3.2cqw 0 1.6cqw; font-size: 1cqw; color: #14102A; }
+.pa-web__brand { display: flex; align-items: center; gap: 0.6cqw; margin-bottom: 1cqw; }
+.pa-web__brand img { width: 2.6cqw; height: 2.6cqw; }
+.pa-web__brand b { font-size: 1.3cqw; font-weight: 600; }
+.pa-web__h { font-size: 2cqw; font-weight: 700; }
+.pa-web__sub { margin-bottom: 0.8cqw; font-size: 0.95cqw; color: #6b6685; }
+.pa-web__lbl { font-size: 0.95cqw; font-weight: 500; }
+.pa-web__in { display: block; height: 3cqw; margin-bottom: 0.5cqw; border: 0.08cqw solid #DCD7EC; border-radius: 0.7cqw; }
+.pa-web__chk { display: flex; align-items: center; gap: 0.6cqw; font-size: 0.85cqw; color: #6b6685; }
+.pa-web__chk i { flex: none; width: 1.1cqw; height: 1.1cqw; border: 0.1cqw solid #C9C2E0; border-radius: 0.25cqw; }
+.pa-web__btn { display: grid; place-items: center; height: 3cqw; margin-top: 0.6cqw; border-radius: 0.7cqw; background: #4337C9; font-size: 1.15cqw; font-weight: 700; color: #fff; }
+.pa-web__foot { text-align: center; font-size: 0.9cqw; color: #6b6685; }
+.pa-web__foot u { font-weight: 700; color: #4337C9; text-decoration: none; }
+@media (max-width: 47.99rem) {
+  /* phones: the picture first, the words under it (nothing is laid over the sign-in card), real rem sizes so the form text stays readable */
+  .pa-access__pane:has(.pa-web), .pa-access__pane:has(.co-phone) { display: flex; flex-direction: column; background: linear-gradient(180deg, #9D579E 0%, #9D579E 40%, #3A1442 75%, #14051A 100%); }
+  .pa-access__pane:has(.pa-web)::after, .pa-access__pane:has(.co-phone)::after { display: none; }
+  .pa-access__pane:has(.pa-web) .pa-access__txt, .pa-access__pane:has(.co-phone) .pa-access__txt { position: static; padding: 1.5rem 1.25rem 2rem; }
+  .co-phone--pay { background: none; aspect-ratio: 4 / 4.4; }
+  .co-phone--pay .co-phone__img { top: 7%; height: 88%; }
+  .pa-web { aspect-ratio: auto; padding: 1.5rem 1rem 0; background: none; }
+  .pa-web__card { position: static; height: auto; grid-template-columns: minmax(0, 1fr); border-radius: 0.75rem; }
+  .pa-web__art { display: none; }
+  .pa-web__form { gap: 0.5rem; padding: 1.25rem; font-size: 0.75rem; }
+  .pa-web__brand { margin-bottom: 0.5rem; } .pa-web__brand b { font-size: 0.9375rem; } .pa-web__brand img { width: 1.75rem; height: 1.75rem; }
+  .pa-web__h { font-size: 1.25rem; } .pa-web__sub, .pa-web__lbl { font-size: 0.75rem; } .pa-web__chk, .pa-web__foot { font-size: 0.6875rem; }
+  .pa-web__in, .pa-web__btn { height: 2.5rem; border-radius: 0.5rem; } .pa-web__btn { font-size: 0.875rem; }
+  .pa-web__chk i { width: 1rem; height: 1rem; }
+}
+.co-phone--pay .co-phone__img { top: 8%; height: 64%; }
