@@ -47,7 +47,7 @@ img.pa-slot--hero { border-radius: 1rem 1rem 0 0; box-shadow: 0 -0.5rem 3rem rgb
 .pa-tabs .hs-tab { padding: 0 1.25rem; font-size: 0.875rem; }
 
 /* 5 · the customer experience (the steps are buttons: choosing one swaps the picture) */
-.pa-exp { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: clamp(1rem, 2.4vw, 2rem); align-items: center; padding: clamp(1rem, 2.4vw, 2rem); border-radius: 0.5rem; background: linear-gradient(120deg, #EAD2EA 0%, #DDB8DC 50%, #C68CC5 100%); }
+.pa-exp { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr); gap: clamp(0.75rem, 1.6vw, 1.25rem); align-items: stretch; padding: clamp(1rem, 2.4vw, 2rem); border-radius: 0.5rem; background: linear-gradient(120deg, #EAD2EA 0%, #DDB8DC 50%, #C68CC5 100%); }
 .pa-steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: clamp(0.625rem, 1vw, 0.875rem); }
 .pa-step { position: relative; padding: clamp(1rem, 1.6vw, 1.375rem) clamp(1.125rem, 1.8vw, 1.5rem); border-radius: 0.375rem; background: #fff; box-shadow: 0 0.125rem 0.5rem rgba(90, 30, 110, .08); cursor: pointer; transition: box-shadow .2s ease; }
 .pa-step:hover { box-shadow: 0 0.25rem 1rem rgba(90, 30, 110, .16); }
@@ -58,7 +58,8 @@ img.pa-slot--hero { border-radius: 1rem 1rem 0 0; box-shadow: 0 -0.5rem 3rem rgb
 .pa-step p { margin: 0; font-size: 0.875rem; line-height: 1.5; color: #5A5473; }
 .pa-steps__chev { position: absolute; right: 1.25rem; top: 1.375rem; width: 0.5rem; height: 0.5rem; border: solid #2A2145; border-width: 0 0.125rem 0.125rem 0; transform: rotate(45deg); transition: transform .2s ease; }
 .pa-step.is-on .pa-steps__chev { transform: rotate(225deg); top: 1.625rem; }
-.pa-exp__stage { width: 100%; max-width: 26rem; justify-self: end; }
+.pa-exp__stage { width: 100%; justify-self: stretch; display: grid; grid-template-rows: minmax(0, 1fr); }
+.pa-exp__pane { display: grid; grid-template-rows: minmax(0, 1fr); }
 .pa-exp__pane[hidden] { display: none; }
 .pa-exp__pane { animation: hs-in .4s cubic-bezier(.2, .7, .2, 1) both; }
 
@@ -70,7 +71,9 @@ img.pa-slot--hero { border-radius: 1rem 1rem 0 0; box-shadow: 0 -0.5rem 3rem rgb
 .pa-pic--tall { border-radius: 0.5rem; }
 .pa-stage { position: relative; overflow: hidden; border-radius: 0.5rem; background: #A556A7; isolation: isolate; }
 .pa-stage--sq { aspect-ratio: 1412 / 1376; }
-.pa-stage--tall { aspect-ratio: 1297 / 1884; background: linear-gradient(180deg, #99469B 0%, #966397 100%); }
+.pa-stage--tall { container-type: size; display: grid; place-items: center; background: linear-gradient(180deg, #99469B 0%, #966397 100%); }
+/* the scene keeps the artwork's proportions and is as tall as the list beside it; the purple panel behind it runs the whole width of its column */
+.pa-scene { position: relative; height: min(100cqh, calc(100cqw * 1884 / 1297)); aspect-ratio: 1297 / 1884; }
 .pa-stage__card { position: absolute; left: 50%; top: 50%; width: 82%; height: auto; transform: translate(-50%, -50%); }
 .pa-stage--sq .pa-stage__card { width: 76%; }
 .pa-stage__avatar { position: absolute; left: 5%; bottom: 19%; width: 15%; height: auto; border-radius: 999rem; }
@@ -114,7 +117,8 @@ img.pa-slot--hero { border-radius: 1rem 1rem 0 0; box-shadow: 0 -0.5rem 3rem rgb
 @media (max-width: 63.99rem) {
   .pa-what, .pa-journey, .pa-exp, .pa-sizes { grid-template-columns: minmax(0, 1fr); }
   .pa-split__media, .pa-sizes__pic { justify-self: center; max-width: 30rem; }
-  .pa-exp__stage { justify-self: center; }
+  .pa-exp__stage { justify-self: stretch; }
+  .pa-stage--tall { aspect-ratio: 4 / 5; width: 100%; max-width: 30rem; margin-inline: auto; }
 
   /* reading order: eyebrow, title, picture, description, list, button */
   .pa-what, .pa-journey, .pa-split, .pa-sizes { display: flex; flex-direction: column; align-items: stretch; }
@@ -219,3 +223,22 @@ img.pa-slot--hero { border-radius: 1rem 1rem 0 0; box-shadow: 0 -0.5rem 3rem rgb
   .pa-web__chk i { width: 1rem; height: 1rem; }
 }
 .co-phone--pay .co-phone__img { top: 8%; height: 64%; }
+
+/* "A simple experience": the step descriptions stay hidden (their space is kept, so the list never changes height) until the section is reached, then fade in one after another (hotspots.js adds .is-await, then .is-seen) */
+.pa-exp.is-await .pa-step p { opacity: 0; translate: 0 0.5rem; }
+.pa-step p { transition: opacity .6s ease, translate .6s ease; }
+.pa-exp.is-seen .pa-step:nth-child(2) p { transition-delay: .15s; }
+.pa-exp.is-seen .pa-step:nth-child(3) p { transition-delay: .3s; }
+.pa-exp.is-seen .pa-step:nth-child(4) p { transition-delay: .45s; }
+
+/* parallax: hotspots.js sets --py (-1 as the section enters, +1 as it leaves). Each layer of cards moves by its own amount, so the panel has depth as you scroll. */
+.pa-scene > * { --dp: 1; margin-top: calc(var(--py, 0) * var(--dp) * -0.75rem); }
+.pa-scene > :nth-child(2) { --dp: 1.7; }
+.pa-scene > :nth-child(3) { --dp: 2.4; }
+.pa-scene > :nth-child(4) { --dp: 3; }
+.pa-scene > .co-chip--done { margin-top: 0; margin-bottom: calc(var(--py, 0) * var(--dp) * 0.75rem); }
+.pa-scene > .co-card--e1, .pa-scene > .pa-stage__full { margin-top: calc((1 - var(--py, 0)) * 0.4rem); }
+@media (prefers-reduced-motion: reduce) { .pa-scene > * { margin: 0; } .pa-step p { transition: none; } }
+
+/* the full-height pictures carry their own purple wash: fade their side edges into the wider panel so no lighter column shows */
+.pa-scene > .co-card--e1, .pa-scene > .pa-stage__full { -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%); }

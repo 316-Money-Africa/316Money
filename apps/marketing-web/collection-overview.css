@@ -2,10 +2,11 @@
    cards that sit on the purple stages, and the phone panel. rem/em/% only, no inline styles (site CSP). */
 
 /* hero: the "Choose a service" screen behind, the dashboard in front, both cut off by the bottom of the hero */
-.co-hero { position: relative; aspect-ratio: 1000 / 470; overflow: hidden; }
+.co-hero { --bw: 58%; position: relative; aspect-ratio: 1000 / 427; overflow: hidden; }
+.co-hero::before { content: ""; position: absolute; right: 0; top: 0; bottom: 0; width: var(--bw); border: 0.0625rem solid #EBDDF5; border-bottom: 0; border-radius: 0.75rem 0.75rem 0 0; background: #fff; }   /* carries the "Choose a service" screen down to the edge of the next section */
 .co-hero__back, .co-hero__front { position: absolute; display: block; height: auto; border-radius: 0.75rem 0.75rem 0 0; }
-.co-hero__back { right: 0; top: 0; width: 58%; }
-.co-hero__front { left: 0; top: 12%; width: 62%; z-index: 1; }
+.co-hero__back { right: 0; top: 0; width: var(--bw); }
+.co-hero__front { left: 0; bottom: 0; width: 62%; z-index: 1; }
 .pa-hero__art:has(.co-hero) { margin-bottom: 0; }
 
 /* see-through cards on the purple stages (positions in % of the stage, so they scale with it) */
@@ -29,8 +30,7 @@
 .pa-access__pane .pa-pic { border-radius: 0; }
 
 @media (max-width: 40rem) {
-  .co-hero { aspect-ratio: 1000 / 600; }
-  .co-hero__back { width: 70%; }
-  .co-hero__front { width: 78%; top: 14%; }
+  .co-hero { --bw: 70%; aspect-ratio: 1000 / 560; }
+  .co-hero__front { width: 78%; }
   .co-phone { aspect-ratio: 4 / 5; }
 }

@@ -74,3 +74,33 @@
     }, { threshold: 0.35 }).observe(po);
   });
 })();
+
+/* "A simple experience" (Collection overview and Payment agent): the step descriptions appear when the section is reached, and the panel on the right has a gentle parallax while the section scrolls through the screen. */
+(function () {
+  var root = document.querySelector("[data-pa-exp]");
+  if (!root) return;
+  var calm = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if ("IntersectionObserver" in window) {
+    root.classList.add("is-await");
+    var io = new IntersectionObserver(function (entries) {
+      if (!entries[0].isIntersecting) return;
+      root.classList.remove("is-await");
+      root.classList.add("is-seen");
+      io.disconnect();
+    }, { threshold: 0.3 });
+    io.observe(root);
+  }
+  if (calm) return;
+  var busy = false;
+  var update = function () {
+    busy = false;
+    var r = root.getBoundingClientRect(), vh = window.innerHeight || 1;
+    var p = ((r.top + r.height / 2) - vh / 2) / (vh / 2 + r.height / 2);   // +1 below the middle of the screen, -1 above it
+    p = Math.max(-1, Math.min(1, -p));
+    root.style.setProperty("--py", p.toFixed(3));
+  };
+  var queue = function () { if (!busy) { busy = true; window.requestAnimationFrame(update); } };
+  window.addEventListener("scroll", queue, { passive: true });
+  window.addEventListener("resize", queue);
+  update();
+})();
