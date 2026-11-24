@@ -224,21 +224,16 @@ img.pa-slot--hero { border-radius: 1rem 1rem 0 0; box-shadow: 0 -0.5rem 3rem rgb
 }
 .co-phone--pay .co-phone__img { top: 8%; height: 64%; }
 
-/* "A simple experience": the step descriptions stay hidden (their space is kept, so the list never changes height) until the section is reached, then fade in one after another (hotspots.js adds .is-await, then .is-seen) */
-.pa-exp.is-await .pa-step p { opacity: 0; translate: 0 0.5rem; }
-.pa-step p { transition: opacity .6s ease, translate .6s ease; }
-.pa-exp.is-seen .pa-step:nth-child(2) p { transition-delay: .15s; }
-.pa-exp.is-seen .pa-step:nth-child(3) p { transition-delay: .3s; }
-.pa-exp.is-seen .pa-step:nth-child(4) p { transition-delay: .45s; }
-
-/* parallax: hotspots.js sets --py (-1 as the section enters, +1 as it leaves). Each layer of cards moves by its own amount, so the panel has depth as you scroll. */
-.pa-scene > * { --dp: 1; margin-top: calc(var(--py, 0) * var(--dp) * -0.75rem); }
+/* "A simple experience" is scroll-driven (hotspots.js): --rv0..--rv3 (0 to 1) reveal each step description in turn as the section scrolls into view, with its space kept so the list never changes height; --py (-1 entering, +1 leaving) moves each layer of the panel by its own amount (parallax). Without the script everything is simply shown. */
+.pa-step p { opacity: var(--rv, 1); translate: 0 calc((1 - var(--rv, 1)) * 1rem); }
+.pa-scene { translate: 0 calc(var(--py, 0) * -1.25rem); scale: 1.08; }
+.pa-scene > * { --dp: 1; margin-top: calc(var(--py, 0) * var(--dp) * -1.4rem); }
 .pa-scene > :nth-child(2) { --dp: 1.7; }
 .pa-scene > :nth-child(3) { --dp: 2.4; }
 .pa-scene > :nth-child(4) { --dp: 3; }
-.pa-scene > .co-chip--done { margin-top: 0; margin-bottom: calc(var(--py, 0) * var(--dp) * 0.75rem); }
-.pa-scene > .co-card--e1, .pa-scene > .pa-stage__full { margin-top: calc((1 - var(--py, 0)) * 0.4rem); }
-@media (prefers-reduced-motion: reduce) { .pa-scene > * { margin: 0; } .pa-step p { transition: none; } }
+.pa-scene > .co-chip--done { margin-top: 0; margin-bottom: calc(var(--py, 0) * var(--dp) * 1.4rem); }
+.pa-scene > .co-card--e1, .pa-scene > .pa-stage__full { margin-top: calc((1 - var(--py, 0)) * 0.9rem); }
+@media (prefers-reduced-motion: reduce) { .pa-scene { translate: none; } .pa-scene > * { margin: 0; } .pa-step p { opacity: 1; translate: none; } }
 
 /* the full-height pictures carry their own purple wash: fade their side edges into the wider panel so no lighter column shows */
 .pa-scene > .co-card--e1, .pa-scene > .pa-stage__full { -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%); }
