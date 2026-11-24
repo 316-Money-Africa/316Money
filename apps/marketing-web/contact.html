@@ -10,9 +10,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap">
+  <link rel="preload" as="image" href="assets/Contact/hero.webp?v=2463a223" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="styles.css?v=77986a3b">
   <link rel="stylesheet" href="sections.css?v=373b85c0">
-  <link rel="stylesheet" href="contact.css?v=82b56bde">
+  <link rel="stylesheet" href="contact.css?v=b759f973">
   <link rel="stylesheet" href="signup.css?v=d29a5e95">
   <link rel="stylesheet" href="mobile.css?v=6b276582">
 </head>
@@ -333,13 +334,14 @@
 
     <!-- 1 · Hero: the introduction and the enquiry form (lilac wash). The photo slot keeps its place until the picture is added. -->
     <section class="ct-hero" id="contact" aria-labelledby="ct-title">
+      <svg class="ct-lines" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M-20 640C240 620 520 540 800 440"/><path d="M880 890C1080 870 1280 850 1460 820"/><path d="M1160 200C1280 150 1370 120 1460 100"/></svg>
       <div class="wrap ct-hero__grid">
         <p class="ct-eyebrow">Contact us</p>
         <h1 id="ct-title" class="ct-title"><span class="ln">Let’s get you the</span> <span class="ln">help you need</span></h1>
         <p class="ct-lead">Whether you have a question about 316 Money, need help with a payment or want to explore a business opportunity, we’re here to point you in the right direction.</p>
         <div class="ct-media">
-          <svg class="slot ct-slot" viewBox="0 0 4 3" data-slot="Contact/hero" aria-hidden="true" focusable="false"></svg>
-          <div class="ct-ready"><b>We’re ready to listen</b><span>Tell us what you need</span></div>
+          <img src="assets/Contact/hero.webp?v=2463a223" class="ct-photo" alt="A 316 Money support agent wearing a headset and smiling" fetchpriority="high" loading="eager" width="1200" height="1135" decoding="async">
+          <img src="assets/Contact/ready.webp?v=dff9c9e5" class="ct-ready" alt="We’re ready to listen. Tell us what’s on your mind." loading="lazy" width="724" height="316" decoding="async">
         </div>
 
         <form class="ct-form" data-ct-form novalidate aria-labelledby="ct-form-title">
@@ -348,22 +350,18 @@
             <div class="ct-field"><label for="ct-first">First name</label><input id="ct-first" name="first" type="text" autocomplete="given-name" placeholder="Enter first name" required></div>
             <div class="ct-field"><label for="ct-last">Last name</label><input id="ct-last" name="last" type="text" autocomplete="family-name" placeholder="Enter last name" required></div>
           </div>
-          <div class="ct-field"><label for="ct-email">Email</label><input id="ct-email" name="email" type="email" autocomplete="email" placeholder="Enter your email" required></div>
-          <div class="ct-field"><label for="ct-topic">What is your enquiry about</label>
-            <span class="ct-select"><select id="ct-topic" name="topic" required>
-              <option value="" selected disabled>Select an enquiry type</option>
-              <option>A question about 316 Money</option>
-              <option>Help with a payment</option>
-              <option>A failed transaction</option>
-              <option>316 Business</option>
-              <option>Becoming a Hotspot agent</option>
-              <option>Something else</option>
-            </select></span>
+          <div class="ct-field"><label for="ct-email">Email</label><input id="ct-email" name="email" type="email" autocomplete="email" placeholder="Enter email address" required></div>
+          <div class="ct-field"><label id="ct-topic-l" for="ct-topic">What is your enquiry about</label>
+            <div class="ct-dd" data-ct-dd>
+              <button class="ct-dd__btn" id="ct-topic" type="button" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-controls="ct-topic-list" aria-labelledby="ct-topic-l ct-topic" data-ct-dd-btn><span data-ct-dd-val>Select an enquiry type</span></button>
+              <input type="hidden" name="topic" value="" data-ct-dd-in>
+              <ul class="ct-dd__list" id="ct-topic-list" role="listbox" aria-labelledby="ct-topic-l" tabindex="-1" hidden><li role="option" aria-selected="false" data-v="General enquiry">General enquiry</li><li role="option" aria-selected="false" data-v="316 Money account">316 Money account</li><li role="option" aria-selected="false" data-v="Payments and transfers">Payments and transfers</li><li role="option" aria-selected="false" data-v="316 Business">316 Business</li><li role="option" aria-selected="false" data-v="316 Hotspots">316 Hotspots</li><li role="option" aria-selected="false" data-v="Partnership opportunities">Partnership opportunities</li><li role="option" aria-selected="false" data-v="Other">Other</li></ul>
+            </div>
           </div>
           <div class="ct-field"><label for="ct-subject">Subject</label><input id="ct-subject" name="subject" type="text" placeholder="Enter a subject" required></div>
-          <div class="ct-field"><label for="ct-msg">Message</label><textarea id="ct-msg" name="message" rows="5" placeholder="Write your message here" required></textarea></div>
+          <div class="ct-field"><label for="ct-msg">Message</label><textarea id="ct-msg" name="message" rows="5" placeholder="Tell us how we can help" required></textarea></div>
           <label class="ct-agree"><input type="checkbox" name="agree" required><span>I agree to the <a href="#privacy">privacy policy</a></span></label>
-          <button class="btn btn--primary ct-send" type="submit">Send message</button>
+          <button class="ct-send" type="submit">Send message</button>
           <p class="ct-status" data-ct-status role="status" hidden></p>
         </form>
       </div>
@@ -381,11 +379,11 @@
         </div>
         <div class="faq__list">
           <details><summary>How do I get started with 316?</summary><p>Download the 316 Money app, create an account with your email and phone number, and complete the identity checks. Once you are verified you can add money, send payments and use the features available in your country.</p></details>
-          <details><summary>How can I get help with a payment?</summary><p>Use the form above and choose “Help with a payment”. Include the amount, the date and the reference shown in the app, and our team will look into it and get back to you.</p></details>
+          <details><summary>How can I get help with a payment?</summary><p>Use the form above and choose “Payments and transfers”. Include the amount, the date and the reference shown in the app, and our team will look into it and get back to you.</p></details>
           <details><summary>Which countries can use 316 Money?</summary><p>316 Money is switched on country by country as our partners and approvals allow. The countries and features available to you are shown when you create your account.</p></details>
           <details><summary>How do I contact 316 Business?</summary><p>Choose “316 Business” in the enquiry list above and tell us about your business. Our team will reply with the next steps for accepting payments, invoicing and the other business tools.</p></details>
-          <details><summary>How can I become a Hotspot?</summary><p>Choose “Becoming a Hotspot agent” above, or start your application from the Hotspots pages. We assess each application, including verification and location checks, before services are enabled.</p></details>
-          <details><summary>How do I report a failed transaction?</summary><p>Choose “A failed transaction” in the enquiry list and share the reference, the amount and the date. We will check the status and tell you what happens next.</p></details>
+          <details><summary>How can I become a Hotspot?</summary><p>Choose “316 Hotspots” above, or start your application from the Hotspots pages. We assess each application, including verification and location checks, before services are enabled.</p></details>
+          <details><summary>How do I report a failed transaction?</summary><p>Choose “Payments and transfers” in the enquiry list and share the reference, the amount and the date. We will check the status and tell you what happens next.</p></details>
         </div>
       </div>
     </section>
@@ -421,6 +419,6 @@
   </footer>
   <script src="nav.js?v=b940ea32" defer></script>
   <script src="signup.js?v=b1822ef8" defer></script>
-  <script src="contact.js?v=296ed245" defer></script>
+  <script src="contact.js?v=b92220c5" defer></script>
 </body>
 </html>

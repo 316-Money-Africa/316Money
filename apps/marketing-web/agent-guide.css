@@ -173,3 +173,12 @@ img.ag-slot { background: none; }
 .ag-tools { position: relative; padding-right: 12%; }
 .ag-tools__web { display: block; width: 100%; height: auto; border-radius: 0.5rem; box-shadow: 0 0.5rem 1.5rem rgba(80, 50, 140, .12); }
 .ag-tools__phone { position: absolute; right: 0; bottom: -0.75rem; width: 24%; height: auto; border-radius: 0.5rem; box-shadow: 0 0.5rem 1.25rem rgba(40, 20, 90, .25); }
+
+/* both-roles guide: two supplied pictures side by side, a photo with a profile card, and two stacked question cards */
+.ag-duo { display: flex; gap: 0.75rem; align-items: center; }
+.ag-duo__i { display: block; flex: 1 1 0; min-width: 0; width: 50%; height: auto; }
+.ag-rev__photo { position: absolute; right: 0; top: 0; width: 62%; height: auto; border-radius: 0.5rem; }
+.ag-rev__card--b { left: 0; bottom: 6%; width: 72%; }
+.ag-stack { display: grid; gap: 0.625rem; }
+.ag-stack__i { display: block; width: 88%; height: auto; }
+.ag-stack__i--b { justify-self: end; }
